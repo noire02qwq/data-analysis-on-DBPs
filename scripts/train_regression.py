@@ -245,7 +245,7 @@ def main() -> None:
     training_params: Dict[str, object] = cfg["training_params"]  # type: ignore[assignment]
     data_params: Dict[str, object] = cfg["data_params"]  # type: ignore[assignment]
 
-    output_dir = Path("models") / "outputs" / model_name
+    output_dir = Path("scripts") / "outputs" / model_name
     checkpoints_dir = output_dir / "checkpoints"
     output_dir.mkdir(parents=True, exist_ok=True)
     checkpoints_dir.mkdir(parents=True, exist_ok=True)

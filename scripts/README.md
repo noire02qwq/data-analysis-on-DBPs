@@ -27,7 +27,7 @@ This folder contains every step of the DBPS data-processing pipeline, from filli
 - **Outputs:** Aligned CSV in `data/time_aligned_data.csv`, logs dropped rows, and removes `cond-RT`.
 
 ## 3. Regression Training (`train_regression.py`)
-- **Purpose:** Trains either the MLP or LSTM regression model on the aligned data, saving checkpoints, the best model, training curves, and metadata into `models/outputs/<model_name>/`.
+- **Purpose:** Trains either the MLP or LSTM regression model on the aligned data, saving checkpoints, the best model, training curves, and metadata into `scripts/outputs/<model_name>/`.
 - **Default command:**  
   ```bash
   python scripts/train_regression.py --config models/configs/mlp_config.yaml
@@ -38,15 +38,15 @@ This folder contains every step of the DBPS data-processing pipeline, from filli
   You can duplicate and modify these YAML files (history length, hidden sizes, batch size, etc.) and pass the new path via `--config`.
 - **What the config controls:** model type/name, history length, hidden size/layers, dropout, training hyperparameters (epochs, batch size, LR, weight decay, checkpoint interval, seed), and data source (CSV path + timestamp column).
 - **Outputs per run:**  
-  - `models/outputs/<model_name>/best_model.pt` and `last_model.pt`  
-  - periodic checkpoints under `models/outputs/<model_name>/checkpoints/`  
+  - `scripts/outputs/<model_name>/best_model.pt` and `last_model.pt`  
+  - periodic checkpoints under `scripts/outputs/<model_name>/checkpoints/`  
   - `scalers.npz`, `metadata.json`, `loss_history.csv`, `training_curve.png`, plus a copy of the YAML config.
 
 ## 4. Regression Testing (`test_regression.py`)
 - **Purpose:** Loads a trained model directory, evaluates the test split, writes `test_predictions.csv`, and creates one True-vs-Predicted plot per target column.
 - **Command template:**  
   ```bash
-  python scripts/test_regression.py --model-dir models/outputs/mlp_regressor
+  python scripts/test_regression.py --model-dir scripts/outputs/mlp_regressor
   ```
 - **Key options:**  
   - `--model-dir`: folder holding `metadata.json`, `best_model.pt`, `scalers.npz`, etc.  
@@ -60,6 +60,6 @@ This folder contains every step of the DBPS data-processing pipeline, from filli
 1. `python scripts/fill_missing.py`  
 2. `python scripts/align_time.py`  
 3. `python scripts/train_regression.py --config models/configs/<your_config>.yaml`  
-4. `python scripts/test_regression.py --model-dir models/outputs/<model_name>`
+4. `python scripts/test_regression.py --model-dir scripts/outputs/<model_name>`
 
 This sequence ensures the regression models always see the cleaned, aligned data and that evaluation uses the same scalers and splits recorded during training. Adjust the YAML configs to explore different look-back windows or network sizes, then rerun steps 3–4.***
