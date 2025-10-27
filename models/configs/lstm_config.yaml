@@ -1,0 +1,20 @@
+experiment:
+  name: lstm_regression
+model:
+  type: LSTM
+  name: lstm_regressor
+  history_length: 72
+  hidden_size: 192
+  num_layers: 2
+  dropout: 0.3
+  fc_dim: 96
+training:
+  epochs: 100
+  batch_size: 128
+  learning_rate: 0.0005
+  weight_decay: 0.0001
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: "Date, Time"

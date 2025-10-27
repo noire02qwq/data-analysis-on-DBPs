@@ -1,0 +1,2 @@
+# Ignore PyTorch checkpoints and similar binary weights
+*.pt
