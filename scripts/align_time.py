@@ -1,23 +1,28 @@
 #!/usr/bin/env python3
 """
-Align DT/RT/PPL1/PPL2 measurements so each row represents the same fluid batch.
+Align DT/RT/PPL1/PPL2 measurements so each row reflects the same batch according to
+the 25/38/55-hour travel times described in prompt-draft/时间对齐.md.
 """
 
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict
 
-import numpy as np
 import pandas as pd
 
-OFFSET_MINUTES: Dict[str, int] = {
+# Travel time in hours for a batch to move from DT to each downstream sensor.
+MEASUREMENT_OFFSET_HOURS: Dict[str, int] = {
     "DT": 0,
     "RT": 25,
-    "PPL1": 40,
+    "PPL1": 38,
     "PPL2": 55,
 }
+
+
+def offset_minutes_map() -> Dict[str, int]:
+    return {suffix: hours * 60 for suffix, hours in MEASUREMENT_OFFSET_HOURS.items()}
 
 
 def parse_args() -> argparse.Namespace:
@@ -45,52 +50,29 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def estimate_step_minutes(timestamps: pd.Series) -> float:
-    diffs = timestamps.diff().dropna()
-    if diffs.empty:
-        raise ValueError("Unable to estimate sampling interval from a single timestamp.")
-    median = diffs.median()
-    minutes = median.total_seconds() / 60.0
-    if minutes <= 0:
-        raise ValueError("Non-positive sampling interval detected.")
-    return minutes
-
-
-def rows_for_offset(offset_minutes: int, step_minutes: float) -> int:
-    if offset_minutes == 0:
-        return 0
-    periods = int(round(offset_minutes / step_minutes))
-    if not np.isclose(periods * step_minutes, offset_minutes, atol=1e-6):
-        raise ValueError(
-            f"Offset {offset_minutes} minutes is not a multiple of the sampling interval {step_minutes} minutes."
-        )
-    return periods
-
-
 def align_columns(
     df: pd.DataFrame,
     timestamp_col: str,
 ) -> pd.DataFrame:
-    timestamps = pd.to_datetime(df[timestamp_col])
     df = df.copy()
-    df[timestamp_col] = timestamps
-    df = df.sort_values(timestamp_col).reset_index(drop=True)
+    df[timestamp_col] = pd.to_datetime(df[timestamp_col])
+    df = df.sort_values(timestamp_col)
+    df = df.set_index(timestamp_col)
 
-    step_minutes = estimate_step_minutes(df[timestamp_col])
-    suffix_shift: Dict[str, int] = {
-        suffix: rows_for_offset(offset, step_minutes) for suffix, offset in OFFSET_MINUTES.items()
-    }
-
-    data_cols = [c for c in df.columns if c != timestamp_col]
-    for col in data_cols:
+    aligned_columns: Dict[str, pd.Series] = {}
+    offsets = offset_minutes_map()
+    for col in df.columns:
         suffix = col.split("-")[-1]
-        shift_periods = suffix_shift.get(suffix)
-        if shift_periods is None or shift_periods == 0:
-            continue
-        df[col] = df[col].shift(-shift_periods)
+        offset_minutes = offsets.get(suffix, 0)
+        series = df[col]
+        if offset_minutes:
+            delta = pd.to_timedelta(offset_minutes, unit="m")
+            series = series.shift(freq=-delta)
+        aligned_columns[col] = series
 
-    aligned = df.dropna(subset=data_cols).reset_index(drop=True)
-    return aligned
+    aligned_df = pd.DataFrame(aligned_columns, index=df.index)
+    aligned_df = aligned_df.dropna().reset_index().rename(columns={"index": timestamp_col})
+    return aligned_df
 
 
 def main() -> None:

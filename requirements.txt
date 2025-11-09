@@ -2,7 +2,10 @@
 numpy>=1.26
 pandas>=2.1
 matplotlib>=3.8
-
-# Deep learning and experiment utilities
-torch>=2.1
 PyYAML>=6.0
+
+# Deep learning
+torch>=2.1
+
+# Gradient boosting
+xgboost==2.0.3  # manylinux2014 build keeps glibc<2.28 support

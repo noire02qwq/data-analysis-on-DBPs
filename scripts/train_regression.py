@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Train regression models (MLP/LSTM) for the DBPS experiment according to the YAML config.
+Train regression models (MLP/MLP_WITH_HISTORY/LSTM/RNN/XGBOOST) per 回归实验1109.md.
 """
 
 from __future__ import annotations
@@ -11,6 +11,7 @@ import math
 import random
 import shutil
 import sys
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
@@ -19,82 +20,103 @@ import numpy as np
 import torch
 from torch import nn
 from torch.utils.data import DataLoader, Subset
-
-try:
-    import yaml
-except ImportError as exc:  # pragma: no cover - dependency guard
-    raise ImportError("PyYAML is required. Install it via 'pip install pyyaml'.") from exc
+import xgboost as xgb
+import yaml
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from models import LSTMRegressor, MLPRegressor
-from scripts.regression_utils import (
-    LSTMSequenceDataset,
-    MLPPastSequenceDataset,
+from models import LSTMRegressor, MLPRegressor, RNNRegressor, XGBoostRegressor  # noqa: E402
+from scripts.regression_utils import (  # noqa: E402
+    DatasetBundle,
     SplitBoundaries,
+    TARGET_COLUMNS,
+    build_dataset_bundle,
     compute_scalers,
     compute_split_boundaries,
-    get_column_indices,
+    get_feature_and_target_indices,
     load_time_series,
     scale_values,
     subset_indices,
-    TARGET_COLUMNS,
 )
+
+SUPPORTED_MODELS = {"MLP", "MLP_WITH_HISTORY", "LSTM", "RNN", "XGBOOST"}
+PATIENCE_EPOCHS = 50
+MIN_EPOCHS = 80
+EARLY_STOP_FORCE_EPOCH = 100
+BEST_START_RATIO = 4.0
+EARLY_STOP_RATIO = 4.0
+
+
+def safe_filename(name: str) -> str:
+    return name.replace("/", "_").replace(" ", "_")
+
+
+@dataclass
+class ConfigBundle:
+    model_type: str
+    model_name: str
+    model_params: Dict[str, Any]
+    training_params: Dict[str, Any]
+    data_params: Dict[str, Any]
+    config_path: Path
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Train MLP/LSTM regression models.")
+    parser = argparse.ArgumentParser(description="Train regression models for DBPS data.")
     parser.add_argument(
         "--config",
         default="models/configs/mlp_config.yaml",
-        help="Path to the YAML config describing the experiment.",
+        help="Path to a YAML config file.",
     )
     return parser.parse_args()
 
 
-def parse_config(config_path: Path) -> Dict[str, object]:
-    with config_path.open("r", encoding="utf-8") as fh:
-        config_data = yaml.safe_load(fh)
-    if not isinstance(config_data, dict):
-        raise ValueError("Config root must be a mapping.")
+def parse_config(path: Path) -> ConfigBundle:
+    with path.open("r", encoding="utf-8") as fh:
+        config = yaml.safe_load(fh)
+    if not isinstance(config, dict):
+        raise ValueError("YAML root must be a mapping.")
 
-    model_cfg = config_data.get("model")
-    training_cfg = config_data.get("training")
-    data_cfg = config_data.get("data")
-    if not isinstance(model_cfg, dict) or not isinstance(training_cfg, dict) or not isinstance(data_cfg, dict):
+    model_cfg = config.get("model")
+    training_cfg = config.get("training")
+    data_cfg = config.get("data")
+    if not all(isinstance(section, dict) for section in (model_cfg, training_cfg, data_cfg)):
         raise ValueError("Config must contain 'model', 'training', and 'data' sections.")
 
     model_type = str(model_cfg.get("type", "")).strip().upper()
-    if model_type not in {"MLP", "LSTM"}:
-        raise ValueError("Model type must be either 'MLP' or 'LSTM'.")
-    model_name = str(model_cfg.get("name") or f"{model_type.lower()}_model").strip()
-    history_length = int(model_cfg["history_length"])
+    if model_type not in SUPPORTED_MODELS:
+        raise ValueError(f"Unsupported model type '{model_type}'. Expected {sorted(SUPPORTED_MODELS)}.")
 
+    model_name = str(model_cfg.get("name") or f"{model_type.lower()}_model").strip()
+    history_length = int(model_cfg.get("history_length", 1))
     model_params: Dict[str, Any] = {"history_length": history_length}
 
-    if model_type == "MLP":
-        hidden_layers_raw = model_cfg.get("hidden_layers", [256, 128])
+    if model_type in {"MLP", "MLP_WITH_HISTORY"}:
+        hidden_layers_raw = model_cfg.get("hidden_layers", [512, 256, 128])
         if isinstance(hidden_layers_raw, str):
-            hidden_layers = [int(layer.strip()) for layer in hidden_layers_raw.split(",") if layer.strip()]
-        elif isinstance(hidden_layers_raw, (list, tuple)):
-            hidden_layers = [int(val) for val in hidden_layers_raw]
+            hidden_layers = [int(chunk.strip()) for chunk in hidden_layers_raw.split(",") if chunk.strip()]
         else:
-            raise ValueError("hidden_layers must be a list or comma-separated string.")
-        if not hidden_layers:
-            raise ValueError("At least one hidden layer is required for the MLP.")
+            hidden_layers = [int(val) for val in hidden_layers_raw]
         model_params["hidden_layers"] = hidden_layers
         model_params["dropout"] = float(model_cfg.get("dropout", 0.0))
-    else:
-        model_params["hidden_size"] = int(model_cfg.get("hidden_size", 128))
+    elif model_type in {"LSTM", "RNN"}:
+        model_params["units"] = int(model_cfg.get("units", 192))
         model_params["num_layers"] = int(model_cfg.get("num_layers", 2))
         model_params["dropout"] = float(model_cfg.get("dropout", 0.0))
-        fc_dim = model_cfg.get("fc_dim")
-        model_params["fc_dim"] = int(fc_dim) if fc_dim is not None else None
+        model_params["fc_dim"] = model_cfg.get("fc_dim")
+    else:  # XGBOOST
+        model_params["max_depth"] = int(model_cfg.get("max_depth", 8))
+        model_params["learning_rate"] = float(model_cfg.get("learning_rate", 0.05))
+        model_params["subsample"] = float(model_cfg.get("subsample", 0.9))
+        model_params["colsample_bytree"] = float(model_cfg.get("colsample_bytree", 0.8))
+        model_params["gamma"] = float(model_cfg.get("gamma", 0.0))
+        model_params["reg_lambda"] = float(model_cfg.get("reg_lambda", 1.0))
+        model_params["min_child_weight"] = float(model_cfg.get("min_child_weight", 1.0))
 
     training_params = {
-        "epochs": int(training_cfg.get("epochs", 50)),
+        "max_epochs": int(training_cfg.get("max_epochs", 400)),
         "batch_size": int(training_cfg.get("batch_size", 256)),
         "learning_rate": float(training_cfg.get("learning_rate", 1e-3)),
         "weight_decay": float(training_cfg.get("weight_decay", 0.0)),
@@ -107,14 +129,14 @@ def parse_config(config_path: Path) -> Dict[str, object]:
         "timestamp_column": str(data_cfg.get("timestamp_column", "Date, Time")),
     }
 
-    return {
-        "model_type": model_type,
-        "model_name": model_name,
-        "model_params": model_params,
-        "training_params": training_params,
-        "data_params": data_params,
-        "config_path": str(config_path),
-    }
+    return ConfigBundle(
+        model_type=model_type,
+        model_name=model_name,
+        model_params=model_params,
+        training_params=training_params,
+        data_params=data_params,
+        config_path=path,
+    )
 
 
 def set_seed(seed: int) -> None:
@@ -125,36 +147,22 @@ def set_seed(seed: int) -> None:
         torch.cuda.manual_seed_all(seed)
 
 
-def build_datasets(
+def configure_output_dirs(model_name: str, config_path: Path) -> Tuple[Path, Path]:
+    output_dir = Path("scripts") / "outputs" / model_name
+    checkpoints_dir = output_dir / "checkpoints"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    checkpoints_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy(config_path, output_dir / config_path.name)
+    return output_dir, checkpoints_dir
+
+
+def build_torch_model(
     model_type: str,
-    model_params: Dict[str, object],
-    scaled_values: np.ndarray,
-    non_target_indices: List[int],
-    target_indices: List[int],
-) -> Tuple[torch.utils.data.Dataset, int, int]:
-    non_target_data = scaled_values[:, non_target_indices]
-    target_data = scaled_values[:, target_indices]
-
-    if model_type == "MLP":
-        dataset = MLPPastSequenceDataset(
-            scaled_values,
-            non_target_data,
-            target_data,
-            history_length=model_params["history_length"],
-        )
-        input_dim = dataset.input_dim
-    else:
-        dataset = LSTMSequenceDataset(
-            non_target_data,
-            target_data,
-            history_length=model_params["history_length"],
-        )
-        input_dim = dataset.input_dim
-    output_dim = target_data.shape[1]
-    return dataset, input_dim, output_dim
-
-
-def build_model(model_type: str, input_dim: int, output_dim: int, model_params: Dict[str, object]) -> nn.Module:
+    input_dim: int,
+    output_dim: int,
+    sequence_length: int | None,
+    model_params: Dict[str, Any],
+) -> nn.Module:
     if model_type == "MLP":
         return MLPRegressor(
             input_dim=input_dim,
@@ -162,15 +170,36 @@ def build_model(model_type: str, input_dim: int, output_dim: int, model_params: 
             hidden_layers=model_params["hidden_layers"],
             dropout=float(model_params.get("dropout", 0.0)),
         )
-
-    return LSTMRegressor(
-        input_dim=input_dim,
-        output_dim=output_dim,
-        hidden_size=int(model_params.get("hidden_size", 128)),
-        num_layers=int(model_params.get("num_layers", 2)),
-        dropout=float(model_params.get("dropout", 0.0)),
-        fc_dim=model_params.get("fc_dim"),
-    )
+    if model_type == "MLP_WITH_HISTORY":
+        return MLPRegressor(
+            input_dim=input_dim,
+            output_dim=output_dim,
+            hidden_layers=model_params["hidden_layers"],
+            dropout=float(model_params.get("dropout", 0.0)),
+        )
+    if model_type == "LSTM":
+        if sequence_length is None:
+            raise ValueError("Sequence length is required for LSTM inputs.")
+        return LSTMRegressor(
+            input_dim=input_dim,
+            output_dim=output_dim,
+            hidden_size=int(model_params.get("units", 192)),
+            num_layers=int(model_params.get("num_layers", 2)),
+            dropout=float(model_params.get("dropout", 0.0)),
+            fc_dim=model_params.get("fc_dim"),
+        )
+    if model_type == "RNN":
+        if sequence_length is None:
+            raise ValueError("Sequence length is required for RNN inputs.")
+        return RNNRegressor(
+            input_dim=input_dim,
+            output_dim=output_dim,
+            hidden_size=int(model_params.get("units", 160)),
+            num_layers=int(model_params.get("num_layers", 2)),
+            dropout=float(model_params.get("dropout", 0.0)),
+            fc_dim=model_params.get("fc_dim"),
+        )
+    raise ValueError(f"Unsupported torch model_type '{model_type}'.")
 
 
 def run_epoch(
@@ -184,29 +213,29 @@ def run_epoch(
     model.train(training)
     total_loss = 0.0
     total_samples = 0
-
     for features, targets in loader:
         features = features.to(device)
         targets = targets.to(device)
-
         if training:
             optimizer.zero_grad()
-        predictions = model(features)
-        loss = criterion(predictions, targets)
+        outputs = model(features)
+        loss = criterion(outputs, targets)
         if training:
             loss.backward()
             optimizer.step()
-
         batch_size = features.size(0)
         total_loss += loss.item() * batch_size
         total_samples += batch_size
-
-    if total_samples == 0:
-        raise RuntimeError("Dataset split is empty.")
-    return total_loss / total_samples
+    return total_loss / max(total_samples, 1)
 
 
-def save_checkpoint(path: Path, model: nn.Module, optimizer: torch.optim.Optimizer, epoch: int, val_loss: float) -> None:
+def save_torch_checkpoint(
+    path: Path,
+    model: nn.Module,
+    optimizer: torch.optim.Optimizer,
+    epoch: int,
+    val_loss: float,
+) -> None:
     torch.save(
         {
             "model_state": model.state_dict(),
@@ -218,12 +247,19 @@ def save_checkpoint(path: Path, model: nn.Module, optimizer: torch.optim.Optimiz
     )
 
 
-def plot_training_curve(epochs: List[int], train_losses: List[float], val_losses: List[float], destination: Path) -> None:
+def plot_training_curve(
+    epochs: List[int],
+    train_losses: List[float],
+    val_losses: List[float],
+    destination: Path,
+    train_label: str = "Train Loss",
+    val_label: str = "Val Loss",
+) -> None:
     plt.figure(figsize=(8, 4))
-    plt.plot(epochs, train_losses, label="Train Loss")
-    plt.plot(epochs, val_losses, label="Validation Loss")
+    plt.plot(epochs, train_losses, label=train_label)
+    plt.plot(epochs, val_losses, label=val_label)
     plt.xlabel("Epoch")
-    plt.ylabel("MSE Loss")
+    plt.ylabel("Loss")
     plt.title("Training Curve")
     plt.legend()
     plt.grid(True, linestyle="--", alpha=0.4)
@@ -232,172 +268,506 @@ def plot_training_curve(epochs: List[int], train_losses: List[float], val_losses
     plt.close()
 
 
+def save_loss_history(path: Path, epochs: List[int], train_losses: List[float], val_losses: List[float]) -> None:
+    with path.open("w", encoding="utf-8") as fh:
+        fh.write("epoch,train_loss,val_loss\n")
+        for epoch, tr, vl in zip(epochs, train_losses, val_losses):
+            fh.write(f"{epoch},{tr},{vl}\n")
+
+
+def save_scalers(path: Path, mean: np.ndarray, std: np.ndarray) -> None:
+    np.savez(path, mean=mean, std=std)
+
+
+def plot_per_target_curves(per_target_history: Dict[str, Dict[str, List[float]]], output_dir: Path) -> None:
+    for target, history in per_target_history.items():
+        plot_training_curve(
+            history["epochs"],
+            history["train_losses"],
+            history["val_losses"],
+            output_dir / f"training_curve_{safe_filename(target)}.png",
+            train_label="Train MSE",
+            val_label="Val MAE",
+        )
+
+
+def save_loss_history_multi(per_target_history: Dict[str, Dict[str, List[float]]], output_dir: Path) -> None:
+    for target, history in per_target_history.items():
+        path = output_dir / f"loss_history_{safe_filename(target)}.csv"
+        save_loss_history(path, history["epochs"], history["train_losses"], history["val_losses"])
+
+
+def train_single_target_xgb(
+    target_name: str,
+    params: Dict[str, Any],
+    training_params: Dict[str, Any],
+    checkpoint_interval: int,
+    train_features: np.ndarray,
+    val_features: np.ndarray,
+    test_features: np.ndarray,
+    train_labels: np.ndarray,
+    val_labels: np.ndarray,
+    test_labels: np.ndarray,
+    output_dir: Path,
+    checkpoints_dir: Path,
+) -> Dict[str, Any]:
+    dtrain = xgb.DMatrix(train_features, label=train_labels)
+    dval = xgb.DMatrix(val_features, label=val_labels)
+    dtest = xgb.DMatrix(test_features, label=test_labels)
+
+    booster: xgb.Booster | None = None
+    train_history: List[float] = []
+    val_history: List[float] = []
+    epochs_axis: List[int] = []
+    initial_train_loss = None
+    best_start_threshold = None
+    early_stop_threshold = None
+    tracking_enabled = False
+    early_stop_enabled = False
+    best_val_loss = math.inf
+    best_epoch = None
+    val_no_improve_epochs = 0
+    forced_stop_due_to_threshold = False
+    best_model_saved = False
+
+    best_dir = output_dir / "best_model"
+    last_dir = output_dir / "last_model"
+    checkpoint_dir = checkpoints_dir / safe_filename(target_name)
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
+    best_dir.mkdir(parents=True, exist_ok=True)
+    last_dir.mkdir(parents=True, exist_ok=True)
+
+    best_model_path = best_dir / f"{target_name}.json"
+    last_model_path = last_dir / f"{target_name}.json"
+    max_epochs = training_params["max_epochs"]
+
+    for epoch in range(1, max_epochs + 1):
+        booster = xgb.train(
+            params,
+            dtrain=dtrain,
+            num_boost_round=1,
+            xgb_model=booster,
+            verbose_eval=False,
+        )
+        train_pred = booster.predict(dtrain)
+        val_pred = booster.predict(dval)
+        train_loss = float(np.mean((train_pred - train_labels) ** 2))
+        val_loss = float(np.mean(np.abs(val_pred - val_labels)))
+
+        epochs_axis.append(epoch)
+        train_history.append(train_loss)
+        val_history.append(val_loss)
+
+        if initial_train_loss is None:
+            initial_train_loss = train_loss
+            best_start_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
+            early_stop_threshold = train_loss / EARLY_STOP_RATIO if train_loss > 0 else train_loss
+
+        val_improved = False
+        if (
+            not tracking_enabled
+            and best_start_threshold is not None
+            and train_loss <= best_start_threshold + 1e-12
+        ):
+            tracking_enabled = True
+            best_val_loss = val_loss
+            best_epoch = epoch
+            booster.save_model(best_model_path)
+            best_model_saved = True
+            val_improved = True
+        elif tracking_enabled and val_loss < best_val_loss - 1e-9:
+            best_val_loss = val_loss
+            best_epoch = epoch
+            booster.save_model(best_model_path)
+            best_model_saved = True
+            val_improved = True
+
+        if (
+            not early_stop_enabled
+            and early_stop_threshold is not None
+            and train_loss <= early_stop_threshold + 1e-12
+        ):
+            early_stop_enabled = True
+            val_no_improve_epochs = 0
+
+        checkpoint_saved = False
+        if epoch % checkpoint_interval == 0:
+            checkpoint_path = checkpoint_dir / f"epoch_{epoch:03d}.json"
+            booster.save_model(checkpoint_path)
+            checkpoint_saved = True
+
+        log_msg = f"[{target_name}][Epoch {epoch:03d}] train_mse={train_loss:.6f} val_mae={val_loss:.6f}"
+        if checkpoint_saved:
+            log_msg += " (checkpoint saved)"
+        print(log_msg)
+
+        if tracking_enabled and early_stop_enabled:
+            if val_improved:
+                val_no_improve_epochs = 0
+            else:
+                val_no_improve_epochs += 1
+                if val_no_improve_epochs >= PATIENCE_EPOCHS and epoch >= MIN_EPOCHS:
+                    break
+
+        if not early_stop_enabled and epoch >= EARLY_STOP_FORCE_EPOCH:
+            forced_stop_due_to_threshold = True
+            break
+
+    if booster is None:
+        raise RuntimeError("XGBoost booster failed to train.")
+
+    booster.save_model(last_model_path)
+    if not best_model_saved:
+        shutil.copy(last_model_path, best_model_path)
+        best_val_loss = val_history[-1]
+        best_epoch = epochs_axis[-1]
+
+    best_booster = xgb.Booster()
+    best_booster.load_model(best_model_path)
+    test_pred = best_booster.predict(dtest)
+    test_loss = float(np.mean((test_pred - test_labels) ** 2))
+
+    return {
+        "epochs": epochs_axis,
+        "train_losses": train_history,
+        "val_losses": val_history,
+        "best_epoch": best_epoch,
+        "best_val_loss": best_val_loss,
+        "test_loss": test_loss,
+        "tracking_enabled": tracking_enabled,
+        "early_stop_enabled": early_stop_enabled,
+        "forced_stop_due_to_threshold": forced_stop_due_to_threshold,
+    }
+
+
+def train_with_torch(
+    cfg: ConfigBundle,
+    dataset_bundle: DatasetBundle,
+    splits: Dict[str, np.ndarray],
+    training_params: Dict[str, Any],
+    output_dir: Path,
+    checkpoints_dir: Path,
+    device: torch.device,
+) -> Dict[str, Any]:
+    dataset = dataset_bundle.dataset
+    train_loader = DataLoader(Subset(dataset, splits["train"]), batch_size=training_params["batch_size"], shuffle=True)
+    val_loader = DataLoader(Subset(dataset, splits["val"]), batch_size=training_params["batch_size"], shuffle=False)
+    test_loader = DataLoader(Subset(dataset, splits["test"]), batch_size=training_params["batch_size"], shuffle=False)
+
+    model = build_torch_model(
+        cfg.model_type,
+        dataset_bundle.input_dim,
+        dataset_bundle.targets.shape[1],
+        dataset_bundle.sequence_length,
+        cfg.model_params,
+    ).to(device)
+    optimizer = torch.optim.Adam(
+        model.parameters(),
+        lr=training_params["learning_rate"],
+        weight_decay=training_params["weight_decay"],
+    )
+    train_criterion = nn.MSELoss()
+    val_criterion = nn.L1Loss()
+
+    checkpoint_interval = max(1, training_params["checkpoint_interval"])
+    best_val_loss = math.inf
+    best_epoch = None
+    best_model_saved = False
+    train_history: List[float] = []
+    val_history: List[float] = []
+    epochs_axis: List[int] = []
+    best_train_loss = math.inf
+    initial_train_loss = None
+    best_start_threshold = None
+    early_stop_threshold = None
+    tracking_enabled = False
+    early_stop_enabled = False
+    val_no_improve_epochs = 0
+    forced_stop_due_to_threshold = False
+
+    max_epochs = training_params["max_epochs"]
+    best_model_path = output_dir / "best_model.pt"
+    last_model_path = output_dir / "last_model.pt"
+
+    for epoch in range(1, max_epochs + 1):
+        train_loss = run_epoch(model, train_loader, train_criterion, optimizer, device)
+        val_loss = run_epoch(model, val_loader, val_criterion, None, device)
+
+        epochs_axis.append(epoch)
+        train_history.append(train_loss)
+        val_history.append(val_loss)
+
+        if initial_train_loss is None:
+            initial_train_loss = train_loss
+            best_start_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
+            early_stop_threshold = train_loss / EARLY_STOP_RATIO if train_loss > 0 else train_loss
+
+        if train_loss < best_train_loss - 1e-9:
+            best_train_loss = train_loss
+
+        val_improved = False
+        if (
+            not tracking_enabled
+            and best_start_threshold is not None
+            and train_loss <= best_start_threshold + 1e-12
+        ):
+            tracking_enabled = True
+            best_val_loss = val_loss
+            best_epoch = epoch
+            save_torch_checkpoint(best_model_path, model, optimizer, epoch, val_loss)
+            best_model_saved = True
+            val_improved = True
+        elif tracking_enabled and val_loss < best_val_loss - 1e-9:
+            best_val_loss = val_loss
+            best_epoch = epoch
+            save_torch_checkpoint(best_model_path, model, optimizer, epoch, val_loss)
+            best_model_saved = True
+            val_improved = True
+
+        if (
+            not early_stop_enabled
+            and early_stop_threshold is not None
+            and train_loss <= early_stop_threshold + 1e-12
+        ):
+            early_stop_enabled = True
+            val_no_improve_epochs = 0
+
+        checkpoint_saved = False
+        if epoch % checkpoint_interval == 0:
+            ckpt = checkpoints_dir / f"epoch_{epoch:03d}.pt"
+            save_torch_checkpoint(ckpt, model, optimizer, epoch, val_loss)
+            checkpoint_saved = True
+
+        log_msg = f"[{cfg.model_name}][Epoch {epoch:03d}] train_mse={train_loss:.6f} val_mae={val_loss:.6f}"
+        if checkpoint_saved:
+            log_msg += " (checkpoint saved)"
+        print(log_msg)
+
+        if tracking_enabled and early_stop_enabled:
+            if val_improved:
+                val_no_improve_epochs = 0
+            else:
+                val_no_improve_epochs += 1
+                if val_no_improve_epochs >= PATIENCE_EPOCHS and epoch >= MIN_EPOCHS:
+                    break
+
+        if not early_stop_enabled and epoch >= EARLY_STOP_FORCE_EPOCH:
+            forced_stop_due_to_threshold = True
+            break
+
+    save_torch_checkpoint(last_model_path, model, optimizer, epochs_axis[-1], val_history[-1])
+    if not best_model_saved:
+        shutil.copy(last_model_path, best_model_path)
+        best_val_loss = val_history[-1]
+        best_epoch = epochs_axis[-1]
+
+    best_state = torch.load(best_model_path, map_location=device)
+    model.load_state_dict(best_state["model_state"])
+    test_loss = run_epoch(model, test_loader, train_criterion, None, device)
+
+    return {
+        "train_losses": train_history,
+        "val_losses": val_history,
+        "epochs": epochs_axis,
+        "best_epoch": best_epoch,
+        "best_val_loss": best_val_loss,
+        "test_loss": test_loss,
+        "tracker_state": {
+            "initial_train_loss": initial_train_loss,
+            "best_start_threshold": best_start_threshold,
+            "early_stop_threshold": early_stop_threshold,
+            "tracking_enabled": tracking_enabled,
+            "early_stop_enabled": early_stop_enabled,
+            "best_train_loss": best_train_loss,
+            "forced_stop_due_to_threshold": forced_stop_due_to_threshold,
+        },
+        "best_model_path": str(best_model_path),
+        "last_model_path": str(last_model_path),
+        "model_format": "torch",
+    }
+
+
+def train_with_xgboost(
+    cfg: ConfigBundle,
+    bundle: DatasetBundle,
+    splits: Dict[str, np.ndarray],
+    training_params: Dict[str, Any],
+    output_dir: Path,
+    checkpoints_dir: Path,
+) -> Dict[str, Any]:
+    params = {
+        "objective": "reg:squarederror",
+        "max_depth": cfg.model_params["max_depth"],
+        "eta": cfg.model_params["learning_rate"],
+        "subsample": cfg.model_params["subsample"],
+        "colsample_bytree": cfg.model_params["colsample_bytree"],
+        "gamma": cfg.model_params["gamma"],
+        "lambda": cfg.model_params["reg_lambda"],
+        "min_child_weight": cfg.model_params["min_child_weight"],
+        "verbosity": 0,
+    }
+
+    train_features = bundle.features[splits["train"]]
+    val_features = bundle.features[splits["val"]]
+    test_features = bundle.features[splits["test"]]
+    train_targets = bundle.targets[splits["train"]]
+    val_targets = bundle.targets[splits["val"]]
+    test_targets = bundle.targets[splits["test"]]
+
+    per_target_history: Dict[str, Dict[str, Any]] = {}
+    checkpoint_interval = max(1, training_params["checkpoint_interval"])
+    best_dir = output_dir / "best_model"
+    last_dir = output_dir / "last_model"
+    best_dir.mkdir(parents=True, exist_ok=True)
+    last_dir.mkdir(parents=True, exist_ok=True)
+
+    for idx, target_name in enumerate(TARGET_COLUMNS):
+        history = train_single_target_xgb(
+            target_name=target_name,
+            params=params,
+            training_params=training_params,
+            checkpoint_interval=checkpoint_interval,
+            train_features=train_features,
+            val_features=val_features,
+            test_features=test_features,
+            train_labels=train_targets[:, idx],
+            val_labels=val_targets[:, idx],
+            test_labels=test_targets[:, idx],
+            output_dir=output_dir,
+            checkpoints_dir=checkpoints_dir,
+        )
+        per_target_history[target_name] = history
+
+    avg_best_val_loss = float(np.mean([hist["best_val_loss"] for hist in per_target_history.values()]))
+    avg_test_loss = float(np.mean([hist["test_loss"] for hist in per_target_history.values()]))
+    avg_best_epoch = float(np.mean([hist["best_epoch"] or 0 for hist in per_target_history.values()]))
+
+    return {
+        "per_target_history": per_target_history,
+        "avg_best_val_loss": avg_best_val_loss,
+        "avg_test_loss": avg_test_loss,
+        "avg_best_epoch": avg_best_epoch,
+        "best_model_path": str(best_dir),
+        "last_model_path": str(last_dir),
+        "model_format": "xgboost",
+    }
+
+
 def main() -> None:
     args = parse_args()
     config_path = Path(args.config)
     if not config_path.exists():
         raise FileNotFoundError(f"Config not found: {config_path}")
+
     cfg = parse_config(config_path)
+    output_dir, checkpoints_dir = configure_output_dirs(cfg.model_name, config_path)
+    set_seed(cfg.training_params["seed"])
+    device = torch.device("cuda" if torch.cuda.is_available() and cfg.model_type != "XGBOOST" else "cpu")
 
-    model_type: str = cfg["model_type"]  # type: ignore[assignment]
-    model_name: str = cfg["model_name"]  # type: ignore[assignment]
-    model_params: Dict[str, object] = cfg["model_params"]  # type: ignore[assignment]
-    training_params: Dict[str, object] = cfg["training_params"]  # type: ignore[assignment]
-    data_params: Dict[str, object] = cfg["data_params"]  # type: ignore[assignment]
-
-    output_dir = Path("scripts") / "outputs" / model_name
-    checkpoints_dir = output_dir / "checkpoints"
-    output_dir.mkdir(parents=True, exist_ok=True)
-    checkpoints_dir.mkdir(parents=True, exist_ok=True)
-
-    shutil.copy(config_path, output_dir / config_path.name)
-
-    set_seed(int(training_params["seed"]))
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-    df = load_time_series(data_params["input_csv"], data_params["timestamp_column"])
+    df = load_time_series(cfg.data_params["input_csv"], cfg.data_params["timestamp_column"])
     columns = list(df.columns)
-    non_target_indices, target_indices = get_column_indices(columns)
+    feature_indices, target_indices = get_feature_and_target_indices(columns)
+    feature_columns = [columns[idx] for idx in feature_indices]
 
-    split_boundaries = compute_split_boundaries(len(df))
-    column_values = df.to_numpy(dtype=np.float32)
+    boundaries = compute_split_boundaries(len(df))
+    values = df.to_numpy(dtype=np.float32)
+    scalers_mean, scalers_std = compute_scalers(values, boundaries.train_end)
+    scaled_values = scale_values(values, scalers_mean, scalers_std)
 
-    scalers_mean, scalers_std = compute_scalers(column_values, split_boundaries.train_end)
-    scaled_values = scale_values(column_values, scalers_mean, scalers_std)
-
-    dataset, input_dim, output_dim = build_datasets(
-        model_type,
-        model_params,
+    dataset_bundle = build_dataset_bundle(
+        cfg.model_type,
         scaled_values,
-        non_target_indices,
+        feature_indices,
         target_indices,
+        cfg.model_params["history_length"],
     )
-    splits = subset_indices(dataset.valid_indices, split_boundaries)
+    splits = subset_indices(dataset_bundle.valid_indices, boundaries)
 
-    train_loader = DataLoader(
-        Subset(dataset, splits["train"]),
-        batch_size=int(training_params["batch_size"]),
-        shuffle=True,
-    )
-    val_loader = DataLoader(
-        Subset(dataset, splits["val"]),
-        batch_size=int(training_params["batch_size"]),
-        shuffle=False,
-    )
-    test_loader = DataLoader(
-        Subset(dataset, splits["test"]),
-        batch_size=int(training_params["batch_size"]),
-        shuffle=False,
-    )
+    if cfg.model_type == "XGBOOST":
+        training_result = train_with_xgboost(
+            cfg,
+            dataset_bundle,
+            splits,
+            cfg.training_params,
+            output_dir,
+            checkpoints_dir,
+        )
+        plot_per_target_curves(training_result["per_target_history"], output_dir)
+        save_loss_history_multi(training_result["per_target_history"], output_dir)
+    else:
+        training_result = train_with_torch(
+            cfg,
+            dataset_bundle,
+            splits,
+            cfg.training_params,
+            output_dir,
+            checkpoints_dir,
+            device,
+        )
+        plot_training_curve(
+            training_result["epochs"],
+            training_result["train_losses"],
+            training_result["val_losses"],
+            output_dir / "training_curve.png",
+            train_label="Train MSE",
+            val_label="Val MAE",
+        )
+        save_loss_history(
+            output_dir / "loss_history.csv",
+            training_result["epochs"],
+            training_result["train_losses"],
+            training_result["val_losses"],
+        )
+    save_scalers(output_dir / "scalers.npz", scalers_mean, scalers_std)
 
-    model = build_model(model_type, input_dim, output_dim, model_params).to(device)
-    optimizer = torch.optim.Adam(
-        model.parameters(),
-        lr=float(training_params["learning_rate"]),
-        weight_decay=float(training_params["weight_decay"]),
-    )
-    criterion = nn.MSELoss()
-
-    checkpoint_interval = max(1, int(training_params["checkpoint_interval"]))
-    best_val_loss = math.inf
-    best_epoch = None
-    best_model_saved = False
-    initial_train_loss = None
-    train_threshold = None
-    tracking_enabled = False
-
-    train_history: List[float] = []
-    val_history: List[float] = []
-    epoch_axis: List[int] = []
-
-    epochs = int(training_params["epochs"])
-    for epoch in range(1, epochs + 1):
-        train_loss = run_epoch(model, train_loader, criterion, optimizer, device)
-        val_loss = run_epoch(model, val_loader, criterion, None, device)
-
-        if initial_train_loss is None:
-            initial_train_loss = train_loss
-            train_threshold = initial_train_loss / 4 if initial_train_loss > 0 else initial_train_loss
-
-        epoch_axis.append(epoch)
-        train_history.append(train_loss)
-        val_history.append(val_loss)
-
-        print(f"[Epoch {epoch:03d}] train_loss={train_loss:.6f} val_loss={val_loss:.6f}")
-
-        if not tracking_enabled and train_threshold is not None and train_loss <= train_threshold + 1e-12:
-            tracking_enabled = True
-            print(f"  Train loss crossed threshold ({train_threshold:.6f}); now tracking validation minima.")
-
-        if tracking_enabled and val_loss < best_val_loss - 1e-9:
-            best_val_loss = val_loss
-            best_epoch = epoch
-            save_checkpoint(output_dir / "best_model.pt", model, optimizer, epoch, val_loss)
-            best_model_saved = True
-            print("  Updated best model based on validation loss.")
-
-        if epoch % checkpoint_interval == 0:
-            ckpt_path = checkpoints_dir / f"epoch_{epoch:03d}.pt"
-            save_checkpoint(ckpt_path, model, optimizer, epoch, val_loss)
-
-    # Always save the final model state.
-    save_checkpoint(output_dir / "last_model.pt", model, optimizer, epochs, val_history[-1])
-    if not best_model_saved:
-        shutil.copy(output_dir / "last_model.pt", output_dir / "best_model.pt")
-        best_val_loss = val_history[-1]
-        best_epoch = epochs
-        print("Best model never triggered; using the last epoch weights as best_model.pt.")
-
-    plot_training_curve(epoch_axis, train_history, val_history, output_dir / "training_curve.png")
-
-    # Evaluate on test split with the best model.
-    best_state = torch.load(output_dir / "best_model.pt", map_location=device)
-    model.load_state_dict(best_state["model_state"])
-    test_loss = run_epoch(model, test_loader, criterion, None, device)
-    print(f"Test loss: {test_loss:.6f}")
-
-    # Persist metadata for reuse by the testing script.
-    np.savez(output_dir / "scalers.npz", mean=scalers_mean, std=scalers_std)
+    dataset_sizes = {name: int(idx.size) for name, idx in splits.items()}
+    if cfg.model_type == "XGBOOST":
+        training_history = {
+            "per_target": training_result["per_target_history"],
+            "avg_best_val_loss": training_result["avg_best_val_loss"],
+            "avg_test_loss": training_result["avg_test_loss"],
+            "avg_best_epoch": training_result["avg_best_epoch"],
+        }
+    else:
+        training_history = {
+            "epochs": training_result["epochs"],
+            "train_loss": training_result["train_losses"],
+            "val_loss": training_result["val_losses"],
+            "best_epoch": training_result["best_epoch"],
+            "best_val_loss": training_result["best_val_loss"],
+            "test_loss": training_result["test_loss"],
+            "tracker": training_result["tracker_state"],
+        }
 
     metadata = {
-        "model_name": model_name,
-        "model_type": model_type,
-        "model_params": model_params,
-        "input_dim": input_dim,
-        "output_dim": output_dim,
+        "model_name": cfg.model_name,
+        "model_type": cfg.model_type,
+        "model_format": training_result["model_format"],
+        "model_params": cfg.model_params,
+        "training_params": cfg.training_params,
+        "data_csv": str(cfg.data_params["input_csv"]),
+        "timestamp_column": cfg.data_params["timestamp_column"],
         "columns": columns,
-        "non_target_columns": [columns[i] for i in non_target_indices],
+        "feature_columns": feature_columns,
         "target_columns": TARGET_COLUMNS,
-        "data_csv": str(data_params["input_csv"]),
-        "timestamp_column": data_params["timestamp_column"],
         "split_boundaries": {
-            "train_end": split_boundaries.train_end,
-            "val_end": split_boundaries.val_end,
-            "test_end": split_boundaries.test_end,
+            "train_end": boundaries.train_end,
+            "val_end": boundaries.val_end,
+            "test_end": boundaries.test_end,
         },
-        "dataset_sizes": {name: int(idx.size) for name, idx in splits.items()},
-        "training_history": {
-            "epochs": epoch_axis,
-            "train_loss": train_history,
-            "val_loss": val_history,
-            "best_epoch": best_epoch,
-            "best_val_loss": best_val_loss,
-            "test_loss": test_loss,
-            "train_threshold": train_threshold,
-            "tracking_enabled": tracking_enabled,
-            "initial_train_loss": initial_train_loss,
+        "dataset_sizes": dataset_sizes,
+        "input_dim": dataset_bundle.input_dim,
+        "sequence_length": dataset_bundle.sequence_length,
+        "training_history": training_history,
+        "model_files": {
+            "best": training_result["best_model_path"],
+            "last": training_result["last_model_path"],
         },
-        "config_path": cfg["config_path"],
+        "config_path": str(cfg.config_path),
     }
 
-    with open(output_dir / "metadata.json", "w", encoding="utf-8") as fh:
+    with (output_dir / "metadata.json").open("w", encoding="utf-8") as fh:
         json.dump(metadata, fh, ensure_ascii=False, indent=2)
-
-    history_csv = output_dir / "loss_history.csv"
-    with history_csv.open("w", encoding="utf-8") as fh:
-        fh.write("epoch,train_loss,val_loss\n")
-        for epoch, tr, vl in zip(epoch_axis, train_history, val_history):
-            fh.write(f"{epoch},{tr},{vl}\n")
 
     print(f"Training artifacts saved to {output_dir}")
 

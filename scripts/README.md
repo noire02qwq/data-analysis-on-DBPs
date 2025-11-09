@@ -15,7 +15,7 @@ This folder contains every step of the DBPS data-processing pipeline, from filli
 - **Outputs:** Saves the filled CSV to `data/imputed_data.csv` (or the path you specify) and prints the number of synthesized values for each column.
 
 ## 2. Time Alignment (`align_time.py`)
-- **Purpose:** Removes the empty `cond-RT` column and realigns the DT/RT/PPL1/PPL2 measurements so that each row represents the same fluid batch (per `prompt-draft/时间对齐.md`).
+- **Purpose:** Removes the empty `cond-RT` column and realigns the DT/RT/PPL1/PPL2 measurements so that each row represents the same fluid batch. The offsets follow `prompt-draft/时间对齐.md`: RT is shifted +25h, PPL1 +38h, and PPL2 +55h relative to DT.
 - **Default command:**  
   ```bash
   python scripts/align_time.py
@@ -27,32 +27,34 @@ This folder contains every step of the DBPS data-processing pipeline, from filli
 - **Outputs:** Aligned CSV in `data/time_aligned_data.csv`, logs dropped rows, and removes `cond-RT`.
 
 ## 3. Regression Training (`train_regression.py`)
-- **Purpose:** Trains either the MLP or LSTM regression model on the aligned data, saving checkpoints, the best model, training curves, and metadata into `scripts/outputs/<model_name>/`.
-- **Default command:**  
+- **Purpose:** Implements the 回归实验1109 specification: trains MLP / MLP_WITH_HISTORY / LSTM / RNN PyTorch models or an XGBoost regressor to predict `TRC/TOC/DOC/pH` at PPL1/PPL2 using only non-PPL features.
+- **Command template:**  
   ```bash
-  python scripts/train_regression.py --config models/configs/mlp_config.yaml
+  python scripts/train_regression.py --config models/configs/<config>.yaml
   ```
-- **Available configs:**  
-  - `models/configs/mlp_config.yaml`: feed-forward regressor using a 12-step history window.  
-  - `models/configs/lstm_config.yaml`: LSTM regressor using a 24-step history window.  
-  You can duplicate and modify these YAML files (history length, hidden sizes, batch size, etc.) and pass the new path via `--config`.
-- **What the config controls:** model type/name, history length, hidden size/layers, dropout, training hyperparameters (epochs, batch size, LR, weight decay, checkpoint interval, seed), and data source (CSV path + timestamp column).
-- **Outputs per run:**  
-  - `scripts/outputs/<model_name>/best_model.pt` and `last_model.pt`  
-  - periodic checkpoints under `scripts/outputs/<model_name>/checkpoints/`  
-  - `scalers.npz`, `metadata.json`, `loss_history.csv`, `training_curve.png`, plus a copy of the YAML config.
+- **Bundled configs (feel free to copy & edit):**  
+  - `mlp_config.yaml`: single-step MLP without history.  
+  - `mlp_with_history_config.yaml`: flattened history window MLP.  
+  - `lstm_config.yaml`: stacked LSTM fed with non-PPL sequences.  
+  - `rnn_config.yaml`: SimpleRNN counterpart.  
+  - `xgboost_config.yaml`: gradient-boosted regressor.  
+- **Training behaviour:**  
+  - Splits data 70/15/15, scales features with the train slice, and removes all `-PPL1/-PPL2` inputs.  
+  - Saves a checkpoint every 10 epochs/rounds (but logs every epoch’s train MSE + val MAE). “Best” checkpoints start updating only after the train loss falls below 其初始值的1/4，早停计数也是从这一刻（且至少80轮）才开始统计；若100轮后仍未达到1/4阈值将直接提前结束。  
+  - PyTorch models output `best_model.pt` / `last_model.pt` plus a single `training_curve.png` + `loss_history.csv`. XGBoost现在会顺序训练8个单输出的 booster，每个目标各自产生 `training_curve_<target>.png` / `loss_history_<target>.csv` 以及对应的 best/last `*.json`。  
+  - 每次训练还会写入 `metadata.json`, `scalers.npz` 以及原始 YAML 副本到 `scripts/outputs/<model_name>/`。
 
 ## 4. Regression Testing (`test_regression.py`)
-- **Purpose:** Loads a trained model directory, evaluates the test split, writes `test_predictions.csv`, and creates one True-vs-Predicted plot per target column.
+- **Purpose:** Loads the artifacts referenced in `metadata.json`, rebuilds the exact dataset splits, evaluates the best model on the test slice, and emits per-target plots plus a CSV (works for both PyTorch checkpoints and XGBoost boosters).
 - **Command template:**  
   ```bash
   python scripts/test_regression.py --model-dir scripts/outputs/mlp_regressor
   ```
 - **Key options:**  
-  - `--model-dir`: folder holding `metadata.json`, `best_model.pt`, `scalers.npz`, etc.  
+  - `--model-dir`: folder holding `metadata.json`, `scalers.npz`, and the saved best model.  
   - `--data`: optional override CSV; otherwise it uses the path recorded in `metadata.json`.
 - **Outputs:**  
-  - Per-target plots (e.g., `DO-PPL1_pred_vs_true.png`).  
+  - Per-target plots (e.g., `TRC-PPL1_pred_vs_true.png`).  
   - `test_predictions.csv` with paired true/predicted values.  
   - Console summary of per-target MSE.
 
@@ -62,4 +64,4 @@ This folder contains every step of the DBPS data-processing pipeline, from filli
 3. `python scripts/train_regression.py --config models/configs/<your_config>.yaml`  
 4. `python scripts/test_regression.py --model-dir scripts/outputs/<model_name>`
 
-This sequence ensures the regression models always see the cleaned, aligned data and that evaluation uses the same scalers and splits recorded during training. Adjust the YAML configs to explore different look-back windows or network sizes, then rerun steps 3–4.***
+This sequence ensures the regression models always see the cleaned, aligned data and that evaluation uses the same scalers and splits recorded during training. Adjust the YAML configs to explore different look-back windows or architectures, then rerun steps 3–4. The autotuning scripts described in 回归实验1109 are intentionally deferred.
