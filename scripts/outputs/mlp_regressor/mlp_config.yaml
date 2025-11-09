@@ -1,16 +1,14 @@
-experiment:
-  name: mlp_regression
 model:
   type: MLP
   name: mlp_regressor
-  history_length: 48
-  hidden_layers: [384, 192, 128]
-  dropout: 0.1
+  history_length: 1
+  hidden_layers: [512, 256, 128]
+  dropout: 0.15
 training:
-  epochs: 120
+  max_epochs: 400
   batch_size: 256
   learning_rate: 0.001
-  weight_decay: 0.0001
+  weight_decay: 0.0
   checkpoint_interval: 10
   seed: 42
 data:

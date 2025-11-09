@@ -1,0 +1,21 @@
+model:
+  type: XGBOOST
+  name: xgboost_regressor
+  history_length: 1
+  max_depth: 8
+  learning_rate: 0.05
+  subsample: 0.9
+  colsample_bytree: 0.8
+  gamma: 0.0
+  reg_lambda: 1.0
+  min_child_weight: 1.0
+training:
+  max_epochs: 600
+  batch_size: 0  # unused for XGBoost
+  learning_rate: 0.001  # unused for XGBoost
+  weight_decay: 0.0
+  checkpoint_interval: 10
+  seed: 2023
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: "Date, Time"
