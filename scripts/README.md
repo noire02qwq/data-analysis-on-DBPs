@@ -65,3 +65,13 @@ This folder contains every step of the DBPS data-processing pipeline, from filli
 4. `python scripts/test_regression.py --model-dir scripts/outputs/<model_name>`
 
 This sequence ensures the regression models always see the cleaned, aligned data and that evaluation uses the same scalers and splits recorded during training. Adjust the YAML configs to explore different look-back windows or architectures, then rerun steps 3–4. The autotuning scripts described in 回归实验1109 are intentionally deferred.
+
+## 5. Autotuning (LSTM / RNN)
+- **Purpose:** Sweep the grids specified in `models/configs/lstm_grid.yaml` / `models/configs/rnn_grid.yaml` by repeatedly launching the training script with different hyperparameters and logging the best validation loss.
+- **Commands:**  
+  ```bash
+  python scripts/autotune_lstm.py [--max-trials N --start-index K]
+  python scripts/autotune_rnn.py  [--max-trials N --start-index K]
+  ```  
+  Use `nohup ... &` if you plan to keep them running overnight.
+- **Behaviour:** For each grid point the script creates `scripts/outputs/<model>/<run_id>/config.yaml`, invokes `train_regression.py`, and appends a row to `scripts/outputs/<model>/autotune_results.csv` containing the run id, hyperparameters, and the recorded best validation loss. Runs are numbered sequentially, so you can pause/resume without overwriting earlier trials.

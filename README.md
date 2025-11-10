@@ -37,6 +37,20 @@ pip install -r requirements.txt
 
 Detailed script options and outputs are documented in `scripts/README.md`.
 
+## Autotuning (optional)
+
+Once any baseline run is healthy, you can launch the grid searches described in `prompt-draft/回归实验1109.md`:
+
+```bash
+# LSTM grid search
+nohup python scripts/autotune_lstm.py > autotune_lstm.log 2>&1 &
+
+# RNN grid search
+nohup python scripts/autotune_rnn.py > autotune_rnn.log 2>&1 &
+```
+
+Each script enumerates the ranges from `models/configs/lstm_grid.yaml` / `models/configs/rnn_grid.yaml`, writes numbered folders (e.g., `scripts/outputs/lstm_regressor/0001/`), and appends every run’s hyperparameters + best validation loss to `scripts/outputs/<model>/autotune_results.csv`. Use `--max-trials` or `--start-index` if you want to split the workload across multiple nights.
+
 ## Notes
 
 - Install the requirements inside a virtual environment (`pip install -r requirements.txt`) to get PyTorch + the pinned XGBoost build (2.0.x keeps compatibility with glibc < 2.28).  

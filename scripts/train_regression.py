@@ -43,8 +43,9 @@ from scripts.regression_utils import (  # noqa: E402
 
 SUPPORTED_MODELS = {"MLP", "MLP_WITH_HISTORY", "LSTM", "RNN", "XGBOOST"}
 PATIENCE_EPOCHS = 50
+PATIENCE_BASE_EPOCH = 30
 MIN_EPOCHS = 80
-EARLY_STOP_FORCE_EPOCH = 100
+FORCE_STOP_EPOCH = 120
 BEST_START_RATIO = 4.0
 EARLY_STOP_RATIO = 4.0
 
@@ -320,13 +321,14 @@ def train_single_target_xgb(
     val_history: List[float] = []
     epochs_axis: List[int] = []
     initial_train_loss = None
-    best_start_threshold = None
-    early_stop_threshold = None
+    quarter_threshold = None
     tracking_enabled = False
-    early_stop_enabled = False
+    quarter_reached = False
+    patience_train_best = None
+    patience_val_best = None
+    patience_no_improve_epochs = 0
     best_val_loss = math.inf
     best_epoch = None
-    val_no_improve_epochs = 0
     forced_stop_due_to_threshold = False
     best_model_saved = False
 
@@ -360,35 +362,39 @@ def train_single_target_xgb(
 
         if initial_train_loss is None:
             initial_train_loss = train_loss
-            best_start_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
-            early_stop_threshold = train_loss / EARLY_STOP_RATIO if train_loss > 0 else train_loss
+            quarter_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
+
+        if epoch == PATIENCE_BASE_EPOCH:
+            patience_train_best = train_loss
+            patience_val_best = val_loss
+
+        train_patience_improved = False
+        val_patience_improved = False
+        if epoch > PATIENCE_BASE_EPOCH:
+            if patience_train_best is not None and train_loss < patience_train_best - 1e-9:
+                patience_train_best = train_loss
+                train_patience_improved = True
+            if patience_val_best is not None and val_loss < patience_val_best - 1e-9:
+                patience_val_best = val_loss
+                val_patience_improved = True
+
+        if not quarter_reached and quarter_threshold is not None and train_loss <= quarter_threshold + 1e-12:
+            quarter_reached = True
 
         val_improved = False
-        if (
-            not tracking_enabled
-            and best_start_threshold is not None
-            and train_loss <= best_start_threshold + 1e-12
-        ):
+        if quarter_reached and not tracking_enabled:
             tracking_enabled = True
             best_val_loss = val_loss
             best_epoch = epoch
             booster.save_model(best_model_path)
             best_model_saved = True
             val_improved = True
-        elif tracking_enabled and val_loss < best_val_loss - 1e-9:
+        elif tracking_enabled and quarter_reached and val_loss < best_val_loss - 1e-9:
             best_val_loss = val_loss
             best_epoch = epoch
             booster.save_model(best_model_path)
             best_model_saved = True
             val_improved = True
-
-        if (
-            not early_stop_enabled
-            and early_stop_threshold is not None
-            and train_loss <= early_stop_threshold + 1e-12
-        ):
-            early_stop_enabled = True
-            val_no_improve_epochs = 0
 
         checkpoint_saved = False
         if epoch % checkpoint_interval == 0:
@@ -401,15 +407,16 @@ def train_single_target_xgb(
             log_msg += " (checkpoint saved)"
         print(log_msg)
 
-        if tracking_enabled and early_stop_enabled:
-            if val_improved:
-                val_no_improve_epochs = 0
+        patience_window_active = epoch >= MIN_EPOCHS and epoch > PATIENCE_BASE_EPOCH
+        if patience_window_active:
+            if not (train_patience_improved or val_patience_improved):
+                patience_no_improve_epochs += 1
             else:
-                val_no_improve_epochs += 1
-                if val_no_improve_epochs >= PATIENCE_EPOCHS and epoch >= MIN_EPOCHS:
-                    break
+                patience_no_improve_epochs = 0
+            if patience_no_improve_epochs >= PATIENCE_EPOCHS:
+                break
 
-        if not early_stop_enabled and epoch >= EARLY_STOP_FORCE_EPOCH:
+        if not quarter_reached and epoch >= FORCE_STOP_EPOCH:
             forced_stop_due_to_threshold = True
             break
 
@@ -435,7 +442,9 @@ def train_single_target_xgb(
         "best_val_loss": best_val_loss,
         "test_loss": test_loss,
         "tracking_enabled": tracking_enabled,
-        "early_stop_enabled": early_stop_enabled,
+        "quarter_reached": quarter_reached,
+        "patience_best_train": patience_train_best,
+        "patience_best_val": patience_val_best,
         "forced_stop_due_to_threshold": forced_stop_due_to_threshold,
     }
 
@@ -478,11 +487,12 @@ def train_with_torch(
     epochs_axis: List[int] = []
     best_train_loss = math.inf
     initial_train_loss = None
-    best_start_threshold = None
-    early_stop_threshold = None
+    quarter_threshold = None
     tracking_enabled = False
-    early_stop_enabled = False
-    val_no_improve_epochs = 0
+    quarter_reached = False
+    patience_train_best = None
+    patience_val_best = None
+    patience_no_improve_epochs = 0
     forced_stop_due_to_threshold = False
 
     max_epochs = training_params["max_epochs"]
@@ -499,38 +509,42 @@ def train_with_torch(
 
         if initial_train_loss is None:
             initial_train_loss = train_loss
-            best_start_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
-            early_stop_threshold = train_loss / EARLY_STOP_RATIO if train_loss > 0 else train_loss
+            quarter_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
 
         if train_loss < best_train_loss - 1e-9:
             best_train_loss = train_loss
 
+        if epoch == PATIENCE_BASE_EPOCH:
+            patience_train_best = train_loss
+            patience_val_best = val_loss
+
+        train_patience_improved = False
+        val_patience_improved = False
+        if epoch > PATIENCE_BASE_EPOCH:
+            if patience_train_best is not None and train_loss < patience_train_best - 1e-9:
+                patience_train_best = train_loss
+                train_patience_improved = True
+            if patience_val_best is not None and val_loss < patience_val_best - 1e-9:
+                patience_val_best = val_loss
+                val_patience_improved = True
+
+        if not quarter_reached and quarter_threshold is not None and train_loss <= quarter_threshold + 1e-12:
+            quarter_reached = True
+
         val_improved = False
-        if (
-            not tracking_enabled
-            and best_start_threshold is not None
-            and train_loss <= best_start_threshold + 1e-12
-        ):
+        if quarter_reached and not tracking_enabled:
             tracking_enabled = True
             best_val_loss = val_loss
             best_epoch = epoch
             save_torch_checkpoint(best_model_path, model, optimizer, epoch, val_loss)
             best_model_saved = True
             val_improved = True
-        elif tracking_enabled and val_loss < best_val_loss - 1e-9:
+        elif tracking_enabled and quarter_reached and val_loss < best_val_loss - 1e-9:
             best_val_loss = val_loss
             best_epoch = epoch
             save_torch_checkpoint(best_model_path, model, optimizer, epoch, val_loss)
             best_model_saved = True
             val_improved = True
-
-        if (
-            not early_stop_enabled
-            and early_stop_threshold is not None
-            and train_loss <= early_stop_threshold + 1e-12
-        ):
-            early_stop_enabled = True
-            val_no_improve_epochs = 0
 
         checkpoint_saved = False
         if epoch % checkpoint_interval == 0:
@@ -543,15 +557,16 @@ def train_with_torch(
             log_msg += " (checkpoint saved)"
         print(log_msg)
 
-        if tracking_enabled and early_stop_enabled:
-            if val_improved:
-                val_no_improve_epochs = 0
+        patience_window_active = epoch >= MIN_EPOCHS and epoch > PATIENCE_BASE_EPOCH
+        if patience_window_active:
+            if not (train_patience_improved or val_patience_improved):
+                patience_no_improve_epochs += 1
             else:
-                val_no_improve_epochs += 1
-                if val_no_improve_epochs >= PATIENCE_EPOCHS and epoch >= MIN_EPOCHS:
-                    break
+                patience_no_improve_epochs = 0
+            if patience_no_improve_epochs >= PATIENCE_EPOCHS:
+                break
 
-        if not early_stop_enabled and epoch >= EARLY_STOP_FORCE_EPOCH:
+        if not quarter_reached and epoch >= FORCE_STOP_EPOCH:
             forced_stop_due_to_threshold = True
             break
 
@@ -574,10 +589,12 @@ def train_with_torch(
         "test_loss": test_loss,
         "tracker_state": {
             "initial_train_loss": initial_train_loss,
-            "best_start_threshold": best_start_threshold,
-            "early_stop_threshold": early_stop_threshold,
+            "quarter_threshold": quarter_threshold,
+            "quarter_reached": quarter_reached,
             "tracking_enabled": tracking_enabled,
-            "early_stop_enabled": early_stop_enabled,
+            "patience_train_best": patience_train_best,
+            "patience_val_best": patience_val_best,
+            "patience_no_improve_epochs": patience_no_improve_epochs,
             "best_train_loss": best_train_loss,
             "forced_stop_due_to_threshold": forced_stop_due_to_threshold,
         },
