@@ -40,8 +40,8 @@ This folder contains every step of the DBPS data-processing pipeline, from filli
   - `xgboost_config.yaml`: gradient-boosted regressor.  
 - **Training behaviour:**  
   - Splits data 70/15/15, scales features with the train slice, and removes all `-PPL1/-PPL2` inputs.  
-  - Saves a checkpoint every 10 epochs/rounds (but logs every epoch’s train MSE + val MAE). “Best” checkpoints start updating only after the train loss falls below 其初始值的1/4，早停计数也是从这一刻（且至少80轮）才开始统计；若100轮后仍未达到1/4阈值将直接提前结束。  
-  - PyTorch models output `best_model.pt` / `last_model.pt` plus a single `training_curve.png` + `loss_history.csv`. XGBoost现在会顺序训练8个单输出的 booster，每个目标各自产生 `training_curve_<target>.png` / `loss_history_<target>.csv` 以及对应的 best/last `*.json`。  
+  - 不再保存固定 checkpoint，而是每个 epoch 记录 train/val MSE；只有当 train loss 下降到初始值的 1/3 时才开始更新 best。Patience 计数从「train loss ≤ 1/3」或「第 31 轮」(先到者)开始，之后若 train/val MSE 在 50 轮内都没有刷新且总轮数 ≥ 80 就提前停止；若训练到第 100 轮仍达不到 1/3 阈值则强制终止。  
+  - PyTorch models output `best_model.pt` / `last_model.pt` plus one `training_curve.png` + `loss_history.csv` (均为 MSE)。XGBoost 依次训练 8 个单输出 booster，每个目标单独产出 `training_curve_<target>.png` / `loss_history_<target>.csv` 及 best/last `*.json`。  
   - 每次训练还会写入 `metadata.json`, `scalers.npz` 以及原始 YAML 副本到 `scripts/outputs/<model_name>/`。
 
 ## 4. Regression Testing (`test_regression.py`)

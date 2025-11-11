@@ -44,10 +44,10 @@ from scripts.regression_utils import (  # noqa: E402
 SUPPORTED_MODELS = {"MLP", "MLP_WITH_HISTORY", "LSTM", "RNN", "XGBOOST"}
 PATIENCE_EPOCHS = 50
 PATIENCE_BASE_EPOCH = 30
+PATIENCE_START_EPOCH = 31
 MIN_EPOCHS = 80
-FORCE_STOP_EPOCH = 120
-BEST_START_RATIO = 4.0
-EARLY_STOP_RATIO = 4.0
+FORCE_STOP_EPOCH = 100
+BEST_START_RATIO = 3.0
 
 
 def safe_filename(name: str) -> str:
@@ -153,7 +153,9 @@ def configure_output_dirs(model_name: str, config_path: Path) -> Tuple[Path, Pat
     checkpoints_dir = output_dir / "checkpoints"
     output_dir.mkdir(parents=True, exist_ok=True)
     checkpoints_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copy(config_path, output_dir / config_path.name)
+    destination = output_dir / config_path.name
+    if config_path.resolve() != destination.resolve():
+        shutil.copy(config_path, destination)
     return output_dir, checkpoints_dir
 
 
@@ -288,7 +290,7 @@ def plot_per_target_curves(per_target_history: Dict[str, Dict[str, List[float]]]
             history["val_losses"],
             output_dir / f"training_curve_{safe_filename(target)}.png",
             train_label="Train MSE",
-            val_label="Val MAE",
+            val_label="Val MSE",
         )
 
 
@@ -302,7 +304,6 @@ def train_single_target_xgb(
     target_name: str,
     params: Dict[str, Any],
     training_params: Dict[str, Any],
-    checkpoint_interval: int,
     train_features: np.ndarray,
     val_features: np.ndarray,
     test_features: np.ndarray,
@@ -310,7 +311,6 @@ def train_single_target_xgb(
     val_labels: np.ndarray,
     test_labels: np.ndarray,
     output_dir: Path,
-    checkpoints_dir: Path,
 ) -> Dict[str, Any]:
     dtrain = xgb.DMatrix(train_features, label=train_labels)
     dval = xgb.DMatrix(val_features, label=val_labels)
@@ -321,11 +321,11 @@ def train_single_target_xgb(
     val_history: List[float] = []
     epochs_axis: List[int] = []
     initial_train_loss = None
-    quarter_threshold = None
-    tracking_enabled = False
-    quarter_reached = False
-    patience_train_best = None
-    patience_val_best = None
+    train_threshold = None
+    best_tracking = False
+    patience_active = False
+    patience_best_train = None
+    patience_best_val = None
     patience_no_improve_epochs = 0
     best_val_loss = math.inf
     best_epoch = None
@@ -334,8 +334,6 @@ def train_single_target_xgb(
 
     best_dir = output_dir / "best_model"
     last_dir = output_dir / "last_model"
-    checkpoint_dir = checkpoints_dir / safe_filename(target_name)
-    checkpoint_dir.mkdir(parents=True, exist_ok=True)
     best_dir.mkdir(parents=True, exist_ok=True)
     last_dir.mkdir(parents=True, exist_ok=True)
 
@@ -354,7 +352,7 @@ def train_single_target_xgb(
         train_pred = booster.predict(dtrain)
         val_pred = booster.predict(dval)
         train_loss = float(np.mean((train_pred - train_labels) ** 2))
-        val_loss = float(np.mean(np.abs(val_pred - val_labels)))
+        val_loss = float(np.mean((val_pred - val_labels) ** 2))
 
         epochs_axis.append(epoch)
         train_history.append(train_loss)
@@ -362,63 +360,47 @@ def train_single_target_xgb(
 
         if initial_train_loss is None:
             initial_train_loss = train_loss
-            quarter_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
+            train_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
 
-        if epoch == PATIENCE_BASE_EPOCH:
-            patience_train_best = train_loss
-            patience_val_best = val_loss
-
-        train_patience_improved = False
-        val_patience_improved = False
-        if epoch > PATIENCE_BASE_EPOCH:
-            if patience_train_best is not None and train_loss < patience_train_best - 1e-9:
-                patience_train_best = train_loss
-                train_patience_improved = True
-            if patience_val_best is not None and val_loss < patience_val_best - 1e-9:
-                patience_val_best = val_loss
-                val_patience_improved = True
-
-        if not quarter_reached and quarter_threshold is not None and train_loss <= quarter_threshold + 1e-12:
-            quarter_reached = True
-
-        val_improved = False
-        if quarter_reached and not tracking_enabled:
-            tracking_enabled = True
+        if not best_tracking and train_threshold is not None and train_loss <= train_threshold + 1e-12:
+            best_tracking = True
             best_val_loss = val_loss
             best_epoch = epoch
             booster.save_model(best_model_path)
             best_model_saved = True
-            val_improved = True
-        elif tracking_enabled and quarter_reached and val_loss < best_val_loss - 1e-9:
+        elif best_tracking and val_loss < best_val_loss - 1e-9:
             best_val_loss = val_loss
             best_epoch = epoch
             booster.save_model(best_model_path)
             best_model_saved = True
-            val_improved = True
 
-        checkpoint_saved = False
-        if epoch % checkpoint_interval == 0:
-            checkpoint_path = checkpoint_dir / f"epoch_{epoch:03d}.json"
-            booster.save_model(checkpoint_path)
-            checkpoint_saved = True
+        if not patience_active and (best_tracking or epoch >= PATIENCE_START_EPOCH):
+            patience_active = True
+            patience_best_train = train_loss
+            patience_best_val = val_loss
+            patience_no_improve_epochs = 0
 
-        log_msg = f"[{target_name}][Epoch {epoch:03d}] train_mse={train_loss:.6f} val_mae={val_loss:.6f}"
-        if checkpoint_saved:
-            log_msg += " (checkpoint saved)"
-        print(log_msg)
-
-        patience_window_active = epoch >= MIN_EPOCHS and epoch > PATIENCE_BASE_EPOCH
-        if patience_window_active:
-            if not (train_patience_improved or val_patience_improved):
-                patience_no_improve_epochs += 1
-            else:
+        if patience_active:
+            improved = False
+            if patience_best_train is None or train_loss < patience_best_train - 1e-9:
+                patience_best_train = train_loss
+                improved = True
+            if patience_best_val is None or val_loss < patience_best_val - 1e-9:
+                patience_best_val = val_loss
+                improved = True
+            if improved:
                 patience_no_improve_epochs = 0
-            if patience_no_improve_epochs >= PATIENCE_EPOCHS:
-                break
+            else:
+                patience_no_improve_epochs += 1
+                if patience_no_improve_epochs >= PATIENCE_EPOCHS and epoch >= MIN_EPOCHS:
+                    break
 
-        if not quarter_reached and epoch >= FORCE_STOP_EPOCH:
+        if not best_tracking and epoch >= FORCE_STOP_EPOCH:
             forced_stop_due_to_threshold = True
             break
+
+        log_msg = f"[{target_name}][Epoch {epoch:03d}] train_mse={train_loss:.6f} val_mse={val_loss:.6f}"
+        print(log_msg)
 
     if booster is None:
         raise RuntimeError("XGBoost booster failed to train.")
@@ -476,9 +458,7 @@ def train_with_torch(
         weight_decay=training_params["weight_decay"],
     )
     train_criterion = nn.MSELoss()
-    val_criterion = nn.L1Loss()
-
-    checkpoint_interval = max(1, training_params["checkpoint_interval"])
+    val_criterion = nn.MSELoss()
     best_val_loss = math.inf
     best_epoch = None
     best_model_saved = False
@@ -487,11 +467,11 @@ def train_with_torch(
     epochs_axis: List[int] = []
     best_train_loss = math.inf
     initial_train_loss = None
-    quarter_threshold = None
-    tracking_enabled = False
-    quarter_reached = False
-    patience_train_best = None
-    patience_val_best = None
+    train_threshold = None
+    best_tracking = False
+    patience_active = False
+    patience_best_train = None
+    patience_best_val = None
     patience_no_improve_epochs = 0
     forced_stop_due_to_threshold = False
 
@@ -509,66 +489,50 @@ def train_with_torch(
 
         if initial_train_loss is None:
             initial_train_loss = train_loss
-            quarter_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
+            train_threshold = train_loss / BEST_START_RATIO if train_loss > 0 else train_loss
 
         if train_loss < best_train_loss - 1e-9:
             best_train_loss = train_loss
 
-        if epoch == PATIENCE_BASE_EPOCH:
-            patience_train_best = train_loss
-            patience_val_best = val_loss
-
-        train_patience_improved = False
-        val_patience_improved = False
-        if epoch > PATIENCE_BASE_EPOCH:
-            if patience_train_best is not None and train_loss < patience_train_best - 1e-9:
-                patience_train_best = train_loss
-                train_patience_improved = True
-            if patience_val_best is not None and val_loss < patience_val_best - 1e-9:
-                patience_val_best = val_loss
-                val_patience_improved = True
-
-        if not quarter_reached and quarter_threshold is not None and train_loss <= quarter_threshold + 1e-12:
-            quarter_reached = True
-
-        val_improved = False
-        if quarter_reached and not tracking_enabled:
-            tracking_enabled = True
+        if not best_tracking and train_threshold is not None and train_loss <= train_threshold + 1e-12:
+            best_tracking = True
             best_val_loss = val_loss
             best_epoch = epoch
             save_torch_checkpoint(best_model_path, model, optimizer, epoch, val_loss)
             best_model_saved = True
-            val_improved = True
-        elif tracking_enabled and quarter_reached and val_loss < best_val_loss - 1e-9:
+        elif best_tracking and val_loss < best_val_loss - 1e-9:
             best_val_loss = val_loss
             best_epoch = epoch
             save_torch_checkpoint(best_model_path, model, optimizer, epoch, val_loss)
             best_model_saved = True
-            val_improved = True
 
-        checkpoint_saved = False
-        if epoch % checkpoint_interval == 0:
-            ckpt = checkpoints_dir / f"epoch_{epoch:03d}.pt"
-            save_torch_checkpoint(ckpt, model, optimizer, epoch, val_loss)
-            checkpoint_saved = True
+        if not patience_active and (best_tracking or epoch >= PATIENCE_START_EPOCH):
+            patience_active = True
+            patience_best_train = train_loss
+            patience_best_val = val_loss
+            patience_no_improve_epochs = 0
 
-        log_msg = f"[{cfg.model_name}][Epoch {epoch:03d}] train_mse={train_loss:.6f} val_mae={val_loss:.6f}"
-        if checkpoint_saved:
-            log_msg += " (checkpoint saved)"
-        print(log_msg)
-
-        patience_window_active = epoch >= MIN_EPOCHS and epoch > PATIENCE_BASE_EPOCH
-        if patience_window_active:
-            if not (train_patience_improved or val_patience_improved):
-                patience_no_improve_epochs += 1
-            else:
+        if patience_active:
+            improved = False
+            if patience_best_train is None or train_loss < patience_best_train - 1e-9:
+                patience_best_train = train_loss
+                improved = True
+            if patience_best_val is None or val_loss < patience_best_val - 1e-9:
+                patience_best_val = val_loss
+                improved = True
+            if improved:
                 patience_no_improve_epochs = 0
-            if patience_no_improve_epochs >= PATIENCE_EPOCHS:
-                break
+            else:
+                patience_no_improve_epochs += 1
+                if patience_no_improve_epochs >= PATIENCE_EPOCHS and epoch >= MIN_EPOCHS:
+                    break
 
-        if not quarter_reached and epoch >= FORCE_STOP_EPOCH:
+        if not best_tracking and epoch >= FORCE_STOP_EPOCH:
             forced_stop_due_to_threshold = True
             break
+
+        log_msg = f"[{cfg.model_name}][Epoch {epoch:03d}] train_mse={train_loss:.6f} val_mse={val_loss:.6f}"
+        print(log_msg)
 
     save_torch_checkpoint(last_model_path, model, optimizer, epochs_axis[-1], val_history[-1])
     if not best_model_saved:
@@ -589,11 +553,11 @@ def train_with_torch(
         "test_loss": test_loss,
         "tracker_state": {
             "initial_train_loss": initial_train_loss,
-            "quarter_threshold": quarter_threshold,
-            "quarter_reached": quarter_reached,
-            "tracking_enabled": tracking_enabled,
-            "patience_train_best": patience_train_best,
-            "patience_val_best": patience_val_best,
+            "train_threshold": train_threshold,
+            "best_tracking": best_tracking,
+            "patience_active": patience_active,
+            "patience_best_train": patience_best_train,
+            "patience_best_val": patience_best_val,
             "patience_no_improve_epochs": patience_no_improve_epochs,
             "best_train_loss": best_train_loss,
             "forced_stop_due_to_threshold": forced_stop_due_to_threshold,
@@ -632,7 +596,6 @@ def train_with_xgboost(
     test_targets = bundle.targets[splits["test"]]
 
     per_target_history: Dict[str, Dict[str, Any]] = {}
-    checkpoint_interval = max(1, training_params["checkpoint_interval"])
     best_dir = output_dir / "best_model"
     last_dir = output_dir / "last_model"
     best_dir.mkdir(parents=True, exist_ok=True)
@@ -643,7 +606,6 @@ def train_with_xgboost(
             target_name=target_name,
             params=params,
             training_params=training_params,
-            checkpoint_interval=checkpoint_interval,
             train_features=train_features,
             val_features=val_features,
             test_features=test_features,
@@ -651,7 +613,6 @@ def train_with_xgboost(
             val_labels=val_targets[:, idx],
             test_labels=test_targets[:, idx],
             output_dir=output_dir,
-            checkpoints_dir=checkpoints_dir,
         )
         per_target_history[target_name] = history
 

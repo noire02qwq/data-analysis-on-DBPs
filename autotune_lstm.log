@@ -1,0 +1,1003 @@
+nohup: ignoring input
+[lstm_regressor/0040][Epoch 001] train_mse=0.666042 val_mae=0.536241
+[lstm_regressor/0040][Epoch 002] train_mse=0.300287 val_mae=0.512004
+[lstm_regressor/0040][Epoch 003] train_mse=0.225025 val_mae=0.524221
+[lstm_regressor/0040][Epoch 004] train_mse=0.165348 val_mae=0.495513
+[lstm_regressor/0040][Epoch 005] train_mse=0.138974 val_mae=0.485414
+[lstm_regressor/0040][Epoch 006] train_mse=0.122341 val_mae=0.509459
+[lstm_regressor/0040][Epoch 007] train_mse=0.108626 val_mae=0.510832
+[lstm_regressor/0040][Epoch 008] train_mse=0.101565 val_mae=0.527291
+[lstm_regressor/0040][Epoch 009] train_mse=0.094788 val_mae=0.521150
+[lstm_regressor/0040][Epoch 010] train_mse=0.087740 val_mae=0.500343 (checkpoint saved)
+[lstm_regressor/0040][Epoch 011] train_mse=0.084131 val_mae=0.496710
+[lstm_regressor/0040][Epoch 012] train_mse=0.074392 val_mae=0.505689
+[lstm_regressor/0040][Epoch 013] train_mse=0.071066 val_mae=0.497955
+[lstm_regressor/0040][Epoch 014] train_mse=0.064009 val_mae=0.514027
+[lstm_regressor/0040][Epoch 015] train_mse=0.063192 val_mae=0.514697
+[lstm_regressor/0040][Epoch 016] train_mse=0.056473 val_mae=0.493020
+[lstm_regressor/0040][Epoch 017] train_mse=0.058182 val_mae=0.530119
+[lstm_regressor/0040][Epoch 018] train_mse=0.050824 val_mae=0.540662
+[lstm_regressor/0040][Epoch 019] train_mse=0.051803 val_mae=0.508261
+[lstm_regressor/0040][Epoch 020] train_mse=0.051223 val_mae=0.511821 (checkpoint saved)
+[lstm_regressor/0040][Epoch 021] train_mse=0.047141 val_mae=0.526827
+[lstm_regressor/0040][Epoch 022] train_mse=0.045592 val_mae=0.526139
+[lstm_regressor/0040][Epoch 023] train_mse=0.039921 val_mae=0.503344
+[lstm_regressor/0040][Epoch 024] train_mse=0.038721 val_mae=0.525622
+[lstm_regressor/0040][Epoch 025] train_mse=0.047489 val_mae=0.538950
+[lstm_regressor/0040][Epoch 026] train_mse=0.037322 val_mae=0.512586
+[lstm_regressor/0040][Epoch 027] train_mse=0.035180 val_mae=0.512601
+[lstm_regressor/0040][Epoch 028] train_mse=0.035713 val_mae=0.519861
+[lstm_regressor/0040][Epoch 029] train_mse=0.035319 val_mae=0.532529
+[lstm_regressor/0040][Epoch 030] train_mse=0.032899 val_mae=0.534252 (checkpoint saved)
+[lstm_regressor/0040][Epoch 031] train_mse=0.032626 val_mae=0.560638
+[lstm_regressor/0040][Epoch 032] train_mse=0.036246 val_mae=0.548384
+[lstm_regressor/0040][Epoch 033] train_mse=0.030114 val_mae=0.559841
+[lstm_regressor/0040][Epoch 034] train_mse=0.029018 val_mae=0.533886
+[lstm_regressor/0040][Epoch 035] train_mse=0.030696 val_mae=0.553119
+[lstm_regressor/0040][Epoch 036] train_mse=0.028685 val_mae=0.589897
+[lstm_regressor/0040][Epoch 037] train_mse=0.031147 val_mae=0.554247
+[lstm_regressor/0040][Epoch 038] train_mse=0.029664 val_mae=0.558245
+[lstm_regressor/0040][Epoch 039] train_mse=0.027133 val_mae=0.538472
+[lstm_regressor/0040][Epoch 040] train_mse=0.028510 val_mae=0.546375 (checkpoint saved)
+[lstm_regressor/0040][Epoch 041] train_mse=0.026290 val_mae=0.546173
+[lstm_regressor/0040][Epoch 042] train_mse=0.025207 val_mae=0.526143
+[lstm_regressor/0040][Epoch 043] train_mse=0.024399 val_mae=0.541802
+[lstm_regressor/0040][Epoch 044] train_mse=0.024482 val_mae=0.536872
+[lstm_regressor/0040][Epoch 045] train_mse=0.025826 val_mae=0.551444
+[lstm_regressor/0040][Epoch 046] train_mse=0.025243 val_mae=0.543378
+[lstm_regressor/0040][Epoch 047] train_mse=0.024481 val_mae=0.534965
+[lstm_regressor/0040][Epoch 048] train_mse=0.024032 val_mae=0.554301
+[lstm_regressor/0040][Epoch 049] train_mse=0.023994 val_mae=0.542818
+[lstm_regressor/0040][Epoch 050] train_mse=0.024273 val_mae=0.521443 (checkpoint saved)
+[lstm_regressor/0040][Epoch 051] train_mse=0.025306 val_mae=0.543704
+[lstm_regressor/0040][Epoch 052] train_mse=0.023646 val_mae=0.533185
+[lstm_regressor/0040][Epoch 053] train_mse=0.040493 val_mae=0.538206
+[lstm_regressor/0040][Epoch 054] train_mse=0.032775 val_mae=0.526561
+[lstm_regressor/0040][Epoch 055] train_mse=0.024779 val_mae=0.527336
+[lstm_regressor/0040][Epoch 056] train_mse=0.023431 val_mae=0.521354
+[lstm_regressor/0040][Epoch 057] train_mse=0.023127 val_mae=0.531804
+[lstm_regressor/0040][Epoch 058] train_mse=0.023244 val_mae=0.524402
+[lstm_regressor/0040][Epoch 059] train_mse=0.024751 val_mae=0.543063
+[lstm_regressor/0040][Epoch 060] train_mse=0.022163 val_mae=0.537234 (checkpoint saved)
+[lstm_regressor/0040][Epoch 061] train_mse=0.021581 val_mae=0.533215
+[lstm_regressor/0040][Epoch 062] train_mse=0.021488 val_mae=0.529077
+[lstm_regressor/0040][Epoch 063] train_mse=0.022103 val_mae=0.553037
+[lstm_regressor/0040][Epoch 064] train_mse=0.020956 val_mae=0.549069
+[lstm_regressor/0040][Epoch 065] train_mse=0.022352 val_mae=0.513868
+[lstm_regressor/0040][Epoch 066] train_mse=0.023415 val_mae=0.545045
+[lstm_regressor/0040][Epoch 067] train_mse=0.020471 val_mae=0.545457
+[lstm_regressor/0040][Epoch 068] train_mse=0.020165 val_mae=0.556534
+[lstm_regressor/0040][Epoch 069] train_mse=0.020794 val_mae=0.505454
+[lstm_regressor/0040][Epoch 070] train_mse=0.020861 val_mae=0.525372 (checkpoint saved)
+[lstm_regressor/0040][Epoch 071] train_mse=0.020406 val_mae=0.532717
+[lstm_regressor/0040][Epoch 072] train_mse=0.019946 val_mae=0.539245
+[lstm_regressor/0040][Epoch 073] train_mse=0.020395 val_mae=0.558216
+[lstm_regressor/0040][Epoch 074] train_mse=0.019491 val_mae=0.547105
+[lstm_regressor/0040][Epoch 075] train_mse=0.020010 val_mae=0.567715
+[lstm_regressor/0040][Epoch 076] train_mse=0.020105 val_mae=0.565525
+[lstm_regressor/0040][Epoch 077] train_mse=0.019840 val_mae=0.573637
+[lstm_regressor/0040][Epoch 078] train_mse=0.019580 val_mae=0.545499
+[lstm_regressor/0040][Epoch 079] train_mse=0.022357 val_mae=0.549433
+[lstm_regressor/0040][Epoch 080] train_mse=0.020444 val_mae=0.554369 (checkpoint saved)
+[lstm_regressor/0040][Epoch 081] train_mse=0.019188 val_mae=0.558092
+[lstm_regressor/0040][Epoch 082] train_mse=0.019206 val_mae=0.557647
+[lstm_regressor/0040][Epoch 083] train_mse=0.020234 val_mae=0.563288
+[lstm_regressor/0040][Epoch 084] train_mse=0.019289 val_mae=0.569976
+[lstm_regressor/0040][Epoch 085] train_mse=0.022664 val_mae=0.577202
+[lstm_regressor/0040][Epoch 086] train_mse=0.026926 val_mae=0.583684
+[lstm_regressor/0040][Epoch 087] train_mse=0.020323 val_mae=0.571903
+[lstm_regressor/0040][Epoch 088] train_mse=0.018508 val_mae=0.574404
+[lstm_regressor/0040][Epoch 089] train_mse=0.018776 val_mae=0.579373
+[lstm_regressor/0040][Epoch 090] train_mse=0.020920 val_mae=0.581689 (checkpoint saved)
+[lstm_regressor/0040][Epoch 091] train_mse=0.022479 val_mae=0.597631
+[lstm_regressor/0040][Epoch 092] train_mse=0.019823 val_mae=0.567972
+[lstm_regressor/0040][Epoch 093] train_mse=0.018316 val_mae=0.568994
+[lstm_regressor/0040][Epoch 094] train_mse=0.018159 val_mae=0.560858
+[lstm_regressor/0040][Epoch 095] train_mse=0.017687 val_mae=0.580794
+[lstm_regressor/0040][Epoch 096] train_mse=0.017484 val_mae=0.570866
+[lstm_regressor/0040][Epoch 097] train_mse=0.017853 val_mae=0.577343
+[lstm_regressor/0040][Epoch 098] train_mse=0.018588 val_mae=0.579230
+[lstm_regressor/0040][Epoch 099] train_mse=0.017718 val_mae=0.583473
+[lstm_regressor/0040][Epoch 100] train_mse=0.018311 val_mae=0.588450 (checkpoint saved)
+[lstm_regressor/0040][Epoch 101] train_mse=0.018446 val_mae=0.567057
+[lstm_regressor/0040][Epoch 102] train_mse=0.019805 val_mae=0.551638
+[lstm_regressor/0040][Epoch 103] train_mse=0.018168 val_mae=0.577722
+[lstm_regressor/0040][Epoch 104] train_mse=0.019031 val_mae=0.551116
+[lstm_regressor/0040][Epoch 105] train_mse=0.017325 val_mae=0.573349
+[lstm_regressor/0040][Epoch 106] train_mse=0.017155 val_mae=0.565286
+[lstm_regressor/0040][Epoch 107] train_mse=0.019468 val_mae=0.566182
+[lstm_regressor/0040][Epoch 108] train_mse=0.016935 val_mae=0.561506
+[lstm_regressor/0040][Epoch 109] train_mse=0.016954 val_mae=0.549673
+[lstm_regressor/0040][Epoch 110] train_mse=0.016589 val_mae=0.550837 (checkpoint saved)
+[lstm_regressor/0040][Epoch 111] train_mse=0.016556 val_mae=0.548841
+[lstm_regressor/0040][Epoch 112] train_mse=0.017376 val_mae=0.542803
+[lstm_regressor/0040][Epoch 113] train_mse=0.016265 val_mae=0.559280
+[lstm_regressor/0040][Epoch 114] train_mse=0.016342 val_mae=0.556462
+[lstm_regressor/0040][Epoch 115] train_mse=0.016214 val_mae=0.548147
+[lstm_regressor/0040][Epoch 116] train_mse=0.016271 val_mae=0.545686
+[lstm_regressor/0040][Epoch 117] train_mse=0.015991 val_mae=0.553984
+[lstm_regressor/0040][Epoch 118] train_mse=0.016134 val_mae=0.553945
+[lstm_regressor/0040][Epoch 119] train_mse=0.016129 val_mae=0.568846
+[lstm_regressor/0040][Epoch 120] train_mse=0.019765 val_mae=0.553582 (checkpoint saved)
+[lstm_regressor/0040][Epoch 121] train_mse=0.017951 val_mae=0.537187
+[lstm_regressor/0040][Epoch 122] train_mse=0.016335 val_mae=0.550970
+[lstm_regressor/0040][Epoch 123] train_mse=0.015917 val_mae=0.555571
+[lstm_regressor/0040][Epoch 124] train_mse=0.017858 val_mae=0.619105
+[lstm_regressor/0040][Epoch 125] train_mse=0.019643 val_mae=0.543658
+[lstm_regressor/0040][Epoch 126] train_mse=0.023467 val_mae=0.558406
+[lstm_regressor/0040][Epoch 127] train_mse=0.020746 val_mae=0.539329
+[lstm_regressor/0040][Epoch 128] train_mse=0.017513 val_mae=0.553274
+[lstm_regressor/0040][Epoch 129] train_mse=0.016212 val_mae=0.533070
+[lstm_regressor/0040][Epoch 130] train_mse=0.015998 val_mae=0.556930 (checkpoint saved)
+[lstm_regressor/0040][Epoch 131] train_mse=0.019084 val_mae=0.566060
+[lstm_regressor/0040][Epoch 132] train_mse=0.015772 val_mae=0.573017
+[lstm_regressor/0040][Epoch 133] train_mse=0.015515 val_mae=0.567640
+[lstm_regressor/0040][Epoch 134] train_mse=0.015362 val_mae=0.562625
+[lstm_regressor/0040][Epoch 135] train_mse=0.015190 val_mae=0.551949
+[lstm_regressor/0040][Epoch 136] train_mse=0.015223 val_mae=0.559105
+[lstm_regressor/0040][Epoch 137] train_mse=0.016017 val_mae=0.578200
+[lstm_regressor/0040][Epoch 138] train_mse=0.017559 val_mae=0.549717
+[lstm_regressor/0040][Epoch 139] train_mse=0.015379 val_mae=0.567342
+[lstm_regressor/0040][Epoch 140] train_mse=0.015739 val_mae=0.557059 (checkpoint saved)
+[lstm_regressor/0040][Epoch 141] train_mse=0.048495 val_mae=0.581482
+[lstm_regressor/0040][Epoch 142] train_mse=0.024183 val_mae=0.534131
+[lstm_regressor/0040][Epoch 143] train_mse=0.019155 val_mae=0.540049
+[lstm_regressor/0040][Epoch 144] train_mse=0.017113 val_mae=0.541913
+[lstm_regressor/0040][Epoch 145] train_mse=0.016030 val_mae=0.535070
+[lstm_regressor/0040][Epoch 146] train_mse=0.015820 val_mae=0.542806
+[lstm_regressor/0040][Epoch 147] train_mse=0.015711 val_mae=0.541839
+[lstm_regressor/0040][Epoch 148] train_mse=0.015588 val_mae=0.534973
+[lstm_regressor/0040][Epoch 149] train_mse=0.015332 val_mae=0.529338
+[lstm_regressor/0040][Epoch 150] train_mse=0.015247 val_mae=0.533936 (checkpoint saved)
+[lstm_regressor/0040][Epoch 151] train_mse=0.015064 val_mae=0.530719
+[lstm_regressor/0040][Epoch 152] train_mse=0.014911 val_mae=0.533818
+[lstm_regressor/0040][Epoch 153] train_mse=0.015194 val_mae=0.529385
+[lstm_regressor/0040][Epoch 154] train_mse=0.015080 val_mae=0.536068
+[lstm_regressor/0040][Epoch 155] train_mse=0.014989 val_mae=0.529314
+[lstm_regressor/0040][Epoch 156] train_mse=0.015241 val_mae=0.526930
+[lstm_regressor/0040][Epoch 157] train_mse=0.014698 val_mae=0.531036
+[lstm_regressor/0040][Epoch 158] train_mse=0.014508 val_mae=0.527554
+[lstm_regressor/0040][Epoch 159] train_mse=0.014669 val_mae=0.531013
+[lstm_regressor/0040][Epoch 160] train_mse=0.015408 val_mae=0.542150 (checkpoint saved)
+[lstm_regressor/0040][Epoch 161] train_mse=0.015585 val_mae=0.551821
+[lstm_regressor/0040][Epoch 162] train_mse=0.014690 val_mae=0.558919
+[lstm_regressor/0040][Epoch 163] train_mse=0.014862 val_mae=0.552236
+[lstm_regressor/0040][Epoch 164] train_mse=0.014308 val_mae=0.538378
+[lstm_regressor/0040][Epoch 165] train_mse=0.014366 val_mae=0.546329
+[lstm_regressor/0040][Epoch 166] train_mse=0.014438 val_mae=0.550416
+[lstm_regressor/0040][Epoch 167] train_mse=0.017752 val_mae=0.529893
+[lstm_regressor/0040][Epoch 168] train_mse=0.014788 val_mae=0.533620
+[lstm_regressor/0040][Epoch 169] train_mse=0.013990 val_mae=0.538939
+[lstm_regressor/0040][Epoch 170] train_mse=0.014017 val_mae=0.539896 (checkpoint saved)
+[lstm_regressor/0040][Epoch 171] train_mse=0.013944 val_mae=0.546893
+[lstm_regressor/0040][Epoch 172] train_mse=0.014142 val_mae=0.544341
+[lstm_regressor/0040][Epoch 173] train_mse=0.015560 val_mae=0.542289
+[lstm_regressor/0040][Epoch 174] train_mse=0.014017 val_mae=0.535833
+[lstm_regressor/0040][Epoch 175] train_mse=0.014105 val_mae=0.535149
+[lstm_regressor/0040][Epoch 176] train_mse=0.016067 val_mae=0.526623
+[lstm_regressor/0040][Epoch 177] train_mse=0.017053 val_mae=0.537822
+[lstm_regressor/0040][Epoch 178] train_mse=0.014310 val_mae=0.551426
+[lstm_regressor/0040][Epoch 179] train_mse=0.013732 val_mae=0.555983
+[lstm_regressor/0040][Epoch 180] train_mse=0.013660 val_mae=0.559212 (checkpoint saved)
+[lstm_regressor/0040][Epoch 181] train_mse=0.013553 val_mae=0.543758
+[lstm_regressor/0040][Epoch 182] train_mse=0.013736 val_mae=0.556750
+[lstm_regressor/0040][Epoch 183] train_mse=0.013990 val_mae=0.542187
+[lstm_regressor/0040][Epoch 184] train_mse=0.014221 val_mae=0.547636
+[lstm_regressor/0040][Epoch 185] train_mse=0.013460 val_mae=0.542436
+[lstm_regressor/0040][Epoch 186] train_mse=0.014635 val_mae=0.528562
+[lstm_regressor/0040][Epoch 187] train_mse=0.018860 val_mae=0.538698
+[lstm_regressor/0040][Epoch 188] train_mse=0.013914 val_mae=0.517769
+[lstm_regressor/0040][Epoch 189] train_mse=0.013591 val_mae=0.527681
+[lstm_regressor/0040][Epoch 190] train_mse=0.013396 val_mae=0.546106 (checkpoint saved)
+[lstm_regressor/0040][Epoch 191] train_mse=0.013240 val_mae=0.534144
+[lstm_regressor/0040][Epoch 192] train_mse=0.013370 val_mae=0.542255
+[lstm_regressor/0040][Epoch 193] train_mse=0.013042 val_mae=0.525032
+[lstm_regressor/0040][Epoch 194] train_mse=0.012991 val_mae=0.528389
+[lstm_regressor/0040][Epoch 195] train_mse=0.013133 val_mae=0.537236
+[lstm_regressor/0040][Epoch 196] train_mse=0.013061 val_mae=0.517941
+[lstm_regressor/0040][Epoch 197] train_mse=0.013426 val_mae=0.521496
+[lstm_regressor/0040][Epoch 198] train_mse=0.013368 val_mae=0.527358
+[lstm_regressor/0040][Epoch 199] train_mse=0.013030 val_mae=0.517419
+[lstm_regressor/0040][Epoch 200] train_mse=0.012872 val_mae=0.520415 (checkpoint saved)
+[lstm_regressor/0040][Epoch 201] train_mse=0.012781 val_mae=0.529545
+[lstm_regressor/0040][Epoch 202] train_mse=0.012883 val_mae=0.511205
+[lstm_regressor/0040][Epoch 203] train_mse=0.012703 val_mae=0.522263
+[lstm_regressor/0040][Epoch 204] train_mse=0.013042 val_mae=0.521494
+[lstm_regressor/0040][Epoch 205] train_mse=0.015525 val_mae=0.497857
+[lstm_regressor/0040][Epoch 206] train_mse=0.017193 val_mae=0.550217
+[lstm_regressor/0040][Epoch 207] train_mse=0.015342 val_mae=0.525757
+[lstm_regressor/0040][Epoch 208] train_mse=0.013367 val_mae=0.515840
+[lstm_regressor/0040][Epoch 209] train_mse=0.012800 val_mae=0.536244
+[lstm_regressor/0040][Epoch 210] train_mse=0.012845 val_mae=0.515752 (checkpoint saved)
+[lstm_regressor/0040][Epoch 211] train_mse=0.012525 val_mae=0.518846
+[lstm_regressor/0040][Epoch 212] train_mse=0.012592 val_mae=0.510191
+[lstm_regressor/0040][Epoch 213] train_mse=0.012674 val_mae=0.526363
+[lstm_regressor/0040][Epoch 214] train_mse=0.012680 val_mae=0.519644
+[lstm_regressor/0040][Epoch 215] train_mse=0.012365 val_mae=0.511260
+[lstm_regressor/0040][Epoch 216] train_mse=0.012378 val_mae=0.517868
+[lstm_regressor/0040][Epoch 217] train_mse=0.012370 val_mae=0.517103
+[lstm_regressor/0040][Epoch 218] train_mse=0.013664 val_mae=0.525076
+[lstm_regressor/0040][Epoch 219] train_mse=0.012506 val_mae=0.487981
+[lstm_regressor/0040][Epoch 220] train_mse=0.012202 val_mae=0.511666 (checkpoint saved)
+[lstm_regressor/0040][Epoch 221] train_mse=0.012073 val_mae=0.511866
+[lstm_regressor/0040][Epoch 222] train_mse=0.016529 val_mae=0.561417
+[lstm_regressor/0040][Epoch 223] train_mse=0.028968 val_mae=0.546829
+[lstm_regressor/0040][Epoch 224] train_mse=0.021959 val_mae=0.487471
+[lstm_regressor/0040][Epoch 225] train_mse=0.015880 val_mae=0.514917
+[lstm_regressor/0040][Epoch 226] train_mse=0.014880 val_mae=0.504211
+[lstm_regressor/0040][Epoch 227] train_mse=0.013824 val_mae=0.500353
+[lstm_regressor/0040][Epoch 228] train_mse=0.013333 val_mae=0.505818
+[lstm_regressor/0040][Epoch 229] train_mse=0.012666 val_mae=0.505555
+[lstm_regressor/0040][Epoch 230] train_mse=0.012346 val_mae=0.498833 (checkpoint saved)
+[lstm_regressor/0040][Epoch 231] train_mse=0.012601 val_mae=0.514315
+[lstm_regressor/0040][Epoch 232] train_mse=0.012281 val_mae=0.508088
+[lstm_regressor/0040][Epoch 233] train_mse=0.012099 val_mae=0.487626
+[lstm_regressor/0040][Epoch 234] train_mse=0.012114 val_mae=0.497806
+[lstm_regressor/0040][Epoch 235] train_mse=0.012608 val_mae=0.485818
+[lstm_regressor/0040][Epoch 236] train_mse=0.011983 val_mae=0.495527
+[lstm_regressor/0040][Epoch 237] train_mse=0.011898 val_mae=0.508299
+[lstm_regressor/0040][Epoch 238] train_mse=0.012169 val_mae=0.498442
+[lstm_regressor/0040][Epoch 239] train_mse=0.012476 val_mae=0.494456
+[lstm_regressor/0040][Epoch 240] train_mse=0.011802 val_mae=0.497064 (checkpoint saved)
+[lstm_regressor/0040][Epoch 241] train_mse=0.011883 val_mae=0.492715
+[lstm_regressor/0040][Epoch 242] train_mse=0.011754 val_mae=0.520430
+[lstm_regressor/0040][Epoch 243] train_mse=0.011802 val_mae=0.508987
+[lstm_regressor/0040][Epoch 244] train_mse=0.011964 val_mae=0.507172
+[lstm_regressor/0040][Epoch 245] train_mse=0.011746 val_mae=0.508540
+[lstm_regressor/0040][Epoch 246] train_mse=0.012089 val_mae=0.522097
+[lstm_regressor/0040][Epoch 247] train_mse=0.011714 val_mae=0.502436
+[lstm_regressor/0040][Epoch 248] train_mse=0.012461 val_mae=0.507454
+[lstm_regressor/0040][Epoch 249] train_mse=0.015734 val_mae=0.505123
+[lstm_regressor/0040][Epoch 250] train_mse=0.013789 val_mae=0.507769 (checkpoint saved)
+[lstm_regressor/0040][Epoch 251] train_mse=0.011927 val_mae=0.521424
+[lstm_regressor/0040][Epoch 252] train_mse=0.011786 val_mae=0.496128
+[lstm_regressor/0040][Epoch 253] train_mse=0.012040 val_mae=0.500587
+[lstm_regressor/0040][Epoch 254] train_mse=0.011547 val_mae=0.509145
+[lstm_regressor/0040][Epoch 255] train_mse=0.011632 val_mae=0.520684
+[lstm_regressor/0040][Epoch 256] train_mse=0.011718 val_mae=0.516230
+[lstm_regressor/0040][Epoch 257] train_mse=0.011493 val_mae=0.495859
+[lstm_regressor/0040][Epoch 258] train_mse=0.011406 val_mae=0.515863
+[lstm_regressor/0040][Epoch 259] train_mse=0.011587 val_mae=0.515259
+[lstm_regressor/0040][Epoch 260] train_mse=0.012562 val_mae=0.521930 (checkpoint saved)
+[lstm_regressor/0040][Epoch 261] train_mse=0.016912 val_mae=0.506398
+[lstm_regressor/0040][Epoch 262] train_mse=0.012140 val_mae=0.546823
+[lstm_regressor/0040][Epoch 263] train_mse=0.012131 val_mae=0.523980
+[lstm_regressor/0040][Epoch 264] train_mse=0.011502 val_mae=0.523204
+[lstm_regressor/0040][Epoch 265] train_mse=0.011435 val_mae=0.523192
+[lstm_regressor/0040][Epoch 266] train_mse=0.012475 val_mae=0.527294
+[lstm_regressor/0040][Epoch 267] train_mse=0.011364 val_mae=0.515415
+[lstm_regressor/0040][Epoch 268] train_mse=0.011702 val_mae=0.541927
+[lstm_regressor/0040][Epoch 269] train_mse=0.011698 val_mae=0.536319
+[lstm_regressor/0040][Epoch 270] train_mse=0.020204 val_mae=0.551761 (checkpoint saved)
+[lstm_regressor/0040][Epoch 271] train_mse=0.015103 val_mae=0.508495
+[lstm_regressor/0040][Epoch 272] train_mse=0.012080 val_mae=0.524931
+[lstm_regressor/0040][Epoch 273] train_mse=0.011324 val_mae=0.523530
+[lstm_regressor/0040][Epoch 274] train_mse=0.011144 val_mae=0.525457
+[lstm_regressor/0040][Epoch 275] train_mse=0.021161 val_mae=0.486176
+[lstm_regressor/0040][Epoch 276] train_mse=0.019541 val_mae=0.465961
+[lstm_regressor/0040][Epoch 277] train_mse=0.013914 val_mae=0.480626
+[lstm_regressor/0040][Epoch 278] train_mse=0.012144 val_mae=0.477906
+[lstm_regressor/0040][Epoch 279] train_mse=0.011793 val_mae=0.522521
+[lstm_regressor/0040][Epoch 280] train_mse=0.012372 val_mae=0.532550 (checkpoint saved)
+[lstm_regressor/0040][Epoch 281] train_mse=0.011459 val_mae=0.515689
+[lstm_regressor/0040][Epoch 282] train_mse=0.011246 val_mae=0.521229
+[lstm_regressor/0040][Epoch 283] train_mse=0.011054 val_mae=0.513158
+[lstm_regressor/0040][Epoch 284] train_mse=0.011383 val_mae=0.507758
+[lstm_regressor/0040][Epoch 285] train_mse=0.011015 val_mae=0.520333
+[lstm_regressor/0040][Epoch 286] train_mse=0.011052 val_mae=0.509133
+[lstm_regressor/0040][Epoch 287] train_mse=0.011155 val_mae=0.515329
+[lstm_regressor/0040][Epoch 288] train_mse=0.010964 val_mae=0.545760
+[lstm_regressor/0040][Epoch 289] train_mse=0.010873 val_mae=0.521946
+[lstm_regressor/0040][Epoch 290] train_mse=0.011464 val_mae=0.521149 (checkpoint saved)
+[lstm_regressor/0040][Epoch 291] train_mse=0.011067 val_mae=0.514010
+[lstm_regressor/0040][Epoch 292] train_mse=0.011032 val_mae=0.506964
+[lstm_regressor/0040][Epoch 293] train_mse=0.011175 val_mae=0.528501
+[lstm_regressor/0040][Epoch 294] train_mse=0.011440 val_mae=0.522266
+[lstm_regressor/0040][Epoch 295] train_mse=0.011147 val_mae=0.528101
+[lstm_regressor/0040][Epoch 296] train_mse=0.011643 val_mae=0.507726
+[lstm_regressor/0040][Epoch 297] train_mse=0.011311 val_mae=0.521569
+[lstm_regressor/0040][Epoch 298] train_mse=0.010810 val_mae=0.516937
+[lstm_regressor/0040][Epoch 299] train_mse=0.010813 val_mae=0.512747
+[lstm_regressor/0040][Epoch 300] train_mse=0.010973 val_mae=0.520810 (checkpoint saved)
+[lstm_regressor/0040][Epoch 301] train_mse=0.011340 val_mae=0.529559
+[lstm_regressor/0040][Epoch 302] train_mse=0.010857 val_mae=0.519923
+[lstm_regressor/0040][Epoch 303] train_mse=0.011927 val_mae=0.513863
+[lstm_regressor/0040][Epoch 304] train_mse=0.016597 val_mae=0.483366
+[lstm_regressor/0040][Epoch 305] train_mse=0.019483 val_mae=0.474025
+[lstm_regressor/0040][Epoch 306] train_mse=0.013500 val_mae=0.489177
+[lstm_regressor/0040][Epoch 307] train_mse=0.012429 val_mae=0.484550
+[lstm_regressor/0040][Epoch 308] train_mse=0.010847 val_mae=0.501430
+[lstm_regressor/0040][Epoch 309] train_mse=0.010748 val_mae=0.495151
+[lstm_regressor/0040][Epoch 310] train_mse=0.010670 val_mae=0.489465 (checkpoint saved)
+[lstm_regressor/0040][Epoch 311] train_mse=0.010950 val_mae=0.500230
+[lstm_regressor/0040][Epoch 312] train_mse=0.010567 val_mae=0.494751
+[lstm_regressor/0040][Epoch 313] train_mse=0.010561 val_mae=0.495305
+[lstm_regressor/0040][Epoch 314] train_mse=0.010455 val_mae=0.490820
+[lstm_regressor/0040][Epoch 315] train_mse=0.010480 val_mae=0.495380
+[lstm_regressor/0040][Epoch 316] train_mse=0.010507 val_mae=0.494083
+[lstm_regressor/0040][Epoch 317] train_mse=0.010268 val_mae=0.508142
+[lstm_regressor/0040][Epoch 318] train_mse=0.010236 val_mae=0.499964
+[lstm_regressor/0040][Epoch 319] train_mse=0.010311 val_mae=0.502990
+[lstm_regressor/0040][Epoch 320] train_mse=0.010327 val_mae=0.502579 (checkpoint saved)
+[lstm_regressor/0040][Epoch 321] train_mse=0.010273 val_mae=0.511212
+[lstm_regressor/0040][Epoch 322] train_mse=0.010261 val_mae=0.511257
+[lstm_regressor/0040][Epoch 323] train_mse=0.011107 val_mae=0.509353
+[lstm_regressor/0040][Epoch 324] train_mse=0.010390 val_mae=0.514876
+[lstm_regressor/0040][Epoch 325] train_mse=0.010177 val_mae=0.498336
+[lstm_regressor/0040][Epoch 326] train_mse=0.010134 val_mae=0.496344
+[lstm_regressor/0040][Epoch 327] train_mse=0.010191 val_mae=0.497710
+[lstm_regressor/0040][Epoch 328] train_mse=0.010580 val_mae=0.498131
+[lstm_regressor/0040][Epoch 329] train_mse=0.011599 val_mae=0.503658
+[lstm_regressor/0040][Epoch 330] train_mse=0.017916 val_mae=0.479610 (checkpoint saved)
+[lstm_regressor/0040][Epoch 331] train_mse=0.014375 val_mae=0.480765
+[lstm_regressor/0040][Epoch 332] train_mse=0.011333 val_mae=0.470411
+[lstm_regressor/0040][Epoch 333] train_mse=0.011213 val_mae=0.477582
+[lstm_regressor/0040][Epoch 334] train_mse=0.010801 val_mae=0.489175
+[lstm_regressor/0040][Epoch 335] train_mse=0.010312 val_mae=0.474478
+[lstm_regressor/0040][Epoch 336] train_mse=0.010382 val_mae=0.488299
+[lstm_regressor/0040][Epoch 337] train_mse=0.011378 val_mae=0.484253
+[lstm_regressor/0040][Epoch 338] train_mse=0.010408 val_mae=0.493475
+[lstm_regressor/0040][Epoch 339] train_mse=0.010151 val_mae=0.494036
+[lstm_regressor/0040][Epoch 340] train_mse=0.010097 val_mae=0.483722 (checkpoint saved)
+[lstm_regressor/0040][Epoch 341] train_mse=0.010007 val_mae=0.483477
+[lstm_regressor/0040][Epoch 342] train_mse=0.010099 val_mae=0.479222
+[lstm_regressor/0040][Epoch 343] train_mse=0.009965 val_mae=0.490128
+[lstm_regressor/0040][Epoch 344] train_mse=0.010210 val_mae=0.486868
+[lstm_regressor/0040][Epoch 345] train_mse=0.010843 val_mae=0.494911
+[lstm_regressor/0040][Epoch 346] train_mse=0.010532 val_mae=0.505968
+[lstm_regressor/0040][Epoch 347] train_mse=0.011065 val_mae=0.485491
+[lstm_regressor/0040][Epoch 348] train_mse=0.013410 val_mae=0.486863
+[lstm_regressor/0040][Epoch 349] train_mse=0.010743 val_mae=0.481854
+[lstm_regressor/0040][Epoch 350] train_mse=0.010109 val_mae=0.498969 (checkpoint saved)
+[lstm_regressor/0040][Epoch 351] train_mse=0.010047 val_mae=0.502808
+[lstm_regressor/0040][Epoch 352] train_mse=0.009983 val_mae=0.482083
+[lstm_regressor/0040][Epoch 353] train_mse=0.010091 val_mae=0.511928
+[lstm_regressor/0040][Epoch 354] train_mse=0.009878 val_mae=0.496990
+[lstm_regressor/0040][Epoch 355] train_mse=0.009905 val_mae=0.502816
+[lstm_regressor/0040][Epoch 356] train_mse=0.010849 val_mae=0.501142
+[lstm_regressor/0040][Epoch 357] train_mse=0.010293 val_mae=0.516168
+[lstm_regressor/0040][Epoch 358] train_mse=0.010055 val_mae=0.512850
+[lstm_regressor/0040][Epoch 359] train_mse=0.009882 val_mae=0.495756
+[lstm_regressor/0040][Epoch 360] train_mse=0.009787 val_mae=0.488761 (checkpoint saved)
+[lstm_regressor/0040][Epoch 361] train_mse=0.009933 val_mae=0.506266
+[lstm_regressor/0040][Epoch 362] train_mse=0.010438 val_mae=0.510250
+[lstm_regressor/0040][Epoch 363] train_mse=0.009781 val_mae=0.506928
+[lstm_regressor/0040][Epoch 364] train_mse=0.009652 val_mae=0.488121
+[lstm_regressor/0040][Epoch 365] train_mse=0.009621 val_mae=0.490986
+[lstm_regressor/0040][Epoch 366] train_mse=0.010165 val_mae=0.535434
+[lstm_regressor/0040][Epoch 367] train_mse=0.020521 val_mae=0.479002
+[lstm_regressor/0040][Epoch 368] train_mse=0.019274 val_mae=0.468090
+[lstm_regressor/0040][Epoch 369] train_mse=0.014863 val_mae=0.469134
+[lstm_regressor/0040][Epoch 370] train_mse=0.010911 val_mae=0.470088 (checkpoint saved)
+[lstm_regressor/0040][Epoch 371] train_mse=0.010556 val_mae=0.469076
+[lstm_regressor/0040][Epoch 372] train_mse=0.010312 val_mae=0.467229
+[lstm_regressor/0040][Epoch 373] train_mse=0.009956 val_mae=0.477950
+[lstm_regressor/0040][Epoch 374] train_mse=0.009774 val_mae=0.481238
+[lstm_regressor/0040][Epoch 375] train_mse=0.009728 val_mae=0.479066
+[lstm_regressor/0040][Epoch 376] train_mse=0.009702 val_mae=0.486941
+[lstm_regressor/0040][Epoch 377] train_mse=0.009687 val_mae=0.479151
+[lstm_regressor/0040][Epoch 378] train_mse=0.009560 val_mae=0.480936
+[lstm_regressor/0040][Epoch 379] train_mse=0.009459 val_mae=0.483879
+[lstm_regressor/0040][Epoch 380] train_mse=0.009498 val_mae=0.486323 (checkpoint saved)
+[lstm_regressor/0040][Epoch 381] train_mse=0.009416 val_mae=0.487479
+[lstm_regressor/0040][Epoch 382] train_mse=0.009609 val_mae=0.484027
+[lstm_regressor/0040][Epoch 383] train_mse=0.009523 val_mae=0.478407
+[lstm_regressor/0040][Epoch 384] train_mse=0.009725 val_mae=0.493167
+[lstm_regressor/0040][Epoch 385] train_mse=0.009565 val_mae=0.490837
+[lstm_regressor/0040][Epoch 386] train_mse=0.009459 val_mae=0.494702
+[lstm_regressor/0040][Epoch 387] train_mse=0.009391 val_mae=0.491890
+[lstm_regressor/0040][Epoch 388] train_mse=0.009380 val_mae=0.507136
+[lstm_regressor/0040][Epoch 389] train_mse=0.009320 val_mae=0.497838
+[lstm_regressor/0040][Epoch 390] train_mse=0.009422 val_mae=0.506729 (checkpoint saved)
+[lstm_regressor/0040][Epoch 391] train_mse=0.009930 val_mae=0.493133
+[lstm_regressor/0040][Epoch 392] train_mse=0.009616 val_mae=0.495503
+[lstm_regressor/0040][Epoch 393] train_mse=0.009477 val_mae=0.488856
+[lstm_regressor/0040][Epoch 394] train_mse=0.009463 val_mae=0.494006
+[lstm_regressor/0040][Epoch 395] train_mse=0.011213 val_mae=0.511373
+[lstm_regressor/0040][Epoch 396] train_mse=0.013680 val_mae=0.520274
+[lstm_regressor/0040][Epoch 397] train_mse=0.011299 val_mae=0.512991
+[lstm_regressor/0040][Epoch 398] train_mse=0.010066 val_mae=0.520159
+[lstm_regressor/0040][Epoch 399] train_mse=0.009592 val_mae=0.522780
+[lstm_regressor/0040][Epoch 400] train_mse=0.009489 val_mae=0.515491 (checkpoint saved)
+[lstm_regressor/0040][Epoch 401] train_mse=0.009387 val_mae=0.526975
+[lstm_regressor/0040][Epoch 402] train_mse=0.009484 val_mae=0.519360
+[lstm_regressor/0040][Epoch 403] train_mse=0.010039 val_mae=0.530224
+[lstm_regressor/0040][Epoch 404] train_mse=0.009383 val_mae=0.522905
+[lstm_regressor/0040][Epoch 405] train_mse=0.009373 val_mae=0.529188
+[lstm_regressor/0040][Epoch 406] train_mse=0.009258 val_mae=0.533469
+[lstm_regressor/0040][Epoch 407] train_mse=0.009182 val_mae=0.536140
+[lstm_regressor/0040][Epoch 408] train_mse=0.009346 val_mae=0.536009
+[lstm_regressor/0040][Epoch 409] train_mse=0.009197 val_mae=0.540308
+[lstm_regressor/0040][Epoch 410] train_mse=0.009197 val_mae=0.537896 (checkpoint saved)
+[lstm_regressor/0040][Epoch 411] train_mse=0.009890 val_mae=0.498253
+[lstm_regressor/0040][Epoch 412] train_mse=0.011245 val_mae=0.526842
+[lstm_regressor/0040][Epoch 413] train_mse=0.010089 val_mae=0.539283
+[lstm_regressor/0040][Epoch 414] train_mse=0.011941 val_mae=0.520879
+[lstm_regressor/0040][Epoch 415] train_mse=0.012567 val_mae=0.523814
+[lstm_regressor/0040][Epoch 416] train_mse=0.010011 val_mae=0.522201
+[lstm_regressor/0040][Epoch 417] train_mse=0.009610 val_mae=0.520741
+[lstm_regressor/0040][Epoch 418] train_mse=0.009322 val_mae=0.515230
+[lstm_regressor/0040][Epoch 419] train_mse=0.009100 val_mae=0.521099
+[lstm_regressor/0040][Epoch 420] train_mse=0.009146 val_mae=0.526294 (checkpoint saved)
+[lstm_regressor/0040][Epoch 421] train_mse=0.009290 val_mae=0.526793
+[lstm_regressor/0040][Epoch 422] train_mse=0.009039 val_mae=0.527534
+[lstm_regressor/0040][Epoch 423] train_mse=0.009080 val_mae=0.524639
+[lstm_regressor/0040][Epoch 424] train_mse=0.009037 val_mae=0.513728
+[lstm_regressor/0040][Epoch 425] train_mse=0.009083 val_mae=0.520760
+[lstm_regressor/0040][Epoch 426] train_mse=0.009080 val_mae=0.522300
+[lstm_regressor/0040][Epoch 427] train_mse=0.009079 val_mae=0.522634
+[lstm_regressor/0040][Epoch 428] train_mse=0.008993 val_mae=0.543331
+[lstm_regressor/0040][Epoch 429] train_mse=0.009246 val_mae=0.525028
+[lstm_regressor/0040][Epoch 430] train_mse=0.008980 val_mae=0.536617 (checkpoint saved)
+[lstm_regressor/0040][Epoch 431] train_mse=0.009070 val_mae=0.522800
+[lstm_regressor/0040][Epoch 432] train_mse=0.009170 val_mae=0.539262
+[lstm_regressor/0040][Epoch 433] train_mse=0.009014 val_mae=0.527225
+[lstm_regressor/0040][Epoch 434] train_mse=0.008861 val_mae=0.530775
+[lstm_regressor/0040][Epoch 435] train_mse=0.008934 val_mae=0.517093
+[lstm_regressor/0040][Epoch 436] train_mse=0.009522 val_mae=0.531521
+[lstm_regressor/0040][Epoch 437] train_mse=0.010162 val_mae=0.533771
+[lstm_regressor/0040][Epoch 438] train_mse=0.009089 val_mae=0.533350
+[lstm_regressor/0040][Epoch 439] train_mse=0.009989 val_mae=0.517223
+[lstm_regressor/0040][Epoch 440] train_mse=0.009450 val_mae=0.513274 (checkpoint saved)
+[lstm_regressor/0040][Epoch 441] train_mse=0.008989 val_mae=0.521987
+[lstm_regressor/0040][Epoch 442] train_mse=0.009012 val_mae=0.508375
+[lstm_regressor/0040][Epoch 443] train_mse=0.009656 val_mae=0.528227
+[lstm_regressor/0040][Epoch 444] train_mse=0.009299 val_mae=0.512565
+[lstm_regressor/0040][Epoch 445] train_mse=0.008991 val_mae=0.521328
+[lstm_regressor/0040][Epoch 446] train_mse=0.008961 val_mae=0.534603
+[lstm_regressor/0040][Epoch 447] train_mse=0.008950 val_mae=0.536561
+[lstm_regressor/0040][Epoch 448] train_mse=0.008795 val_mae=0.532434
+[lstm_regressor/0040][Epoch 449] train_mse=0.008788 val_mae=0.542834
+[lstm_regressor/0040][Epoch 450] train_mse=0.008824 val_mae=0.517933 (checkpoint saved)
+[lstm_regressor/0040][Epoch 451] train_mse=0.008832 val_mae=0.537562
+[lstm_regressor/0040][Epoch 452] train_mse=0.010852 val_mae=0.525359
+[lstm_regressor/0040][Epoch 453] train_mse=0.009122 val_mae=0.542212
+[lstm_regressor/0040][Epoch 454] train_mse=0.008841 val_mae=0.559905
+[lstm_regressor/0040][Epoch 455] train_mse=0.008695 val_mae=0.568386
+[lstm_regressor/0040][Epoch 456] train_mse=0.008712 val_mae=0.543897
+[lstm_regressor/0040][Epoch 457] train_mse=0.008872 val_mae=0.552525
+[lstm_regressor/0040][Epoch 458] train_mse=0.008615 val_mae=0.557497
+[lstm_regressor/0040][Epoch 459] train_mse=0.008564 val_mae=0.558790
+[lstm_regressor/0040][Epoch 460] train_mse=0.008702 val_mae=0.538680 (checkpoint saved)
+[lstm_regressor/0040][Epoch 461] train_mse=0.008864 val_mae=0.554818
+[lstm_regressor/0040][Epoch 462] train_mse=0.008552 val_mae=0.538894
+[lstm_regressor/0040][Epoch 463] train_mse=0.008591 val_mae=0.544429
+[lstm_regressor/0040][Epoch 464] train_mse=0.008595 val_mae=0.540567
+[lstm_regressor/0040][Epoch 465] train_mse=0.008591 val_mae=0.562453
+[lstm_regressor/0040][Epoch 466] train_mse=0.009062 val_mae=0.559461
+[lstm_regressor/0040][Epoch 467] train_mse=0.008892 val_mae=0.549138
+[lstm_regressor/0040][Epoch 468] train_mse=0.009526 val_mae=0.558659
+[lstm_regressor/0040][Epoch 469] train_mse=0.008749 val_mae=0.549098
+[lstm_regressor/0040][Epoch 470] train_mse=0.008965 val_mae=0.549738 (checkpoint saved)
+[lstm_regressor/0040][Epoch 471] train_mse=0.008447 val_mae=0.544914
+[lstm_regressor/0040][Epoch 472] train_mse=0.008517 val_mae=0.557277
+[lstm_regressor/0040][Epoch 473] train_mse=0.008554 val_mae=0.567314
+[lstm_regressor/0040][Epoch 474] train_mse=0.008620 val_mae=0.557070
+[lstm_regressor/0040][Epoch 475] train_mse=0.010041 val_mae=0.553584
+[lstm_regressor/0040][Epoch 476] train_mse=0.010315 val_mae=0.556965
+[lstm_regressor/0040][Epoch 477] train_mse=0.010312 val_mae=0.554211
+[lstm_regressor/0040][Epoch 478] train_mse=0.008861 val_mae=0.533303
+[lstm_regressor/0040][Epoch 479] train_mse=0.008653 val_mae=0.562213
+[lstm_regressor/0040][Epoch 480] train_mse=0.008381 val_mae=0.557133 (checkpoint saved)
+[lstm_regressor/0040][Epoch 481] train_mse=0.008327 val_mae=0.559237
+[lstm_regressor/0040][Epoch 482] train_mse=0.008328 val_mae=0.556316
+[lstm_regressor/0040][Epoch 483] train_mse=0.008519 val_mae=0.559280
+[lstm_regressor/0040][Epoch 484] train_mse=0.008543 val_mae=0.540612
+[lstm_regressor/0040][Epoch 485] train_mse=0.008351 val_mae=0.559394
+[lstm_regressor/0040][Epoch 486] train_mse=0.008528 val_mae=0.539995
+[lstm_regressor/0040][Epoch 487] train_mse=0.008751 val_mae=0.570948
+[lstm_regressor/0040][Epoch 488] train_mse=0.008382 val_mae=0.556711
+[lstm_regressor/0040][Epoch 489] train_mse=0.008577 val_mae=0.551246
+[lstm_regressor/0040][Epoch 490] train_mse=0.008397 val_mae=0.559879 (checkpoint saved)
+[lstm_regressor/0040][Epoch 491] train_mse=0.008566 val_mae=0.550563
+[lstm_regressor/0040][Epoch 492] train_mse=0.017784 val_mae=0.552639
+[lstm_regressor/0040][Epoch 493] train_mse=0.016048 val_mae=0.546366
+[lstm_regressor/0040][Epoch 494] train_mse=0.009598 val_mae=0.535026
+[lstm_regressor/0040][Epoch 495] train_mse=0.008766 val_mae=0.540312
+[lstm_regressor/0040][Epoch 496] train_mse=0.009025 val_mae=0.556370
+[lstm_regressor/0040][Epoch 497] train_mse=0.008440 val_mae=0.548444
+[lstm_regressor/0040][Epoch 498] train_mse=0.008403 val_mae=0.528475
+[lstm_regressor/0040][Epoch 499] train_mse=0.008566 val_mae=0.550079
+[lstm_regressor/0040][Epoch 500] train_mse=0.008255 val_mae=0.542677 (checkpoint saved)
+Training artifacts saved to scripts/outputs/lstm_regressor/0040
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           [lstm_regressor/0039][Epoch 001] train_mse=0.632603 val_mae=0.624890
+[lstm_regressor/0039][Epoch 002] train_mse=0.323376 val_mae=0.709355
+[lstm_regressor/0039][Epoch 003] train_mse=0.296327 val_mae=0.691763
+[lstm_regressor/0039][Epoch 004] train_mse=0.294142 val_mae=0.718372
+[lstm_regressor/0039][Epoch 005] train_mse=0.291838 val_mae=0.658562
+[lstm_regressor/0039][Epoch 006] train_mse=0.294058 val_mae=0.621159
+[lstm_regressor/0039][Epoch 007] train_mse=0.291124 val_mae=0.674259
+[lstm_regressor/0039][Epoch 008] train_mse=0.289141 val_mae=0.625002
+[lstm_regressor/0039][Epoch 009] train_mse=0.287028 val_mae=0.613824
+[lstm_regressor/0039][Epoch 010] train_mse=0.290304 val_mae=0.538508 (checkpoint saved)
+[lstm_regressor/0039][Epoch 011] train_mse=0.288127 val_mae=0.663023
+[lstm_regressor/0039][Epoch 012] train_mse=0.288101 val_mae=0.635609
+[lstm_regressor/0039][Epoch 013] train_mse=0.292149 val_mae=0.619249
+[lstm_regressor/0039][Epoch 014] train_mse=0.284488 val_mae=0.639132
+[lstm_regressor/0039][Epoch 015] train_mse=0.287918 val_mae=0.629437
+[lstm_regressor/0039][Epoch 016] train_mse=0.285909 val_mae=0.562271
+[lstm_regressor/0039][Epoch 017] train_mse=0.284248 val_mae=0.613781
+[lstm_regressor/0039][Epoch 018] train_mse=0.291985 val_mae=0.521119
+[lstm_regressor/0039][Epoch 019] train_mse=0.283738 val_mae=0.591530
+[lstm_regressor/0039][Epoch 020] train_mse=0.284477 val_mae=0.702820 (checkpoint saved)
+[lstm_regressor/0039][Epoch 021] train_mse=0.282006 val_mae=0.600951
+[lstm_regressor/0039][Epoch 022] train_mse=0.281953 val_mae=0.599694
+[lstm_regressor/0039][Epoch 023] train_mse=0.273549 val_mae=0.578298
+[lstm_regressor/0039][Epoch 024] train_mse=0.268805 val_mae=0.584076
+[lstm_regressor/0039][Epoch 025] train_mse=0.257602 val_mae=0.688988
+[lstm_regressor/0039][Epoch 026] train_mse=0.252540 val_mae=0.591842
+[lstm_regressor/0039][Epoch 027] train_mse=0.250417 val_mae=0.659758
+[lstm_regressor/0039][Epoch 028] train_mse=0.253008 val_mae=0.576695
+[lstm_regressor/0039][Epoch 029] train_mse=0.240646 val_mae=0.629621
+[lstm_regressor/0039][Epoch 030] train_mse=0.234918 val_mae=0.536170 (checkpoint saved)
+[lstm_regressor/0039][Epoch 031] train_mse=0.228437 val_mae=0.649848
+[lstm_regressor/0039][Epoch 032] train_mse=0.223637 val_mae=0.574421
+[lstm_regressor/0039][Epoch 033] train_mse=0.221220 val_mae=0.616901
+[lstm_regressor/0039][Epoch 034] train_mse=0.233432 val_mae=0.579867
+[lstm_regressor/0039][Epoch 035] train_mse=0.213571 val_mae=0.648564
+[lstm_regressor/0039][Epoch 036] train_mse=0.211380 val_mae=0.664485
+[lstm_regressor/0039][Epoch 037] train_mse=0.214293 val_mae=0.602298
+[lstm_regressor/0039][Epoch 038] train_mse=0.204351 val_mae=0.696177
+[lstm_regressor/0039][Epoch 039] train_mse=0.204990 val_mae=0.711195
+[lstm_regressor/0039][Epoch 040] train_mse=0.199424 val_mae=0.623746 (checkpoint saved)
+[lstm_regressor/0039][Epoch 041] train_mse=0.204968 val_mae=0.698904
+[lstm_regressor/0039][Epoch 042] train_mse=0.194432 val_mae=0.770864
+[lstm_regressor/0039][Epoch 043] train_mse=0.197216 val_mae=0.663595
+[lstm_regressor/0039][Epoch 044] train_mse=0.197330 val_mae=0.694119
+[lstm_regressor/0039][Epoch 045] train_mse=0.189951 val_mae=0.673450
+[lstm_regressor/0039][Epoch 046] train_mse=0.193144 val_mae=0.635179
+[lstm_regressor/0039][Epoch 047] train_mse=0.188888 val_mae=0.667232
+[lstm_regressor/0039][Epoch 048] train_mse=0.193613 val_mae=0.694570
+[lstm_regressor/0039][Epoch 049] train_mse=0.189829 val_mae=0.616000
+[lstm_regressor/0039][Epoch 050] train_mse=0.190670 val_mae=0.646426 (checkpoint saved)
+[lstm_regressor/0039][Epoch 051] train_mse=0.183297 val_mae=0.663642
+[lstm_regressor/0039][Epoch 052] train_mse=0.182864 val_mae=0.638927
+[lstm_regressor/0039][Epoch 053] train_mse=0.187901 val_mae=0.655790
+[lstm_regressor/0039][Epoch 054] train_mse=0.196858 val_mae=0.654743
+[lstm_regressor/0039][Epoch 055] train_mse=0.188760 val_mae=0.647713
+[lstm_regressor/0039][Epoch 056] train_mse=0.183371 val_mae=0.678863
+[lstm_regressor/0039][Epoch 057] train_mse=0.178708 val_mae=0.664479
+[lstm_regressor/0039][Epoch 058] train_mse=0.179146 val_mae=0.642754
+[lstm_regressor/0039][Epoch 059] train_mse=0.185929 val_mae=0.631817
+[lstm_regressor/0039][Epoch 060] train_mse=0.183626 val_mae=0.659648 (checkpoint saved)
+[lstm_regressor/0039][Epoch 061] train_mse=0.179759 val_mae=0.634636
+[lstm_regressor/0039][Epoch 062] train_mse=0.180034 val_mae=0.721497
+[lstm_regressor/0039][Epoch 063] train_mse=0.183568 val_mae=0.613309
+[lstm_regressor/0039][Epoch 064] train_mse=0.176535 val_mae=0.675758
+[lstm_regressor/0039][Epoch 065] train_mse=0.185443 val_mae=0.698338
+[lstm_regressor/0039][Epoch 066] train_mse=0.178664 val_mae=0.638488
+[lstm_regressor/0039][Epoch 067] train_mse=0.175964 val_mae=0.681791
+[lstm_regressor/0039][Epoch 068] train_mse=0.176719 val_mae=0.659717
+[lstm_regressor/0039][Epoch 069] train_mse=0.175971 val_mae=0.677978
+[lstm_regressor/0039][Epoch 070] train_mse=0.175205 val_mae=0.649310 (checkpoint saved)
+[lstm_regressor/0039][Epoch 071] train_mse=0.171228 val_mae=0.637478
+[lstm_regressor/0039][Epoch 072] train_mse=0.176265 val_mae=0.662424
+[lstm_regressor/0039][Epoch 073] train_mse=0.170268 val_mae=0.628803
+[lstm_regressor/0039][Epoch 074] train_mse=0.169874 val_mae=0.623052
+[lstm_regressor/0039][Epoch 075] train_mse=0.175920 val_mae=0.578488
+[lstm_regressor/0039][Epoch 076] train_mse=0.170566 val_mae=0.599467
+[lstm_regressor/0039][Epoch 077] train_mse=0.170272 val_mae=0.599439
+[lstm_regressor/0039][Epoch 078] train_mse=0.168229 val_mae=0.643046
+[lstm_regressor/0039][Epoch 079] train_mse=0.166537 val_mae=0.654384
+[lstm_regressor/0039][Epoch 080] train_mse=0.162916 val_mae=0.610407 (checkpoint saved)
+[lstm_regressor/0039][Epoch 081] train_mse=0.165766 val_mae=0.686965
+[lstm_regressor/0039][Epoch 082] train_mse=0.160659 val_mae=0.613982
+[lstm_regressor/0039][Epoch 083] train_mse=0.155908 val_mae=0.626894
+[lstm_regressor/0039][Epoch 084] train_mse=0.169036 val_mae=0.621426
+[lstm_regressor/0039][Epoch 085] train_mse=0.161784 val_mae=0.649418
+[lstm_regressor/0039][Epoch 086] train_mse=0.149819 val_mae=0.631619
+[lstm_regressor/0039][Epoch 087] train_mse=0.148480 val_mae=0.612546
+[lstm_regressor/0039][Epoch 088] train_mse=0.153466 val_mae=0.603111
+[lstm_regressor/0039][Epoch 089] train_mse=0.150190 val_mae=0.623504
+[lstm_regressor/0039][Epoch 090] train_mse=0.154196 val_mae=0.636224 (checkpoint saved)
+[lstm_regressor/0039][Epoch 091] train_mse=0.157651 val_mae=0.643727
+[lstm_regressor/0039][Epoch 092] train_mse=0.153705 val_mae=0.620604
+[lstm_regressor/0039][Epoch 093] train_mse=0.147695 val_mae=0.615221
+[lstm_regressor/0039][Epoch 094] train_mse=0.145564 val_mae=0.619818
+[lstm_regressor/0039][Epoch 095] train_mse=0.145079 val_mae=0.626799
+[lstm_regressor/0039][Epoch 096] train_mse=0.154143 val_mae=0.624916
+[lstm_regressor/0039][Epoch 097] train_mse=0.149996 val_mae=0.613416
+[lstm_regressor/0039][Epoch 098] train_mse=0.143947 val_mae=0.621492
+[lstm_regressor/0039][Epoch 099] train_mse=0.144355 val_mae=0.638853
+[lstm_regressor/0039][Epoch 100] train_mse=0.144805 val_mae=0.661291 (checkpoint saved)
+[lstm_regressor/0039][Epoch 101] train_mse=0.148036 val_mae=0.630801
+[lstm_regressor/0039][Epoch 102] train_mse=0.145003 val_mae=0.606447
+[lstm_regressor/0039][Epoch 103] train_mse=0.146777 val_mae=0.623336
+[lstm_regressor/0039][Epoch 104] train_mse=0.144406 val_mae=0.614338
+[lstm_regressor/0039][Epoch 105] train_mse=0.142680 val_mae=0.629982
+[lstm_regressor/0039][Epoch 106] train_mse=0.144497 val_mae=0.630586
+[lstm_regressor/0039][Epoch 107] train_mse=0.149700 val_mae=0.625913
+[lstm_regressor/0039][Epoch 108] train_mse=0.145366 val_mae=0.623843
+[lstm_regressor/0039][Epoch 109] train_mse=0.143379 val_mae=0.624025
+[lstm_regressor/0039][Epoch 110] train_mse=0.144286 val_mae=0.595309 (checkpoint saved)
+[lstm_regressor/0039][Epoch 111] train_mse=0.157208 val_mae=0.627623
+[lstm_regressor/0039][Epoch 112] train_mse=0.139116 val_mae=0.638323
+[lstm_regressor/0039][Epoch 113] train_mse=0.139573 val_mae=0.629014
+[lstm_regressor/0039][Epoch 114] train_mse=0.140821 val_mae=0.631462
+[lstm_regressor/0039][Epoch 115] train_mse=0.142003 val_mae=0.571585
+[lstm_regressor/0039][Epoch 116] train_mse=0.148774 val_mae=0.628089
+[lstm_regressor/0039][Epoch 117] train_mse=0.138561 val_mae=0.610216
+[lstm_regressor/0039][Epoch 118] train_mse=0.144187 val_mae=0.599254
+[lstm_regressor/0039][Epoch 119] train_mse=0.139869 val_mae=0.622553
+[lstm_regressor/0039][Epoch 120] train_mse=0.138687 val_mae=0.614727 (checkpoint saved)
+[lstm_regressor/0039][Epoch 121] train_mse=0.135643 val_mae=0.621475
+[lstm_regressor/0039][Epoch 122] train_mse=0.137730 val_mae=0.631030
+[lstm_regressor/0039][Epoch 123] train_mse=0.141499 val_mae=0.623026
+[lstm_regressor/0039][Epoch 124] train_mse=0.138548 val_mae=0.628962
+[lstm_regressor/0039][Epoch 125] train_mse=0.133891 val_mae=0.625699
+[lstm_regressor/0039][Epoch 126] train_mse=0.145027 val_mae=0.621441
+[lstm_regressor/0039][Epoch 127] train_mse=0.135723 val_mae=0.624974
+[lstm_regressor/0039][Epoch 128] train_mse=0.135247 val_mae=0.628136
+[lstm_regressor/0039][Epoch 129] train_mse=0.135177 val_mae=0.615284
+[lstm_regressor/0039][Epoch 130] train_mse=0.139639 val_mae=0.622065 (checkpoint saved)
+[lstm_regressor/0039][Epoch 131] train_mse=0.133461 val_mae=0.627327
+[lstm_regressor/0039][Epoch 132] train_mse=0.133475 val_mae=0.625673
+[lstm_regressor/0039][Epoch 133] train_mse=0.145217 val_mae=0.609271
+[lstm_regressor/0039][Epoch 134] train_mse=0.134823 val_mae=0.630784
+[lstm_regressor/0039][Epoch 135] train_mse=0.132956 val_mae=0.632590
+[lstm_regressor/0039][Epoch 136] train_mse=0.131170 val_mae=0.626330
+[lstm_regressor/0039][Epoch 137] train_mse=0.131949 val_mae=0.645633
+[lstm_regressor/0039][Epoch 138] train_mse=0.134918 val_mae=0.638563
+[lstm_regressor/0039][Epoch 139] train_mse=0.136767 val_mae=0.626748
+[lstm_regressor/0039][Epoch 140] train_mse=0.135071 val_mae=0.617947 (checkpoint saved)
+[lstm_regressor/0039][Epoch 141] train_mse=0.133914 val_mae=0.623020
+[lstm_regressor/0039][Epoch 142] train_mse=0.130536 val_mae=0.640567
+[lstm_regressor/0039][Epoch 143] train_mse=0.132724 val_mae=0.627123
+[lstm_regressor/0039][Epoch 144] train_mse=0.128545 val_mae=0.630443
+[lstm_regressor/0039][Epoch 145] train_mse=0.130470 val_mae=0.636243
+[lstm_regressor/0039][Epoch 146] train_mse=0.132053 val_mae=0.637026
+[lstm_regressor/0039][Epoch 147] train_mse=0.133447 val_mae=0.614252
+[lstm_regressor/0039][Epoch 148] train_mse=0.138809 val_mae=0.619904
+[lstm_regressor/0039][Epoch 149] train_mse=0.128357 val_mae=0.654034
+[lstm_regressor/0039][Epoch 150] train_mse=0.129389 val_mae=0.608957 (checkpoint saved)
+[lstm_regressor/0039][Epoch 151] train_mse=0.136003 val_mae=0.693049
+[lstm_regressor/0039][Epoch 152] train_mse=0.130497 val_mae=0.631295
+[lstm_regressor/0039][Epoch 153] train_mse=0.124652 val_mae=0.632397
+[lstm_regressor/0039][Epoch 154] train_mse=0.126593 val_mae=0.645788
+[lstm_regressor/0039][Epoch 155] train_mse=0.130097 val_mae=0.601856
+[lstm_regressor/0039][Epoch 156] train_mse=0.124511 val_mae=0.608702
+[lstm_regressor/0039][Epoch 157] train_mse=0.135705 val_mae=0.636741
+[lstm_regressor/0039][Epoch 158] train_mse=0.124602 val_mae=0.632512
+[lstm_regressor/0039][Epoch 159] train_mse=0.128698 val_mae=0.611443
+[lstm_regressor/0039][Epoch 160] train_mse=0.125559 val_mae=0.648822 (checkpoint saved)
+[lstm_regressor/0039][Epoch 161] train_mse=0.121586 val_mae=0.663837
+[lstm_regressor/0039][Epoch 162] train_mse=0.123728 val_mae=0.592539
+[lstm_regressor/0039][Epoch 163] train_mse=0.130687 val_mae=0.582450
+[lstm_regressor/0039][Epoch 164] train_mse=0.136448 val_mae=0.626227
+[lstm_regressor/0039][Epoch 165] train_mse=0.124571 val_mae=0.610003
+[lstm_regressor/0039][Epoch 166] train_mse=0.120445 val_mae=0.616523
+[lstm_regressor/0039][Epoch 167] train_mse=0.122508 val_mae=0.605475
+[lstm_regressor/0039][Epoch 168] train_mse=0.120730 val_mae=0.639799
+[lstm_regressor/0039][Epoch 169] train_mse=0.120274 val_mae=0.647400
+[lstm_regressor/0039][Epoch 170] train_mse=0.121110 val_mae=0.604824 (checkpoint saved)
+[lstm_regressor/0039][Epoch 171] train_mse=0.118443 val_mae=0.630693
+[lstm_regressor/0039][Epoch 172] train_mse=0.120632 val_mae=0.590548
+[lstm_regressor/0039][Epoch 173] train_mse=0.126244 val_mae=0.600918
+[lstm_regressor/0039][Epoch 174] train_mse=0.121914 val_mae=0.600762
+[lstm_regressor/0039][Epoch 175] train_mse=0.118565 val_mae=0.649997
+[lstm_regressor/0039][Epoch 176] train_mse=0.120040 val_mae=0.618357
+[lstm_regressor/0039][Epoch 177] train_mse=0.120296 val_mae=0.609979
+[lstm_regressor/0039][Epoch 178] train_mse=0.120864 val_mae=0.627728
+[lstm_regressor/0039][Epoch 179] train_mse=0.122621 val_mae=0.614860
+[lstm_regressor/0039][Epoch 180] train_mse=0.121706 val_mae=0.616274 (checkpoint saved)
+[lstm_regressor/0039][Epoch 181] train_mse=0.125127 val_mae=0.599187
+[lstm_regressor/0039][Epoch 182] train_mse=0.117757 val_mae=0.581623
+[lstm_regressor/0039][Epoch 183] train_mse=0.122112 val_mae=0.588070
+[lstm_regressor/0039][Epoch 184] train_mse=0.116418 val_mae=0.613710
+[lstm_regressor/0039][Epoch 185] train_mse=0.123721 val_mae=0.627056
+[lstm_regressor/0039][Epoch 186] train_mse=0.118947 val_mae=0.613665
+[lstm_regressor/0039][Epoch 187] train_mse=0.117954 val_mae=0.629136
+[lstm_regressor/0039][Epoch 188] train_mse=0.119780 val_mae=0.615734
+[lstm_regressor/0039][Epoch 189] train_mse=0.116096 val_mae=0.587651
+[lstm_regressor/0039][Epoch 190] train_mse=0.119596 val_mae=0.595803 (checkpoint saved)
+[lstm_regressor/0039][Epoch 191] train_mse=0.119059 val_mae=0.585928
+[lstm_regressor/0039][Epoch 192] train_mse=0.118200 val_mae=0.647747
+[lstm_regressor/0039][Epoch 193] train_mse=0.123055 val_mae=0.581453
+[lstm_regressor/0039][Epoch 194] train_mse=0.118429 val_mae=0.589978
+[lstm_regressor/0039][Epoch 195] train_mse=0.116219 val_mae=0.575494
+[lstm_regressor/0039][Epoch 196] train_mse=0.121117 val_mae=0.591958
+[lstm_regressor/0039][Epoch 197] train_mse=0.120948 val_mae=0.630648
+[lstm_regressor/0039][Epoch 198] train_mse=0.120486 val_mae=0.593067
+[lstm_regressor/0039][Epoch 199] train_mse=0.115214 val_mae=0.593100
+[lstm_regressor/0039][Epoch 200] train_mse=0.116789 val_mae=0.618649 (checkpoint saved)
+[lstm_regressor/0039][Epoch 201] train_mse=0.114988 val_mae=0.598343
+[lstm_regressor/0039][Epoch 202] train_mse=0.116358 val_mae=0.653273
+[lstm_regressor/0039][Epoch 203] train_mse=0.115087 val_mae=0.615295
+[lstm_regressor/0039][Epoch 204] train_mse=0.115886 val_mae=0.642746
+[lstm_regressor/0039][Epoch 205] train_mse=0.119587 val_mae=0.578451
+[lstm_regressor/0039][Epoch 206] train_mse=0.121008 val_mae=0.567635
+[lstm_regressor/0039][Epoch 207] train_mse=0.116563 val_mae=0.600588
+[lstm_regressor/0039][Epoch 208] train_mse=0.116570 val_mae=0.612300
+[lstm_regressor/0039][Epoch 209] train_mse=0.117586 val_mae=0.643904
+[lstm_regressor/0039][Epoch 210] train_mse=0.124791 val_mae=0.627988 (checkpoint saved)
+[lstm_regressor/0039][Epoch 211] train_mse=0.115388 val_mae=0.571919
+[lstm_regressor/0039][Epoch 212] train_mse=0.113086 val_mae=0.631444
+[lstm_regressor/0039][Epoch 213] train_mse=0.113109 val_mae=0.588751
+[lstm_regressor/0039][Epoch 214] train_mse=0.116009 val_mae=0.625421
+[lstm_regressor/0039][Epoch 215] train_mse=0.125622 val_mae=0.616681
+[lstm_regressor/0039][Epoch 216] train_mse=0.115893 val_mae=0.627757
+[lstm_regressor/0039][Epoch 217] train_mse=0.114998 val_mae=0.615687
+[lstm_regressor/0039][Epoch 218] train_mse=0.114991 val_mae=0.590259
+[lstm_regressor/0039][Epoch 219] train_mse=0.115828 val_mae=0.577226
+[lstm_regressor/0039][Epoch 220] train_mse=0.115515 val_mae=0.676977 (checkpoint saved)
+[lstm_regressor/0039][Epoch 221] train_mse=0.116488 val_mae=0.564456
+[lstm_regressor/0039][Epoch 222] train_mse=0.114335 val_mae=0.591323
+[lstm_regressor/0039][Epoch 223] train_mse=0.118278 val_mae=0.669159
+[lstm_regressor/0039][Epoch 224] train_mse=0.116340 val_mae=0.565723
+[lstm_regressor/0039][Epoch 225] train_mse=0.114493 val_mae=0.610186
+[lstm_regressor/0039][Epoch 226] train_mse=0.111238 val_mae=0.646149
+[lstm_regressor/0039][Epoch 227] train_mse=0.111354 val_mae=0.617135
+[lstm_regressor/0039][Epoch 228] train_mse=0.111592 val_mae=0.620819
+[lstm_regressor/0039][Epoch 229] train_mse=0.111502 val_mae=0.648770
+[lstm_regressor/0039][Epoch 230] train_mse=0.114386 val_mae=0.640223 (checkpoint saved)
+[lstm_regressor/0039][Epoch 231] train_mse=0.111256 val_mae=0.612540
+[lstm_regressor/0039][Epoch 232] train_mse=0.109698 val_mae=0.596800
+[lstm_regressor/0039][Epoch 233] train_mse=0.115130 val_mae=0.610792
+[lstm_regressor/0039][Epoch 234] train_mse=0.126530 val_mae=0.633152
+[lstm_regressor/0039][Epoch 235] train_mse=0.117321 val_mae=0.579889
+[lstm_regressor/0039][Epoch 236] train_mse=0.110446 val_mae=0.586576
+[lstm_regressor/0039][Epoch 237] train_mse=0.111397 val_mae=0.597334
+[lstm_regressor/0039][Epoch 238] train_mse=0.117751 val_mae=0.590566
+[lstm_regressor/0039][Epoch 239] train_mse=0.113389 val_mae=0.590887
+[lstm_regressor/0039][Epoch 240] train_mse=0.110646 val_mae=0.599039 (checkpoint saved)
+[lstm_regressor/0039][Epoch 241] train_mse=0.110513 val_mae=0.623600
+[lstm_regressor/0039][Epoch 242] train_mse=0.109896 val_mae=0.623237
+[lstm_regressor/0039][Epoch 243] train_mse=0.107689 val_mae=0.626380
+[lstm_regressor/0039][Epoch 244] train_mse=0.110485 val_mae=0.588681
+[lstm_regressor/0039][Epoch 245] train_mse=0.113419 val_mae=0.591464
+[lstm_regressor/0039][Epoch 246] train_mse=0.110965 val_mae=0.618781
+[lstm_regressor/0039][Epoch 247] train_mse=0.110218 val_mae=0.637325
+[lstm_regressor/0039][Epoch 248] train_mse=0.111658 val_mae=0.592580
+[lstm_regressor/0039][Epoch 249] train_mse=0.111645 val_mae=0.636176
+[lstm_regressor/0039][Epoch 250] train_mse=0.111016 val_mae=0.586619 (checkpoint saved)
+[lstm_regressor/0039][Epoch 251] train_mse=0.110755 val_mae=0.589449
+[lstm_regressor/0039][Epoch 252] train_mse=0.107580 val_mae=0.608951
+[lstm_regressor/0039][Epoch 253] train_mse=0.114622 val_mae=0.662011
+[lstm_regressor/0039][Epoch 254] train_mse=0.108317 val_mae=0.647960
+[lstm_regressor/0039][Epoch 255] train_mse=0.109088 val_mae=0.559136
+[lstm_regressor/0039][Epoch 256] train_mse=0.109083 val_mae=0.604076
+[lstm_regressor/0039][Epoch 257] train_mse=0.104780 val_mae=0.636050
+[lstm_regressor/0039][Epoch 258] train_mse=0.119823 val_mae=0.606631
+[lstm_regressor/0039][Epoch 259] train_mse=0.106812 val_mae=0.613432
+[lstm_regressor/0039][Epoch 260] train_mse=0.105120 val_mae=0.620666 (checkpoint saved)
+[lstm_regressor/0039][Epoch 261] train_mse=0.110546 val_mae=0.616149
+[lstm_regressor/0039][Epoch 262] train_mse=0.108713 val_mae=0.607734
+[lstm_regressor/0039][Epoch 263] train_mse=0.108622 val_mae=0.641279
+[lstm_regressor/0039][Epoch 264] train_mse=0.108803 val_mae=0.644544
+[lstm_regressor/0039][Epoch 265] train_mse=0.105575 val_mae=0.649727
+[lstm_regressor/0039][Epoch 266] train_mse=0.108581 val_mae=0.640390
+[lstm_regressor/0039][Epoch 267] train_mse=0.111560 val_mae=0.603649
+[lstm_regressor/0039][Epoch 268] train_mse=0.107994 val_mae=0.593519
+[lstm_regressor/0039][Epoch 269] train_mse=0.109047 val_mae=0.643397
+[lstm_regressor/0039][Epoch 270] train_mse=0.109810 val_mae=0.628054 (checkpoint saved)
+[lstm_regressor/0039][Epoch 271] train_mse=0.111943 val_mae=0.664334
+[lstm_regressor/0039][Epoch 272] train_mse=0.109398 val_mae=0.654565
+[lstm_regressor/0039][Epoch 273] train_mse=0.107598 val_mae=0.598158
+[lstm_regressor/0039][Epoch 274] train_mse=0.110004 val_mae=0.562604
+[lstm_regressor/0039][Epoch 275] train_mse=0.104447 val_mae=0.657165
+[lstm_regressor/0039][Epoch 276] train_mse=0.104295 val_mae=0.642141
+[lstm_regressor/0039][Epoch 277] train_mse=0.107274 val_mae=0.601902
+[lstm_regressor/0039][Epoch 278] train_mse=0.106248 val_mae=0.656685
+[lstm_regressor/0039][Epoch 279] train_mse=0.112523 val_mae=0.612193
+[lstm_regressor/0039][Epoch 280] train_mse=0.103297 val_mae=0.649842 (checkpoint saved)
+[lstm_regressor/0039][Epoch 281] train_mse=0.107438 val_mae=0.600228
+[lstm_regressor/0039][Epoch 282] train_mse=0.105857 val_mae=0.607465
+[lstm_regressor/0039][Epoch 283] train_mse=0.104068 val_mae=0.593462
+[lstm_regressor/0039][Epoch 284] train_mse=0.114519 val_mae=0.630585
+[lstm_regressor/0039][Epoch 285] train_mse=0.104058 val_mae=0.641307
+[lstm_regressor/0039][Epoch 286] train_mse=0.107821 val_mae=0.671410
+[lstm_regressor/0039][Epoch 287] train_mse=0.110227 val_mae=0.682498
+[lstm_regressor/0039][Epoch 288] train_mse=0.106025 val_mae=0.629202
+[lstm_regressor/0039][Epoch 289] train_mse=0.102989 val_mae=0.647662
+[lstm_regressor/0039][Epoch 290] train_mse=0.107673 val_mae=0.597760 (checkpoint saved)
+[lstm_regressor/0039][Epoch 291] train_mse=0.102352 val_mae=0.622376
+[lstm_regressor/0039][Epoch 292] train_mse=0.105545 val_mae=0.630936
+[lstm_regressor/0039][Epoch 293] train_mse=0.106016 val_mae=0.591150
+[lstm_regressor/0039][Epoch 294] train_mse=0.107202 val_mae=0.654465
+[lstm_regressor/0039][Epoch 295] train_mse=0.103892 val_mae=0.644191
+[lstm_regressor/0039][Epoch 296] train_mse=0.099835 val_mae=0.642039
+[lstm_regressor/0039][Epoch 297] train_mse=0.103606 val_mae=0.599436
+[lstm_regressor/0039][Epoch 298] train_mse=0.106367 val_mae=0.626507
+[lstm_regressor/0039][Epoch 299] train_mse=0.106068 val_mae=0.622351
+[lstm_regressor/0039][Epoch 300] train_mse=0.104109 val_mae=0.656387 (checkpoint saved)
+[lstm_regressor/0039][Epoch 301] train_mse=0.110163 val_mae=0.634868
+[lstm_regressor/0039][Epoch 302] train_mse=0.103433 val_mae=0.638035
+[lstm_regressor/0039][Epoch 303] train_mse=0.102404 val_mae=0.611109
+[lstm_regressor/0039][Epoch 304] train_mse=0.103165 val_mae=0.637793
+[lstm_regressor/0039][Epoch 305] train_mse=0.105712 val_mae=0.660840
+[lstm_regressor/0039][Epoch 306] train_mse=0.104135 val_mae=0.649522
+[lstm_regressor/0039][Epoch 307] train_mse=0.101490 val_mae=0.612405
+[lstm_regressor/0039][Epoch 308] train_mse=0.104148 val_mae=0.661195
+[lstm_regressor/0039][Epoch 309] train_mse=0.107001 val_mae=0.648466
+[lstm_regressor/0039][Epoch 310] train_mse=0.102601 val_mae=0.662179 (checkpoint saved)
+[lstm_regressor/0039][Epoch 311] train_mse=0.103198 val_mae=0.665568
+[lstm_regressor/0039][Epoch 312] train_mse=0.106161 val_mae=0.670112
+[lstm_regressor/0039][Epoch 313] train_mse=0.105011 val_mae=0.617521
+[lstm_regressor/0039][Epoch 314] train_mse=0.104731 val_mae=0.620212
+[lstm_regressor/0039][Epoch 315] train_mse=0.103546 val_mae=0.663340
+[lstm_regressor/0039][Epoch 316] train_mse=0.105885 val_mae=0.613789
+[lstm_regressor/0039][Epoch 317] train_mse=0.102556 val_mae=0.637727
+[lstm_regressor/0039][Epoch 318] train_mse=0.103417 val_mae=0.652128
+[lstm_regressor/0039][Epoch 319] train_mse=0.101635 val_mae=0.660900
+[lstm_regressor/0039][Epoch 320] train_mse=0.101297 val_mae=0.688094 (checkpoint saved)
+[lstm_regressor/0039][Epoch 321] train_mse=0.103694 val_mae=0.648260
+[lstm_regressor/0039][Epoch 322] train_mse=0.099976 val_mae=0.651521
+[lstm_regressor/0039][Epoch 323] train_mse=0.102995 val_mae=0.659524
+[lstm_regressor/0039][Epoch 324] train_mse=0.101089 val_mae=0.686083
+[lstm_regressor/0039][Epoch 325] train_mse=0.104714 val_mae=0.627147
+[lstm_regressor/0039][Epoch 326] train_mse=0.104854 val_mae=0.651434
+[lstm_regressor/0039][Epoch 327] train_mse=0.101255 val_mae=0.629951
+[lstm_regressor/0039][Epoch 328] train_mse=0.099877 val_mae=0.668190
+[lstm_regressor/0039][Epoch 329] train_mse=0.100908 val_mae=0.637347
+[lstm_regressor/0039][Epoch 330] train_mse=0.106030 val_mae=0.652669 (checkpoint saved)
+[lstm_regressor/0039][Epoch 331] train_mse=0.100539 val_mae=0.645505
+[lstm_regressor/0039][Epoch 332] train_mse=0.102321 val_mae=0.649344
+[lstm_regressor/0039][Epoch 333] train_mse=0.100691 val_mae=0.647471
+[lstm_regressor/0039][Epoch 334] train_mse=0.102221 val_mae=0.614078
+[lstm_regressor/0039][Epoch 335] train_mse=0.106361 val_mae=0.595190
+[lstm_regressor/0039][Epoch 336] train_mse=0.100336 val_mae=0.640671
+[lstm_regressor/0039][Epoch 337] train_mse=0.101612 val_mae=0.672760
+[lstm_regressor/0039][Epoch 338] train_mse=0.100141 val_mae=0.650881
+[lstm_regressor/0039][Epoch 339] train_mse=0.103798 val_mae=0.635848
+[lstm_regressor/0039][Epoch 340] train_mse=0.103027 val_mae=0.673944 (checkpoint saved)
+[lstm_regressor/0039][Epoch 341] train_mse=0.098454 val_mae=0.654269
+[lstm_regressor/0039][Epoch 342] train_mse=0.099195 val_mae=0.662474
+[lstm_regressor/0039][Epoch 343] train_mse=0.098034 val_mae=0.655343
+[lstm_regressor/0039][Epoch 344] train_mse=0.100131 val_mae=0.634479
+[lstm_regressor/0039][Epoch 345] train_mse=0.099048 val_mae=0.643372
+[lstm_regressor/0039][Epoch 346] train_mse=0.097587 val_mae=0.644676
+[lstm_regressor/0039][Epoch 347] train_mse=0.098324 val_mae=0.629979
+[lstm_regressor/0039][Epoch 348] train_mse=0.104076 val_mae=0.600453
+[lstm_regressor/0039][Epoch 349] train_mse=0.101777 val_mae=0.652661
+[lstm_regressor/0039][Epoch 350] train_mse=0.097946 val_mae=0.664530 (checkpoint saved)
+[lstm_regressor/0039][Epoch 351] train_mse=0.103499 val_mae=0.640758
+[lstm_regressor/0039][Epoch 352] train_mse=0.099243 val_mae=0.616969
+[lstm_regressor/0039][Epoch 353] train_mse=0.106517 val_mae=0.663965
+[lstm_regressor/0039][Epoch 354] train_mse=0.099091 val_mae=0.629030
+[lstm_regressor/0039][Epoch 355] train_mse=0.096541 val_mae=0.661002
+[lstm_regressor/0039][Epoch 356] train_mse=0.098007 val_mae=0.652045
+[lstm_regressor/0039][Epoch 357] train_mse=0.099126 val_mae=0.641173
+[lstm_regressor/0039][Epoch 358] train_mse=0.097767 val_mae=0.662836
+[lstm_regressor/0039][Epoch 359] train_mse=0.103396 val_mae=0.636348
+[lstm_regressor/0039][Epoch 360] train_mse=0.102037 val_mae=0.690489 (checkpoint saved)
+[lstm_regressor/0039][Epoch 361] train_mse=0.102803 val_mae=0.667772
+[lstm_regressor/0039][Epoch 362] train_mse=0.099299 val_mae=0.662655
+[lstm_regressor/0039][Epoch 363] train_mse=0.099074 val_mae=0.694979
+[lstm_regressor/0039][Epoch 364] train_mse=0.098992 val_mae=0.641236
+[lstm_regressor/0039][Epoch 365] train_mse=0.096340 val_mae=0.721523
+[lstm_regressor/0039][Epoch 366] train_mse=0.103790 val_mae=0.693963
+[lstm_regressor/0039][Epoch 367] train_mse=0.096843 val_mae=0.650925
+[lstm_regressor/0039][Epoch 368] train_mse=0.096822 val_mae=0.652248
+[lstm_regressor/0039][Epoch 369] train_mse=0.095385 val_mae=0.672558
+[lstm_regressor/0039][Epoch 370] train_mse=0.098101 val_mae=0.634279 (checkpoint saved)
+[lstm_regressor/0039][Epoch 371] train_mse=0.098099 val_mae=0.678712
+[lstm_regressor/0039][Epoch 372] train_mse=0.101899 val_mae=0.654000
+[lstm_regressor/0039][Epoch 373] train_mse=0.100144 val_mae=0.674489
+[lstm_regressor/0039][Epoch 374] train_mse=0.099898 val_mae=0.636649
+[lstm_regressor/0039][Epoch 375] train_mse=0.094821 val_mae=0.653520
+[lstm_regressor/0039][Epoch 376] train_mse=0.099180 val_mae=0.648038
+[lstm_regressor/0039][Epoch 377] train_mse=0.101058 val_mae=0.655694
+[lstm_regressor/0039][Epoch 378] train_mse=0.099517 val_mae=0.656999
+[lstm_regressor/0039][Epoch 379] train_mse=0.098588 val_mae=0.666624
+[lstm_regressor/0039][Epoch 380] train_mse=0.095286 val_mae=0.686153 (checkpoint saved)
+[lstm_regressor/0039][Epoch 381] train_mse=0.098798 val_mae=0.656292
+[lstm_regressor/0039][Epoch 382] train_mse=0.096704 val_mae=0.685536
+[lstm_regressor/0039][Epoch 383] train_mse=0.094810 val_mae=0.678016
+[lstm_regressor/0039][Epoch 384] train_mse=0.093592 val_mae=0.644706
+[lstm_regressor/0039][Epoch 385] train_mse=0.098049 val_mae=0.681554
+[lstm_regressor/0039][Epoch 386] train_mse=0.094310 val_mae=0.669028
+[lstm_regressor/0039][Epoch 387] train_mse=0.098136 val_mae=0.632258
+[lstm_regressor/0039][Epoch 388] train_mse=0.094539 val_mae=0.675129
+[lstm_regressor/0039][Epoch 389] train_mse=0.097828 val_mae=0.683258
+[lstm_regressor/0039][Epoch 390] train_mse=0.094215 val_mae=0.669835 (checkpoint saved)
+[lstm_regressor/0039][Epoch 391] train_mse=0.096951 val_mae=0.654301
+[lstm_regressor/0039][Epoch 392] train_mse=0.095616 val_mae=0.694545
+[lstm_regressor/0039][Epoch 393] train_mse=0.098712 val_mae=0.701347
+[lstm_regressor/0039][Epoch 394] train_mse=0.092316 val_mae=0.688152
+[lstm_regressor/0039][Epoch 395] train_mse=0.093971 val_mae=0.645213
+[lstm_regressor/0039][Epoch 396] train_mse=0.094250 val_mae=0.676947
+[lstm_regressor/0039][Epoch 397] train_mse=0.100133 val_mae=0.691177
+[lstm_regressor/0039][Epoch 398] train_mse=0.101149 val_mae=0.674335
+[lstm_regressor/0039][Epoch 399] train_mse=0.096163 val_mae=0.638459
+[lstm_regressor/0039][Epoch 400] train_mse=0.093517 val_mae=0.662798 (checkpoint saved)
+[lstm_regressor/0039][Epoch 401] train_mse=0.092750 val_mae=0.650677
+[lstm_regressor/0039][Epoch 402] train_mse=0.094247 val_mae=0.682401
+[lstm_regressor/0039][Epoch 403] train_mse=0.096128 val_mae=0.659007
+[lstm_regressor/0039][Epoch 404] train_mse=0.095327 val_mae=0.636097
+[lstm_regressor/0039][Epoch 405] train_mse=0.093770 val_mae=0.680148
+[lstm_regressor/0039][Epoch 406] train_mse=0.092585 val_mae=0.716418
+[lstm_regressor/0039][Epoch 407] train_mse=0.100360 val_mae=0.657718
+[lstm_regressor/0039][Epoch 408] train_mse=0.092061 val_mae=0.659240
+[lstm_regressor/0039][Epoch 409] train_mse=0.093178 val_mae=0.648876
+[lstm_regressor/0039][Epoch 410] train_mse=0.096221 val_mae=0.703582 (checkpoint saved)
+[lstm_regressor/0039][Epoch 411] train_mse=0.094998 val_mae=0.687971
+[lstm_regressor/0039][Epoch 412] train_mse=0.095159 val_mae=0.648559
+[lstm_regressor/0039][Epoch 413] train_mse=0.098600 val_mae=0.660460
+[lstm_regressor/0039][Epoch 414] train_mse=0.092785 val_mae=0.681491
+[lstm_regressor/0039][Epoch 415] train_mse=0.094355 val_mae=0.644669
+[lstm_regressor/0039][Epoch 416] train_mse=0.091747 val_mae=0.684018
+[lstm_regressor/0039][Epoch 417] train_mse=0.093564 val_mae=0.662421
+[lstm_regressor/0039][Epoch 418] train_mse=0.093201 val_mae=0.683358
+[lstm_regressor/0039][Epoch 419] train_mse=0.093187 val_mae=0.674557
+[lstm_regressor/0039][Epoch 420] train_mse=0.093233 val_mae=0.671781 (checkpoint saved)
+[lstm_regressor/0039][Epoch 421] train_mse=0.093490 val_mae=0.635926
+[lstm_regressor/0039][Epoch 422] train_mse=0.095826 val_mae=0.688806
+[lstm_regressor/0039][Epoch 423] train_mse=0.093776 val_mae=0.700895
+[lstm_regressor/0039][Epoch 424] train_mse=0.099510 val_mae=0.680538
+[lstm_regressor/0039][Epoch 425] train_mse=0.092192 val_mae=0.666901
+[lstm_regressor/0039][Epoch 426] train_mse=0.094863 val_mae=0.693665
+[lstm_regressor/0039][Epoch 427] train_mse=0.091885 val_mae=0.706529
+[lstm_regressor/0039][Epoch 428] train_mse=0.093705 val_mae=0.698863
+[lstm_regressor/0039][Epoch 429] train_mse=0.089201 val_mae=0.676904
+[lstm_regressor/0039][Epoch 430] train_mse=0.093894 val_mae=0.660977 (checkpoint saved)
+[lstm_regressor/0039][Epoch 431] train_mse=0.093358 val_mae=0.672268
+[lstm_regressor/0039][Epoch 432] train_mse=0.095185 val_mae=0.685857
+[lstm_regressor/0039][Epoch 433] train_mse=0.092977 val_mae=0.676117
+[lstm_regressor/0039][Epoch 434] train_mse=0.092503 val_mae=0.688645
+[lstm_regressor/0039][Epoch 435] train_mse=0.089945 val_mae=0.678621
+[lstm_regressor/0039][Epoch 436] train_mse=0.088826 val_mae=0.678250
+[lstm_regressor/0039][Epoch 437] train_mse=0.088442 val_mae=0.686058
+[lstm_regressor/0039][Epoch 438] train_mse=0.090905 val_mae=0.709443
+[lstm_regressor/0039][Epoch 439] train_mse=0.096960 val_mae=0.715698
+[lstm_regressor/0039][Epoch 440] train_mse=0.092430 val_mae=0.657480 (checkpoint saved)
+[lstm_regressor/0039][Epoch 441] train_mse=0.091028 val_mae=0.645850
+[lstm_regressor/0039][Epoch 442] train_mse=0.092983 val_mae=0.684302
+[lstm_regressor/0039][Epoch 443] train_mse=0.093494 val_mae=0.652509
+[lstm_regressor/0039][Epoch 444] train_mse=0.093280 val_mae=0.635073
+[lstm_regressor/0039][Epoch 445] train_mse=0.091894 val_mae=0.679573
+[lstm_regressor/0039][Epoch 446] train_mse=0.087252 val_mae=0.669268
+[lstm_regressor/0039][Epoch 447] train_mse=0.087930 val_mae=0.689356
+[lstm_regressor/0039][Epoch 448] train_mse=0.093001 val_mae=0.698391
+[lstm_regressor/0039][Epoch 449] train_mse=0.090324 val_mae=0.678342
+[lstm_regressor/0039][Epoch 450] train_mse=0.091704 val_mae=0.676488 (checkpoint saved)
+[lstm_regressor/0039][Epoch 451] train_mse=0.088257 val_mae=0.664886
+[lstm_regressor/0039][Epoch 452] train_mse=0.088655 val_mae=0.669988
+[lstm_regressor/0039][Epoch 453] train_mse=0.088088 val_mae=0.676972
+[lstm_regressor/0039][Epoch 454] train_mse=0.087965 val_mae=0.688032
+[lstm_regressor/0039][Epoch 455] train_mse=0.088604 val_mae=0.694910
+[lstm_regressor/0039][Epoch 456] train_mse=0.090420 val_mae=0.658374
+[lstm_regressor/0039][Epoch 457] train_mse=0.087762 val_mae=0.666477
+[lstm_regressor/0039][Epoch 458] train_mse=0.088650 val_mae=0.694092
+[lstm_regressor/0039][Epoch 459] train_mse=0.090607 val_mae=0.663089
+[lstm_regressor/0039][Epoch 460] train_mse=0.093638 val_mae=0.698625 (checkpoint saved)
+[lstm_regressor/0039][Epoch 461] train_mse=0.092953 val_mae=0.663601
+[lstm_regressor/0039][Epoch 462] train_mse=0.086096 val_mae=0.675615
+[lstm_regressor/0039][Epoch 463] train_mse=0.086709 val_mae=0.686735
+[lstm_regressor/0039][Epoch 464] train_mse=0.090224 val_mae=0.645254
+[lstm_regressor/0039][Epoch 465] train_mse=0.091021 val_mae=0.643302
+[lstm_regressor/0039][Epoch 466] train_mse=0.091999 val_mae=0.694354
+[lstm_regressor/0039][Epoch 467] train_mse=0.090562 val_mae=0.695452
+[lstm_regressor/0039][Epoch 468] train_mse=0.088549 val_mae=0.682200
+[lstm_regressor/0039][Epoch 469] train_mse=0.087977 val_mae=0.679913
+[lstm_regressor/0039][Epoch 470] train_mse=0.088294 val_mae=0.693350 (checkpoint saved)
+[lstm_regressor/0039][Epoch 471] train_mse=0.085022 val_mae=0.695165
+[lstm_regressor/0039][Epoch 472] train_mse=0.088743 val_mae=0.652739
+[lstm_regressor/0039][Epoch 473] train_mse=0.091873 val_mae=0.717045
+[lstm_regressor/0039][Epoch 474] train_mse=0.094114 val_mae=0.668843
+[lstm_regressor/0039][Epoch 475] train_mse=0.088328 val_mae=0.670879
+[lstm_regressor/0039][Epoch 476] train_mse=0.085570 val_mae=0.690980
+[lstm_regressor/0039][Epoch 477] train_mse=0.087295 val_mae=0.665763
+[lstm_regressor/0039][Epoch 478] train_mse=0.087050 val_mae=0.664970
+[lstm_regressor/0039][Epoch 479] train_mse=0.086807 val_mae=0.716869
+[lstm_regressor/0039][Epoch 480] train_mse=0.087236 val_mae=0.691248 (checkpoint saved)
+[lstm_regressor/0039][Epoch 481] train_mse=0.088065 val_mae=0.708580
+[lstm_regressor/0039][Epoch 482] train_mse=0.088131 val_mae=0.644481
+[lstm_regressor/0039][Epoch 483] train_mse=0.086106 val_mae=0.685223
+[lstm_regressor/0039][Epoch 484] train_mse=0.089516 val_mae=0.707085
+[lstm_regressor/0039][Epoch 485] train_mse=0.087029 val_mae=0.687328
+[lstm_regressor/0039][Epoch 486] train_mse=0.085115 val_mae=0.676207
+[lstm_regressor/0039][Epoch 487] train_mse=0.083366 val_mae=0.690672
+[lstm_regressor/0039][Epoch 488] train_mse=0.095053 val_mae=0.666668
+[lstm_regressor/0039][Epoch 489] train_mse=0.087566 val_mae=0.680240
+[lstm_regressor/0039][Epoch 490] train_mse=0.086505 val_mae=0.677731 (checkpoint saved)
+[lstm_regressor/0039][Epoch 491] train_mse=0.086071 val_mae=0.657409
+[lstm_regressor/0039][Epoch 492] train_mse=0.083308 val_mae=0.708663
+[lstm_regressor/0039][Epoch 493] train_mse=0.086107 val_mae=0.682799
+[lstm_regressor/0039][Epoch 494] train_mse=0.086374 val_mae=0.664253
+[lstm_regressor/0039][Epoch 495] train_mse=0.086235 val_mae=0.668670
+[lstm_regressor/0039][Epoch 496] train_mse=0.088319 val_mae=0.673622
+[lstm_regressor/0039][Epoch 497] train_mse=0.085607 val_mae=0.675886
+[lstm_regressor/0039][Epoch 498] train_mse=0.086052 val_mae=0.697742
+[lstm_regressor/0039][Epoch 499] train_mse=0.086119 val_mae=0.691866
+[lstm_regressor/0039][Epoch 500] train_mse=0.087450 val_mae=0.665740 (checkpoint saved)
+Training artifacts saved to scripts/outputs/lstm_regressor/0039

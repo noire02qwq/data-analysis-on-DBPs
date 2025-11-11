@@ -1,17 +1,17 @@
 model:
   type: RNN
   name: rnn_regressor
-  history_length: 36
-  units: 160
-  num_layers: 3
-  dropout: 0.15
+  history_length: 48
+  units: 128
+  num_layers: 8
+  dropout: 0.2
 training:
-  max_epochs: 450
+  max_epochs: 500
   batch_size: 192
-  learning_rate: 0.0006
-  weight_decay: 0.0
+  learning_rate: 0.0004
+  weight_decay: 0.004
   checkpoint_interval: 10
-  seed: 314
+  seed: 947
 data:
   input_csv: data/time_aligned_data.csv
   timestamp_column: "Date, Time"
