@@ -37,6 +37,19 @@ pip install -r requirements.txt
 
 Detailed script options and outputs are documented in `scripts/README.md`.
 
+## Rate-Based Regression (变化率回归1115)
+
+The `变化率回归1115.md` brief swaps each target from an absolute value to the RT-relative delta `((PPL - RT) / RT)` so that models learn smoother distributions but final metrics remain in the original value domain. This repository now ships a parallel set of scripts prefixed with `rate_`:
+
+| Step | Command |
+| --- | --- |
+| Train | `python scripts/rate_train_regression.py --config models/configs/<config>.yaml` |
+| Test | `python scripts/rate_test_regression.py --model-dir scripts/outputs/rate_<model_name>` |
+| Autotune LSTM | `nohup python scripts/rate_autotune_lstm.py > rate_autotune_lstm.log 2>&1 &` |
+| Autotune RNN | `nohup python scripts/rate_autotune_rnn.py  > rate_autotune_rnn.log 2>&1 &` |
+
+The rate-aware scripts keep the same YAML configs and model code as the direct-regression pipeline, automatically prefix their output folders with `rate_`, and always convert predictions back to absolute values before computing validation/test MSE.
+
 ## Autotuning (optional)
 
 Once any baseline run is healthy, you can launch the grid searches described in `prompt-draft/回归实验1109.md`:

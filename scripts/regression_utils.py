@@ -37,12 +37,23 @@ class SplitBoundaries:
 class CurrentStepDataset(Dataset):
     """Per-step dataset used by MLP and XGBoost."""
 
-    def __init__(self, features: np.ndarray, targets: np.ndarray) -> None:
+    def __init__(
+        self,
+        features: np.ndarray,
+        targets: np.ndarray,
+        base_targets: np.ndarray | None = None,
+    ) -> None:
         self.features = features.astype(np.float32)
         self.targets = targets.astype(np.float32)
         self.valid_indices = np.arange(len(self.features), dtype=int)
         self.input_dim = self.features.shape[1]
         self.sequence_length: int | None = None
+        if base_targets is not None:
+            if base_targets.shape != targets.shape:
+                raise ValueError("base_targets must match targets shape.")
+            self.base_targets = base_targets.astype(np.float32)
+        else:
+            self.base_targets = None
 
     def __len__(self) -> int:
         return len(self.valid_indices)
@@ -54,7 +65,13 @@ class CurrentStepDataset(Dataset):
 class HistoryFlattenDataset(Dataset):
     """Windowed dataset that flattens history_length steps of non-PPL features."""
 
-    def __init__(self, features: np.ndarray, targets: np.ndarray, history_length: int) -> None:
+    def __init__(
+        self,
+        features: np.ndarray,
+        targets: np.ndarray,
+        history_length: int,
+        base_targets: np.ndarray | None = None,
+    ) -> None:
         if history_length < 1:
             raise ValueError("history_length must be >= 1 for MLP_WITH_HISTORY.")
         total_rows = features.shape[0]
@@ -70,6 +87,12 @@ class HistoryFlattenDataset(Dataset):
         self.valid_indices = valid_indices
         self.input_dim = self.features.shape[1]
         self.sequence_length: int | None = None
+        if base_targets is not None:
+            if base_targets.shape != targets.shape:
+                raise ValueError("base_targets must match targets shape.")
+            self.base_targets = base_targets[valid_indices].astype(np.float32)
+        else:
+            self.base_targets = None
 
     def __len__(self) -> int:
         return len(self.valid_indices)
@@ -81,7 +104,13 @@ class HistoryFlattenDataset(Dataset):
 class SequenceDataset(Dataset):
     """Sequence dataset feeding history_length steps into LSTM/RNN models."""
 
-    def __init__(self, features: np.ndarray, targets: np.ndarray, history_length: int) -> None:
+    def __init__(
+        self,
+        features: np.ndarray,
+        targets: np.ndarray,
+        history_length: int,
+        base_targets: np.ndarray | None = None,
+    ) -> None:
         if history_length < 1:
             raise ValueError("history_length must be >= 1 for sequential models.")
         total_rows = features.shape[0]
@@ -95,6 +124,12 @@ class SequenceDataset(Dataset):
         self.valid_indices = valid_indices
         self.input_dim = self.features.shape[2]
         self.sequence_length = history_length
+        if base_targets is not None:
+            if base_targets.shape != targets.shape:
+                raise ValueError("base_targets must match targets shape.")
+            self.base_targets = base_targets[valid_indices].astype(np.float32)
+        else:
+            self.base_targets = None
 
     def __len__(self) -> int:
         return len(self.valid_indices)
@@ -111,6 +146,7 @@ class DatasetBundle:
     valid_indices: np.ndarray
     input_dim: int
     sequence_length: int | None
+    base_targets: np.ndarray | None
 
 
 def load_time_series(csv_path: Path, timestamp_column: str) -> pd.DataFrame:
@@ -171,17 +207,18 @@ def build_dataset_bundle(
     feature_indices: List[int],
     target_indices: List[int],
     history_length: int,
+    base_targets: np.ndarray | None = None,
 ) -> DatasetBundle:
     non_ppl = scaled_values[:, feature_indices]
     target_data = scaled_values[:, target_indices]
     model = model_type.upper()
 
     if model in {"MLP", "XGBOOST"}:
-        dataset: Dataset = CurrentStepDataset(non_ppl, target_data)
+        dataset: Dataset = CurrentStepDataset(non_ppl, target_data, base_targets=base_targets)
     elif model == "MLP_WITH_HISTORY":
-        dataset = HistoryFlattenDataset(non_ppl, target_data, history_length)
+        dataset = HistoryFlattenDataset(non_ppl, target_data, history_length, base_targets=base_targets)
     elif model in {"LSTM", "RNN"}:
-        dataset = SequenceDataset(non_ppl, target_data, history_length)
+        dataset = SequenceDataset(non_ppl, target_data, history_length, base_targets=base_targets)
     else:
         raise ValueError(f"Unsupported model_type '{model_type}'.")
 
@@ -192,6 +229,7 @@ def build_dataset_bundle(
         valid_indices=dataset.valid_indices,
         input_dim=dataset.input_dim,
         sequence_length=getattr(dataset, "sequence_length", None),
+        base_targets=getattr(dataset, "base_targets", None),
     )
 
 
@@ -209,3 +247,49 @@ def subset_indices(valid_indices: np.ndarray, boundaries: SplitBoundaries) -> Di
         if idx.size == 0:
             raise ValueError(f"{name} split is empty. Adjust history length or split ratios.")
     return splits
+
+
+def infer_rt_column(target: str) -> str:
+    """Infer the RT column paired with a `*-PPL#` measurement."""
+    prefix = target.split("-")[0]
+    return f"{prefix}-RT"
+
+
+def compute_rate_targets(
+    df: pd.DataFrame,
+    target_columns: Sequence[str],
+    target_to_rt: Dict[str, str] | None = None,
+) -> Tuple[np.ndarray, np.ndarray, List[str]]:
+    """
+    Compute (target - RT) / RT for every requested column and return both the rate values
+    and the aligned RT baselines.
+    """
+
+    rates: List[np.ndarray] = []
+    bases: List[np.ndarray] = []
+    base_columns: List[str] = []
+
+    for target in target_columns:
+        base_col = (target_to_rt or {}).get(target) or infer_rt_column(target)
+        if base_col not in df.columns:
+            raise KeyError(f"RT column '{base_col}' (needed for {target}) not found in dataframe.")
+        if target not in df.columns:
+            raise KeyError(f"Target column '{target}' not found in dataframe.")
+        base_values = df[base_col].to_numpy(dtype=np.float32)
+        if np.any(base_values == 0):
+            raise ValueError(f"RT column '{base_col}' contains zeros; cannot compute rate.")
+        target_values = df[target].to_numpy(dtype=np.float32)
+        rates.append((target_values - base_values) / base_values)
+        bases.append(base_values)
+        base_columns.append(base_col)
+
+    rates_array = np.column_stack(rates).astype(np.float32)
+    base_array = np.column_stack(bases).astype(np.float32)
+    return rates_array, base_array, base_columns
+
+
+def rate_to_absolute(rate_values: np.ndarray, base_values: np.ndarray) -> np.ndarray:
+    """Convert rate outputs back to absolute PPL values."""
+    if rate_values.shape != base_values.shape:
+        raise ValueError("rate_values and base_values shapes must match.")
+    return base_values * (1.0 + rate_values)

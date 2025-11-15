@@ -75,3 +75,17 @@ This sequence ensures the regression models always see the cleaned, aligned data
   ```  
   Use `nohup ... &` if you plan to keep them running overnight.
 - **Behaviour:** For each grid point the script creates `scripts/outputs/<model>/<run_id>/config.yaml`, invokes `train_regression.py`, and appends a row to `scripts/outputs/<model>/autotune_results.csv` containing the run id, hyperparameters, and the recorded best validation loss. Runs are numbered sequentially, so you can pause/resume without overwriting earlier trials.
+
+## 6. Rate-Based Regression (`变化率回归1115`)
+- **Purpose:** Implements the `prompt-draft/变化率回归1115.md` request by changing every target to `(PPL - RT) / RT` during training, then converts predictions back to absolute values for validation/test metrics.
+- **Commands:**  
+  ```bash
+  python scripts/rate_train_regression.py --config models/configs/<config>.yaml
+  python scripts/rate_test_regression.py  --model-dir scripts/outputs/rate_<model_name>
+  python scripts/rate_autotune_lstm.py    [--max-trials N --start-index K]
+  python scripts/rate_autotune_rnn.py     [--max-trials N --start-index K]
+  ```  
+  The YAML configs are identical to the direct-regression runs; the scripts automatically prefix the output folders with `rate_`.
+- **Key differences vs. the direct pipeline:**  
+  - Targets are rates during optimization, but validation/test losses are computed on the recovered absolute values so that MSE stays in the original units.  
+  - `metadata.json` now records `target_mode: "rate"` plus the RT column paired with each target, allowing `rate_test_regression.py` to rebuild the conversion without extra inputs.

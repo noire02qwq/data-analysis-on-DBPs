@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm_regressor/tmp_dropout_b5ffd1
+  history_length: 80
+  units: 192
+  num_layers: 4
+  dropout: 0.35
+training:
+  max_epochs: 500
+  batch_size: 224
+  learning_rate: 0.0008
+  weight_decay: 0.0
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

@@ -124,8 +124,8 @@ def build_run_config(
     return config
 
 
-def run_training(config_path: Path) -> None:
-    cmd = ["python", "scripts/train_regression.py", "--config", str(config_path)]
+def run_training(config_path: Path, training_entrypoint: str) -> None:
+    cmd = ["python", training_entrypoint, "--config", str(config_path)]
     subprocess.run(cmd, check=True, cwd=REPO_ROOT)
 
 
@@ -147,6 +147,8 @@ def run_autotune(
     grid_config_path: Path,
     max_trials: int | None,
     start_index: int,
+    training_script: str = "scripts/train_regression.py",
+    model_name_prefix: str = "",
 ) -> None:
     base_config = load_yaml(base_config_path)
     grid_config = load_yaml(grid_config_path)
@@ -180,7 +182,11 @@ def run_autotune(
     if start_index > 0:
         print(f"[{model_type}] start_index={start_index} is ignored for hill climbing; using defined start values.")
 
-    output_root = REPO_ROOT / "scripts" / "outputs" / base_model_name
+    effective_model_name = base_model_name
+    if model_name_prefix and not effective_model_name.startswith(model_name_prefix):
+        effective_model_name = f"{model_name_prefix}{effective_model_name}"
+
+    output_root = REPO_ROOT / "scripts" / "outputs" / effective_model_name
     output_root.mkdir(parents=True, exist_ok=True)
     results_csv = output_root / "autotune_results.csv"
     existing_runs = load_existing_run_ids(output_root)
@@ -221,7 +227,7 @@ def run_autotune(
             yaml.safe_dump(run_config, fh, allow_unicode=True, sort_keys=False)
         evaluations += 1
         try:
-            run_training(config_path)
+            run_training(config_path, training_script)
             metadata_path = run_dir / "metadata.json"
             best_val = read_best_val_loss(metadata_path)
             return best_val, "success"
@@ -259,10 +265,10 @@ def run_autotune(
         if metadata_path.exists():
             with metadata_path.open("r", encoding="utf-8") as fh:
                 metadata = json.load(fh)
-            metadata["model_name"] = f"{base_model_name}/{final_run_id}"
+            metadata["model_name"] = f"{effective_model_name}/{final_run_id}"
             model_files = metadata.get("model_files", {})
-            temp_prefix = Path("scripts") / "outputs" / base_model_name / temp_label
-            final_prefix = Path("scripts") / "outputs" / base_model_name / final_run_id
+            temp_prefix = Path("scripts") / "outputs" / effective_model_name / temp_label
+            final_prefix = Path("scripts") / "outputs" / effective_model_name / final_run_id
             for key, path_str in list(model_files.items()):
                 if not path_str:
                     continue

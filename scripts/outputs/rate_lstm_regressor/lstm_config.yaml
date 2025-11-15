@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm_regressor
+  history_length: 108
+  units: 192
+  num_layers: 8
+  dropout: 0.4
+training:
+  max_epochs: 500
+  batch_size: 128
+  learning_rate: 0.001
+  weight_decay: 0.0
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: "Date, Time"
