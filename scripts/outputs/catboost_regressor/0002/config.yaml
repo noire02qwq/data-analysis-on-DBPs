@@ -1,0 +1,20 @@
+model:
+  type: CATBOOST
+  name: catboost_regressor/tmp_l2_leaf_reg_94cb99
+  history_length: 1
+  depth: 8
+  learning_rate: 0.06
+  l2_leaf_reg: 4.0
+  subsample: 0.8
+  random_strength: 1.0
+  bagging_temperature: 1.0
+training:
+  max_epochs: 600
+  batch_size: 0
+  learning_rate: 0.001
+  weight_decay: 0.0
+  checkpoint_interval: 10
+  seed: 2023
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

@@ -21,6 +21,8 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader, Subset
 import xgboost as xgb
+import lightgbm as lgb
+from catboost import CatBoostRegressor, Pool
 import yaml
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -43,7 +45,7 @@ from scripts.regression_utils import (  # noqa: E402
     subset_indices,
 )
 
-SUPPORTED_MODELS = {"MLP", "MLP_WITH_HISTORY", "LSTM", "RNN", "XGBOOST"}
+SUPPORTED_MODELS = {"MLP", "MLP_WITH_HISTORY", "LSTM", "RNN", "XGBOOST", "LIGHTGBM", "CATBOOST"}
 PATIENCE_EPOCHS = 50
 PATIENCE_BASE_EPOCH = 30
 PATIENCE_START_EPOCH = 31
@@ -164,7 +166,7 @@ def parse_config(path: Path) -> ConfigBundle:
         model_params["num_layers"] = int(model_cfg.get("num_layers", 2))
         model_params["dropout"] = float(model_cfg.get("dropout", 0.0))
         model_params["fc_dim"] = model_cfg.get("fc_dim")
-    else:  # XGBOOST
+    elif model_type == "XGBOOST":
         model_params["max_depth"] = int(model_cfg.get("max_depth", 8))
         model_params["learning_rate"] = float(model_cfg.get("learning_rate", 0.05))
         model_params["subsample"] = float(model_cfg.get("subsample", 0.9))
@@ -172,6 +174,23 @@ def parse_config(path: Path) -> ConfigBundle:
         model_params["gamma"] = float(model_cfg.get("gamma", 0.0))
         model_params["reg_lambda"] = float(model_cfg.get("reg_lambda", 1.0))
         model_params["min_child_weight"] = float(model_cfg.get("min_child_weight", 1.0))
+    elif model_type == "LIGHTGBM":
+        model_params["num_leaves"] = int(model_cfg.get("num_leaves", 255))
+        model_params["max_depth"] = int(model_cfg.get("max_depth", -1))
+        model_params["learning_rate"] = float(model_cfg.get("learning_rate", 0.05))
+        model_params["subsample"] = float(model_cfg.get("subsample", 0.9))
+        model_params["colsample_bytree"] = float(model_cfg.get("colsample_bytree", 0.8))
+        model_params["min_child_samples"] = int(model_cfg.get("min_child_samples", 40))
+        model_params["reg_alpha"] = float(model_cfg.get("reg_alpha", 0.0))
+        model_params["reg_lambda"] = float(model_cfg.get("reg_lambda", 1.0))
+        model_params["bagging_freq"] = int(model_cfg.get("bagging_freq", 1))
+    else:  # CATBOOST
+        model_params["depth"] = int(model_cfg.get("depth", 8))
+        model_params["learning_rate"] = float(model_cfg.get("learning_rate", 0.05))
+        model_params["l2_leaf_reg"] = float(model_cfg.get("l2_leaf_reg", 3.0))
+        model_params["subsample"] = float(model_cfg.get("subsample", 0.8))
+        model_params["random_strength"] = float(model_cfg.get("random_strength", 1.0))
+        model_params["bagging_temperature"] = float(model_cfg.get("bagging_temperature", 1.0))
 
     training_params = {
         "max_epochs": int(training_cfg.get("max_epochs", 400)),
@@ -440,7 +459,6 @@ def train_single_target_xgb(
     train_threshold = None
     best_tracking = False
     patience_active = False
-    patience_best_train = None
     patience_best_val = None
     patience_no_improve_epochs = 0
     val_value_history: List[float] = []
@@ -510,19 +528,12 @@ def train_single_target_xgb(
 
         if not patience_active and (best_tracking or epoch >= PATIENCE_START_EPOCH):
             patience_active = True
-            patience_best_train = train_loss
             patience_best_val = val_loss
             patience_no_improve_epochs = 0
 
         if patience_active:
-            improved = False
-            if patience_best_train is None or train_loss < patience_best_train - 1e-9:
-                patience_best_train = train_loss
-                improved = True
             if patience_best_val is None or val_loss < patience_best_val - 1e-9:
                 patience_best_val = val_loss
-                improved = True
-            if improved:
                 patience_no_improve_epochs = 0
             else:
                 patience_no_improve_epochs += 1
@@ -567,6 +578,181 @@ def train_single_target_xgb(
         "test_value_loss": test_value_loss,
         "forced_stop_due_to_threshold": forced_stop_due_to_threshold,
     }
+
+
+def train_single_target_lightgbm(
+    target_name: str,
+    params: Dict[str, Any],
+    training_params: Dict[str, Any],
+    train_features: np.ndarray,
+    val_features: np.ndarray,
+    test_features: np.ndarray,
+    train_labels: np.ndarray,
+    val_labels: np.ndarray,
+    test_labels: np.ndarray,
+    val_bases: np.ndarray,
+    test_bases: np.ndarray,
+    target_mean: float,
+    target_std: float,
+) -> Dict[str, Any]:
+    evals_result: Dict[str, Dict[str, List[float]]] = {}
+    model = lgb.LGBMRegressor(
+        boosting_type=params.get("boosting_type", "gbdt"),
+        num_leaves=int(params.get("num_leaves", 255)),
+        max_depth=int(params.get("max_depth", -1)),
+        learning_rate=float(params.get("learning_rate", 0.05)),
+        subsample=float(params.get("subsample", 0.9)),
+        colsample_bytree=float(params.get("colsample_bytree", 0.8)),
+        min_child_samples=int(params.get("min_child_samples", 40)),
+        reg_alpha=float(params.get("reg_alpha", 0.0)),
+        reg_lambda=float(params.get("reg_lambda", 1.0)),
+        bagging_freq=int(params.get("bagging_freq", 1)),
+        n_estimators=int(training_params.get("max_epochs", 400)),
+        objective="regression",
+        random_state=int(training_params.get("seed", 42)),
+    )
+    callbacks = [lgb.record_evaluation(evals_result), lgb.early_stopping(PATIENCE_EPOCHS, verbose=False)]
+    model.fit(
+        train_features,
+        train_labels,
+        eval_set=[(train_features, train_labels), (val_features, val_labels)],
+        eval_names=["train", "val"],
+        eval_metric="l2",
+        callbacks=callbacks,
+    )
+    train_history_scaled = [float(x) for x in evals_result.get("train", {}).get("l2", [])]
+    val_history_scaled = [float(x) for x in evals_result.get("val", {}).get("l2", [])]
+    if not train_history_scaled:
+        train_history_scaled = [float(np.mean((model.predict(train_features) - train_labels) ** 2))]
+    if not val_history_scaled:
+        val_history_scaled = [float(np.mean((model.predict(val_features) - val_labels) ** 2))]
+    scale = float(target_std**2)
+    train_rate_history = [value * scale for value in train_history_scaled]
+    val_rate_history = [value * scale for value in val_history_scaled]
+    best_iter = model.best_iteration_
+    if best_iter is None or best_iter <= 0:
+        best_iter = len(val_rate_history)
+    best_val_loss = float(min(val_rate_history[:best_iter] or val_rate_history))
+    val_pred_scaled = model.predict(val_features, num_iteration=best_iter)
+    val_pred_rates = val_pred_scaled * target_std + target_mean
+    val_true_rates = val_labels * target_std + target_mean
+    val_value_loss, _ = compute_value_mse(
+        val_pred_scaled.reshape(-1, 1),
+        val_labels.reshape(-1, 1),
+        val_bases.reshape(-1, 1),
+        np.array([target_mean], dtype=np.float32),
+        np.array([target_std], dtype=np.float32),
+    )
+    test_pred_scaled = model.predict(test_features, num_iteration=best_iter)
+    test_rate_loss, _ = compute_rate_mse(
+        test_pred_scaled.reshape(-1, 1),
+        test_labels.reshape(-1, 1),
+        np.array([target_mean], dtype=np.float32),
+        np.array([target_std], dtype=np.float32),
+    )
+    test_value_loss, _ = compute_value_mse(
+        test_pred_scaled.reshape(-1, 1),
+        test_labels.reshape(-1, 1),
+        test_bases.reshape(-1, 1),
+        np.array([target_mean], dtype=np.float32),
+        np.array([target_std], dtype=np.float32),
+    )
+    history = {
+        "epochs": list(range(1, len(val_rate_history) + 1)),
+        "train_rate_losses": train_rate_history,
+        "val_rate_losses": val_rate_history,
+        "val_value_losses": [val_value_loss] * len(val_rate_history),
+        "best_epoch": best_iter,
+        "best_val_loss": best_val_loss,
+        "best_val_value_loss": val_value_loss,
+        "test_rate_loss": test_rate_loss,
+        "test_value_loss": test_value_loss,
+    }
+    return history, model.booster_
+
+
+def train_single_target_catboost(
+    target_name: str,
+    params: Dict[str, Any],
+    training_params: Dict[str, Any],
+    train_features: np.ndarray,
+    val_features: np.ndarray,
+    test_features: np.ndarray,
+    train_labels: np.ndarray,
+    val_labels: np.ndarray,
+    test_labels: np.ndarray,
+    val_bases: np.ndarray,
+    test_bases: np.ndarray,
+    target_mean: float,
+    target_std: float,
+) -> Dict[str, Any]:
+    model = CatBoostRegressor(
+        iterations=int(training_params.get("max_epochs", 400)),
+        depth=int(params.get("depth", 8)),
+        learning_rate=float(params.get("learning_rate", 0.05)),
+        l2_leaf_reg=float(params.get("l2_leaf_reg", 3.0)),
+        subsample=float(params.get("subsample", 0.8)),
+        random_strength=float(params.get("random_strength", 1.0)),
+        bagging_temperature=float(params.get("bagging_temperature", 1.0)),
+        loss_function="RMSE",
+        eval_metric="RMSE",
+        od_type="Iter",
+        od_wait=PATIENCE_EPOCHS,
+        random_seed=int(training_params.get("seed", 42)),
+        verbose=False,
+    )
+    train_pool = Pool(train_features, train_labels)
+    val_pool = Pool(val_features, val_labels)
+    model.fit(train_pool, eval_set=val_pool, use_best_model=True, verbose=False)
+    evals_result = model.get_evals_result()
+    train_rmse = evals_result.get("learn", {}).get("RMSE", [])
+    val_rmse = evals_result.get("validation", {}).get("RMSE", [])
+    scale = float(target_std**2)
+    train_rate_history = [(float(val) ** 2) * scale for val in train_rmse]
+    val_rate_history = [(float(val) ** 2) * scale for val in val_rmse]
+    if not train_rate_history:
+        train_rate_history = [float(np.mean((model.predict(train_features) - train_labels) ** 2)) * scale]
+    if not val_rate_history:
+        val_rate_history = [float(np.mean((model.predict(val_features) - val_labels) ** 2)) * scale]
+    best_iter = model.get_best_iteration()
+    if best_iter is None or best_iter < 0:
+        best_iter = len(val_rate_history) - 1
+    best_epoch = best_iter + 1
+    best_val_loss = float(min(val_rate_history[: best_iter + 1] or val_rate_history))
+    val_pred_scaled = model.predict(val_features)
+    val_value_loss, _ = compute_value_mse(
+        val_pred_scaled.reshape(-1, 1),
+        val_labels.reshape(-1, 1),
+        val_bases.reshape(-1, 1),
+        np.array([target_mean], dtype=np.float32),
+        np.array([target_std], dtype=np.float32),
+    )
+    test_pred_scaled = model.predict(test_features)
+    test_rate_loss, _ = compute_rate_mse(
+        test_pred_scaled.reshape(-1, 1),
+        test_labels.reshape(-1, 1),
+        np.array([target_mean], dtype=np.float32),
+        np.array([target_std], dtype=np.float32),
+    )
+    test_value_loss, _ = compute_value_mse(
+        test_pred_scaled.reshape(-1, 1),
+        test_labels.reshape(-1, 1),
+        test_bases.reshape(-1, 1),
+        np.array([target_mean], dtype=np.float32),
+        np.array([target_std], dtype=np.float32),
+    )
+    history = {
+        "epochs": list(range(1, len(val_rate_history) + 1)),
+        "train_rate_losses": train_rate_history,
+        "val_rate_losses": val_rate_history,
+        "val_value_losses": [val_value_loss] * len(val_rate_history),
+        "best_epoch": best_epoch,
+        "best_val_loss": best_val_loss,
+        "best_val_value_loss": val_value_loss,
+        "test_rate_loss": test_rate_loss,
+        "test_value_loss": test_value_loss,
+    }
+    return history, model
 
 
 def train_with_torch(
@@ -813,6 +999,8 @@ def train_with_xgboost(
     avg_test_rate_loss = float(np.mean([hist["test_rate_loss"] for hist in per_target_history.values()]))
     avg_test_value_loss = float(np.mean([hist["test_value_loss"] for hist in per_target_history.values()]))
     avg_best_epoch = float(np.mean([hist["best_epoch"] or 0 for hist in per_target_history.values()]))
+    primary_target = "TRC-PPL1" if "TRC-PPL1" in per_target_history else next(iter(per_target_history))
+    primary_best_val_loss = float(per_target_history[primary_target]["best_val_loss"])
 
     return {
         "per_target_history": per_target_history,
@@ -821,9 +1009,152 @@ def train_with_xgboost(
         "avg_test_rate_loss": avg_test_rate_loss,
         "avg_test_value_loss": avg_test_value_loss,
         "avg_best_epoch": avg_best_epoch,
+        "primary_target": primary_target,
+        "primary_best_val_loss": primary_best_val_loss,
         "best_model_path": str(best_dir),
         "last_model_path": str(last_dir),
         "model_format": "xgboost",
+    }
+
+
+def train_with_lightgbm(
+    cfg: ConfigBundle,
+    bundle: DatasetBundle,
+    splits: Dict[str, np.ndarray],
+    training_params: Dict[str, Any],
+    output_dir: Path,
+    target_mean: np.ndarray,
+    target_std: np.ndarray,
+) -> Dict[str, Any]:
+    if bundle.base_targets is None:
+        raise ValueError("Rate-based LightGBM training requires base_targets.")
+    train_features = bundle.features[splits["train"]]
+    val_features = bundle.features[splits["val"]]
+    test_features = bundle.features[splits["test"]]
+    train_targets = bundle.targets[splits["train"]]
+    val_targets = bundle.targets[splits["val"]]
+    test_targets = bundle.targets[splits["test"]]
+    train_bases = bundle.base_targets[splits["train"]]
+    val_bases = bundle.base_targets[splits["val"]]
+    test_bases = bundle.base_targets[splits["test"]]
+
+    per_target_history: Dict[str, Dict[str, Any]] = {}
+    best_dir = output_dir / "best_model"
+    last_dir = output_dir / "last_model"
+    best_dir.mkdir(parents=True, exist_ok=True)
+    last_dir.mkdir(parents=True, exist_ok=True)
+
+    for idx, target_name in enumerate(TARGET_COLUMNS):
+        history, booster = train_single_target_lightgbm(
+            target_name,
+            cfg.model_params,
+            training_params,
+            train_features,
+            val_features,
+            test_features,
+            train_targets[:, idx],
+            val_targets[:, idx],
+            test_targets[:, idx],
+            val_bases[:, idx],
+            test_bases[:, idx],
+            target_mean[idx],
+            target_std[idx],
+        )
+        per_target_history[target_name] = history
+        best_path = best_dir / f"{target_name}.txt"
+        booster.save_model(best_path)
+        shutil.copy(best_path, last_dir / f"{target_name}.txt")
+
+    avg_best_val_loss = float(np.mean([hist["best_val_loss"] for hist in per_target_history.values()]))
+    avg_best_val_value_loss = float(np.mean([hist["best_val_value_loss"] for hist in per_target_history.values()]))
+    avg_test_rate_loss = float(np.mean([hist["test_rate_loss"] for hist in per_target_history.values()]))
+    avg_test_value_loss = float(np.mean([hist["test_value_loss"] for hist in per_target_history.values()]))
+    avg_best_epoch = float(np.mean([hist.get("best_epoch", 0) for hist in per_target_history.values()]))
+    primary_target = "TRC-PPL1" if "TRC-PPL1" in per_target_history else next(iter(per_target_history))
+    primary_best_val_loss = float(per_target_history[primary_target]["best_val_loss"])
+
+    return {
+        "per_target_history": per_target_history,
+        "avg_best_val_loss": avg_best_val_loss,
+        "avg_best_val_value_loss": avg_best_val_value_loss,
+        "avg_test_rate_loss": avg_test_rate_loss,
+        "avg_test_value_loss": avg_test_value_loss,
+        "avg_best_epoch": avg_best_epoch,
+        "primary_target": primary_target,
+        "primary_best_val_loss": primary_best_val_loss,
+        "best_model_path": str(best_dir),
+        "last_model_path": str(last_dir),
+        "model_format": "lightgbm",
+    }
+
+
+def train_with_catboost(
+    cfg: ConfigBundle,
+    bundle: DatasetBundle,
+    splits: Dict[str, np.ndarray],
+    training_params: Dict[str, Any],
+    output_dir: Path,
+    target_mean: np.ndarray,
+    target_std: np.ndarray,
+) -> Dict[str, Any]:
+    if bundle.base_targets is None:
+        raise ValueError("Rate-based CatBoost training requires base_targets.")
+    train_features = bundle.features[splits["train"]]
+    val_features = bundle.features[splits["val"]]
+    test_features = bundle.features[splits["test"]]
+    train_targets = bundle.targets[splits["train"]]
+    val_targets = bundle.targets[splits["val"]]
+    test_targets = bundle.targets[splits["test"]]
+    val_bases = bundle.base_targets[splits["val"]]
+    test_bases = bundle.base_targets[splits["test"]]
+
+    per_target_history: Dict[str, Dict[str, Any]] = {}
+    best_dir = output_dir / "best_model"
+    last_dir = output_dir / "last_model"
+    best_dir.mkdir(parents=True, exist_ok=True)
+    last_dir.mkdir(parents=True, exist_ok=True)
+
+    for idx, target_name in enumerate(TARGET_COLUMNS):
+        history, model = train_single_target_catboost(
+            target_name,
+            cfg.model_params,
+            training_params,
+            train_features,
+            val_features,
+            test_features,
+            train_targets[:, idx],
+            val_targets[:, idx],
+            test_targets[:, idx],
+            val_bases[:, idx],
+            test_bases[:, idx],
+            target_mean[idx],
+            target_std[idx],
+        )
+        per_target_history[target_name] = history
+        best_path = best_dir / f"{target_name}.cbm"
+        model.save_model(best_path)
+        model.save_model(last_dir / f"{target_name}.cbm")
+
+    avg_best_val_loss = float(np.mean([hist["best_val_loss"] for hist in per_target_history.values()]))
+    avg_best_val_value_loss = float(np.mean([hist["best_val_value_loss"] for hist in per_target_history.values()]))
+    avg_test_rate_loss = float(np.mean([hist["test_rate_loss"] for hist in per_target_history.values()]))
+    avg_test_value_loss = float(np.mean([hist["test_value_loss"] for hist in per_target_history.values()]))
+    avg_best_epoch = float(np.mean([hist.get("best_epoch", 0) for hist in per_target_history.values()]))
+    primary_target = "TRC-PPL1" if "TRC-PPL1" in per_target_history else next(iter(per_target_history))
+    primary_best_val_loss = float(per_target_history[primary_target]["best_val_loss"])
+
+    return {
+        "per_target_history": per_target_history,
+        "avg_best_val_loss": avg_best_val_loss,
+        "avg_best_val_value_loss": avg_best_val_value_loss,
+        "avg_test_rate_loss": avg_test_rate_loss,
+        "avg_test_value_loss": avg_test_value_loss,
+        "avg_best_epoch": avg_best_epoch,
+        "primary_target": primary_target,
+        "primary_best_val_loss": primary_best_val_loss,
+        "best_model_path": str(best_dir),
+        "last_model_path": str(last_dir),
+        "model_format": "catboost",
     }
 
 
@@ -876,6 +1207,30 @@ def main() -> None:
         )
         plot_per_target_curves(training_result["per_target_history"], output_dir)
         save_loss_history_multi(training_result["per_target_history"], output_dir)
+    elif cfg.model_type == "LIGHTGBM":
+        training_result = train_with_lightgbm(
+            cfg,
+            dataset_bundle,
+            splits,
+            cfg.training_params,
+            output_dir,
+            target_mean,
+            target_std,
+        )
+        plot_per_target_curves(training_result["per_target_history"], output_dir)
+        save_loss_history_multi(training_result["per_target_history"], output_dir)
+    elif cfg.model_type == "CATBOOST":
+        training_result = train_with_catboost(
+            cfg,
+            dataset_bundle,
+            splits,
+            cfg.training_params,
+            output_dir,
+            target_mean,
+            target_std,
+        )
+        plot_per_target_curves(training_result["per_target_history"], output_dir)
+        save_loss_history_multi(training_result["per_target_history"], output_dir)
     else:
         training_result = train_with_torch(
             cfg,
@@ -914,7 +1269,7 @@ def main() -> None:
     save_scalers(output_dir / "scalers.npz", scalers_mean, scalers_std)
 
     dataset_sizes = {name: int(idx.size) for name, idx in splits.items()}
-    if cfg.model_type == "XGBOOST":
+    if cfg.model_type in {"XGBOOST", "LIGHTGBM", "CATBOOST"}:
         training_history = {
             "per_target": training_result["per_target_history"],
             "avg_best_val_loss": training_result["avg_best_val_loss"],
@@ -923,6 +1278,8 @@ def main() -> None:
             "avg_test_value_loss": training_result["avg_test_value_loss"],
             "avg_best_epoch": training_result["avg_best_epoch"],
             "best_val_loss": training_result["avg_best_val_loss"],
+            "primary_target": training_result["primary_target"],
+            "primary_best_val_loss": training_result["primary_best_val_loss"],
         }
     else:
         training_history = {

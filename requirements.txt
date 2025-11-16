@@ -9,3 +9,5 @@ torch>=2.1
 
 # Gradient boosting
 xgboost==2.0.3  # manylinux2014 build keeps glibc<2.28 support
+lightgbm>=4.1
+catboost>=1.2

@@ -1,0 +1,23 @@
+model:
+  type: LIGHTGBM
+  name: lightgbm_regressor/0001
+  history_length: 1
+  num_leaves: 128
+  max_depth: 20
+  learning_rate: 0.05
+  subsample: 0.9
+  colsample_bytree: 0.8
+  min_child_samples: 40
+  reg_alpha: 0.0
+  reg_lambda: 1.0
+  bagging_freq: 1
+training:
+  max_epochs: 600
+  batch_size: 0
+  learning_rate: 0.001
+  weight_decay: 0.0
+  checkpoint_interval: 10
+  seed: 2023
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

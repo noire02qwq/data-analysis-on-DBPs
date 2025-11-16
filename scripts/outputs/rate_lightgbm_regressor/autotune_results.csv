@@ -1,0 +1,13 @@
+run_id,status,best_val_loss,bagging_freq,colsample_bytree,learning_rate,max_depth,min_child_samples,num_leaves,reg_alpha,reg_lambda,subsample,moved_param,new_value
+0001,success,0.000123,1,0.8,0.05,20,40,128,0.0,1.0,0.9,,
+0002,success,0.000122,1,0.8,0.05,20,40,128,0.1,1.0,0.9,reg_alpha,0.1
+0003,success,0.000122,1,0.8,0.05,20,40,112,0.1,1.0,0.9,num_leaves,112
+0004,success,0.000121,1,0.8,0.06,20,40,112,0.1,1.0,0.9,learning_rate,0.06
+0005,success,0.000120,1,0.8,0.06,22,40,112,0.1,1.0,0.9,max_depth,22
+0006,success,0.000120,2,0.8,0.06,22,40,112,0.1,1.0,0.9,bagging_freq,2
+0007,success,0.000120,2,0.85,0.06,22,40,112,0.1,1.0,0.9,colsample_bytree,0.85
+0008,success,0.000119,2,0.85,0.06,22,40,112,0.2,1.0,0.9,reg_alpha,0.2
+0009,success,0.000118,2,0.85,0.06,22,40,112,0.2,1.0,0.95,subsample,0.95
+0010,success,0.000118,2,0.85,0.06,22,40,112,0.1,1.0,0.95,reg_alpha,0.1
+0011,success,0.000117,2,0.85,0.06,22,40,128,0.1,1.0,0.95,num_leaves,128
+0012,success,0.000117,2,0.85,0.06,20,40,128,0.1,1.0,0.95,max_depth,20

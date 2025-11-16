@@ -1,0 +1,4 @@
+run_id,status,best_val_loss,bagging_temperature,depth,l2_leaf_reg,learning_rate,random_strength,subsample,moved_param,new_value
+0001,success,0.347947,1.0,8,3.0,0.06,1.0,0.8,,
+0002,success,0.343073,1.0,8,4.0,0.06,1.0,0.8,l2_leaf_reg,4.0
+0003,success,0.342538,1.0,8,4.0,0.04,1.0,0.8,learning_rate,0.04

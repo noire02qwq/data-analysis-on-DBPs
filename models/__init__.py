@@ -4,3 +4,5 @@ from .lstm_regressor import LSTMRegressor  # noqa: F401
 from .mlp_regressor import MLPRegressor  # noqa: F401
 from .rnn_regressor import RNNRegressor  # noqa: F401
 from .xgboost_regressor import XGBoostRegressor  # noqa: F401
+from .lightgbm_regressor import LightGBMRegressor  # noqa: F401
+from .catboost_regressor import CatBoostEnsemble  # noqa: F401

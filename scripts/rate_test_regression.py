@@ -20,7 +20,14 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from models import LSTMRegressor, MLPRegressor, RNNRegressor, XGBoostRegressor  # noqa: E402
+from models import (  # noqa: E402
+    CatBoostEnsemble,
+    LightGBMRegressor,
+    LSTMRegressor,
+    MLPRegressor,
+    RNNRegressor,
+    XGBoostRegressor,
+)
 from scripts.regression_utils import (  # noqa: E402
     DatasetBundle,
     SplitBoundaries,
@@ -209,11 +216,24 @@ def main() -> None:
 
     target_names: List[str] = metadata["target_columns"]  # type: ignore[assignment]
 
-    if metadata["model_format"] == "xgboost":
+    model_format = metadata["model_format"]
+    if model_format == "xgboost":
         best_dir = resolve_artifact(metadata["model_files"]["best"], model_dir)
         xgb_model = XGBoostRegressor.load(best_dir, target_names)
         test_features = dataset_bundle.features[test_indices]
         y_pred_scaled = xgb_model.predict(test_features)
+        y_true_scaled = dataset_bundle.targets[test_indices]
+    elif model_format == "lightgbm":
+        best_dir = resolve_artifact(metadata["model_files"]["best"], model_dir)
+        lgb_model = LightGBMRegressor.load(best_dir, target_names)
+        test_features = dataset_bundle.features[test_indices]
+        y_pred_scaled = lgb_model.predict(test_features)
+        y_true_scaled = dataset_bundle.targets[test_indices]
+    elif model_format == "catboost":
+        best_dir = resolve_artifact(metadata["model_files"]["best"], model_dir)
+        cb_model = CatBoostEnsemble.load(best_dir, target_names)
+        test_features = dataset_bundle.features[test_indices]
+        y_pred_scaled = cb_model.predict(test_features)
         y_true_scaled = dataset_bundle.targets[test_indices]
     else:
         dataset = dataset_bundle.dataset

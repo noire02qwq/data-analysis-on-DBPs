@@ -213,7 +213,7 @@ def build_dataset_bundle(
     target_data = scaled_values[:, target_indices]
     model = model_type.upper()
 
-    if model in {"MLP", "XGBOOST"}:
+    if model in {"MLP", "XGBOOST", "LIGHTGBM", "CATBOOST"}:
         dataset: Dataset = CurrentStepDataset(non_ppl, target_data, base_targets=base_targets)
     elif model == "MLP_WITH_HISTORY":
         dataset = HistoryFlattenDataset(non_ppl, target_data, history_length, base_targets=base_targets)

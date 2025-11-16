@@ -1,83 +1,115 @@
-# data-analysis-on-DBPs
+# DBPS Regression Pipeline
 
-End-to-end workflow for preparing dissolved by-product sensor data, aligning time steps, and running the 回归实验1109 double-output regressions (TRC/TOC/DOC/pH at PPL1/PPL2) using PyTorch (MLP/MLP-with-history/LSTM/RNN) or XGBoost.
+End-to-end toolkit for preparing dissolved by-product sensor data, training multi-output regressors (MLP/LSTM/RNN/GBDT), and comparing absolute-value vs. rate-based targets.
+
+## Overview
+- **Data processing**: impute missing `-PPL1/-PPL2` readings and realign DT/RT/PPL1/PPL2 timestamps.
+- **Model zoo**: PyTorch dense/sequence models and tree ensembles (XGBoost, LightGBM, CatBoost) with shared training/test scripts.
+- **Rate mode**: optional `(PPL-RT)/RT` objective during training, with automatic conversion back to absolute values for metrics.
+- **Autotuning**: hill-climbing runner that explores grid configs for every model family (value and rate variants) and records best runs.
+- **Archival**: `Archived/` stores the top checkpoints + metadata from major sweeps for future reference.
 
 ## Repository Layout
-
 | Path | Description |
 | --- | --- |
-| `data/` | Raw and processed CSV files (`raw_data.csv`, `imputed_data.csv`, `time_aligned_data.csv`). |
-| `models/` | PyTorch modules for the MLP/MLP-with-history/LSTM/RNN architectures plus YAML configs under `models/configs/`. |
-| `prompt-draft/` | Vibe-coding task briefs that describe each experiment in natural language. |
-| `scripts/` | All runnable scripts (`fill_missing.py`, `align_time.py`, `train_regression.py`, `test_regression.py`, shared regression utilities, plus a script-level README) and generated artifacts in `scripts/outputs/<model_name>/`. |
-| `requirements.txt` | Python dependencies for running every step. |
+| `data/` | Raw/imputed/aligned CSVs. Training scripts default to `data/time_aligned_data.csv`. |
+| `models/` | PyTorch modules, gradient-boost wrappers, and all YAML configs & grids (see `models/README.md`). |
+| `scripts/` | CLI entry points for data prep, training, evaluation, and autotuning (documented in `scripts/README.md`). |
+| `Archived/` | Snapshots of best autotune runs, including `metadata.json`, scalers, and checkpoints. |
+| `prompt-draft/` | Narrative specs for past experiments (kept for context). |
+| `requirements.txt` | Python dependencies (NumPy/Pandas/Torch/XGBoost/LightGBM/CatBoost, etc.). |
 
-## Installing Dependencies
-
+## Environment Setup
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+> CatBoost and LightGBM wheels are included, so no extra system packages are required on Linux.
 
-## Typical Workflow
+## Data Preparation Workflow
+1. **Impute missing values**:
+   ```bash
+   python scripts/fill_missing.py \
+       --input data/raw_data.csv --output data/imputed_data.csv
+   ```
+2. **Align timestamps** (shifts RT/PPL columns to a common DT reference):
+   ```bash
+   python scripts/align_time.py \
+       --input data/imputed_data.csv --output data/time_aligned_data.csv
+   ```
+Both scripts log the decisions they make; rerun them whenever you update the source CSVs.
 
-1. **Fill missing values**  
-   `python scripts/fill_missing.py`
-2. **Align time steps**  
-   `python scripts/align_time.py`
-3. **Train a model** (pick any YAML config under `models/configs/`)  
-   `python scripts/train_regression.py --config models/configs/mlp_config.yaml`  
-   `python scripts/train_regression.py --config models/configs/mlp_with_history_config.yaml`  
-   `python scripts/train_regression.py --config models/configs/lstm_config.yaml`  
-   `python scripts/train_regression.py --config models/configs/rnn_config.yaml`  
-   `python scripts/train_regression.py --config models/configs/xgboost_config.yaml`
-4. **Evaluate / plot predictions**  
-   `python scripts/test_regression.py --model-dir scripts/outputs/<model_name>`
+## Training & Testing Overview
+- **Value-domain models** use `scripts/train_regression.py` / `scripts/test_regression.py`.
+- **Rate-domain models** use `scripts/rate_train_regression.py` / `scripts/rate_test_regression.py`; they consume the same YAML configs but change the target transformation.
+- Supported types: `MLP`, `MLP_WITH_HISTORY`, `LSTM`, `RNN`, `XGBOOST`, `LIGHTGBM`, `CATBOOST`.
+- All scripts expect a YAML config under `models/configs/` specifying the model, training hyperparameters, and data paths.
 
-Detailed script options and outputs are documented in `scripts/README.md`.
+### Example: LSTM Workflow
+1. **Inspect config** (`models/configs/lstm_config.yaml`):
+   ```yaml
+   model:
+     type: LSTM
+     name: lstm_regressor
+     history_length: 48
+     units: 192
+     num_layers: 4
+     dropout: 0.25
+     fc_dim: 128
+   training:
+     max_epochs: 600
+     batch_size: 256
+     learning_rate: 0.001
+     weight_decay: 0.0
+     seed: 2023
+   data:
+     input_csv: data/time_aligned_data.csv
+     timestamp_column: "Date, Time"
+   ```
+2. **Train (value domain)**:
+   ```bash
+   python scripts/train_regression.py --config models/configs/lstm_config.yaml
+   ```
+   Artifacts appear in `scripts/outputs/lstm_regressor/` (metadata, scalers, checkpoints, plots).
+3. **Test**:
+   ```bash
+   python scripts/test_regression.py --model-dir scripts/outputs/lstm_regressor
+   ```
+   The script reloads the saved scalers, rebuilds the splits, and writes `test_predictions.csv` plus per-target plots.
+4. **Autotune** (hill-climb grid search):
+   ```bash
+   nohup python scripts/autotune_lstm.py \
+       --base-config models/configs/lstm_config.yaml \
+       --grid-config models/configs/lstm_grid.yaml \
+       > autotune_lstm.log 2>&1 &
+   ```
+   Each run lands in `scripts/outputs/lstm_regressor/<run_id>/`; `autotune_results.csv` logs hyperparameters and best validation MSE.
+5. **Rate variant**: swap to `scripts/rate_train_regression.py`, `scripts/rate_test_regression.py`, and `scripts/rate_autotune_lstm.py` while reusing the same YAML.
 
-## Rate-Based Regression (变化率回归1115)
+## Autotuning Summary
+Use the matching pair of scripts + grid for each model family:
 
-The `变化率回归1115.md` brief swaps each target from an absolute value to the RT-relative delta `((PPL - RT) / RT)` so that models learn smoother distributions but final metrics remain in the original value domain. This repository now ships a parallel set of scripts prefixed with `rate_`:
+| Model | Value Autotune | Rate Autotune | Grid file |
+| --- | --- | --- | --- |
+| LSTM | `scripts/autotune_lstm.py` | `scripts/rate_autotune_lstm.py` | `models/configs/lstm_grid.yaml` |
+| RNN | `scripts/autotune_rnn.py` | `scripts/rate_autotune_rnn.py` | `models/configs/rnn_grid.yaml` |
+| MLP | `scripts/autotune_mlp.py` | `scripts/rate_autotune_mlp.py` | `models/configs/mlp_grid.yaml` |
+| MLP w/ history | `scripts/autotune_mlp_history.py` | `scripts/rate_autotune_mlp_history.py` | `models/configs/mlp_with_history_grid.yaml` |
+| XGBoost | `scripts/autotune_xgboost.py` | `scripts/rate_autotune_xgboost.py` | `models/configs/xgboost_grid.yaml` |
+| LightGBM | `scripts/autotune_lightgbm.py` | `scripts/rate_autotune_lightgbm.py` | `models/configs/lightgbm_grid.yaml` |
+| CatBoost | `scripts/autotune_catboost.py` | `scripts/rate_autotune_catboost.py` | `models/configs/catboost_grid.yaml` |
 
-| Step | Command |
-| --- | --- |
-| Train | `python scripts/rate_train_regression.py --config models/configs/<config>.yaml` |
-| Test | `python scripts/rate_test_regression.py --model-dir scripts/outputs/rate_<model_name>` |
-| Autotune LSTM | `nohup python scripts/rate_autotune_lstm.py > rate_autotune_lstm.log 2>&1 &` |
-| Autotune RNN | `nohup python scripts/rate_autotune_rnn.py  > rate_autotune_rnn.log 2>&1 &` |
+**Hill-climb logic**: the runner evaluates the starting point, then iteratively moves along neighboring hyperparameter settings if they improve TRC‑PPL1 validation MSE. Failed runs are skipped automatically, and `autotune_results.csv` keeps a row-per-run audit trail (hyperparameters, status, best val loss, moved param).
 
-The rate-aware scripts keep the same YAML configs and model code as the direct-regression pipeline, automatically prefix their output folders with `rate_`, and always convert predictions back to absolute values before computing validation/test MSE.
+## Archived Best Runs
+Whenever an autotune sweep finishes, copy the best-performing folder into `Archived/<run_id><model>/` (see `Archived/README.md`). These archives preserve the exact environment required to reproduce research results:
+- Re-run tests: `python scripts/test_regression.py --model-dir Archived/0048lstm`
+- Compare configs/metrics across experiments.
 
-## Autotuning (optional)
+## Documentation & References
+- `scripts/README.md`: detailed CLI reference for every step.
+- `models/README.md`: explanation of model modules and YAML schema.
+- `requirements.txt`: dependency pins.
 
-Once any baseline run is healthy, you can launch the grid searches described in `prompt-draft/回归实验1109.md`:
-
-```bash
-# LSTM grid search
-nohup python scripts/autotune_lstm.py > autotune_lstm.log 2>&1 &
-
-# RNN grid search
-nohup python scripts/autotune_rnn.py > autotune_rnn.log 2>&1 &
-
-# MLP / MLP-with-history (value domain)
-nohup python scripts/autotune_mlp.py > autotune_mlp.log 2>&1 &
-nohup python scripts/autotune_mlp_history.py > autotune_mlp_history.log 2>&1 &
-
-# Rate-based counterparts
-nohup python scripts/rate_autotune_lstm.py > rate_autotune_lstm.log 2>&1 &
-nohup python scripts/rate_autotune_rnn.py > rate_autotune_rnn.log 2>&1 &
-nohup python scripts/rate_autotune_mlp.py > rate_autotune_mlp.log 2>&1 &
-nohup python scripts/rate_autotune_mlp_history.py > rate_autotune_mlp_history.log 2>&1 &
-```
-
-Each script enumerates the ranges from its paired grid file (`models/configs/lstm_grid.yaml`, `rnn_grid.yaml`, `mlp_grid.yaml`, or `mlp_with_history_grid.yaml`), writes numbered folders (e.g., `scripts/outputs/lstm_regressor/0001/`), and appends every run’s hyperparameters + best validation loss to `scripts/outputs/<model>/autotune_results.csv`. Use `--max-trials` or `--start-index` if you want to split the workload across multiple nights.
-
-## Notes
-
-- Install the requirements inside a virtual environment (`pip install -r requirements.txt`) to get PyTorch + the pinned XGBoost build (2.0.x keeps compatibility with glibc < 2.28).  
-- `prompt-draft/` files describe the business logic (缺失填充、时间对齐、回归实验10xx) that each script implements.  
-- The training script no longer writes periodic checkpoints; it logs each epoch’s train/val MSE, only starts tracking “best” checkpoints after the train loss falls below one quarter of its initial value, and enforces the updated stopping rule (50-epoch patience beginning after epoch 30, force stop at epoch 120 if needed). XGBoost trains eight independent single-output boosters, each with its own MSE loss history/plot under `scripts/outputs/<model_name>/`.  
-- Every training run copies its config plus metadata, scalers, checkpoints, and plots into `scripts/outputs/<model_name>/`, allowing `scripts/test_regression.py` to rebuild the splits and evaluate consistently.  
-- The autotuning scripts mentioned in 回归实验1109 are intentionally postponed; once the five core models are stable they can be added on top of this structure.
+For experimental context (business logic, historical notes), consult the relevant markdown files under `prompt-draft/`. The codebase itself remains agnostic to individual experiment IDs—everything is configured through the YAML files and CLI commands outlined above.

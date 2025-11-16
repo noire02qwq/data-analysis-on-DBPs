@@ -1,0 +1,11 @@
+run_id,status,best_val_loss,colsample_bytree,gamma,learning_rate,max_depth,min_child_weight,reg_lambda,subsample,moved_param,new_value
+0001,failed,inf,0.8,0.0,0.1,8,2,1.0,0.9,,
+0001,failed,inf,0.8,0.0,0.1,8,2,1.0,0.9,,
+0001,success,0.366610,0.8,0.0,0.1,8,2,1.0,0.9,,
+0002,success,0.362121,0.8,0.0,0.1,8,2,1.0,0.95,subsample,0.95
+0003,success,0.358594,0.8,0.0,0.1,8,3,1.0,0.95,min_child_weight,3
+0004,success,0.358295,0.8,0.0,0.1,8,3,1.5,0.95,reg_lambda,1.5
+0005,success,0.352602,0.8,0.0,0.08,8,3,1.5,0.95,learning_rate,0.08
+0006,success,0.352592,0.75,0.0,0.08,8,3,1.5,0.95,colsample_bytree,0.75
+0007,success,0.350702,0.75,0.2,0.08,8,3,1.5,0.95,gamma,0.2
+0008,success,0.346644,0.75,0.2,0.06,8,3,1.5,0.95,learning_rate,0.06

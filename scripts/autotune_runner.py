@@ -103,10 +103,14 @@ def write_results_row(
         writer.writerow({k: row.get(k, "") for k in fieldnames})
 
 
+GBDT_MODEL_TYPES = {"XGBOOST", "LIGHTGBM", "CATBOOST"}
+
+
 def build_run_config(
     base_config: Dict[str, object],
     overrides: Dict[str, float | int],
     model_name: str,
+    target_model_type: str,
 ) -> Dict[str, object]:
     config = deepcopy(base_config)
     model_section = config.setdefault("model", {})
@@ -117,14 +121,22 @@ def build_run_config(
     mid_layer_count = overrides.get("mid_layer_count")
     mid_layer_size = overrides.get("mid_layer_size")
     for key, value in overrides.items():
-        if key in {"history_length", "units", "num_layers", "dropout"}:
+        if key in {"history_length", "units", "num_layers", "dropout", "max_depth", "subsample", "colsample_bytree",
+                   "gamma", "reg_lambda", "reg_alpha", "min_child_weight", "min_child_samples", "num_leaves",
+                   "reg_beta", "boosting_type", "bagging_fraction", "bagging_freq", "feature_fraction",
+                   "depth", "l2_leaf_reg", "random_strength", "bagging_temperature"}:
             model_section[key] = value
-        elif key in {"batch_size", "learning_rate", "weight_decay"}:
+        elif key == "learning_rate":
+            if target_model_type in GBDT_MODEL_TYPES:
+                model_section[key] = value
+            else:
+                training_section[key] = value
+        elif key in {"batch_size", "weight_decay", "max_epochs"}:
             training_section[key] = value
         elif key in {"mid_layer_count", "mid_layer_size"}:
             continue
         else:
-            raise ValueError(f"Unknown parameter override: {key}")
+            model_section[key] = value
     if mid_layer_count is not None or mid_layer_size is not None:
         if mid_layer_count is None or mid_layer_size is None:
             raise ValueError("Both mid_layer_count and mid_layer_size must be provided together.")
@@ -154,6 +166,9 @@ def read_best_val_loss(metadata_path: Path) -> float:
         metadata = json.load(fh)
     history = metadata.get("training_history", {})
     if isinstance(history, dict):
+        primary = history.get("primary_best_val_loss")
+        if isinstance(primary, (int, float)):
+            return float(primary)
         best_val = history.get("best_val_loss")
         if isinstance(best_val, (int, float)):
             return float(best_val)
@@ -185,9 +200,9 @@ def run_autotune(
     if base_model_type != model_type.upper():
         raise ValueError(f"Base config model.type ({base_model_type}) does not match expected {model_type}.")
 
-    keys = sorted(parameters.keys())
-    value_lists: List[List[float | int]] = [expand_parameter_values(parameters[key]) for key in keys]
-    value_lookup = {key: value_lists[idx] for idx, key in enumerate(keys)}
+    grid_keys = sorted(parameters.keys())
+    value_lists: List[List[float | int]] = [expand_parameter_values(parameters[key]) for key in grid_keys]
+    value_lookup = {key: value_lists[idx] for idx, key in enumerate(grid_keys)}
     start_values = {}
     for key, spec in parameters.items():
         start_value = spec.get("start")
@@ -212,22 +227,10 @@ def run_autotune(
     existing_runs = load_existing_run_ids(output_root)
     next_run_number = (existing_runs[-1] + 1) if existing_runs else 1
 
-    param_fieldnames = [
-        "run_id",
-        "status",
-        "best_val_loss",
-        "history_length",
-        "units",
-        "num_layers",
-        "dropout",
-        "mid_layer_count",
-        "mid_layer_size",
-        "batch_size",
-        "learning_rate",
-        "weight_decay",
-    ]
+    grid_keys = sorted(parameters.keys())
 
-    fieldnames = param_fieldnames + ["moved_param", "new_value"]
+    base_fieldnames = ["run_id", "status", "best_val_loss"]
+    fieldnames = base_fieldnames + grid_keys + ["moved_param", "new_value"]
 
     evaluations = 0
 
@@ -244,7 +247,7 @@ def run_autotune(
         run_dir.mkdir(parents=True, exist_ok=True)
         config_path = run_dir / "config.yaml"
         model_name = f"{base_model_name}/{label}"
-        run_config = build_run_config(base_config, state, model_name)
+        run_config = build_run_config(base_config, state, model_name, model_type)
         with config_path.open("w", encoding="utf-8") as fh:
             yaml.safe_dump(run_config, fh, allow_unicode=True, sort_keys=False)
         evaluations += 1
@@ -271,10 +274,11 @@ def run_autotune(
             "run_id": run_id,
             "status": status,
             "best_val_loss": f"{best_val:.6f}" if isinstance(best_val, float) and not math.isnan(best_val) else "",
-            "moved_param": moved_param or "",
-            "new_value": state.get(moved_param, "") if moved_param else "",
         }
-        row.update({key: state.get(key, "") for key in param_fieldnames if key in state})
+        for key in grid_keys:
+            row[key] = state.get(key, "")
+        row["moved_param"] = moved_param or ""
+        row["new_value"] = state.get(moved_param, "") if moved_param else ""
         write_results_row(results_csv, fieldnames, row)
 
     def finalize_dir(temp_label: str, final_run_id: str) -> None:
@@ -323,7 +327,7 @@ def run_autotune(
 
     while not should_stop():
         improved = False
-        param_order = keys[:]
+        param_order = grid_keys[:]
         random.shuffle(param_order)
 
         for param in param_order:

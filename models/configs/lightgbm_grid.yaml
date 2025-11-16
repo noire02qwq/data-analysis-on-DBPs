@@ -1,0 +1,46 @@
+parameters:
+  num_leaves:
+    min: 32
+    max: 1024
+    step: 16
+    start: 128
+  max_depth:
+    min: 2
+    max: 40
+    step: 2
+    start: 20
+  learning_rate:
+    min: 0.01
+    max: 0.2
+    step: 0.01
+    start: 0.05
+  subsample:
+    min: 0.6
+    max: 1.0
+    step: 0.05
+    start: 0.9
+  colsample_bytree:
+    min: 0.6
+    max: 1.0
+    step: 0.05
+    start: 0.8
+  min_child_samples:
+    min: 5
+    max: 200
+    step: 5
+    start: 40
+  reg_alpha:
+    min: 0.0
+    max: 1.0
+    step: 0.1
+    start: 0.0
+  reg_lambda:
+    min: 0.2
+    max: 5.0
+    step: 0.2
+    start: 1.0
+  bagging_freq:
+    min: 1
+    max: 10
+    step: 1
+    start: 1
