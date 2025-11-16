@@ -1,0 +1,3 @@
+run_id,status,best_val_loss,history_length,units,num_layers,dropout,mid_layer_count,mid_layer_size,batch_size,learning_rate,weight_decay,moved_param,new_value
+0001,success,0.000074,,,,0.3,4,512,256,0.0008,0.0,,
+0002,success,0.000074,,,,0.3,4,544,256,0.0008,0.0,mid_layer_size,544

@@ -1,0 +1,22 @@
+model:
+  type: MLP_WITH_HISTORY
+  name: mlp_with_history_regressor/0001
+  history_length: 80
+  hidden_layers:
+  - 1024
+  - 512
+  - 512
+  - 512
+  - 512
+  - 256
+  dropout: 0.3
+training:
+  max_epochs: 500
+  batch_size: 256
+  learning_rate: 0.0008
+  weight_decay: 0.0
+  checkpoint_interval: 10
+  seed: 77
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

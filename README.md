@@ -60,9 +60,19 @@ nohup python scripts/autotune_lstm.py > autotune_lstm.log 2>&1 &
 
 # RNN grid search
 nohup python scripts/autotune_rnn.py > autotune_rnn.log 2>&1 &
+
+# MLP / MLP-with-history (value domain)
+nohup python scripts/autotune_mlp.py > autotune_mlp.log 2>&1 &
+nohup python scripts/autotune_mlp_history.py > autotune_mlp_history.log 2>&1 &
+
+# Rate-based counterparts
+nohup python scripts/rate_autotune_lstm.py > rate_autotune_lstm.log 2>&1 &
+nohup python scripts/rate_autotune_rnn.py > rate_autotune_rnn.log 2>&1 &
+nohup python scripts/rate_autotune_mlp.py > rate_autotune_mlp.log 2>&1 &
+nohup python scripts/rate_autotune_mlp_history.py > rate_autotune_mlp_history.log 2>&1 &
 ```
 
-Each script enumerates the ranges from `models/configs/lstm_grid.yaml` / `models/configs/rnn_grid.yaml`, writes numbered folders (e.g., `scripts/outputs/lstm_regressor/0001/`), and appends every run’s hyperparameters + best validation loss to `scripts/outputs/<model>/autotune_results.csv`. Use `--max-trials` or `--start-index` if you want to split the workload across multiple nights.
+Each script enumerates the ranges from its paired grid file (`models/configs/lstm_grid.yaml`, `rnn_grid.yaml`, `mlp_grid.yaml`, or `mlp_with_history_grid.yaml`), writes numbered folders (e.g., `scripts/outputs/lstm_regressor/0001/`), and appends every run’s hyperparameters + best validation loss to `scripts/outputs/<model>/autotune_results.csv`. Use `--max-trials` or `--start-index` if you want to split the workload across multiple nights.
 
 ## Notes
 

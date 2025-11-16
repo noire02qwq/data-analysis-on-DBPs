@@ -114,13 +114,33 @@ def build_run_config(
     if not isinstance(model_section, dict) or not isinstance(training_section, dict):
         raise ValueError("Config must contain 'model' and 'training' sections.")
     model_section["name"] = model_name
+    mid_layer_count = overrides.get("mid_layer_count")
+    mid_layer_size = overrides.get("mid_layer_size")
     for key, value in overrides.items():
         if key in {"history_length", "units", "num_layers", "dropout"}:
             model_section[key] = value
         elif key in {"batch_size", "learning_rate", "weight_decay"}:
             training_section[key] = value
+        elif key in {"mid_layer_count", "mid_layer_size"}:
+            continue
         else:
             raise ValueError(f"Unknown parameter override: {key}")
+    if mid_layer_count is not None or mid_layer_size is not None:
+        if mid_layer_count is None or mid_layer_size is None:
+            raise ValueError("Both mid_layer_count and mid_layer_size must be provided together.")
+        try:
+            count = int(mid_layer_count)
+            width = int(mid_layer_size)
+        except ValueError as exc:
+            raise ValueError("mid_layer_count and mid_layer_size must be integers.") from exc
+        if count < 1:
+            raise ValueError("mid_layer_count must be >= 1.")
+        if width < 1:
+            raise ValueError("mid_layer_size must be >= 1.")
+        first = width * 2
+        last = max(width // 2, 1)
+        hidden_layers = [first] + [width] * count + [last]
+        model_section["hidden_layers"] = hidden_layers
     return config
 
 
@@ -200,6 +220,8 @@ def run_autotune(
         "units",
         "num_layers",
         "dropout",
+        "mid_layer_count",
+        "mid_layer_size",
         "batch_size",
         "learning_rate",
         "weight_decay",

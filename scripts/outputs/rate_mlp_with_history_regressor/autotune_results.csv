@@ -1,0 +1,8 @@
+run_id,status,best_val_loss,history_length,units,num_layers,dropout,mid_layer_count,mid_layer_size,batch_size,learning_rate,weight_decay,moved_param,new_value
+0001,success,0.000115,80,,,0.3,4,512,256,0.0008,0.0,,
+0002,success,0.000100,88,,,0.3,4,512,256,0.0008,0.0,history_length,88
+0003,success,0.000099,88,,,0.3,2,512,256,0.0008,0.0,mid_layer_count,2
+0004,success,0.000095,96,,,0.3,2,512,256,0.0008,0.0,history_length,96
+0005,success,0.000094,96,,,0.3,2,544,256,0.0008,0.0,mid_layer_size,544
+0006,success,0.000093,96,,,0.35,2,544,256,0.0008,0.0,dropout,0.35
+0007,success,0.000090,96,,,0.35,2,544,256,0.001,0.0,learning_rate,0.001

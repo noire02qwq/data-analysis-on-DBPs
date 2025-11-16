@@ -1,0 +1,7 @@
+run_id,status,best_val_loss,history_length,units,num_layers,dropout,mid_layer_count,mid_layer_size,batch_size,learning_rate,weight_decay,moved_param,new_value
+0001,failed,inf,,,,0.3,4,512,256,0.0008,0.0,,
+0001,success,0.436309,,,,0.3,4,512,256,0.0008,0.0,,
+0002,success,0.421237,,,,0.3,4,544,256,0.0008,0.0,mid_layer_size,544
+0003,success,0.376650,,,,0.3,4,544,256,0.0008,0.002,weight_decay,0.002
+0004,success,0.375818,,,,0.3,4,544,240,0.0008,0.002,batch_size,240
+0005,success,0.375336,,,,0.3,4,544,224,0.0008,0.002,batch_size,224
