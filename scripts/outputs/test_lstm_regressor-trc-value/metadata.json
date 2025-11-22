@@ -1,0 +1,117 @@
+{
+  "model_name": "test_lstm_regressor",
+  "model_type": "LSTM",
+  "model_format": "torch",
+  "model_params": {
+    "history_length": 10,
+    "units": 32,
+    "num_layers": 2,
+    "dropout": 0.1
+  },
+  "training_params": {
+    "max_epochs": 5,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "checkpoint_interval": 1,
+    "seed": 42
+  },
+  "data_csv": "data\\time_aligned_data.csv",
+  "timestamp_column": "Date, Time",
+  "columns": [
+    "TRC-DT",
+    "TRC-RT",
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-DT",
+    "pH-RT",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-DT",
+    "cond-PPL1",
+    "cond-PPL2",
+    "fDOM-RT",
+    "fDOM-PPL1",
+    "fDOM-PPL2",
+    "DO-RT",
+    "DO-PPL1",
+    "DO-PPL2",
+    "TOC-RT",
+    "TOC-PPL1",
+    "TOC-PPL2",
+    "DOC-RT",
+    "DOC-PPL1",
+    "DOC-PPL2",
+    "minutes_since_start"
+  ],
+  "feature_columns": [
+    "TRC-DT",
+    "TRC-RT",
+    "pH-DT",
+    "pH-RT",
+    "cond-DT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+    "minutes_since_start"
+  ],
+  "target_columns": [
+    "TRC-PPL1",
+    "TRC-PPL2"
+  ],
+  "split_boundaries": {
+    "train_end": 7796,
+    "val_end": 9466,
+    "test_end": 11138
+  },
+  "dataset_sizes": {
+    "train": 7787,
+    "val": 1670,
+    "test": 1672
+  },
+  "input_dim": 10,
+  "sequence_length": 10,
+  "training_history": {
+    "epochs": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "train_loss": [
+      0.22045891014953564,
+      0.04290347728513241,
+      0.031795662695871356,
+      0.02829227402267605,
+      0.024992057432890458
+    ],
+    "val_loss": [
+      0.20863194970670573,
+      0.21282616425417142,
+      0.23423889240104995,
+      0.26649965038913453,
+      0.2821331172467706
+    ],
+    "best_epoch": 2,
+    "best_val_loss": 0.21282616425417142,
+    "test_loss": 4.9431257761266245,
+    "tracker": {
+      "initial_train_loss": 0.22045891014953564,
+      "train_threshold": 0.07348630338317855,
+      "best_tracking": true,
+      "patience_active": true,
+      "patience_best_train": null,
+      "patience_best_val": 0.21282616425417142,
+      "patience_no_improve_epochs": 4,
+      "best_train_loss": Infinity,
+      "forced_stop_due_to_threshold": false
+    }
+  },
+  "model_files": {
+    "best": "scripts\\outputs\\test_lstm_regressor-trc-value\\best_model.pt",
+    "last": "scripts\\outputs\\test_lstm_regressor-trc-value\\last_model.pt"
+  },
+  "config_path": "models\\configs\\test_lstm_config.yaml"
+}

@@ -1,0 +1,33 @@
+parameters:
+  history_length:
+    min: 64
+    max: 256
+    step: 8
+    log: false
+  units:
+    min: 128
+    max: 384
+    step: 8
+    log: false
+  num_layers:
+    min: 2
+    max: 16
+    step: 2
+    log: false
+  dropout:
+    min: 0.2
+    max: 0.5
+    log: false
+  batch_size:
+    min: 64
+    max: 256
+    step: 4
+    log: false
+  learning_rate:
+    min: 0.0002
+    max: 0.002
+    log: true
+  weight_decay:
+    min: 0.0001
+    max: 0.01
+    log: true

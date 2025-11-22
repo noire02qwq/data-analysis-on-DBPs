@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-trc-rate/trial_29_ffbea1
+  history_length: 210
+  units: 310
+  num_layers: 3
+  dropout: 0.4253858537240655
+training:
+  max_epochs: 500
+  batch_size: 206
+  learning_rate: 0.0009235247758698109
+  weight_decay: 0.0006278398393733052
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

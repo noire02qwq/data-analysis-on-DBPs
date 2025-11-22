@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-trc-value/trial_87_baba21
+  history_length: 120
+  units: 214
+  num_layers: 5
+  dropout: 0.3098823857770052
+training:
+  max_epochs: 500
+  batch_size: 237
+  learning_rate: 0.00023047558898696123
+  weight_decay: 0.0009025978938887871
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

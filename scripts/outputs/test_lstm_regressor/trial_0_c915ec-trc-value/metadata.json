@@ -1,0 +1,117 @@
+{
+  "model_name": "test_lstm_regressor/trial_0_c915ec",
+  "model_type": "LSTM",
+  "model_format": "torch",
+  "model_params": {
+    "history_length": 80,
+    "units": 241,
+    "num_layers": 5,
+    "dropout": 0.38550955226146877
+  },
+  "training_params": {
+    "max_epochs": 5,
+    "batch_size": 218,
+    "learning_rate": 0.0005459401792483312,
+    "weight_decay": 0.0005760669983244692,
+    "checkpoint_interval": 1,
+    "seed": 42
+  },
+  "data_csv": "data\\time_aligned_data.csv",
+  "timestamp_column": "Date, Time",
+  "columns": [
+    "TRC-DT",
+    "TRC-RT",
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-DT",
+    "pH-RT",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-DT",
+    "cond-PPL1",
+    "cond-PPL2",
+    "fDOM-RT",
+    "fDOM-PPL1",
+    "fDOM-PPL2",
+    "DO-RT",
+    "DO-PPL1",
+    "DO-PPL2",
+    "TOC-RT",
+    "TOC-PPL1",
+    "TOC-PPL2",
+    "DOC-RT",
+    "DOC-PPL1",
+    "DOC-PPL2",
+    "minutes_since_start"
+  ],
+  "feature_columns": [
+    "TRC-DT",
+    "TRC-RT",
+    "pH-DT",
+    "pH-RT",
+    "cond-DT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+    "minutes_since_start"
+  ],
+  "target_columns": [
+    "TRC-PPL1",
+    "TRC-PPL2"
+  ],
+  "split_boundaries": {
+    "train_end": 7796,
+    "val_end": 9466,
+    "test_end": 11138
+  },
+  "dataset_sizes": {
+    "train": 7717,
+    "val": 1670,
+    "test": 1672
+  },
+  "input_dim": 10,
+  "sequence_length": 80,
+  "training_history": {
+    "epochs": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "train_loss": [
+      0.658945832939767,
+      0.16824367819084812,
+      0.1131199244484624,
+      0.06644607512397409,
+      0.047246553439700543
+    ],
+    "val_loss": [
+      0.2138940264141845,
+      0.2579197204755452,
+      0.3455010698851711,
+      0.21765391406809498,
+      0.2292161522957379
+    ],
+    "best_epoch": 4,
+    "best_val_loss": 0.21765391406809498,
+    "test_loss": 4.245891316370531,
+    "tracker": {
+      "initial_train_loss": 0.658945832939767,
+      "train_threshold": 0.21964861097992236,
+      "best_tracking": true,
+      "patience_active": true,
+      "patience_best_train": null,
+      "patience_best_val": 0.21765391406809498,
+      "patience_no_improve_epochs": 1,
+      "best_train_loss": Infinity,
+      "forced_stop_due_to_threshold": false
+    }
+  },
+  "model_files": {
+    "best": "scripts\\outputs\\test_lstm_regressor\\trial_0_c915ec-trc-value\\best_model.pt",
+    "last": "scripts\\outputs\\test_lstm_regressor\\trial_0_c915ec-trc-value\\last_model.pt"
+  },
+  "config_path": "\\\\wsl.localhost\\Ubuntu-24.04\\home\\amoris\\data-analysis-on-dbps\\scripts\\outputs\\lstm-trc-value-test_lstm_regressor\\trial_0_c915ec\\config.yaml"
+}

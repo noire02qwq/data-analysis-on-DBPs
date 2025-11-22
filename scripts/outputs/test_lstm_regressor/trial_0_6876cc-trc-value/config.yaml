@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: test_lstm_regressor/trial_0_6876cc
+  history_length: 47
+  units: 253
+  num_layers: 14
+  dropout: 0.48716211298832063
+training:
+  max_epochs: 5
+  batch_size: 118
+  learning_rate: 0.0005448155053292502
+  weight_decay: 0.0030286677054369255
+  checkpoint_interval: 1
+  seed: 42
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

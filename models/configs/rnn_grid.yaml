@@ -10,7 +10,7 @@ parameters:
     step: 32
     start: 192
   num_layers:
-    values: [4, 8, 12, 16, 24, 32, 64]
+    values: [4, 8, 12, 16, 24, 32]
     start: 8
   dropout:
     min: 0.2

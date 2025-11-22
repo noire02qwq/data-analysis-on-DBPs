@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-trc-value/trial_88_a59524
+  history_length: 107
+  units: 176
+  num_layers: 6
+  dropout: 0.3869072669145877
+training:
+  max_epochs: 500
+  batch_size: 239
+  learning_rate: 0.00022980288770496854
+  weight_decay: 0.0013524692160366836
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

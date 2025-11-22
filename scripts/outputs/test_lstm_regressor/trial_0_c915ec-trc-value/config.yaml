@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: test_lstm_regressor/trial_0_c915ec
+  history_length: 80
+  units: 241
+  num_layers: 5
+  dropout: 0.38550955226146877
+training:
+  max_epochs: 5
+  batch_size: 218
+  learning_rate: 0.0005459401792483312
+  weight_decay: 0.0005760669983244692
+  checkpoint_interval: 1
+  seed: 42
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

@@ -1,0 +1,26 @@
+parameters:
+  depth:
+    min: 4
+    max: 12
+    step: 1
+    log: false
+  learning_rate:
+    min: 0.002
+    max: 0.03
+    log: true
+  l2_leaf_reg:
+    min: 1.0
+    max: 10.0
+    log: true
+  subsample:
+    min: 0.6
+    max: 1.0
+    log: true
+  random_strength:
+    min: 0.1
+    max: 1.0
+    log: true
+  bagging_temperature:
+    min: 0.0
+    max: 1.0
+    log: true

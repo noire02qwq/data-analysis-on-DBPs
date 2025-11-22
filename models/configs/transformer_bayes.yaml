@@ -1,0 +1,40 @@
+parameters:
+  history_length:
+    min: 32
+    max: 192
+    step: 16
+    log: false
+  d_model:
+    min: 64
+    max: 512
+    step: 32
+    log: false
+  nhead:
+    values: [4, 8, 16]
+  num_encoder_layers:
+    min: 2
+    max: 12
+    step: 2
+    log: false
+  dim_feedforward:
+    min: 256
+    max: 2048
+    step: 128
+    log: false
+  dropout:
+    min: 0.1
+    max: 0.5
+    log: true
+  batch_size:
+    min: 128
+    max: 384
+    step: 16
+    log: false
+  learning_rate:
+    min: 0.0004
+    max: 0.0020
+    log: true
+  weight_decay:
+    min: 0.0
+    max: 0.01
+    log: true

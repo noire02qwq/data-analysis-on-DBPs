@@ -78,6 +78,8 @@ class HistoryFlattenDataset(Dataset):
         if total_rows < history_length:
             raise ValueError("Not enough samples to build the requested history window.")
 
+        # 确保history_length是整数类型
+        history_length = int(history_length)
         valid_indices = np.arange(history_length - 1, total_rows, dtype=int)
         stacked = [
             features[idx - history_length + 1 : idx + 1].reshape(-1) for idx in valid_indices
@@ -117,6 +119,8 @@ class SequenceDataset(Dataset):
         if total_rows < history_length:
             raise ValueError("Not enough samples to build the requested history window.")
 
+        # 确保history_length是整数类型
+        history_length = int(history_length)
         valid_indices = np.arange(history_length - 1, total_rows, dtype=int)
         windows = [features[idx - history_length + 1 : idx + 1] for idx in valid_indices]
         self.features = np.stack(windows).astype(np.float32)

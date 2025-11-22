@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-trc-rate/trial_19_be10a2
+  history_length: 115
+  units: 279
+  num_layers: 7
+  dropout: 0.44760218105670796
+training:
+  max_epochs: 500
+  batch_size: 95
+  learning_rate: 0.0011407807618167517
+  weight_decay: 0.002199127635598685
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-other-value/trial_2_7caab2
+  history_length: 144
+  units: 135
+  num_layers: 10
+  dropout: 0.2783073507116376
+training:
+  max_epochs: 500
+  batch_size: 125
+  learning_rate: 0.0014660107174160998
+  weight_decay: 0.0001991705524259593
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

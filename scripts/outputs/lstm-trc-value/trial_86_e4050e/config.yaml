@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-trc-value/trial_86_e4050e
+  history_length: 86
+  units: 383
+  num_layers: 9
+  dropout: 0.3211941367744339
+training:
+  max_epochs: 500
+  batch_size: 231
+  learning_rate: 0.0002963206655852547
+  weight_decay: 0.0004569983217097552
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time
