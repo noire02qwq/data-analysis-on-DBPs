@@ -1,0 +1,17 @@
+model:
+  type: RNN
+  name: rnn-other-value/trial_38_fdeda3
+  history_length: 57
+  units: 266
+  num_layers: 2
+  dropout: 0.29555198848060205
+training:
+  max_epochs: 500
+  batch_size: 296
+  learning_rate: 0.0012797512113255926
+  weight_decay: 0.0002151991107772807
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

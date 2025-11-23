@@ -1,0 +1,17 @@
+model:
+  type: RNN
+  name: rnn-other-value/trial_51_beba9e
+  history_length: 47
+  units: 383
+  num_layers: 2
+  dropout: 0.45570591629375523
+training:
+  max_epochs: 500
+  batch_size: 272
+  learning_rate: 0.0015631106943112755
+  weight_decay: 0.0007564994470252003
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

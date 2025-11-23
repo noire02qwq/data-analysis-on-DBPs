@@ -1,0 +1,439 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage[left=3.18cm, right=3.18cm, top=2.54cm, bottom=2.54cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\pagestyle{fancy}
+\lhead{} % Clear left header
+\chead{ESE - ZHOU DAFU - A0331761J} % Center header only
+\rhead{} % Clear right header
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\title{ESE5004 Project Midterm Report}
+\date{2025/3/4}
+\begin{document}
+\maketitle
+\begin{itemize}
+    \item{Topic: Advanced oxidation methods for the treatment of landfill leachate wastewater}
+    \item{Name: Zhou Dafu}
+    \item{Number: A0331761J}
+    \item{Supervisor: Prof. Hu Jiangyong}
+    \item{Mentor: Sun Yuanpeng}
+\end{itemize}
+
+\section{Project Background and Research Significance}
+
+\subsection{Introduction}
+
+Landfills remain the predominant method for managing municipal solid waste (MSW) worldwide. In China, over 80\% of the 160 million tonnes of MSW generated annually is disposed of in 668 landfills~\cite{feng2003new}. While landfills provide a cost-effective and operationally simple solution, the decomposition of waste through physicochemical and biological processes generates landfill leachate—a highly contaminated secondary wastewater. This leachate contains a complex mixture of pollutants, including organic compounds (both biodegradable and refractory), inorganic salts, heavy metals, pathogens, and emerging contaminants (ECs) such as pharmaceuticals and personal care products (PPCPs)~\cite{pastore2018comparison}. The presence of refractory organic pollutants, which resist biological degradation, poses significant environmental and health risks, with studies demonstrating that untreated leachate can impair DNA repair mechanisms and cause ecological harm~\cite{ghosh2017bioassays}. Consequently, effective treatment technologies are essential to mitigate these impacts.
+
+Conventional treatment methods, such as physical adsorption, coagulation, and biological processes, are widely employed but often inadequate. Physical methods like adsorption or filtration fail to fully eliminate pollutants, merely transferring them to another phase, while biological treatments struggle to degrade recalcitrant compounds, particularly in aged leachate~\cite{talalaj2019treatment}. These limitations necessitate advanced treatment approaches capable of addressing the diverse and persistent contaminants in landfill leachate.
+
+Advanced Oxidation Processes (AOPs) have gained attention as a robust solution for treating recalcitrant pollutants. AOPs rely on the generation of highly reactive species, primarily hydroxyl radicals (${\cdot}$OH), and in some cases sulfate radicals (${\cdot}$SO$_4^-$), to oxidize organic and inorganic contaminants into smaller, less toxic molecules or mineralize them into carbon dioxide, water, and inorganic ions~\cite{li2022advanced}. Unlike traditional methods, AOPs excel at targeting high organic loads and refractory compounds, making them well-suited for landfill leachate treatment.
+
+In this study, we propose a hybrid treatment system combining biological treatment with advanced oxidation. The biological stage employs activated sludge to remove biodegradable organic matter and nutrients, while the subsequent advanced oxidation step utilizes catalytic oxidation with metal-based activated carbon (e.g., iron and manganese) and hydrogen peroxide (H$_2$O$_2$) to degrade refractory organic pollutants. This section elaborates on the principles of AOPs, details the catalytic oxidation process using metal-based activated carbon, and justifies its selection over alternative AOPs, supported by references and a schematic illustration.
+
+\subsection{Principles of Advanced Oxidation Processes (AOPs)}
+
+AOPs encompass a suite of chemical treatment techniques designed to degrade pollutants through oxidation reactions driven by reactive oxygen species (ROS). The cornerstone of most AOPs is the hydroxyl radical (${\cdot}$OH), a non-selective, highly reactive oxidant with an oxidation potential of 2.8 V (versus the standard hydrogen electrode)~\cite{glaze1987chemistry}. This radical attacks organic molecules by abstracting hydrogen atoms, adding to double bonds, or transferring electrons, initiating a cascade of reactions that break down complex compounds into simpler intermediates or fully mineralize them~\cite{li2022advanced}. Some AOPs also employ sulfate radicals (${\cdot}$SO$_4^-$), which have a slightly lower oxidation potential (2.5–3.1 V) but offer greater selectivity and stability in certain conditions~\cite{chen2021landfill}.
+
+The generation of these radicals depends on the specific AOP method. Common AOPs include:
+
+\begin{itemize}
+    \item \textbf{Ozonation:} Ozone (O$_3$) oxidizes pollutants directly or decomposes in water to form ${\cdot}$OH. The reaction is pH-dependent, with higher pH favoring radical formation (e.g., O$_3$ + OH$^-$ $\rightarrow$ ${\cdot}$OH + O$_2^-$).
+    \item \textbf{Fenton Process:} Involves ferrous iron (Fe$^{2+}$) reacting with H$_2$O$_2$ to produce ${\cdot}$OH (Fe$^{2+}$ + H$_2$O$_2$ $\rightarrow$ Fe$^{3+}$ + ${\cdot}$OH + OH$^-$). This process is highly effective but requires acidic conditions (pH $\sim$ 3) for optimal performance.
+    \item \textbf{Photocatalytic Oxidation:} Uses a semiconductor catalyst (e.g., TiO$_2$) activated by ultraviolet (UV) light to generate electron-hole pairs, which react with water or oxygen to form ${\cdot}$OH (TiO$_2$ + $h\nu$ $\rightarrow$ e$^-$ + h$^+$); h$^+$ + H$_2$O $\rightarrow$ ${\cdot}$OH + H$^+$).
+    \item \textbf{Electrochemical Oxidation:} Employs electrodes to generate oxidants (e.g., ${\cdot}$OH or Cl$_2$) at the anode surface through water electrolysis or electrolyte reactions.
+\end{itemize}
+
+The efficacy of AOPs stems from their ability to produce radicals in situ, ensuring rapid and extensive pollutant degradation. For landfill leachate, which contains recalcitrant compounds like humic substances, phenolic compounds, and halogenated organics, AOPs offer a critical advantage over biological methods by targeting these pollutants directly~\cite{li2022advanced}.
+
+\subsection{Catalytic Oxidation with Metal-Based Activated Carbon}
+
+In this study, we focus on catalytic oxidation using metal-based activated carbon (AC) impregnated with iron (Fe) and manganese (Mn) as catalysts, combined with H$_2$O$_2$ as the oxidant. This method leverages both adsorption and oxidation mechanisms to enhance leachate treatment efficiency. The process can be broken down as follows:
+
+\subsubsection{Components and Mechanisms}
+
+\begin{enumerate}
+    \item \textbf{Activated Carbon (AC):}
+        AC is a porous material with a high specific surface area (typically 500–1500 m$^2$/g), enabling it to adsorb a wide range of organic pollutants from leachate via van der Waals forces and hydrophobic interactions~\cite{bansal2005activated}. This initial adsorption concentrates pollutants on the AC surface, facilitating subsequent oxidation.
+
+    \item \textbf{Metal Catalysts (Fe and Mn):}
+        Iron and manganese are loaded onto the AC surface to serve as heterogeneous catalysts. These metals catalyze the decomposition of H$_2$O$_2$ into ${\cdot}$OH radicals through redox cycles:
+        \begin{itemize}
+            \item Fe$^{3+}$ + H$_2$O$_2$ $\rightarrow$ Fe$^{2+}$ + HO$_2{\cdot}$ + H$^+$
+            \item Fe$^{2+}$ + H$_2$O$_2$ $\rightarrow$ Fe$^{3+}$ + ${\cdot}$OH + OH$^-$
+            \item Mn$^{4+}$ + H$_2$O$_2$ $\rightarrow$ Mn$^{2+}$ + O$_2$ + 2H$^+$
+            \item Mn$^{2+}$ + H$_2$O$_2$ $\rightarrow$ Mn$^{4+}$ + ${\cdot}$OH + OH$^-$
+        \end{itemize}
+        The synergy between Fe and Mn enhances radical production, as Mn can stabilize intermediate species and broaden the pH range of effective catalysis~\cite{zhang2019catalytic}.
+
+    \item \textbf{Hydrogen Peroxide (H$_2$O$_2$):}
+        H$_2$O$_2$ acts as a precursor to ${\cdot}$OH radicals. Its decomposition is accelerated by the metal catalysts, ensuring a steady supply of radicals for oxidation. The reaction is represented as:
+        \[
+        H_2O_2 + M \rightarrow 2{\cdot}OH \quad (\text{where M = Fe or Mn})
+        \]
+
+    \item \textbf{Synergistic Process:}
+        The adsorbed pollutants on AC are oxidized in situ by ${\cdot}$OH radicals generated on the catalyst surface, creating a dual mechanism of removal. This proximity enhances reaction kinetics and minimizes radical scavenging by non-target species in the bulk solution.
+\end{enumerate}
+
+\subsubsection{Process Illustration}
+
+The treatment process is depicted in the following schematic:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{f1.png}
+    \caption{Schematic of catalytic oxidation using metal-based activated carbon with H$_2$O$_2$. Pollutants are adsorbed onto the AC surface, where Fe/Mn catalysts decompose H$_2$O$_2$ into ${\cdot}$OH radicals, oxidizing the pollutants into CO$_2$, H$_2$O, and inorganic ions (María Andérez Fernández et al.).}
+    \label{fig:catalytic_oxidation}
+\end{figure}
+
+\subsection{Advantages Over Other AOPs}
+
+While various AOPs can treat landfill leachate, the metal-based AC catalytic oxidation method offers distinct advantages over alternatives:
+
+\begin{enumerate}
+    \item \textbf{Mild Operating Conditions:}
+        Unlike the Fenton process, which requires acidic pH (2.5–3.5) to prevent iron precipitation, this method operates effectively at neutral pH (6–8). Manganese’s catalytic activity complements iron, broadening the operational pH range and eliminating the need for pH adjustment~\cite{zhang2019catalytic}.
+
+    \item \textbf{Catalyst Reusability:}
+        The heterogeneous nature of metal-based AC allows for catalyst recovery via filtration or sedimentation, reducing operational costs and waste generation. In contrast, the homogeneous Fenton process produces iron sludge, necessitating additional disposal steps~\cite{li2022advanced}.
+
+    \item \textbf{Synergistic Adsorption and Oxidation:}
+        The AC component adsorbs pollutants, concentrating them near the catalytic sites for efficient oxidation. Ozonation and photocatalysis lack this dual functionality, relying solely on radical reactions in the bulk phase, which can be less effective in complex matrices like leachate~\cite{deng2015advanced}.
+
+    \item \textbf{Energy Efficiency:}
+        Photocatalytic oxidation requires UV light, and electrochemical oxidation demands significant electrical input, both increasing energy costs. The metal-based AC method operates without external energy sources, relying on chemical catalysis, making it more sustainable~\cite{chen2021landfill}.
+
+    \item \textbf{Cost-Effectiveness:}
+        Ozonation involves high costs for ozone generation and delivery systems, while the Fenton process incurs expenses for pH adjustment and sludge management. The use of H$_2$O$_2$ with reusable AC catalysts offers a more economical alternative, especially for large-scale applications~\cite{oturan2014advanced}.
+\end{enumerate}
+
+Comparative studies support these advantages. For instance, Zhang et al. (2019) demonstrated that Fe-Mn loaded AC effectively degraded organic pollutants in wastewater, achieving higher removal rates than standalone Fenton or ozonation processes under neutral conditions~\cite{zhang2019catalytic}. Similarly, Li et al. (2022) highlighted the efficacy of metal-catalyzed AOPs for landfill leachate, noting their adaptability to variable pollutant compositions~\cite{li2022advanced}.
+
+\section{Research Gaps}
+
+\begin{itemize}
+    \item The specific impacts of varying operational parameters on the degradation outcomes of landfill leachate.
+    \item Comprehensive cost-performance analysis of different advanced oxidation processes (AOPs).
+\end{itemize}
+
+\section{Objectives}
+
+\begin{itemize}
+    \item Evaluate the efficiency of various AOPs in degrading pollutants in landfill leachate.
+    \item Identify cost-effective AOP treatment methods.
+    \item Analyze the relationship between operational parameters and treatment performance.
+    \item Assess energy consumption, carbon emissions, and cost efficiency for sustainable landfill leachate management.
+\end{itemize}
+
+\section{Current Progress}
+
+\subsection{Characterization of Raw Leachate Pollutants and Determination of Process Sequence}
+
+\subsubsection{Characterization of Raw Leachate}
+
+The first step was to measure the pollutant concentrations in the raw landfill leachate to establish a baseline for treatment evaluation. We focused on three key parameters: Chemical Oxygen Demand (COD), Total Nitrogen (TN), and Ammonia Nitrogen (NH$_3$-N), which reflect the organic load, nutrient content, and ammonia levels, respectively. These metrics are critical for assessing leachate toxicity and treatment efficacy. The measured concentrations of the raw leachate are as follows:
+
+\begin{itemize}
+    \item \textbf{COD:} 36,667 mg/L
+    \item \textbf{TN:} 1,615 mg/L
+    \item \textbf{NH$_3$-N:} 538 mg/L
+\end{itemize}
+
+These values indicate a high organic load and significant nitrogen content, necessitating a combined treatment approach.
+
+\subsubsection{Determination of Biological Treatment Duration}
+
+To integrate biological treatment into our process, we first tested the performance of an activated sludge aeration reactor on the raw leachate. The goal was to determine the minimum time required for effective biological degradation before combining it with advanced oxidation processes (AOPs). The leachate was mixed with activated sludge at a 1:1 ratio, and the reactor was aerated continuously. COD was measured daily to track the degradation progress.
+
+The results showed a rapid initial decrease in COD, followed by a plateau after 3 days, with no significant further reduction observed beyond this point, indicating that biodegradable organics were largely removed within this timeframe.
+
+\subsubsection{Determination of Process Sequence}
+
+With the baseline pollutant levels and biological treatment duration established, we investigated the optimal sequence for combining biological treatment (using activated sludge) with catalytic oxidation (an AOP employing metal-based activated carbon and H$_2$O$_2$). Two process sequences were tested over a total of 6 days each:
+
+\begin{enumerate}
+    \item \textbf{AOP First, Biological Treatment Second:}
+        \begin{itemize}
+            \item \textbf{Step 1:} Raw leachate underwent catalytic oxidation in an AOP reactor for 3 days (3h reaction time per batch, repeated over 3 days).
+            \item \textbf{Step 2:} The AOP-treated effluent was mixed with activated sludge (1:1 ratio) and biologically treated for 3 days with aeration.
+            \item \textbf{Effluent Results:} COD = 1,875 mg/L, TN = 139 mg/L, NH$_3$-N = 61.5 mg/L
+        \end{itemize}
+
+    \item \textbf{Biological Treatment First, AOP Second:}
+        \begin{itemize}
+            \item \textbf{Step 1:} Raw leachate was mixed with activated sludge (1:1 ratio) and biologically treated for 3 days with aeration.
+            \item \textbf{Step 2:} The biologically treated effluent underwent catalytic oxidation in an AOP reactor for 3 days (3h reaction time per batch, repeated over 3 days).
+            \item \textbf{Effluent Results:} COD = 1,120 mg/L, TN = 102 mg/L, NH$_3$-N = 59.8 mg/L
+        \end{itemize}
+\end{enumerate}
+
+The results are summarized in the table below:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|c|}
+        \hline
+        \textbf{Process Sequence} & \textbf{COD (mg/L)} & \textbf{TN (mg/L)} & \textbf{NH$_3$-N (mg/L)} \\
+        \hline
+        Raw Leachate & 36,667 & 1,615 & 538 \\
+        AOP First, Biological Second & 1,875 & 139 & 61.5 \\
+        Biological First, AOP Second & 1,120 & 102 & 59.8 \\
+        \hline
+    \end{tabular}
+    \caption{Pollutant concentrations in raw leachate and effluents after different treatment sequences.}
+    \label{tab:process_sequence}
+\end{table}
+
+These experiments showed that the biological-first sequence outperformed the reverse order, establishing a foundation for further optimization.
+
+\subsection{Single-Factor Analysis Experiments on H$_2$O$_2$ Dosage}
+
+Following the process sequence determination, we conducted single-factor experiments to investigate the effect of H$_2$O$_2$ dosage on pollutant removal efficiency in the catalytic oxidation stage. These experiments aimed to optimize the AOP step by examining how varying H$_2$O$_2$ volumes influence COD removal and establish reaction trends.
+
+\subsubsection{Experimental Design}
+
+The experimental setup was designed to isolate the effect of H$_2$O$_2$ dosage while keeping other variables constant. The procedure is outlined below:
+
+\begin{enumerate}
+    \item \textbf{Preparation of Feed Water:}
+        Effluent from the biological treatment stage (activated sludge reactor, 3-day aeration) was used as the feed water for the AOP reactor. This ensured a consistent starting point with reduced biodegradable organics, focusing the AOP on refractory compounds. Volume of feed water: 170 mL per experiment, derived from the raw leachate with an initial COD of 36,667 mg/L.
+    \item \textbf{H$_2$O$_2$ Dosage Gradient:}
+        A gradient of H$_2$O$_2$ dosages ranging from 0 mL to 10 mL (30\% w/w H$_2$O$_2$ solution) was tested across multiple experiments. The catalyst (metal-based activated carbon, Fe-Mn) to feed water ratio was fixed at 1:2 by volume.
+    \item \textbf{Procedure for Each Experiment:}
+        Measure the initial COD of the bioreactor effluent. Add the specified volume of H$_2$O$_2$ to the AOP reactor containing the catalyst and feed water. Aerate the reactor and sample the effluent at regular intervals over 3 hours (180 minutes). Measure COD at each interval to calculate removal efficiency:
+        \[
+        \text{Removal Efficiency (\%)} = \frac{[\text{COD}]_{\text{initial}} - [\text{COD}]_{\text{final}}}{[\text{COD}]_{\text{initial}}} \times 100
+        \]
+        Plot time versus removal efficiency for each H$_2$O$_2$ dosage. Record the final removal efficiency after 3 hours as the endpoint for that dosage.
+    \item \textbf{Qualitative Outcome:}
+        A graph of removal efficiency versus reaction time was plotted for each H$_2$O$_2$ dosage, with the figure shown below.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{stitched_horizontal_image.png}
+    \caption{Removal efficiency versus reaction time for different H$_2$O$_2$ dosages (0 mL to 10 mL).}
+    \label{fig:h2o2_efficiency}
+\end{figure}
+
+\subsubsection{Qualitative Results}
+
+The experiments indicated that COD removal efficiency increased with both reaction time and H$_2$O$_2$ dosage, providing insights into effective dosing ranges for the catalytic oxidation process.
+
+\subsubsection{Calculation of Ideal H$_2$O$_2$ Volume and Maximum Dosage Rationale}
+
+To understand the 10 mL maximum dosage, we calculated the theoretical H$_2$O$_2$ volume required for complete COD removal:
+\begin{itemize}
+    \item \textbf{Given Data:}
+        Feed water volume: 170 mL. Initial COD of raw leachate: 36,667 mg/L (assume bioreactor effluent COD is lower, e.g., $\sim$1,120 mg/L post-biological treatment from Table~\ref{tab:process_sequence}, but we’ll use raw leachate for a conservative estimate). H$_2$O$_2$ solution: 30\% w/w, density $\approx$ 1.11 g/mL, molar mass = 34 g/mol. COD represents oxygen demand (O$_2$ molar mass = 32 g/mol), where 1 mol O$_2$ (32 g) provides 4 mol electrons.
+    \item \textbf{COD in Moles:}
+        COD mass in 170 mL = 36,667 mg/L $\times$ 0.17 L = 6,233.39 mg = 6.233 g. Moles of O$_2$ equivalent = 6.233 g $\div$ 32 g/mol = 0.1948 mol. Electrons transferred = 0.1948 mol $\times$ 4 = 0.7792 mol.
+    \item \textbf{H$_2$O$_2$ Requirement:}
+        1 mol H$_2$O$_2$ provides 2 mol electrons (H$_2$O$_2$ $\rightarrow$ 2H$^+$ + 2e$^-$ + O$_2$). Moles of H$_2$O$_2$ needed = 0.7792 mol $\div$ 2 = 0.3896 mol. Mass of pure H$_2$O$_2$ = 0.3896 mol $\times$ 34 g/mol = 13.246 g. Mass of 30\% H$_2$O$_2$ solution = 13.246 g $\div$ 0.3 = 44.153 g. Volume of 30\% H$_2$O$_2$ = 44.153 g $\div$ 1.11 g/mL = 39.78 mL.
+\end{itemize}
+
+This calculation helped define practical dosage limits for the experiments.
+
+\subsubsection{Further Data Analysis: Mathematical Model Derivation}
+
+To quantify the relationship between H$_2$O$_2$ dosage, COD removal, and reaction time, we developed a kinetic model based on the experimental data.
+
+\textbf{Reaction Stoichiometry}
+
+\begin{itemize}
+    \item H$_2$O$_2$ acts as an oxidant, providing 2 mol electrons per mol (H$_2$O$_2$ $\rightarrow$ 2${\cdot}$OH).
+    \item COD, measured as O$_2$ equivalent, requires 4 mol electrons per mol O$_2$.
+    \item Thus, the molar ratio of H$_2$O$_2$ to COD is 2:1.
+\end{itemize}
+
+\textbf{Reaction Rate}
+
+The catalytic oxidation rate is assumed to follow:
+\[
+\text{Rate} = k[\text{COD}][H_2O_2]^2
+\]
+where \(k\) is the rate constant, and the second-order dependence on [H$_2$O$_2$] reflects its role in generating ${\cdot}$OH via catalysis.
+
+\textbf{Differential Equation}
+
+\[
+\frac{d[\text{COD}]}{dt} = -k[\text{COD}][H_2O_2]^2
+\]
+
+\textbf{Material Balance}
+
+\[
+[H_2O_2] = [H_2O_2]_0 - 2([\text{COD}]_0 - [\text{COD}])
+\]
+
+\textbf{Substitution}
+
+Substitute into the rate equation:
+\[
+\frac{d[\text{COD}]}{dt} = -k[\text{COD}]([H_2O_2]_0 - 2[\text{COD}]_0 + 2[\text{COD}])^2
+\]
+Define \(\gamma = [H_2O_2]_0 - 2[\text{COD}]_0\):
+\[
+\frac{d[\text{COD}]}{dt} = -k[\text{COD}](\gamma + 2[\text{COD}])^2
+\]
+Expand:
+\[
+\frac{d[\text{COD}]}{dt} = -k\gamma^2[\text{COD}] - 4k\gamma[\text{COD}]^2 - 4k[\text{COD}]^3
+\]
+
+\textbf{Integrated Form}
+
+Solving this nonlinear differential equation via partial fraction decomposition and integration yields:
+\[
+\frac{1}{\gamma^2}\ln\left|\frac{[\text{COD}]}{[\text{COD}]_0}\right| - \frac{2}{\gamma^3}\ln\left|\frac{\gamma + 2[\text{COD}]}{\gamma + 2[\text{COD}]_0}\right| + \frac{4}{\gamma^3}\left(\frac{1}{\gamma + 2[\text{COD}]} - \frac{1}{\gamma + 2[\text{COD}]_0}\right) = -kt
+\]
+
+\textbf{Model Fitting}
+
+\begin{itemize}
+    \item Convert experimental data (H$_2$O$_2$ volumes, COD measurements) to molar concentrations:
+        \begin{itemize}
+            \item [\text{COD}] in mol/L = COD (mg/L) $\div$ 32,000 (mg/mol O$_2$ equivalent).
+            \item \([H_2O_2]_0\) from 30\% H$_2$O$_2$ volume: e.g., 10 mL in 170 mL = 0.0588 mol/L.
+        \end{itemize}
+    \item Time in seconds (e.g., 3h = 10,800 s).
+    \item Fit the equation to time-COD data for each H$_2$O$_2$ dosage, solving for \(k\) via linear regression ($R^2 > 0.8$).
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{stitched_image.png}
+    \caption{Linear fit of kinetic model for selected H$_2$O$_2$ dosages (e.g., 5 mL, 8 mL, 10 mL).}
+    \label{fig:kinetic_fit}
+\end{figure}
+
+\textbf{Rate Constant Analysis}
+
+\begin{itemize}
+    \item Calculated \(k\) values for experiments with $R^2 > 0.8$ were compiled.
+    \item A boxplot of \(k\) values provides statistical insights:
+        \begin{itemize}
+            \item \textbf{Box Range:} 0.000284–0.000714 L$^2$/mol$^2$$\cdot$s
+            \item \textbf{Median:} 0.000482 L$^2$/mol$^2$$\cdot$s
+        \end{itemize}
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{k-result.png}
+    \caption{Boxplot of rate constant \(k\) across valid experiments.}
+    \label{fig:k_boxplot}
+\end{figure}
+
+These quantitative results enhance our understanding of the reaction kinetics.
+
+\subsection{Single-Factor Analysis Experiments on Ratio of Catalyst Filler to Feed Water}
+
+We then explored the effect of catalyst-to-feed-water ratio on COD removal efficiency.
+
+\subsubsection{Experimental Design}
+
+The setup mirrored the H$_2$O$_2$ experiments with adjustments for catalyst variation:
+
+\begin{enumerate}
+    \item \textbf{Preparation of Feed Water:}
+        Effluent from the biological treatment stage (3-day aeration in an activated sludge reactor) was used as the feed water, standardized at 1 unit (assumed 170 mL).
+    \item \textbf{Catalyst Dosage Gradient:}
+        A gradient of catalyst filler volumes was tested, ranging from 0 to 2 units relative to the feed water volume (i.e., ratios from 0:1 to 2:1). The H$_2$O$_2$ dosage was fixed at 8 mL.
+    \item \textbf{Procedure for Each Experiment:}
+        Measure the initial COD of the bioreactor effluent. Add 8 mL of 30\% H$_2$O$_2$ and the specified volume of catalyst to the AOP reactor with the feed water. Aerate the reactor and sample the effluent at intervals over 3 hours. Measure COD at each interval to calculate removal efficiency. Plot time versus removal efficiency for each catalyst ratio. Select an incomplete reaction time (e.g., 1 hour) to compare removal rates across different catalyst dosages.
+    \item \textbf{Qualitative Outcome:}
+        Higher catalyst ratios accelerated COD removal, particularly at shorter times.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figure_2.png}
+    \caption{Removal efficiency versus reaction time for different catalyst filler to feed water ratios (0:1 to 2:1).}
+    \label{fig:catalyst_efficiency}
+\end{figure}
+
+\subsubsection{Qualitative Results}
+
+The experiments showed that increasing catalyst loading enhanced COD removal rates, with effects most notable early in the reaction, informing further optimization.
+
+\subsection{Preliminary Results}
+
+The experiments provided detailed insights into the treatment process:
+
+\begin{enumerate}
+    \item \textbf{Process Sequence:}
+        The raw leachate composition was characterized (COD: 36,667 mg/L, TN: 1,615 mg/L, NH$_3$-N: 538 mg/L). Nitrogen was primarily removed during biological treatment (TN: 93.7\% reduction; NH$_3$-N: 88.9\% in biological-first sequence), with AOP contributing negligibly to TN or NH$_3$-N reduction, as confirmed by intermediate measurements. COD was reduced effectively by both stages, with the biological-first sequence achieving a 96.9\% reduction (COD: 1,120 mg/L, TN: 102 mg/L, NH$_3$-N: 59.8 mg/L) compared to 94.9\% for AOP-first (COD: 1,875 mg/L, TN: 139 mg/L, NH$_3$-N: 61.5 mg/L). During AOP, COD stabilized after about 3 hours, suggesting initial biological treatment enhances AOP efficiency by reducing organic load that could consume ${\cdot}$OH radicals.
+    \item \textbf{Impact of H$_2$O$_2$ Dosage:}
+        Within 0–10 mL, COD removal efficiency increased with higher H$_2$O$_2$ dosages, rising sharply early in the reaction (e.g., first hour) but slowing as reactive species were consumed or refractory COD remained. Moderate dosages (5–8 mL) showed significant gains, while higher dosages (9–10 mL) exhibited a plateau, indicating excess H$_2$O$_2$ was not fully utilized due to radical scavenging or catalyst saturation.
+    \item \textbf{Effect of Catalyst Packing Ratio:}
+        Higher ratios (up to 2:1) accelerated COD removal, especially within the first hour (e.g., 1:1 and 1.5–2:1 showed rapid gains), but the enhancement tapered off near 2:1, suggesting a saturation point where additional catalyst provided minimal benefit due to limited substrate or H$_2$O$_2$.
+\end{enumerate}
+
+These findings confirm the hybrid process’s efficacy and the significant influence of operational parameters.
+
+\section{Summary and Future Plan}
+
+\subsection{Summary}
+
+To date, we have completed the characterization of raw landfill leachate pollutants, established the optimal process sequence (biological treatment followed by AOP), and conducted single-factor experiments on H$_2$O$_2$ dosage and catalyst-to-feed-water ratio. These efforts have yielded preliminary conclusions:
+\begin{itemize}
+    \item Biological treatment excels at nitrogen removal, while AOP targets refractory COD.
+    \item H$_2$O$_2$ and catalyst loading enhance COD removal, but their effects plateau at higher levels, indicating diminishing returns.
+    \item Qualitative patterns (e.g., efficiency versus time, dosage) have been identified, providing a basis for quantitative analysis.
+\end{itemize}
+
+\subsection{Future Plan}
+
+The next steps will build on this foundation:
+\begin{itemize}
+    \item \textbf{Orthogonal Experiments:} Conduct multi-factor experiments to optimize H$_2$O$_2$ dosage, catalyst ratio, and reaction time simultaneously, using statistical design to minimize runs while maximizing insight.
+    \item \textbf{Continuous Testing and Stability:} Assess the long-term stability and reproducibility of the optimized process with fresh leachate samples.
+    \item \textbf{Quantitative Modeling:} Refine the kinetic model from H$_2$O$_2$ experiments (e.g., fit \(k\) values across conditions) and validate it with additional data, addressing outliers through repeated trials.
+    \item \textbf{Energy and Carbon Analysis:} Measure energy consumption (e.g., aeration, H$_2$O$_2$ production) and calculate carbon emissions, drawing on literature for benchmarks.
+    \item \textbf{Cost-Performance Analysis:} Quantify reagent costs, energy expenses, and efficiency to identify the most cost-effective parameters for sustainable leachate management.
+\end{itemize}
+
+These activities will transition our qualitative insights into a robust, scalable treatment strategy, aligning with the project timeline from the FYP Plan.
+
+\section{References}
+
+\begin{thebibliography}{11}
+    \bibitem{feng2003new}
+    Feng, Z.Y., Na, D., Hong, L.J., Zhong, X.C. (2003). A new pyrolysis technology and equipment for treatment of municipal household garbage and hospital waste. \emph{Renewable Energy}, 28(15), 2383–2393.
+
+    \bibitem{pastore2018comparison}
+    Pastore, C., et al. (2018). Comparison of different types of landfill leachate treatments by employment of nontarget screening to identify residual refractory organics and principal component analysis. \emph{Science of The Total Environment}, 635, 984–994.
+
+    \bibitem{ghosh2017bioassays}
+    Ghosh, P., Thakur, I.S., Kaushik, A. (2017). Bioassays for toxicological risk assessment of landfill leachate: A review. \emph{Ecotoxicology and Environmental Safety}, 141, 259–270.
+
+    \bibitem{talalaj2019treatment}
+    Tałałaj, I.A., Biedka, P., Bartkowska, I. (2019). Treatment of landfill leachates with biological pretreatments and reverse osmosis. \emph{Environmental Chemistry Letters}, 17(3), 1177–1193.
+
+    \bibitem{li2022advanced}
+    Li, S., et al. (2022). Advanced oxidation process based on hydroxyl and sulfate radicals to degrade refractory organic pollutants in landfill leachate. \emph{Chemosphere}, 297, 134214.
+
+    \bibitem{glaze1987chemistry}
+    Glaze, W.H., Kang, J.W., Chapin, D.H. (1987). The chemistry of water treatment processes involving ozone, hydrogen peroxide, and ultraviolet radiation. \emph{Ozone: Science \& Engineering}, 9(4), 335–352.
+
+    \bibitem{chen2021landfill}
+    Chen, G., et al. (2021). Landfill leachate treatment by persulphate related advanced oxidation technologies. \emph{Journal of Hazardous Materials}, 418, 126355.
+
+    \bibitem{bansal2005activated}
+    Bansal, R.C., Goyal, M. (2005). \emph{Activated Carbon Adsorption}. CRC Press.
+
+    \bibitem{zhang2019catalytic}
+    Zhang, L., et al. (2019). Catalytic oxidation of organic pollutants in wastewater by Fe-Mn loaded activated carbon. \emph{Journal of Environmental Sciences}, 85, 112–121.
+
+    \bibitem{deng2015advanced}
+    Deng, Y., Zhao, R. (2015). Advanced oxidation processes (AOPs) in wastewater treatment. \emph{Current Pollution Reports}, 1(3), 167–176.
+
+    \bibitem{oturan2014advanced}
+    Oturan, M.A., Aaron, J.J. (2014). Advanced oxidation processes in water/wastewater treatment: Principles and applications. A review. \emph{Critical Reviews in Environmental Science and Technology}, 44(23), 2577–2641.
+\end{thebibliography}
+
+\end{document}

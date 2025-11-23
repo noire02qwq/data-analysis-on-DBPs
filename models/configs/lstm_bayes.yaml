@@ -1,7 +1,7 @@
 parameters:
   history_length:
     min: 64
-    max: 256
+    max: 160
     step: 8
     log: false
   units:

@@ -1,0 +1,17 @@
+model:
+  type: RNN
+  name: rnn-other-rate/trial_13_efd100
+  history_length: 49
+  units: 110
+  num_layers: 7
+  dropout: 0.33901306111353224
+training:
+  max_epochs: 500
+  batch_size: 374
+  learning_rate: 0.00038762222547239787
+  weight_decay: 0.009835138153607106
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

@@ -1,0 +1,17 @@
+model:
+  type: RNN
+  name: rnn-trc-rate/trial_56_cab1fb
+  history_length: 32
+  units: 201
+  num_layers: 2
+  dropout: 0.48729539591638316
+training:
+  max_epochs: 500
+  batch_size: 113
+  learning_rate: 0.0008754519363676242
+  weight_decay: 0.008538149451734388
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

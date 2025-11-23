@@ -1,0 +1,17 @@
+model:
+  type: RNN
+  name: rnn-other-value/trial_15_adc2c2
+  history_length: 152
+  units: 204
+  num_layers: 6
+  dropout: 0.26232682392167855
+training:
+  max_epochs: 500
+  batch_size: 343
+  learning_rate: 0.0003319217212389159
+  weight_decay: 0.0064591327625836996
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

@@ -1,0 +1,17 @@
+model:
+  type: RNN
+  name: rnn-trc-rate/trial_36_fadd1c
+  history_length: 61
+  units: 216
+  num_layers: 6
+  dropout: 0.37171638189405476
+training:
+  max_epochs: 500
+  batch_size: 336
+  learning_rate: 0.0009132356467668793
+  weight_decay: 0.009588346390043367
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

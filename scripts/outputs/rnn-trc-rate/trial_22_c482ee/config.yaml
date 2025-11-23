@@ -1,0 +1,17 @@
+model:
+  type: RNN
+  name: rnn-trc-rate/trial_22_c482ee
+  history_length: 53
+  units: 155
+  num_layers: 9
+  dropout: 0.49159172317294897
+training:
+  max_epochs: 500
+  batch_size: 69
+  learning_rate: 0.0010262871208029498
+  weight_decay: 0.0018971836014986393
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time
