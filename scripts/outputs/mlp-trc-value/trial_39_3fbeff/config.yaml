@@ -1,0 +1,21 @@
+model:
+  type: MLP
+  name: mlp-trc-value/trial_39_3fbeff
+  history_length: 1
+  hidden_layers:
+  - 512
+  - 256
+  - 128
+  dropout: 0.1973237466297092
+  mid_layer_count: 14
+  mid_layer_size: 214
+training:
+  max_epochs: 400
+  batch_size: 203
+  learning_rate: 0.0005061853444939554
+  weight_decay: 0.0023191178087441076
+  checkpoint_interval: 10
+  seed: 42
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

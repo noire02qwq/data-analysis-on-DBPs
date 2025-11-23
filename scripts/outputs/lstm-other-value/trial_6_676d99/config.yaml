@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-other-value/trial_6_676d99
+  history_length: 216
+  units: 250
+  num_layers: 12
+  dropout: 0.39598785650303936
+training:
+  max_epochs: 500
+  batch_size: 243
+  learning_rate: 0.000922938617832885
+  weight_decay: 0.002513210415848268
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

@@ -1,17 +1,17 @@
 parameters:
   history_length:
-    min: 64
-    max: 256
+    min: 32
+    max: 192
     step: 8
     log: false
   units:
-    min: 128
+    min: 64
     max: 384
     step: 8
     log: false
   num_layers:
     min: 2
-    max: 16
+    max: 10
     step: 2
     log: false
   dropout:
@@ -20,7 +20,7 @@ parameters:
     log: false
   batch_size:
     min: 64
-    max: 256
+    max: 384
     step: 4
     log: false
   learning_rate:

@@ -1,0 +1,17 @@
+model:
+  type: RNN
+  name: rnn-trc-value/trial_19_6ca92b
+  history_length: 78
+  units: 342
+  num_layers: 9
+  dropout: 0.32833302078491705
+training:
+  max_epochs: 500
+  batch_size: 113
+  learning_rate: 0.0010929236400485443
+  weight_decay: 0.00020495754586720446
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

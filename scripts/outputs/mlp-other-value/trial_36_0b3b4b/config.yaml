@@ -1,0 +1,21 @@
+model:
+  type: MLP
+  name: mlp-other-value/trial_36_0b3b4b
+  history_length: 1
+  hidden_layers:
+  - 512
+  - 256
+  - 128
+  dropout: 0.4983116979338579
+  mid_layer_count: 6
+  mid_layer_size: 446
+training:
+  max_epochs: 400
+  batch_size: 131
+  learning_rate: 0.0015938386717563708
+  weight_decay: 0.0008786363437900649
+  checkpoint_interval: 10
+  seed: 42
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-other-value/trial_15_abee56
+  history_length: 148
+  units: 221
+  num_layers: 10
+  dropout: 0.467437491691928
+training:
+  max_epochs: 500
+  batch_size: 254
+  learning_rate: 0.0018976195335147134
+  weight_decay: 0.00024018998860534453
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

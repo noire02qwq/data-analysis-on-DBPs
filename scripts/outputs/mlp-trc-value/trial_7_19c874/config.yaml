@@ -1,0 +1,21 @@
+model:
+  type: MLP
+  name: mlp-trc-value/trial_7_19c874
+  history_length: 1
+  hidden_layers:
+  - 512
+  - 256
+  - 128
+  dropout: 0.19559323042615712
+  mid_layer_count: 3
+  mid_layer_size: 413
+training:
+  max_epochs: 400
+  batch_size: 322
+  learning_rate: 0.0005227591218913545
+  weight_decay: 0.0008514320760667155
+  checkpoint_interval: 10
+  seed: 42
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

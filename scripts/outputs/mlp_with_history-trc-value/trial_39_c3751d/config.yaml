@@ -1,0 +1,26 @@
+model:
+  type: MLP_WITH_HISTORY
+  name: mlp_with_history-trc-value/trial_39_c3751d
+  history_length: 111
+  hidden_layers:
+  - 4096
+  - 3072
+  - 2048
+  - 1024
+  - 768
+  - 512
+  - 256
+  - 128
+  dropout: 0.42742659362972235
+  mid_layer_count: 9
+  mid_layer_size: 990
+training:
+  max_epochs: 500
+  batch_size: 451
+  learning_rate: 0.0010600423299841981
+  weight_decay: 0.005990360290352523
+  checkpoint_interval: 10
+  seed: 77
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

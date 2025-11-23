@@ -1,4 +1,4 @@
 {
     "python.analysis.typeCheckingMode": "off",
-    "kiroAgent.configureMCP": "Disabled"
+    "kiroAgent.configureMCP": "Enabled"
 }
