@@ -5246,3 +5246,13 @@ Training artifacts saved to scripts/outputs/lstm-other-value/trial_50_8bc92d
 [lstm-other-value/trial_51_cfb0bc][Epoch 129] train_mse=0.026651 val_mse=0.471640
 Training artifacts saved to scripts/outputs/lstm-other-value/trial_51_cfb0bc
 [I 2025-11-22 21:25:49,545] Trial 51 finished with value: 0.38390251975395007 and parameters: {'history_length': 176.24874435122726, 'units': 347.4689209796913, 'num_layers': 2.077404542041963, 'dropout': 0.3290325685762869, 'batch_size': 214.49687067657848, 'learning_rate': 0.000585788513747458, 'weight_decay': 0.0004421906864419382}. Best is trial 33 with value: 0.31053998513136083.
+Best parameters:
+  'history_length': 194.89833088779312
+    'units': 173.8831625027322
+    'num_layers': 8.745133004523353
+    'dropout': 0.43943530557964516
+    'batch_size': 73.93179900237328
+    'learning_rate': 0.00028818393157126085
+    'weight_decay': 0.00035420958833168347
+Best validation loss: 0.31053998513136083
+Results saved to /home/amoris/data-analysis-on-dbps/scripts/outputs/lstm-other-value/bayes_optimization_results.csv

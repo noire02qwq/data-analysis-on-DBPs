@@ -1,0 +1,17 @@
+model:
+  type: RNN
+  name: rnn-other-rate/trial_38_ee623f
+  history_length: 54
+  units: 206
+  num_layers: 4
+  dropout: 0.45202883156750534
+training:
+  max_epochs: 500
+  batch_size: 94
+  learning_rate: 0.0005095785255162066
+  weight_decay: 0.0021073109170510447
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

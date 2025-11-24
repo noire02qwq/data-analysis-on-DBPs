@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/amoris/data-analysis-on-dbps/scripts/bayes_autotune_trc_rate.py", line 49, in <module>
+    main()
+  File "/home/amoris/data-analysis-on-dbps/scripts/bayes_autotune_trc_rate.py", line 38, in main
+    run_bayesian_optimization(
+  File "/home/amoris/data-analysis-on-dbps/scripts/bayes_optimize.py", line 244, in run_bayesian_optimization
+    raise ValueError(f"Base config model.type ({base_model_type}) does not match expected {model_type}.")
+ValueError: Base config model.type (RNN) does not match expected GRU.

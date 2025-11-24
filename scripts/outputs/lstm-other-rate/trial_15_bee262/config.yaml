@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-other-rate/trial_15_bee262
+  history_length: 129
+  units: 80
+  num_layers: 4
+  dropout: 0.22871145436430546
+training:
+  max_epochs: 500
+  batch_size: 65
+  learning_rate: 0.00043497437314573157
+  weight_decay: 0.00021786717470177958
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

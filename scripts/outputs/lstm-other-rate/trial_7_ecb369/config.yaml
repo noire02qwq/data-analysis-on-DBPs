@@ -1,0 +1,17 @@
+model:
+  type: LSTM
+  name: lstm-other-rate/trial_7_ecb369
+  history_length: 147
+  units: 137
+  num_layers: 8
+  dropout: 0.41463417979203576
+training:
+  max_epochs: 500
+  batch_size: 172
+  learning_rate: 0.0004929089702131765
+  weight_decay: 0.0013836853974675417
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time
