@@ -1,0 +1,47 @@
+\begin{thebibliography}{1}
+
+\bibitem{galliard2004organic}
+Herv{\'e} Galliard and Urs von Gunten.
+\newblock Organic matter and disinfection by-products.
+\newblock {\em Water Research}, 38(1):45--56, 2004.
+
+\bibitem{siddique2012review}
+Mst~Asma Siddique, Abdul Khaleque, and Md~Aminul Islam.
+\newblock A review of disinfection by-product (dbp) formation.
+\newblock {\em International Journal of Environmental Sciences}, 2(4):2356--2366, 2012.
+
+\bibitem{hua2015formation}
+Guanghui Hua and David~A Reckhow.
+\newblock Formation and control of nitrogenous disinfection by-products.
+\newblock {\em Current Opinion in Environmental Science \& Health}, -1:28--34, 2015.
+
+\bibitem{hochreiter1997long}
+Sepp Hochreiter and J{\'u}rgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780, 1997.
+
+\bibitem{kingma2014adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{srivastava2014dropout}
+Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock {\em The journal of machine learning research}, 15(1):1929--1958, 2014.
+
+\bibitem{bergstra2012random}
+James Bergstra and Yoshua Bengio.
+\newblock Random search for hyper-parameter optimization.
+\newblock {\em Journal of machine learning research}, 13(Feb):281--305, 2012.
+
+\bibitem{snoek2012practical}
+Jasper Snoek, Hugo Larochelle, and Ryan~P Adams.
+\newblock Practical bayesian optimization of machine learning algorithms.
+\newblock {\em Advances in neural information processing systems}, 25, 2012.
+
+\bibitem{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, and \L~Kaiser.
+\newblock Attention is all you need.
+
+\end{thebibliography}

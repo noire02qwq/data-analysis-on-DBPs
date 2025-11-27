@@ -1,0 +1,264 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage[left=3.18cm, right=3.18cm, top=2.54cm, bottom=2.54cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+
+\newcommand{\minval}[1]{\textbf{\textcolor{red}{#1}}}
+
+\pagestyle{fancy}
+\lhead{} % Clear left header
+\chead{ESE5004 - Midterm Report} % Center header
+\rhead{} % Clear right header
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+\title{Data-Driven Prediction of Disinfection By-Product Indicators in Water Distribution Systems}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{itemize}
+    \item{\textbf{Topic:} Data-Driven Prediction of Disinfection By-Product Indicators in Water Distribution Systems}
+    \item{\textbf{Name:} Zhou Dafu}
+    \item{\textbf{Number:} A0331761J}
+    \item{\textbf{Supervisor:} Prof. Hu Jiangyong}
+    \item{\textbf{Mentor:} Mr. Sun Yuanpeng}
+\end{itemize}
+
+\section{Introduction}
+
+\subsection{Background}
+Disinfection is a critical step in municipal water treatment, designed to eliminate pathogenic microorganisms and ensure public health. However, chemical disinfectants, most commonly chlorine, react with naturally occurring organic matter (NOM) and other precursors in the water to form a wide array of unintended compounds known as disinfection by-products (DBPs)~\cite{galliard2004organic}. Many DBPs are of health concern due to their potential carcinogenic and mutagenic properties~\cite{siddique2012review}. Consequently, water utilities face the challenge of balancing microbial safety with the minimization of DBP formation.
+
+Predicting DBP concentrations within complex water distribution systems (WDS) is a significant challenge due to dynamic hydraulic conditions and complex chemical kinetics. Traditional monitoring relies on infrequent grab sampling and laboratory analysis, which is costly and provides low temporal resolution. This research aims to leverage high-frequency sensor data and supervised machine learning techniques to develop predictive models for DBP indicators, such as Total Residual Chlorine (TRC), Total Organic Carbon (TOC), and pH. The successful development of these models would enable proactive operational control to mitigate DBP formation and improve water quality management. This report outlines the progress made in data preprocessing, model selection, and experimental design for this purpose.
+
+\subsection{DBP Formation Chemistry}
+The formation of DBPs is initiated by the reaction of a primary disinfectant (e.g., chlorine) with organic and inorganic precursors present in the water. In this project, the water treatment process involves the addition of chlorine, lime, and ammonium salts. The primary disinfectant, hypochlorous acid (HOCl), is formed, which then acts as an oxidizing agent. These disinfectants react with NOM to produce halogenated DBPs, while reactions with nitrogen-containing precursors can lead to the formation of nitrogenous DBPs (N-DBPs), which are often more cytotoxic and genotoxic than their regulated counterparts~\cite{hua2015formation}. A simplified representation of the primary reactions is:
+\begin{align*}
+    \text{Cl}_2 + \text{H}_2\text{O} & \rightleftharpoons \text{HOCl} + \text{H}^+ + \text{Cl}^- \\
+    \text{HOCl} + \text{NOM} & \rightarrow \text{Halogenated DBPs (e.g., THMs, HAAs)} \\
+    \text{HOCl} + \text{NH}_3 + \text{NOM} & \rightarrow \text{Nitrogenous DBPs (e.g., HANs)}
+\end{align*}
+The specific types and concentrations of DBPs formed are highly dependent on factors such as precursor type and concentration (TOC, DOC), disinfectant dose (measured by TRC), pH, temperature, and reaction time.
+
+\section{Methodology}
+
+\subsection{System Description and Data Acquisition}
+The study focuses on a section of a water distribution system comprising five main stages:
+\begin{enumerate}
+    \item \textbf{Finished Water Tank (FWT):} Post-treatment water storage. Not included in the modeling.
+    \item \textbf{Mixing Tank (DT):} Where disinfection chemicals are introduced and mixed.
+    \item \textbf{Reservoir Tank (RT):} Provides contact time for disinfection.
+    \item \textbf{Pipeline Stage 1 (PPL1):} First section of the distribution pipeline.
+    \item \textbf{Pipeline Stage 2 (PPL2):} Second section of the distribution pipeline.
+\end{enumerate}
+
+Water quality data is collected via multi-parameter sensors at different stages. The parameters include Total Residual Chlorine (TRC), pH, Conductivity, Fluorescent Dissolved Organic Matter (fDOM), Dissolved Oxygen (DO), Total Organic Carbon (TOC), and Dissolved Organic Carbon (DOC). Data is recorded at a 5-minute interval. The availability of sensor measurements at each stage is summarized in Table \ref{tab:sensor_data}.
+
+\begin{table}[h!]
+\centering
+\caption{Availability of Sensor Measurements at Each Stage}
+\label{tab:sensor_data}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Parameter} & \textbf{DT} & \textbf{RT} & \textbf{PPL1} & \textbf{PPL2} \\
+\midrule
+TRC & \checkmark & \checkmark & \checkmark & \checkmark \\
+pH & \checkmark & \checkmark & \checkmark & \checkmark \\
+Conductivity & \checkmark &  & \checkmark & \checkmark \\
+fDOM (QSU) &  & \checkmark & \checkmark & \checkmark \\
+DO &  & \checkmark & \checkmark & \checkmark \\
+TOC &  & \checkmark & \checkmark & \checkmark \\
+DOC &  & \checkmark & \checkmark & \checkmark \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Data Preprocessing}
+
+\subsubsection{Imputation of Missing Values}
+A unique challenge in the dataset arises from the measurement setup for PPL1 and PPL2, where a single sensor alternates between the two locations every 30 minutes. This results in blocks of six consecutive missing values for each pipeline stage, alternating with six valid measurements. To create a continuous time series for model training, these missing values must be imputed. Given the temporal correlation in water quality data, advanced imputation techniques such as interpolation, or model-based methods will be employed to fill these gaps realistically. Figure \ref{fig:imputation_example} illustrates a conceptual example of this imputation.
+
+\begin{figure}[h!]
+\centering
+\caption{Conceptual Example of Missing Value Imputation (Placeholder)}
+\label{fig:imputation_example}
+\fbox{A plot showing a time series with gaps and the imputed values will be placed here.}
+\end{figure}
+
+\subsubsection{Time Alignment}
+As a parcel of water flows through the WDS, there is a travel time (hydraulic delay) between consecutive stages. To model the chemical transformations accurately, the input data (from DT and RT) must be time-aligned with the output data (from PPL1 and PPL2) to ensure the model learns the relationship between the same parcel of water at different points in time. This involves calculating the time lag between stages and shifting the data series accordingly before creating input-output pairs for the models.
+
+\section{Model Selection and Training}
+
+\subsection{Model Architectures}
+To capture the complex, non-linear dynamics of DBP formation, several neural network architectures are considered for this regression task:
+\begin{itemize}
+    \item \textbf{Multilayer Perceptron (MLP):} A foundational feedforward neural network that can model complex non-linear relationships. It consists of an input layer, one or more hidden layers, and an output layer. Each layer contains neurons that are fully connected to the neurons in the subsequent layer. MLPs are powerful function approximators but do not have inherent memory, treating each input independently.
+
+    \begin{figure}[h!]
+        \centering
+        \caption{Structure of a Multilayer Perceptron (Placeholder)}
+        \label{fig:mlp_structure}
+        \fbox{A diagram illustrating the layered structure of an MLP will be placed here.}
+    \end{figure}
+
+    \item \textbf{Recurrent Neural Network (RNN):} Designed to handle sequential data by maintaining a hidden state that captures past information. The output at a given time step is a function of the current input and the hidden state from the previous time step. This recurrent connection allows RNNs to model temporal dependencies, but they can struggle with long-term dependencies due to the vanishing gradient problem.
+
+    \begin{figure}[h!]
+        \centering
+        \caption{Structure of a Recurrent Neural Network (Placeholder)}
+        \label{fig:rnn_structure}
+        \fbox{A diagram illustrating the recurrent loop in an RNN will be placed here.}
+    \end{figure}
+
+    \item \textbf{Long Short-Term Memory (LSTM):} A specialized RNN architecture that uses gating mechanisms (input, forget, and output gates) to overcome the vanishing gradient problem and effectively learn long-term dependencies~\cite{hochreiter1997long}. The gates control the flow of information, allowing the network to selectively remember or forget information over long sequences, making it well-suited for time-series forecasting.
+
+    \begin{figure}[h!]
+        \centering
+        \caption{Structure of a Long Short-Term Memory Cell (Placeholder)}
+        \label{fig:lstm_structure}
+        \fbox{A diagram illustrating the gates within an LSTM cell will be placed here.}
+    \end{figure}
+
+    \item \textbf{Gated Recurrent Unit (GRU):} A simplified version of the LSTM with fewer parameters, which often performs comparably on many tasks. It combines the input and forget gates into a single "update gate" and merges the cell state and hidden state. This makes the GRU more computationally efficient than the LSTM while still retaining its ability to capture long-term dependencies.
+
+    \begin{figure}[h!]
+        \centering
+        \caption{Structure of a Gated Recurrent Unit Cell (Placeholder)}
+        \label{fig:gru_structure}
+        \fbox{A diagram illustrating the gates within a GRU cell will be placed here.}
+    \end{figure}
+\end{itemize}
+
+\subsection{Model Training}
+The models will be trained using standard deep learning principles. The process involves feeding the model with input-output pairs and optimizing its internal weights to minimize a loss function, which quantifies the error between the model's predictions and the true values.
+
+\begin{figure}[h!]
+    \centering
+    \caption{Model Training and Evaluation Workflow (Placeholder)}
+    \label{fig:training_flowchart}
+    \fbox{A flowchart illustrating the data splitting, training, validation, and testing process will be placed here.}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Loss Function:} Mean Squared Error (MSE) is chosen as the loss function, suitable for regression tasks.
+    \item \textbf{Optimization:} The Adam optimizer~\cite{kingma2014adam}, an adaptive learning rate optimization algorithm, is used to update the model weights via backpropagation.
+    \item \textbf{Dataset Splitting:} The data is split into training, validation, and test sets. The model learns from the training set, its hyperparameters are tuned based on performance on the validation set, and its final performance is evaluated on the unseen test set.
+    \item \textbf{Regularization:} To prevent overfitting, techniques like Dropout~\cite{srivastava2014dropout} are used. Additionally, an early stopping mechanism is implemented: training is halted if the validation loss does not improve for a specified number of epochs, and the model with the best validation performance is saved.
+\end{itemize}
+
+\subsection{Hyperparameter Optimization}
+The performance of neural networks is highly sensitive to the choice of hyperparameters. Key hyperparameters include learning rate, batch size, dropout rate, number of layers, number of units per layer, and the history length for sequential models. While methods like grid search and random search~\cite{bergstra2012random} exist, this project employs \textbf{Bayesian Optimization}~\cite{snoek2012practical}. Bayesian optimization builds a probabilistic model of the objective function (e.g., validation loss) and uses it to intelligently select the most promising hyperparameters to evaluate next. This approach is more efficient than exhaustive or random searches, often finding better hyperparameter configurations in fewer iterations.
+
+\section{Experiment Design and Improvements}
+
+\subsection{Initial Multi-Output Approach}
+The initial experimental design involved a single model with multiple output heads to simultaneously predict all target variables for PPL1 and PPL2, using sensor data from DT and RT as input. While straightforward, this approach can be suboptimal if the target variables have different scales or underlying complexities.
+
+\subsection{Normalized Rate of Change Regression}
+An alternative approach, termed "rate" regression, was explored to improve model sensitivity to small variations. Instead of predicting the absolute downstream concentration, the model is trained to predict a normalized rate of change. This "rate" is defined as the relative change from the upstream concentration:
+\[ \text{Rate} = \frac{Y_{\text{downstream}} - Y_{\text{upstream}}}{Y_{\text{upstream}}} \]
+This can be intuitively understood as the percentage by which the concentration has increased or decreased. The primary motivation for this transformation is that the absolute concentrations between upstream and downstream points often change very little. When training on absolute values, the large, relatively stable upstream value can dominate the input features, saturating the neural network's weights and making it difficult for the model to learn the small but significant variations that occur downstream. By transforming the target variable into a normalized rate, the model can focus specifically on capturing these subtle changes, leading to a more effective representation of the system's dynamics.
+
+\subsection{Decoupled Model for TRC}
+Preliminary experiments indicated that TRC is particularly challenging to predict accurately, yet it is a crucial driver of DBP formation. To address this, a decoupled modeling strategy was designed. One model is trained exclusively to predict TRC, allowing for a more focused architecture and hyperparameter search. A second, multi-output model is then trained to predict the remaining, less-critical parameters. This specialization is hypothesized to yield better overall predictive accuracy.
+
+\section{Results and Analysis}
+This section presents the quantitative results from the different modeling approaches. The performance of each model is evaluated using Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and Mean Absolute Error (MAE). The results for predicting TRC, pH, and TOC at the PPL2 stage are summarized in Tables \ref{tab:results_trc}, \ref{tab:results_ph}, and \ref{tab:results_toc}, respectively. In each table, the best performing model for each metric is highlighted in red.
+
+% TRC Table
+\begin{table}[h!]
+\centering
+\caption{Performance Metrics for TRC Prediction at PPL2}
+\label{tab:results_trc}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Model & MSE & RMSE & MAE \\
+\midrule
+LSTM-Rate & \minval{0.004105} & \minval{0.064071} & 0.064056 \\
+GRU-Rate & 0.004119 & 0.064181 & 0.064169 \\
+MLP-Rate & 0.004132 & 0.064282 & 0.064276 \\
+MLPHIS-Rate & 0.004225 & 0.064999 & 0.064992 \\
+RNN-Rate & 0.004274 & 0.065373 & 0.065365 \\
+GRU-Value & 0.005223 & 0.072270 & \minval{0.061207} \\
+LSTM-Value & 0.006218 & 0.078852 & 0.070913 \\
+MLPHIS-Value & 0.006462 & 0.080386 & 0.072379 \\
+MLP-Value & 0.007443 & 0.086271 & 0.072452 \\
+RNN-Value & 0.007742 & 0.087986 & 0.076849 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% PH Table
+\begin{table}[h!]
+\centering
+\caption{Performance Metrics for pH Prediction at PPL2}
+\label{tab:results_ph}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Model & MSE & RMSE & MAE \\
+\midrule
+GRU-Value & \minval{0.000943} & \minval{0.030707} & \minval{0.023314} \\
+RNN-Value & 0.001014 & 0.031850 & 0.027056 \\
+MLPHIS-Value & 0.001075 & 0.032787 & 0.026606 \\
+MLP-Value & 0.001234 & 0.035129 & 0.029048 \\
+LSTM-Value & 0.001317 & 0.036284 & 0.030846 \\
+LSTM-Rate & 0.006097 & 0.078086 & 0.061832 \\
+MLP-Rate & 0.006363 & 0.079769 & 0.062610 \\
+RNN-Rate & 0.006593 & 0.081196 & 0.062938 \\
+MLPHIS-Rate & 0.006601 & 0.081245 & 0.063193 \\
+GRU-Rate & 0.006605 & 0.081271 & 0.063178 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% TOC Table
+\begin{table}[h!]
+\centering
+\caption{Performance Metrics for TOC Prediction at PPL2}
+\label{tab:results_toc}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Model & MSE & RMSE & MAE \\
+\midrule
+GRU-Value & \minval{0.000121} & \minval{0.011009} & \minval{0.008832} \\
+RNN-Value & 0.000126 & 0.011223 & 0.009155 \\
+LSTM-Value & 0.000215 & 0.014674 & 0.012685 \\
+MLP-Value & 0.000281 & 0.016771 & 0.014317 \\
+LSTM-Rate & 0.000282 & 0.016790 & 0.013792 \\
+MLPHIS-Rate & 0.000332 & 0.018233 & 0.015136 \\
+GRU-Rate & 0.000339 & 0.018420 & 0.015334 \\
+RNN-Rate & 0.000348 & 0.018663 & 0.015582 \\
+MLPHIS-Value & 0.000343 & 0.018517 & 0.015614 \\
+MLP-Rate & 0.000391 & 0.019768 & 0.016724 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\section{Conclusion}
+\textit{(This section is a placeholder for future results.)}
+
+This section will summarize the key findings of the study, highlighting the most effective modeling approaches and the implications for water quality management.
+
+\section{Future Work}
+Based on the progress to date, several future directions have been identified:
+\begin{itemize}
+    \item \textbf{Expand Dataset:} Incorporate new data as it becomes available to increase the size and diversity of the training set, which is crucial for model generalization.
+    \item \textbf{Enhance Optimization:} Increase the number of trials in the Bayesian optimization runs to allow for a more thorough exploration of the hyperparameter space, potentially yielding more optimal models.
+    \item \textbf{Explore Advanced Models:} Investigate state-of-the-art time series models, such as the Transformer~\cite{vaswani2017attention} and its recent variants (e.g., iTransformer, PatchTST), which have shown strong performance on long-sequence forecasting tasks.
+    \item \textbf{Develop a Second-Stage DBP Model:} Create a subsequent model to establish a mapping from the predicted water quality parameters (TRC, TOC, pH) to actual DBP concentrations measured by offline laboratory instruments. This would achieve the ultimate goal of predicting specific DBP levels from sensor data.
+\end{itemize}
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}
