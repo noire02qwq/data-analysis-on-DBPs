@@ -8,12 +8,14 @@ Herv{\'e} Galliard and Urs von Gunten.
 \bibitem{siddique2012review}
 Mst~Asma Siddique, Abdul Khaleque, and Md~Aminul Islam.
 \newblock A review of disinfection by-product (dbp) formation.
-\newblock {\em International Journal of Environmental Sciences}, 2(4):2356--2366, 2012.
+\newblock {\em International Journal of Environmental Sciences},
+  2(4):2356--2366, 2012.
 
 \bibitem{hua2015formation}
 Guanghui Hua and David~A Reckhow.
 \newblock Formation and control of nitrogenous disinfection by-products.
-\newblock {\em Current Opinion in Environmental Science \& Health}, -1:28--34, 2015.
+\newblock {\em Current Opinion in Environmental Science \& Health}, pages
+  28--34, 2015.
 
 \bibitem{hochreiter1997long}
 Sepp Hochreiter and J{\'u}rgen Schmidhuber.
@@ -26,9 +28,11 @@ Diederik~P Kingma and Jimmy Ba.
 \newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
 
 \bibitem{srivastava2014dropout}
-Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan Salakhutdinov.
+Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
+  Salakhutdinov.
 \newblock Dropout: a simple way to prevent neural networks from overfitting.
-\newblock {\em The journal of machine learning research}, 15(1):1929--1958, 2014.
+\newblock {\em The journal of machine learning research}, 15(1):1929--1958,
+  2014.
 
 \bibitem{bergstra2012random}
 James Bergstra and Yoshua Bengio.
@@ -41,7 +45,9 @@ Jasper Snoek, Hugo Larochelle, and Ryan~P Adams.
 \newblock {\em Advances in neural information processing systems}, 25, 2012.
 
 \bibitem{vaswani2017attention}
-Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, and \L~Kaiser.
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, {Ł}ukasz Kaiser, and Illia Polosukhin.
 \newblock Attention is all you need.
+\newblock {\em Advances in neural information processing systems}, 30, 2017.
 
 \end{thebibliography}

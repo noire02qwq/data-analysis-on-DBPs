@@ -1,15 +1,25 @@
 # Fdb version 4
-["bibtex midterm_report"] 1764243350.97981 "midterm_report.aux" "midterm_report.bbl" "midterm_report" 1764243351.06638 2
-  "./references.bib" 1764221240.89579 2749 6d3f544b9805ac76ca42ac99b0560d71 ""
+["bibtex midterm_report"] 1764253212.34557 "midterm_report.aux" "midterm_report.bbl" "midterm_report" 1764253213.09238 0
+  "./references.bib" 1764253039.39588 2735 23cc604149fa9be931b2913f5aa55d35 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "midterm_report.aux" 1764243350.78259 4745 507ccd0825f670af8a35130675a91bea "pdflatex"
+  "midterm_report.aux" 1764253212.88383 5604 b97118439009e9d3d7471243cff6c4aa "pdflatex"
   (generated)
   "midterm_report.bbl"
   "midterm_report.blg"
   (rewritten before read)
-["pdflatex"] 1764243350.47127 "/home/amoris/data-analysis-on-dbps/documents/midterm/midterm_report.tex" "midterm_report.pdf" "midterm_report" 1764243351.06656 0
+["pdflatex"] 1764253212.42516 "/home/amoris/data-analysis-on-dbps/documents/midterm/midterm_report.tex" "midterm_report.pdf" "midterm_report" 1764253213.09253 0
+  "../attachment/alignment.png" 1764246491.5377 4868895 75b1c670e2a331a4314dddc936679e18 ""
+  "../attachment/experiment framework.png" 1764247332.80147 5450007 edec7d74a7174b015e354f4882715637 ""
+  "../attachment/gru.png" 1764246492.2177 4949314 c33e6260b18bf735703acf8b13bec0bf ""
+  "../attachment/imputation.png" 1764246491.8497 4541312 b06185af9dba3588c3a7b77b10df0417 ""
+  "../attachment/lstm.png" 1764246492.7337 4958596 960fb820753f03397f3ee56d4358f0b4 ""
+  "../attachment/midterm result plots.png" 1764250748.46855 5289858 0c1887a51a34151b1178618be17c2841 ""
+  "../attachment/mlp.png" 1764250749.28055 5454956 654afa6e3d11452da352a2bf2f7d3cff ""
+  "../attachment/model workflow.png" 1764247923.6453 5443452 7f9f2b7bf54387e641c34741f2afbd23 ""
+  "../attachment/reactors.png" 1764246491.2177 4859045 fe9d7bce28e00ab2091093bbb3207ff9 ""
+  "../attachment/rnn.png" 1764246493.0337 4744040 7e176ac387ca9b114d307bff97a6613e ""
   "/etc/texmf/web2c/texmf.cnf" 1760251244.23218 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/amoris/data-analysis-on-dbps/documents/midterm/midterm_report.tex" 1764243349.33859 18461 382cb606d9ee6a3c7c40e78209327953 ""
+  "/home/amoris/data-analysis-on-dbps/documents/midterm/midterm_report.tex" 1764253211.08783 21978 2ad9bf0d2b20f61b5f396c137f7b4e2a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -60,6 +70,9 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1705352648 20144 147463a6a579f4597269ef9565205cfe ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1705352648 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty" 1579038678 6078 f1cb470c9199e7110a27851508ed7a5c ""
+  "/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty" 1696191071 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
+  "/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty" 1696191071 72619 ee90b6612147680fd73c3b1406a74245 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty" 1690576852 12494 0c0cdb824278a4d51cefeb2e79901315 ""
   "/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty" 1659300143 12441 3b2a708337608012a865c7d9b7f05d28 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1668028059 18450 88279bf67c81e69f8e3f1c1bad1a26c5 ""
@@ -73,6 +86,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty" 1654720880 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx" 1667332637 2885 9c645d672ae17285bba324998918efd8 ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty" 1654720880 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/grffile/grffile.sty" 1573594974 1499 e43bb281163d9895e141f684cfc2da7e ""
   "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1704491087 30006 57b07afb710ee2f649c65cfbafda39c1 ""
   "/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1279039959 678 4792914a8f45be57bb98413425e4c7af ""
   "/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty" 1670275497 22490 8cac309b79a4c53a4ffce4b1b07aead0 ""
@@ -84,9 +98,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1760251273.64156 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1760251338 8215100 95a1cd555142dc73e280eb5efe6472a2 ""
-  "midterm_report.aux" 1764243350.78259 4745 507ccd0825f670af8a35130675a91bea "pdflatex"
-  "midterm_report.bbl" 1764243351.06259 1906 f486909520b350193b34a9955b34150e "bibtex midterm_report"
-  "midterm_report.tex" 1764243349.33859 18461 382cb606d9ee6a3c7c40e78209327953 ""
+  "midterm_report.aux" 1764253212.88383 5604 b97118439009e9d3d7471243cff6c4aa "pdflatex"
+  "midterm_report.bbl" 1764253212.41584 2011 0c77463a2aa5a07180f9204b091e20d2 "bibtex midterm_report"
+  "midterm_report.tex" 1764253211.08783 21978 2ad9bf0d2b20f61b5f396c137f7b4e2a ""
   (generated)
   "midterm_report.aux"
   "midterm_report.log"

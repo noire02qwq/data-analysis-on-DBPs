@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.12)  27 NOV 2025 19:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.12)  27 NOV 2025 22:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -230,41 +230,73 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen175
+\captionmargin=\dimen176
+\caption@leftmargin=\dimen177
+\caption@rightmargin=\dimen178
+\caption@width=\dimen179
+\caption@indent=\dimen180
+\caption@parindent=\dimen181
+\caption@hangindent=\dimen182
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count281
+\c@continuedfloat=\count282
+)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count283
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count284
+)
+(/usr/share/texlive/texmf-dist/tex/latex/grffile/grffile.sty
+Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
+y)
+Package grffile Info: This package is an empty stub for compatibility on input 
+line 40.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count281
+\l__color_backend_stack_int=\count285
 \l__pdf_internal_box=\box55
 )
 (./midterm_report.aux)
 \openout1 = `midterm_report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count282
-\scratchdimen=\dimen175
+\scratchcounter=\count286
+\scratchdimen=\dimen183
 \scratchbox=\box56
-\nofMPsegments=\count283
-\nofMParguments=\count284
+\nofMPsegments=\count287
+\nofMParguments=\count288
 \everyMPshowfont=\toks26
-\MPscratchCnt=\count285
-\MPscratchDim=\dimen176
-\MPnumerator=\count286
-\makeMPintoPDFobject=\count287
+\MPscratchCnt=\count289
+\MPscratchDim=\dimen184
+\MPnumerator=\count290
+\makeMPintoPDFobject=\count291
 \everyMPtoPDFconversion=\toks27
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -309,53 +341,132 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: No \author given.
-
-[1
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
-dvips/cm-super/cm-super-ts1.enc}]
+dvips/cm-super/cm-super-ts1.enc}] [2]
+<../attachment/reactors.png, id=20, 2826.56pt x 1541.76pt>
+File: ../attachment/reactors.png Graphic file (type png)
+<use ../attachment/reactors.png>
+Package pdftex.def Info: ../attachment/reactors.png  used on input line 77.
+(pdftex.def)             Requested size: 333.24028pt x 181.75671pt.
+ [3 <../attachment/reactors.png (PNG copy)>]
+<../attachment/imputation.png, id=24, 2826.56pt x 1541.76pt>
+File: ../attachment/imputation.png Graphic file (type png)
+<use ../attachment/imputation.png>
+Package pdftex.def Info: ../attachment/imputation.png  used on input line 112.
+(pdftex.def)             Requested size: 333.24028pt x 181.75671pt.
+<../attachment/alignment.png, id=25, 2409.0pt x 1798.72pt>
+File: ../attachment/alignment.png Graphic file (type png)
+<use ../attachment/alignment.png>
+Package pdftex.def Info: ../attachment/alignment.png  used on input line 122.
+(pdftex.def)             Requested size: 333.24028pt x 248.8pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2] [3]
-Overfull \hbox (39.27986pt too wide) in paragraph at lines 148--149
- [][] 
- []
+[4 <../attachment/imputation.png (PNG copy)>]
+<../attachment/mlp.png, id=29, 2826.56pt x 1541.76pt>
+File: ../attachment/mlp.png Graphic file (type png)
+<use ../attachment/mlp.png>
+Package pdftex.def Info: ../attachment/mlp.png  used on input line 140.
+(pdftex.def)             Requested size: 249.9318pt x 136.30577pt.
 
-[4] [5]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../attachment/rnn.png, id=30, 2826.56pt x 1541.76pt>
+File: ../attachment/rnn.png Graphic file (type png)
+<use ../attachment/rnn.png>
+Package pdftex.def Info: ../attachment/rnn.png  used on input line 147.
+(pdftex.def)             Requested size: 291.58286pt x 159.03125pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../attachment/lstm.png, id=31, 2826.56pt x 1541.76pt>
+File: ../attachment/lstm.png Graphic file (type png)
+<use ../attachment/lstm.png>
+Package pdftex.def Info: ../attachment/lstm.png  used on input line 154.
+(pdftex.def)             Requested size: 291.58286pt x 159.03125pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../attachment/gru.png, id=32, 2826.56pt x 1541.76pt>
+File: ../attachment/gru.png Graphic file (type png)
+<use ../attachment/gru.png>
+Package pdftex.def Info: ../attachment/gru.png  used on input line 161.
+(pdftex.def)             Requested size: 291.58286pt x 159.03125pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../attachment/model workflow.png, id=33, 2826.56pt x 1541.76pt>
+File: ../attachment/model workflow.png Graphic file (type png)
+<use ../attachment/model workflow.png>
+Package pdftex.def Info: ../attachment/model workflow.png  used on input line 1
+71.
+(pdftex.def)             Requested size: 416.54877pt x 227.20766pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <../attachment/alignment.png (PNG copy)>] [6 <../attachment/mlp.png (PNG cop
+y)> <../attachment/rnn.png (PNG copy)> <../attachment/lstm.png (PNG copy)>]
+[7 <../attachment/gru.png (PNG copy)> <../attachment/model workflow.png (PNG co
+py)>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] (./midterm_report.bbl [7]) [8] (./midterm_report.aux)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[8]
+<../attachment/midterm result plots.png, id=47, 2955.04pt x 1445.4pt>
+File: ../attachment/midterm result plots.png Graphic file (type png)
+<use ../attachment/midterm result plots.png>
+Package pdftex.def Info: ../attachment/midterm result plots.png  used on input 
+line 275.
+(pdftex.def)             Requested size: 416.54877pt x 203.74408pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9] [10 <../attachment/midterm result plots.png (PNG copy)>]
+<../attachment/experiment framework.png, id=54, 2826.56pt x 1541.76pt>
+File: ../attachment/experiment framework.png Graphic file (type png)
+<use ../attachment/experiment framework.png>
+Package pdftex.def Info: ../attachment/experiment framework.png  used on input 
+line 297.
+(pdftex.def)             Requested size: 416.54877pt x 227.20766pt.
+
+(./midterm_report.bbl [11 <../attachment/experiment framework.png (PNG copy)>])
+[12] (./midterm_report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4119 strings out of 474222
- 60284 string characters out of 5748732
+ 5667 strings out of 474222
+ 91231 string characters out of 5748732
  1937975 words of memory out of 5000000
- 26321 multiletter control sequences out of 15000+600000
+ 27856 multiletter control sequences out of 15000+600000
  566613 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,844b,330s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,11n,77p,1177b,324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -367,10 +478,10 @@ blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on midterm_report.pdf (8 pages, 173181 bytes).
+Output written on midterm_report.pdf (12 pages, 50656617 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 114 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

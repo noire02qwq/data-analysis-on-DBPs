@@ -66,6 +66,14 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/grffile/grffile.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/grffile/grffile.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT ./midterm_report.aux
@@ -111,9 +119,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-OUTPUT midterm_report.pdf
-INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
-INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -122,10 +127,63 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+OUTPUT midterm_report.pdf
+INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+INPUT ../attachment/reactors.png
+INPUT ../attachment/reactors.png
+INPUT ../attachment/reactors.png
+INPUT ../attachment/reactors.png
+INPUT ../attachment/reactors.png
+INPUT ../attachment/imputation.png
+INPUT ../attachment/imputation.png
+INPUT ../attachment/imputation.png
+INPUT ../attachment/imputation.png
+INPUT ../attachment/imputation.png
+INPUT ../attachment/alignment.png
+INPUT ../attachment/alignment.png
+INPUT ../attachment/alignment.png
+INPUT ../attachment/alignment.png
+INPUT ../attachment/alignment.png
+INPUT ../attachment/mlp.png
+INPUT ../attachment/mlp.png
+INPUT ../attachment/mlp.png
+INPUT ../attachment/mlp.png
+INPUT ../attachment/mlp.png
+INPUT ../attachment/rnn.png
+INPUT ../attachment/rnn.png
+INPUT ../attachment/rnn.png
+INPUT ../attachment/rnn.png
+INPUT ../attachment/rnn.png
+INPUT ../attachment/lstm.png
+INPUT ../attachment/lstm.png
+INPUT ../attachment/lstm.png
+INPUT ../attachment/lstm.png
+INPUT ../attachment/lstm.png
+INPUT ../attachment/gru.png
+INPUT ../attachment/gru.png
+INPUT ../attachment/gru.png
+INPUT ../attachment/gru.png
+INPUT ../attachment/gru.png
+INPUT ../attachment/model workflow.png
+INPUT ../attachment/model workflow.png
+INPUT ../attachment/model workflow.png
+INPUT ../attachment/model workflow.png
+INPUT ../attachment/model workflow.png
+INPUT ../attachment/midterm result plots.png
+INPUT ../attachment/midterm result plots.png
+INPUT ../attachment/midterm result plots.png
+INPUT ../attachment/midterm result plots.png
+INPUT ../attachment/midterm result plots.png
+INPUT ../attachment/experiment framework.png
+INPUT ../attachment/experiment framework.png
+INPUT ../attachment/experiment framework.png
+INPUT ../attachment/experiment framework.png
+INPUT ../attachment/experiment framework.png
 INPUT ./midterm_report.bbl
 INPUT ./midterm_report.bbl
 INPUT midterm_report.bbl
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT midterm_report.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
