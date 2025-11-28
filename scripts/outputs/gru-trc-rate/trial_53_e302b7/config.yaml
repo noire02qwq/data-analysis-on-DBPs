@@ -1,0 +1,17 @@
+model:
+  type: GRU
+  name: gru-trc-rate/trial_53_e302b7
+  history_length: 122
+  units: 207
+  num_layers: 7
+  dropout: 0.3747570268671013
+training:
+  max_epochs: 500
+  batch_size: 128
+  learning_rate: 0.00030396050701585084
+  weight_decay: 0.000332641842280776
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

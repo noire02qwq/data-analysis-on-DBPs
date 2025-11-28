@@ -14,16 +14,16 @@ count=1
 total=17
 
 # 1. 运行MLP TRC值回归调参
-echo "$count/$total: 运行MLP TRC值回归调参..."
+echo "$count/$total: 运行MLP TRC값回归调参..."
 nohup python scripts/bayes_autotune_trc.py --model-type MLP --n-trials 64 \
   --base-config models/configs/mlp_config.yaml \
   --grid-config models/configs/mlp_bayes.yaml > mlp_trc_value.log 2>&1 &
 PID1=$!
-echo "MLP TRC值回归调参已在后台运行，PID: $PID1"
+echo "MLP TRC값回归调参已在后台运行，PID: $PID1"
 
 # 等待第一个任务完成
 wait $PID1
-echo "MLP TRC值回归调参已完成"
+echo "MLP TRC값回归调参已完成"
 ((count++))
 
 # 2. 运行MLP TRC比率回归调参
@@ -39,17 +39,17 @@ wait $PID2
 echo "MLP TRC比率回归调参已完成"
 ((count++))
 
-# 3. 运行MLP OTHER值回归调参
-echo "$count/$total: 运行MLP OTHER值回归调参..."
+# 3. 运行MLP OTHER값回归调参
+echo "$count/$total: 运行MLP OTHER값回归调参..."
 nohup python scripts/bayes_autotune_other.py --model-type MLP --n-trials 64 \
   --base-config models/configs/mlp_config.yaml \
   --grid-config models/configs/mlp_bayes.yaml > mlp_other_value.log 2>&1 &
 PID3=$!
-echo "MLP OTHER值回归调参已在后台运行，PID: $PID3"
+echo "MLP OTHER값回归调参已在后台运行，PID: $PID3"
 
 # 等待第三个任务完成
 wait $PID3
-echo "MLP OTHER值回归调参已完成"
+echo "MLP OTHER값回归调参已完成"
 ((count++))
 
 # 4. 运行MLP OTHER比率回归调参
@@ -65,17 +65,17 @@ wait $PID4
 echo "MLP OTHER比率回归调参已完成"
 ((count++))
 
-# 5. 运行MLP HIS TRC值回归调参
-echo "$count/$total: 运行MLP HIS TRC值回归调参..."
+# 5. 运行MLP HIS TRC값回归调参
+echo "$count/$total: 运行MLP HIS TRC값回归调参..."
 nohup python scripts/bayes_autotune_trc.py --model-type MLP_WITH_HISTORY --n-trials 64 \
   --base-config models/configs/mlp_with_history_config.yaml \
   --grid-config models/configs/mlp_with_history_grid.yaml > mlphis_trc_value.log 2>&1 &
 PID5=$!
-echo "MLP HIS TRC值回归调参已在后台运行，PID: $PID5"
+echo "MLP HIS TRC값回归调参已在后台运行，PID: $PID5"
 
 # 等待第五个任务完成
 wait $PID5
-echo "MLP HIS TRC值回归调参已完成"
+echo "MLP HIS TRC값回归调参已完成"
 ((count++))
 
 # 6. 运行MLP HIS TRC比率回归调参
@@ -91,17 +91,17 @@ wait $PID6
 echo "MLP HIS TRC比率回归调参已完成"
 ((count++))
 
-# 7. 运行MLP HIS OTHER值回归调参
-echo "$count/$total: 运行MLP HIS OTHER值回归调参..."
+# 7. 运行MLP HIS OTHER값回归调参
+echo "$count/$total: 运行MLP HIS OTHER값回归调参..."
 nohup python scripts/bayes_autotune_other.py --model-type MLP_WITH_HISTORY --n-trials 64 \
   --base-config models/configs/mlp_with_history_config.yaml \
   --grid-config models/configs/mlp_with_history_grid.yaml > mlphis_other_value.log 2>&1 &
 PID7=$!
-echo "MLP HIS OTHER值回归调参已在后台运行，PID: $PID7"
+echo "MLP HIS OTHER값回归调参已在后台运行，PID: $PID7"
 
 # 等待第七个任务完成
 wait $PID7
-echo "MLP HIS OTHER值回归调参已完成"
+echo "MLP HIS OTHER값回归调参已完成"
 ((count++))
 
 # 8. 运行MLP HIS OTHER比率回归调参
@@ -117,17 +117,17 @@ wait $PID8
 echo "MLP HIS OTHER比率回归调参已完成"
 ((count++))
 
-# 9. 运行RNN TRC值回归调参
-echo "$count/$total: 运行RNN TRC值回归调参..."
+# 9. 运行RNN TRC값回归调参
+echo "$count/$total: 运行RNN TRC값回归调参..."
 nohup python scripts/bayes_autotune_trc.py --model-type RNN --n-trials 64 \
   --base-config models/configs/rnn_config.yaml \
   --grid-config models/configs/rnn_bayes.yaml > rnn_trc_value.log 2>&1 &
 PID9=$!
-echo "RNN TRC值回归调参已在后台运行，PID: $PID9"
+echo "RNN TRC값回归调参已在后台运行，PID: $PID9"
 
 # 等待第九个任务完成
 wait $PID9
-echo "RNN TRC值回归调参已完成"
+echo "RNN TRC값回归调参已完成"
 ((count++))
 
 # 10. 运行RNN TRC比率回归调参
@@ -143,17 +143,17 @@ wait $PID10
 echo "RNN TRC比率回归调参已完成"
 ((count++))
 
-# 11. 运行RNN OTHER值回归调参
-echo "$count/$total: 运行RNN OTHER值回归调参..."
+# 11. 运行RNN OTHER값回归调参
+echo "$count/$total: 运行RNN OTHER값回归调参..."
 nohup python scripts/bayes_autotune_other.py --model-type RNN --n-trials 64 \
   --base-config models/configs/rnn_config.yaml \
   --grid-config models/configs/rnn_bayes.yaml > rnn_other_value.log 2>&1 &
 PID11=$!
-echo "RNN OTHER值回归调参已在后台运行，PID: $PID11"
+echo "RNN OTHER값回归调参已在后台运行，PID: $PID11"
 
 # 等待第十一个任务完成
 wait $PID11
-echo "RNN OTHER值回归调参已完成"
+echo "RNN OTHER값回归调参已完成"
 ((count++))
 
 # 12. 运行RNN OTHER比率回归调参
@@ -169,23 +169,23 @@ wait $PID12
 echo "RNN OTHER比率回归调参已完成"
 ((count++))
 
-# 13. 运行GRU TRC值回归调参
-echo "$count/$total: 运行GRU TRC值回归调参..."
+# 13. 运行GRU TRC값回归调参
+echo "$count/$total: 运行GRU TRC값回归调参..."
 nohup python scripts/bayes_autotune_trc.py --model-type GRU --n-trials 64 \
-  --base-config models/configs/rnn_config.yaml \
+  --base-config models/configs/gru_config.yaml \
   --grid-config models/configs/gru_bayes.yaml > gru_trc_value.log 2>&1 &
 PID13=$!
-echo "GRU TRC值回归调参已在后台运行，PID: $PID13"
+echo "GRU TRC값回归调参已在后台运行，PID: $PID13"
 
 # 等待第十三个任务完成
 wait $PID13
-echo "GRU TRC值回归调参已完成"
+echo "GRU TRC값回归调参已完成"
 ((count++))
 
 # 14. 运行GRU TRC比率回归调参
 echo "$count/$total: 运行GRU TRC比率回归调参..."
 nohup python scripts/bayes_autotune_trc_rate.py --model-type GRU --n-trials 64 \
-  --base-config models/configs/rnn_config.yaml \
+  --base-config models/configs/gru_config.yaml \
   --grid-config models/configs/gru_bayes.yaml > gru_trc_rate.log 2>&1 &
 PID14=$!
 echo "GRU TRC比率回归调参已在后台运行，PID: $PID14"
@@ -195,23 +195,23 @@ wait $PID14
 echo "GRU TRC比率回归调参已完成"
 ((count++))
 
-# 15. 运行GRU OTHER值回归调参
-echo "$count/$total: 运行GRU OTHER值回归调参..."
+# 15. 运行GRU OTHER값回归调参
+echo "$count/$total: 运行GRU OTHER값回归调参..."
 nohup python scripts/bayes_autotune_other.py --model-type GRU --n-trials 64 \
-  --base-config models/configs/rnn_config.yaml \
+  --base-config models/configs/gru_config.yaml \
   --grid-config models/configs/gru_bayes.yaml > gru_other_value.log 2>&1 &
 PID15=$!
-echo "GRU OTHER值回归调参已在后台运行，PID: $PID15"
+echo "GRU OTHER값回归调参已在后台运行，PID: $PID15"
 
 # 等待第十五个任务完成
 wait $PID15
-echo "GRU OTHER值回归调参已完成"
+echo "GRU OTHER값回归调参已完成"
 ((count++))
 
 # 16. 运行GRU OTHER比率回归调参
 echo "$count/$total: 运行GRU OTHER比率回归调参..."
 nohup python scripts/bayes_autotune_other_rate.py --model-type GRU --n-trials 64 \
-  --base-config models/configs/rnn_config.yaml \
+  --base-config models/configs/gru_config.yaml \
   --grid-config models/configs/gru_bayes.yaml > gru_other_rate.log 2>&1 &
 PID16=$!
 echo "GRU OTHER比率回归调参已在后台运行，PID: $PID16"

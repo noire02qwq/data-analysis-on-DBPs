@@ -1,0 +1,17 @@
+model:
+  type: GRU
+  name: gru-trc-rate/trial_32_beeb0f
+  history_length: 133
+  units: 101
+  num_layers: 4
+  dropout: 0.3226476053703401
+training:
+  max_epochs: 500
+  batch_size: 115
+  learning_rate: 0.00024152432431973422
+  weight_decay: 0.0001599715260530432
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

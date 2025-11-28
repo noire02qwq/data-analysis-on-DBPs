@@ -1,0 +1,17 @@
+model:
+  type: GRU
+  name: gru-other-value/trial_0_dbaf2e
+  history_length: 129
+  units: 230
+  num_layers: 2
+  dropout: 0.3896118481439155
+training:
+  max_epochs: 500
+  batch_size: 346
+  learning_rate: 0.00033117088322989595
+  weight_decay: 0.00020279321670156055
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

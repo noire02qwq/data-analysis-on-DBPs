@@ -1,0 +1,17 @@
+model:
+  type: GRU
+  name: gru-trc-value/trial_25_db5d44
+  history_length: 129
+  units: 275
+  num_layers: 7
+  dropout: 0.3646856150449474
+training:
+  max_epochs: 500
+  batch_size: 206
+  learning_rate: 0.00022841152411854114
+  weight_decay: 0.0002433482733817047
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

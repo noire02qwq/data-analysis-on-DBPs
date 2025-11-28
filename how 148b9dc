@@ -1,0 +1,10 @@
+[33m148b9dc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m new test program
+[33m9d52d31[m keep running models and create documents
+[33mf5e2425[m mlp autotune finished
+[33m7923080[m midterm prompt
+[33mde8285a[m gbdt rate test
+[33m0ddeefb[m mlp autotune
+[33m190ec91[m rate test
+[33m4ac1ad3[m autotune
+[33mbe4a220[m Add new stopping rules and autotune scripts
+[33m3a1f026[m add regression 1109

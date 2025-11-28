@@ -1,0 +1,17 @@
+model:
+  type: GRU
+  name: gru-other-value/trial_10_a7ed92
+  history_length: 81
+  units: 80
+  num_layers: 4
+  dropout: 0.4816893260584886
+training:
+  max_epochs: 500
+  batch_size: 256
+  learning_rate: 0.0016313023913845626
+  weight_decay: 0.000965971696334058
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

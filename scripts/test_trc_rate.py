@@ -306,10 +306,13 @@ def main() -> None:
         raise ValueError("Base targets missing in dataset bundle; cannot convert to absolute values.")
     base_values = dataset_bundle.base_targets[test_indices]
 
-    rate_pred = denormalize_rates(y_pred_scaled, target_mean, target_std)
-    rate_true = denormalize_rates(y_true_scaled, target_mean, target_std)
-
+    # For rate-based models, predictions are rates that need to be converted to absolute values
+    y_pred_scaled = denormalize_rates(y_pred_scaled, target_mean, target_std)
     y_pred = to_absolute_values(y_pred_scaled, base_values, target_mean, target_std)
+    
+    # For true values, we need to get the actual target values from the original data
+    # y_true_scaled contains the true rate values, we need to convert them to absolute values
+    y_true_scaled = denormalize_rates(y_true_scaled, target_mean, target_std)
     y_true = to_absolute_values(y_true_scaled, base_values, target_mean, target_std)
 
     plot_predictions(target_names, y_true, y_pred, model_dir)

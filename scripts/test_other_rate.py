@@ -234,8 +234,19 @@ def main() -> None:
     rate_targets, base_targets, _ = compute_rate_targets(df, target_columns, target_to_rt)
 
     scalers = np.load(model_dir / "scalers.npz")
-    mean = scalers["mean"]
-    std = scalers["std"]
+    # 检查scalers.npz中的键名
+    if "mean" in scalers:
+        mean = scalers["mean"]
+        std = scalers["std"]
+        target_mean = mean[target_indices]
+        target_std = std[target_indices]
+    elif "feature_mean" in scalers:
+        mean = scalers["feature_mean"]
+        std = scalers["feature_std"]
+        target_mean = scalers["target_mean"]
+        target_std = scalers["target_std"]
+    else:
+        raise KeyError("scalers.npz does not contain expected keys (mean/std or feature_mean/feature_std)")
 
     values = df.to_numpy(dtype=np.float32)
     column_to_idx = {col: idx for idx, col in enumerate(metadata["columns"])}  # type: ignore[index]
@@ -292,18 +303,18 @@ def main() -> None:
         y_pred_scaled = np.concatenate(preds, axis=0)
         y_true_scaled = np.concatenate(trues, axis=0)
 
-    target_mean = mean[target_indices]
-    target_std = std[target_indices]
-
     if dataset_bundle.base_targets is None:
         raise ValueError("Base targets missing in dataset bundle; cannot convert to absolute values.")
     base_values = dataset_bundle.base_targets[test_indices]
 
-    rate_pred = denormalize_rates(y_pred_scaled, target_mean, target_std)
-    rate_true = denormalize_rates(y_true_scaled, target_mean, target_std)
-
+    # For rate-based models, predictions are rates that need to be converted to absolute values
+    y_pred_scaled = denormalize_rates(y_pred_scaled, target_mean, target_std)
     y_pred = to_absolute_values(y_pred_scaled, base_values, target_mean, target_std)
-    y_true = to_absolute_values(y_true_scaled, base_values, target_mean, target_std)
+    
+    # For true values, we use the original PPL values directly from the data
+    # 获取原始数据中的真实PPL值
+    original_values = df.to_numpy(dtype=np.float32)
+    y_true = original_values[test_indices][:, target_indices]
 
     plot_predictions(target_names, y_true, y_pred, model_dir)
 

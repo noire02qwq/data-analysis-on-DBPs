@@ -1,0 +1,17 @@
+model:
+  type: GRU
+  name: gru-other-value/trial_6_dfac5f
+  history_length: 47
+  units: 349
+  num_layers: 8
+  dropout: 0.31684338721857297
+training:
+  max_epochs: 500
+  batch_size: 336
+  learning_rate: 0.0002870412040814102
+  weight_decay: 0.008342896907525764
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

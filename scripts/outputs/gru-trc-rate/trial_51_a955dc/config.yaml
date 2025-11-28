@@ -1,0 +1,17 @@
+model:
+  type: GRU
+  name: gru-trc-rate/trial_51_a955dc
+  history_length: 127
+  units: 87
+  num_layers: 6
+  dropout: 0.30471184816878494
+training:
+  max_epochs: 500
+  batch_size: 159
+  learning_rate: 0.0003928813326868875
+  weight_decay: 0.00013073536405697179
+  checkpoint_interval: 10
+  seed: 947
+data:
+  input_csv: data/time_aligned_data.csv
+  timestamp_column: Date, Time

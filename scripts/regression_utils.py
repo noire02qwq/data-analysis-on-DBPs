@@ -221,7 +221,7 @@ def build_dataset_bundle(
         dataset: Dataset = CurrentStepDataset(non_ppl, target_data, base_targets=base_targets)
     elif model == "MLP_WITH_HISTORY":
         dataset = HistoryFlattenDataset(non_ppl, target_data, history_length, base_targets=base_targets)
-    elif model in {"LSTM", "RNN"}:
+    elif model in {"LSTM", "RNN", "GRU"}:
         dataset = SequenceDataset(non_ppl, target_data, history_length, base_targets=base_targets)
     else:
         raise ValueError(f"Unsupported model_type '{model_type}'.")

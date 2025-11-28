@@ -6,16 +6,26 @@
 
 FILENAME="midterm_report"
 
+echo "Compiling $FILENAME.tex..."
+
 # Run pdflatex for the first time
-pdflatex $FILENAME.tex
+pdflatex -interaction=nonstopmode -file-line-error $FILENAME.tex
+if [ $? -ne 0 ]; then
+    echo "Error during first pdflatex run."
+    exit 1
+fi
 
 # Run bibtex to generate the bibliography
 bibtex $FILENAME.aux
+if [ $? -ne 0 ]; then
+    echo "Error during bibtex run."
+    exit 1
+fi
 
 # Run pdflatex again to include the bibliography
-pdflatex $FILENAME.tex
+pdflatex -interaction=nonstopmode -file-line-error $FILENAME.tex
 
 # Run pdflatex one more time to fix any cross-referencing issues
-pdflatex $FILENAME.tex
+pdflatex -interaction=nonstopmode -file-line-error $FILENAME.tex
 
 echo "Compilation finished. Please check $FILENAME.pdf"
