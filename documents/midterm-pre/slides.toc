@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Introduction \& Objectives}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Background \& Chemistry}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Objectives}{4}{0}{1}
+\beamer@sectionintoc {2}{Methodology \& Experimental Framework}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{System \& Data}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Models \& Strategies}{11}{0}{2}
+\beamer@sectionintoc {3}{Results \& Conclusion}{17}{0}{3}
+\beamer@subsectionintoc {3}{1}{Results}{17}{0}{3}
+\beamer@subsectionintoc {3}{2}{Conclusion}{19}{0}{3}

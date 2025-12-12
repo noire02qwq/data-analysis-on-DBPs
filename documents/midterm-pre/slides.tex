@@ -1,0 +1,321 @@
+% Copyright 2016 by Wang Kunzhen <wangkunzhen1993@gmail.com>.
+% Modified for Midterm Report Presentation
+
+\documentclass[xcolor=dvipsnames]{beamer}
+
+% Theme and Color Settings
+\usetheme{Malmoe}
+
+\definecolor{nus-orange}{RGB}{239,124,0} 
+\definecolor{nus-white}{RGB}{255,255,255}
+\definecolor{nus-blue}{RGB}{0,61,124}
+\definecolor{nus-black}{RGB}{0,0,0}
+
+\setbeamercolor{section in head/foot}{bg=nus-blue, fg=nus-white}
+\setbeamercolor{subsection in head/foot}{bg=nus-blue, fg=nus-white}
+\setbeamercolor{frametitle}{bg=nus-orange, fg=nus-black}
+\setbeamercolor{title}{bg=nus-orange, fg=nus-white}
+\setbeamercolor{alerted text}{fg=nus-orange}
+\setbeamercolor{block title}{fg=nus-blue}
+\setbeamercolor{block body}{fg=nus-black}
+
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{propositions}[numbered]
+\setbeamertemplate{bibliography item}{\insertbiblabel}
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true, shadow=true]
+\setbeamertemplate{navigation symbols}{} % Remove navigation symbols
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+% Metadata
+\title{Midterm Report}
+\subtitle{Application of Supervised Learning Methods to Transformation Mechanisms in DBPs Formation}
+\author[Zhou Dafu]{Zhou Dafu \\ \small Supervisor: Prof. Hu Jiangyong \\ Mentor: Mr. Sun Yuanpeng}
+\institute[NUS]
+{
+  Department of Civil and Environmental Engineering\\
+  National University of Singapore
+}
+\titlegraphic{
+   \includegraphics[width=2cm]{nus-logo.png}
+}
+\date{\today}
+
+\begin{document}
+
+% Title Slide
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Outline
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+% ============================================================================
+% Section 1: Introduction & Objectives
+% ============================================================================
+\section{Introduction \& Objectives}
+
+\subsection{Background \& Chemistry}
+\begin{frame}{Background \& DBP Formation}
+  \begin{block}{The Challenge}
+    \begin{itemize}
+        \item \textbf{Disinfection By-products (DBPs)}: Formed by reaction of disinfectants (e.g., Chlorine) with Natural Organic Matter (NOM).
+        \item \textbf{Health Risk}: Carcinogenic potential (e.g., Nitrosamines).
+        \item \textbf{Goal}: Use Deep Learning for real-time prediction in Water Distribution Systems (WDS).
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Chemistry (Alkaline Conditions)}
+    \begin{itemize}
+        \item \textbf{Chloramine Formation}:
+        $ \text{NH}_3 + \text{OCl}^- \rightarrow \text{NH}_2\text{Cl} + \text{OH}^- $
+        \item \textbf{Mechanism}: Chloramines + Organic Precursors $\xrightarrow{O_2}$ N-DBPs.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\subsection{Objectives}
+\begin{frame}{Objectives}
+  \begin{enumerate}
+      \item \textbf{Evaluate Deep Learning Models}:
+      \begin{itemize}
+          \item Compare MLP, RNN, LSTM, and GRU architectures.
+      \end{itemize}
+      \item \textbf{Analyze Correlations}:
+      \begin{itemize}
+          \item Investigate relationship between sensor data (TRC, pH, TOC) and DBP formation.
+      \end{itemize}
+      \item \textbf{Develop Prediction Framework}:
+      \begin{itemize}
+          \item Establish a robust framework for real-time water quality monitoring.
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+% ============================================================================
+% Section 2: Methodology & Experimental Framework
+% ============================================================================
+\section{Methodology \& Experimental Framework}
+
+\subsection{System \& Data}
+\begin{frame}{System Description}
+  \begin{figure}
+      \centering
+      \includegraphics[width=0.9\textwidth]{../attachment/reactors.png}
+      \caption{Simulated WDS: Disinfection (DT), Retention (RT), and Pipelines (PPL1/2).}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Data Acquisition}
+  \begin{block}{Sensor Network}
+      \begin{itemize}
+          \item \textbf{Comprehensive Monitoring}: Sensors are deployed at all key stages: Disinfection Tank (DT), Retention Tank (RT), and Pipelines (PPL1/PPL2).
+          \item \textbf{Key Parameters}:
+          \begin{itemize}
+              \item \textbf{Core}: Total Residual Chlorine (TRC), pH, Conductivity.
+              \item \textbf{Advanced}: fDOM, Dissolved Oxygen (DO), Total Organic Carbon (TOC), Dissolved Organic Carbon (DOC).
+          \end{itemize}
+          \item \textbf{Frequency}: High-resolution data collected at 5-minute intervals.
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Data Preprocessing: Imputation}
+  \begin{block}{Challenge: Missing Values}
+      \begin{itemize}
+          \item Due to the shared sensor setup, PPL1 and PPL2 have alternating blocks of missing data (30-minute gaps).
+          \item Standard mean imputation would reduce variance and distort the signal.
+      \end{itemize}
+  \end{block}
+  \begin{block}{Solution: Stochastic Interpolation}
+      \begin{itemize}
+          \item \textbf{Step 1}: Linear interpolation between known points.
+          \item \textbf{Step 2}: Injection of random noise matching the local variance of the signal.
+          \item \textbf{Result}: A continuous time-series that preserves the statistical properties of the water quality dynamics.
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Data Preprocessing: Imputation (Visual)}
+  \centering
+  \includegraphics[width=0.9\textwidth]{../attachment/imputation.png}
+\end{frame}
+
+\begin{frame}{Data Preprocessing: Time Alignment}
+  \begin{block}{Challenge: Hydraulic Delays}
+      \begin{itemize}
+          \item Water takes time to travel from the tanks to the pipelines.
+          \item Direct correlation of timestamps would lead to incorrect cause-and-effect mapping.
+      \end{itemize}
+  \end{block}
+  \begin{block}{Solution: Lag Correction}
+      \begin{itemize}
+          \item Calculated the hydraulic residence time for each segment.
+          \item Shifted the input data series (DT/RT) forward in time to align with the corresponding output data (PPL1/PPL2).
+          \item Ensures the model learns the transformation of the \textit{same} water parcel.
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Data Preprocessing: Time Alignment (Visual)}
+  \centering
+  \includegraphics[width=0.9\textwidth]{../attachment/alignment.png}
+\end{frame}
+
+\subsection{Models \& Strategies}
+\begin{frame}{Model Architectures}
+  \begin{figure}
+      \centering
+      \includegraphics[width=0.23\textwidth]{../attachment/mlp.png} \hfill
+      \includegraphics[width=0.23\textwidth]{../attachment/rnn.png} \hfill
+      \includegraphics[width=0.23\textwidth]{../attachment/lstm.png} \hfill
+      \includegraphics[width=0.23\textwidth]{../attachment/gru.png}
+      \caption{Architectures: MLP, RNN, LSTM, GRU.}
+  \end{figure}
+  \begin{itemize}
+      \item \textbf{MLP}: Baseline feedforward network.
+      \item \textbf{RNN}: Captures temporal dependencies but suffers from vanishing gradients.
+      \item \textbf{LSTM/GRU}: Gating mechanisms for long-term dependencies.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Training Process}
+  \begin{block}{Optimization Setup}
+      \begin{itemize}
+          \item \textbf{Loss Function}: Mean Squared Error (MSE) - penalizes larger errors, ideal for regression.
+          \item \textbf{Optimizer}: Adam - combines momentum and adaptive learning rates for faster convergence.
+      \end{itemize}
+  \end{block}
+  \begin{block}{Regularization}
+      \begin{itemize}
+          \item \textbf{Dropout}: Randomly deactivates neurons during training to prevent co-adaptation.
+          \item \textbf{Early Stopping}: Halts training when validation loss stops improving to prevent overfitting.
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Training Process (Workflow)}
+  \begin{figure}
+      \centering
+      \includegraphics[width=0.9\textwidth]{../attachment/model workflow.png}
+      \caption{Model Training and Evaluation Workflow.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Hyperparameter Optimization}
+  \begin{block}{Bayesian Optimization}
+      \begin{itemize}
+          \item \textbf{Why?}: Deep learning models are sensitive to hyperparameters (e.g., learning rate, hidden size). Manual tuning is inefficient.
+          \item \textbf{Process}: 
+          \begin{enumerate}
+              \item Build a probabilistic surrogate model (Gaussian Process) of the objective function.
+              \item Use an acquisition function to select the next set of hyperparameters to evaluate.
+              \item Balance exploration (trying new regions) and exploitation (refining good regions).
+          \end{enumerate}
+          \item \textbf{Result}: Found optimal configurations with fewer iterations than Grid Search.
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Strategy 1: Normalized Rate of Change}
+  \begin{block}{Concept}
+    Instead of predicting the absolute downstream concentration ($Y_{down}$), we predict the normalized rate of change:
+    \[ \text{Rate} = \frac{Y_{\text{downstream}} - Y_{\text{upstream}}}{Y_{\text{upstream}}} \]
+  \end{block}
+  \begin{block}{Rationale}
+      \begin{itemize}
+          \item Absolute concentrations are dominated by the stable upstream value.
+          \item The chemical transformation causes only small deviations.
+          \item Predicting the "Rate" forces the model to focus on the \textit{kinetics} of the reaction occurring within the pipe, rather than just memorizing the input level.
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Strategy 2: Decoupled TRC Model}
+  \begin{block}{The Problem with TRC}
+      \begin{itemize}
+          \item Total Residual Chlorine (TRC) is the primary disinfectant and decays rapidly.
+          \item Its behavior is distinct from stable parameters like Conductivity or TOC.
+          \item In a combined multi-output model, TRC prediction accuracy often suffers.
+      \end{itemize}
+  \end{block}
+  \begin{block}{The Solution}
+      \begin{itemize}
+          \item \textbf{Model A}: Dedicated exclusively to predicting TRC.
+          \item \textbf{Model B}: Predicts all other parameters (pH, TOC, etc.).
+          \item Allows for specialized architecture and hyperparameter tuning for the most critical parameter.
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+% ============================================================================
+% Section 3: Results & Conclusion
+% ============================================================================
+\section{Results \& Conclusion}
+
+\subsection{Results}
+\begin{frame}{Performance Metrics (PPL2)}
+  \begin{table}
+      \centering
+      \resizebox{\textwidth}{!}{
+      \begin{tabular}{lcccccc}
+          \toprule
+          & \multicolumn{2}{c}{\textbf{TRC}} & \multicolumn{2}{c}{\textbf{pH}} & \multicolumn{2}{c}{\textbf{TOC}} \\
+          \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+          \textbf{Model} & \textbf{MSE} & \textbf{MAE} & \textbf{MSE} & \textbf{MAE} & \textbf{MSE} & \textbf{MAE} \\
+          \midrule
+          GRU-Value & 0.0052 & 0.0612 & \textbf{0.0009} & \textbf{0.0233} & \textbf{0.0001} & \textbf{0.0088} \\
+          LSTM-Rate & \textbf{0.0041} & 0.0641 & 0.0061 & 0.0618 & 0.0003 & 0.0138 \\
+          MLP-Rate & 0.0041 & 0.0643 & 0.0064 & 0.0626 & 0.0004 & 0.0198 \\
+          \bottomrule
+      \end{tabular}
+      }
+      \caption{Comparison: Rate regression best for TRC; Value regression best for pH/TOC.}
+  \end{table}
+\end{frame}
+
+\begin{frame}{Prediction Visualization}
+  \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{../attachment/midterm result plots.png}
+      \caption{Predicted vs. Actual Values (TRC, pH, TOC).}
+  \end{figure}
+\end{frame}
+
+\subsection{Conclusion}
+\begin{frame}{Conclusion \& Future Work}
+  \begin{block}{Key Findings}
+    \begin{itemize}
+        \item \textbf{Deep Learning}: GRU and LSTM effectively capture temporal dynamics.
+        \item \textbf{Strategy}: "Rate" regression is superior for TRC; "Value" regression for stable parameters (pH, TOC).
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{Future Work}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item \textbf{Advanced Models}: Transformers (PatchTST).
+                \item \textbf{Interpretability}: SHAP, PDP, LIME.
+                \item \textbf{Second-Stage}: Predict actual DBP concentrations.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \includegraphics[width=\textwidth]{../attachment/experiment framework.png}
+        \end{column}
+    \end{columns}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \centering
+  \Huge \textbf{Thank You!} \\
+  \vspace{1cm}
+  \Large Q \& A
+\end{frame}
+
+\end{document}
