@@ -24,6 +24,7 @@
 \setbeamertemplate{bibliography item}{\insertbiblabel}
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true, shadow=true]
 \setbeamertemplate{navigation symbols}{} % Remove navigation symbols
+\setbeamertemplate{footline}[frame number] % Add page numbers
 
 \usepackage{booktabs}
 \usepackage{graphicx}
@@ -59,37 +60,46 @@
 % ============================================================================
 \section{Introduction \& Objectives}
 
-\subsection{Background \& Chemistry}
+\subsection{Background}
 \begin{frame}{Background \& DBP Formation}
   \begin{block}{The Challenge}
     \begin{itemize}
         \item \textbf{Disinfection By-products (DBPs)}: Formed by reaction of disinfectants (e.g., Chlorine) with Natural Organic Matter (NOM).
-        \item \textbf{Health Risk}: Carcinogenic potential (e.g., Nitrosamines).
-        \item \textbf{Goal}: Use Deep Learning for real-time prediction in Water Distribution Systems (WDS).
+        \item \textbf{Varieties}: Trihalomethanes (THMs), Haloacetic acids (HAAs), Haloacetonitriles (HANs).
+        \item \textbf{Goal}: Use Deep Learning for real-time prediction in a simulated drinking water distribution network.
     \end{itemize}
   \end{block}
 
-  \begin{block}{Chemistry (Alkaline Conditions)}
+  \begin{block}{Formation Chemistry (Alkaline Conditions)}
     \begin{itemize}
         \item \textbf{Chloramine Formation}:
         $ \text{NH}_3 + \text{OCl}^- \rightarrow \text{NH}_2\text{Cl} + \text{OH}^- $
-        \item \textbf{Mechanism}: Chloramines + Organic Precursors $\xrightarrow{O_2}$ N-DBPs.
+        \item \textbf{Mechanism}: Chloramines react with organic precursors to generate N-DBPs (e.g., Nitrosamines).
     \end{itemize}
   \end{block}
+\end{frame}
+
+\begin{frame}{Research Gap}
+  \begin{itemize}
+      \item \textbf{Dynamic Conditions}: Traditional methods (e.g., mechanistic models) struggle with real-time, non-linear dynamics.
+      \item \textbf{Limit of Traditional ML}: Conventional machine learning (e.g., Decision Trees, SVM) often fails to capture complex temporal dependencies in time-series data.
+      \item \textbf{Monitoring Limitations}: Lab analysis is infrequent and costly (low temporal resolution).
+      \item \textbf{Opportunity}: High-frequency sensor data + Deep Learning for real-time, proactive control.
+  \end{itemize}
 \end{frame}
 
 \subsection{Objectives}
 \begin{frame}{Objectives}
   \begin{enumerate}
-      \item \textbf{Evaluate Deep Learning Models}:
+      \item \textbf{Development of Deep Learning Models}:
       \begin{itemize}
           \item Compare MLP, RNN, LSTM, and GRU architectures.
       \end{itemize}
-      \item \textbf{Analyze Correlations}:
+      \item \textbf{Analyze Correlations (in progress)}:
       \begin{itemize}
           \item Investigate relationship between sensor data (TRC, pH, TOC) and DBP formation.
       \end{itemize}
-      \item \textbf{Develop Prediction Framework}:
+      \item \textbf{Develop Prediction Framework (in progress)}:
       \begin{itemize}
           \item Establish a robust framework for real-time water quality monitoring.
       \end{itemize}
@@ -125,85 +135,49 @@
 \end{frame}
 
 \begin{frame}{Data Preprocessing: Imputation}
-  \begin{block}{Challenge: Missing Values}
-      \begin{itemize}
-          \item Due to the shared sensor setup, PPL1 and PPL2 have alternating blocks of missing data (30-minute gaps).
-          \item Standard mean imputation would reduce variance and distort the signal.
-      \end{itemize}
-  \end{block}
-  \begin{block}{Solution: Stochastic Interpolation}
-      \begin{itemize}
-          \item \textbf{Step 1}: Linear interpolation between known points.
-          \item \textbf{Step 2}: Injection of random noise matching the local variance of the signal.
-          \item \textbf{Result}: A continuous time-series that preserves the statistical properties of the water quality dynamics.
-      \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}{Data Preprocessing: Imputation (Visual)}
   \centering
-  \includegraphics[width=0.9\textwidth]{../attachment/imputation.png}
+  \textbf{Stochastic Interpolation}: Combines linear interpolation with random noise injection (matching local variance) to fill alternating 30-min gaps, preserving signal statistical properties.
+  \vspace{0.5cm}
+  \includegraphics[width=0.8\textwidth]{../attachment/imputation.png}
 \end{frame}
 
 \begin{frame}{Data Preprocessing: Time Alignment}
-  \begin{block}{Challenge: Hydraulic Delays}
+  \begin{block}{Lag Correction}
       \begin{itemize}
-          \item Water takes time to travel from the tanks to the pipelines.
-          \item Direct correlation of timestamps would lead to incorrect cause-and-effect mapping.
+          \item Water travels \textbf{across the stages} (DT $\to$ RT $\to$ Pipelines).
+          \item Input series shifted to align with output timestamps.
+          \item Ensures mapping of the \textbf{same batch of water}.
       \end{itemize}
   \end{block}
-  \begin{block}{Solution: Lag Correction}
-      \begin{itemize}
-          \item Calculated the hydraulic residence time for each segment.
-          \item Shifted the input data series (DT/RT) forward in time to align with the corresponding output data (PPL1/PPL2).
-          \item Ensures the model learns the transformation of the \textit{same} water parcel.
-      \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}{Data Preprocessing: Time Alignment (Visual)}
   \centering
-  \includegraphics[width=0.9\textwidth]{../attachment/alignment.png}
+  \includegraphics[width=0.5\textwidth]{../attachment/alignment.png}
 \end{frame}
 
 \subsection{Models \& Strategies}
 \begin{frame}{Model Architectures}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.23\textwidth]{../attachment/mlp.png} \hfill
-      \includegraphics[width=0.23\textwidth]{../attachment/rnn.png} \hfill
-      \includegraphics[width=0.23\textwidth]{../attachment/lstm.png} \hfill
-      \includegraphics[width=0.23\textwidth]{../attachment/gru.png}
-      \caption{Architectures: MLP, RNN, LSTM, GRU.}
-  \end{figure}
-  \begin{itemize}
-      \item \textbf{MLP}: Baseline feedforward network.
-      \item \textbf{RNN}: Captures temporal dependencies but suffers from vanishing gradients.
-      \item \textbf{LSTM/GRU}: Gating mechanisms for long-term dependencies.
-  \end{itemize}
+  \begin{columns}
+      \begin{column}{0.5\textwidth}
+          \centering
+          \textbf{MLP} \\
+          \includegraphics[width=0.8\textwidth]{../attachment/mlp.png} \\ \vspace{0.5cm}
+          \textbf{LSTM} \\
+          \includegraphics[width=0.8\textwidth]{../attachment/lstm.png}
+      \end{column}
+      \begin{column}{0.5\textwidth}
+          \centering
+          \textbf{RNN} \\
+          \includegraphics[width=0.8\textwidth]{../attachment/rnn.png} \\ \vspace{0.5cm}
+          \textbf{GRU} \\
+          \includegraphics[width=0.8\textwidth]{../attachment/gru.png}
+      \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Training Process}
-  \begin{block}{Optimization Setup}
-      \begin{itemize}
-          \item \textbf{Loss Function}: Mean Squared Error (MSE) - penalizes larger errors, ideal for regression.
-          \item \textbf{Optimizer}: Adam - combines momentum and adaptive learning rates for faster convergence.
-      \end{itemize}
-  \end{block}
-  \begin{block}{Regularization}
-      \begin{itemize}
-          \item \textbf{Dropout}: Randomly deactivates neurons during training to prevent co-adaptation.
-          \item \textbf{Early Stopping}: Halts training when validation loss stops improving to prevent overfitting.
-      \end{itemize}
-  \end{block}
-\end{frame}
-
-\begin{frame}{Training Process (Workflow)}
-  \begin{figure}
-      \centering
-      \includegraphics[width=0.9\textwidth]{../attachment/model workflow.png}
-      \caption{Model Training and Evaluation Workflow.}
-  \end{figure}
+  \centering
+  The model is trained using MSE loss, Adam optimizer, and Early Stopping on a Train/Val/Test split.
+  \vspace{0.5cm}
+  \includegraphics[width=0.9\textwidth]{../attachment/model workflow.png}
 \end{frame}
 
 \begin{frame}{Hyperparameter Optimization}
@@ -221,8 +195,9 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Strategy 1: Normalized Rate of Change}
-  \begin{block}{Concept}
+\begin{frame}{Algorithm Optimizing}
+  \small
+  \begin{block}{Concept: Normalized Rate of Change}
     Instead of predicting the absolute downstream concentration ($Y_{down}$), we predict the normalized rate of change:
     \[ \text{Rate} = \frac{Y_{\text{downstream}} - Y_{\text{upstream}}}{Y_{\text{upstream}}} \]
   \end{block}
@@ -235,18 +210,19 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Strategy 2: Decoupled TRC Model}
-  \begin{block}{The Problem with TRC}
+\begin{frame}{Algorithm Optimizing}
+  \footnotesize
+  \begin{block}{Problem: TRC Behavior}
       \begin{itemize}
           \item Total Residual Chlorine (TRC) is the primary disinfectant and decays rapidly.
           \item Its behavior is distinct from stable parameters like Conductivity or TOC.
           \item In a combined multi-output model, TRC prediction accuracy often suffers.
       \end{itemize}
   \end{block}
-  \begin{block}{The Solution}
+  \begin{block}{Solution: Decoupled Modeling}
       \begin{itemize}
-          \item \textbf{Model A}: Dedicated exclusively to predicting TRC.
-          \item \textbf{Model B}: Predicts all other parameters (pH, TOC, etc.).
+          \item \textbf{TRC Model}: Dedicated exclusively to predicting TRC.
+          \item \textbf{Other Parameter Model}: Predicts all other parameters (pH, TOC, etc.).
           \item Allows for specialized architecture and hyperparameter tuning for the most critical parameter.
       \end{itemize}
   \end{block}
@@ -268,9 +244,14 @@
           \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
           \textbf{Model} & \textbf{MSE} & \textbf{MAE} & \textbf{MSE} & \textbf{MAE} & \textbf{MSE} & \textbf{MAE} \\
           \midrule
+          GRU-Rate & 0.0041 & 0.0642 & 0.0066 & 0.0632 & 0.0003 & 0.0184 \\
           GRU-Value & 0.0052 & 0.0612 & \textbf{0.0009} & \textbf{0.0233} & \textbf{0.0001} & \textbf{0.0088} \\
           LSTM-Rate & \textbf{0.0041} & 0.0641 & 0.0061 & 0.0618 & 0.0003 & 0.0138 \\
+          LSTM-Value & 0.0062 & 0.0709 & 0.0013 & 0.0308 & 0.0002 & 0.0127 \\
           MLP-Rate & 0.0041 & 0.0643 & 0.0064 & 0.0626 & 0.0004 & 0.0198 \\
+          MLP-Value & 0.0074 & 0.0725 & 0.0012 & 0.0290 & 0.0003 & 0.0143 \\
+          RNN-Rate & 0.0043 & 0.0654 & 0.0066 & 0.0629 & 0.0003 & 0.0187 \\
+          RNN-Value & 0.0077 & 0.0768 & 0.0010 & 0.0271 & 0.0001 & 0.0092 \\
           \bottomrule
       \end{tabular}
       }
@@ -288,26 +269,23 @@
 
 \subsection{Conclusion}
 \begin{frame}{Conclusion \& Future Work}
+  \footnotesize
   \begin{block}{Key Findings}
     \begin{itemize}
-        \item \textbf{Deep Learning}: GRU and LSTM effectively capture temporal dynamics.
-        \item \textbf{Strategy}: "Rate" regression is superior for TRC; "Value" regression for stable parameters (pH, TOC).
+        \item \textbf{General Performance}: Neural Networks fit the water quality data patterns effectively.
+        \item \textbf{Comparison}: GRU and LSTM are superior, validating the need for temporal modeling in WDS.
+        \item \textbf{Regression Strategy}:
+        \begin{itemize}
+            \item \textbf{TRC}: Best predicted using "Rate" regression (LSTM-Rate). Chemical decay is the dominant factor.
+            \item \textbf{pH/TOC}: Best predicted using "Value" regression (GRU-Value).
+        \end{itemize}
     \end{itemize}
   \end{block}
 
   \begin{block}{Future Work}
-    \begin{columns}
-        \begin{column}{0.6\textwidth}
-            \begin{itemize}
-                \item \textbf{Advanced Models}: Transformers (PatchTST).
-                \item \textbf{Interpretability}: SHAP, PDP, LIME.
-                \item \textbf{Second-Stage}: Predict actual DBP concentrations.
-            \end{itemize}
-        \end{column}
-        \begin{column}{0.4\textwidth}
-            \includegraphics[width=\textwidth]{../attachment/experiment framework.png}
-        \end{column}
-    \end{columns}
+    \begin{itemize}
+        \item \textbf{Second-Stage Model}: Map predicted water quality references (TRC, pH, TOC) to actual DBP concentrations (THMs, HAAs).
+    \end{itemize}
   \end{block}
 \end{frame}
 

@@ -1,7 +1,7 @@
 # Midterm Presentation Script (Consolidated - 15 Minutes)
 
 ## Slide 1: Title Slide (0:00 - 0:30)
-"Good morning/afternoon everyone. My name is Zhou Dafu. Today I will present my midterm progress on applying Supervised Learning methods to understand DBP formation mechanisms in water distribution systems. This work is supervised by Prof. Hu Jiangyong and mentored by Mr. Sun Yuanpeng."
+"Good morning/afternoon everyone. My name is Zhou Dafu. Today I will present my midterm progress on the **Development of Deep Learning Models for DBP Prediction in a Simulated Drinking Water Distribution Network**. This work is supervised by Prof. Hu Jiangyong and mentored by Mr. Sun Yuanpeng."
 
 ## Slide 2: Outline (0:30 - 0:45)
 "My presentation is divided into three main sections:
@@ -11,89 +11,86 @@
 
 # Section 1: Introduction & Objectives
 
-## Slide 3: Background & DBP Formation (0:45 - 2:30)
-"Let's start with the background. Disinfection By-products, or DBPs, are a major health concern in water treatment. They form when disinfectants react with organic matter, and many are carcinogenic. Our goal is to use Deep Learning to predict these formation events in real-time.
-Chemically, in our alkaline chloramination system, the key reaction starts with ammonia and hypochlorite forming monochloramine. These chloramines then react with organic precursors to form intermediates, which eventually oxidize into harmful N-DBPs like Nitrosamines."
+## Slide 3: Background & DBP Formation (0:45 - 1:45)
+"Disinfection By-products (DBPs) are a critical issue. They form when disinfectants react with organic matter. We are specifically concerned with **Trihalomethanes (THMs)**, **Haloacetic acids (HAAs)**, and **Haloacetonitriles (HANs)** due to their health risks.
+Our goal is to use Deep Learning for real-time prediction in a simulated drinking water network.
+Chemically, chloramines react with organic precursors to generate nitrogenous DBPs (N-DBPs), such as Nitrosamines."
 
-## Slide 4: Objectives (2:30 - 3:30)
-"Our study has three primary objectives:
-1.  To evaluate and compare different Deep Learning architectures (MLP, RNN, LSTM, GRU).
-2.  To analyze the correlations between standard sensor data (like TRC and pH) and DBP formation.
-3.  To develop a robust prediction framework that can operate in real-time."
+## Slide 4: Research Gap (1:45 - 2:30)
+"Why do we need this research?
+1.  **Dynamic Conditions**: Traditional mechanistic models struggle with the non-linear dynamics of distribution systems.
+2.  **Limit of Traditional ML**: Even conventional machine learning, like Decision Trees or SVMs, often fails to capture the complex temporal dependencies inherent in our time-series data.
+3.  **Monitoring Limitations**: Lab analysis is slow and expensive.
+4.  **Opportunity**: We have high-frequency sensor data. Using Deep Learning enables proactive, real-time control that other methods cannot match."
+
+## Slide 5: Objectives (2:30 - 3:00)
+"Our objectives are:
+1.  **Development of Deep Learning Models**: Comparing MLP, RNN, LSTM, and GRU.
+2.  **Analyze Correlations (in progress)**: Investigating correlations between sensors and DBPs.
+3.  **Develop Prediction Framework (in progress)**: Building a robust system for real-time monitoring."
 
 # Section 2: Methodology & Experimental Framework
 
-## Slide 5: System Description (3:30 - 4:15)
-"Moving on to our methodology. We simulated a Water Distribution System comprising a Disinfection Tank, a Retention Tank for storage, and two pipelines. This setup allows us to monitor the chemical evolution of water as it travels through the network."
+## Slide 6: System Description (3:00 - 3:30)
+"We simulated a Water Distribution System with a Disinfection Tank, Retention Tank, and two Pipelines. This allows us to track water quality evolution."
 
-## Slide 6: Data Acquisition (4:15 - 5:00)
-"We collect high-frequency sensor data at 5-minute intervals.
-Our sensor network covers all key stages. We measure core parameters like TRC, pH, and Conductivity, as well as advanced parameters like fDOM and TOC. This comprehensive dataset captures the water quality profile throughout the system."
+## Slide 7: Data Acquisition (3:30 - 4:00)
+"We use a comprehensive sensor network measuring core parameters (TRC, pH) and advanced ones (fDOM, TOC) at a 5-minute resolution."
 
-## Slide 7: Data Preprocessing: Imputation (5:00 - 5:30)
-"Raw data requires careful preprocessing. The first challenge is missing values due to alternating sensors.
-Standard mean imputation would reduce the variance and distort the signal.
-Instead, we used a stochastic interpolation method. We first linearly interpolate between known points and then inject random noise that matches the local variance. This preserves the statistical properties of the water quality dynamics."
+## Slide 8: Data Preprocessing: Imputation (4:00 - 4:45)
+"For preprocessing, we first handle missing values. Alternating sensors cause 30-minute gaps.
+As shown in the figure, we use **Stochastic Interpolation**. This combines linear interpolation with random noise injection that matches the local variance. This approach fills the gaps while preserving the statistical properties of the signal, which is crucial for training robust models."
 
-## Slide 8: Imputation (Visual) (5:30 - 5:45)
-"This figure demonstrates our imputation method. The red points represent the imputed values filling the gaps, maintaining the natural fluctuation of the sensor readings."
+## Slide 9: Data Preprocessing: Time Alignment (4:45 - 5:15)
+"Next is Time Alignment. Water travels **across the stages**. We correct for this hydraulic lag by shifting the input series, ensuring our model learns the transformation of the **same batch of water**."
 
-## Slide 9: Data Preprocessing: Time Alignment (5:45 - 6:15)
-"The second challenge is hydraulic delay. Water takes time to travel from the tanks to the pipelines.
-If we directly correlate timestamps, we get incorrect mappings.
-We solved this by calculating the residence time and shifting the input data series forward. This ensures the model learns the transformation of the *same* parcel of water."
+## Slide 10: Model Architectures (5:15 - 6:00)
+"We tested four architectures, visualized here:
+- **MLP**: A standard feedforward network using flattened historical windows.
+- **RNN**: The basic recurrent network for sequences.
+- **LSTM**: Uses gating mechanisms (input, output, forget gates) to capture long-term dependencies.
+- **GRU**: A streamlined variant of LSTM with update and reset gates.
+These recurrent architectures are specifically chosen to handle the temporal nature of our data."
 
-## Slide 10: Time Alignment (Visual) (6:15 - 6:30)
-"This diagram illustrates the alignment process. By shifting the input series (blue) to match the output (orange), we align the peaks and troughs, allowing the model to learn the correct causal relationship."
+## Slide 11: Training Process (6:00 - 6:45)
+"This workflow illustrates our training process.
+We rely on **Mean Squared Error (MSE)** as our loss function, as it effectively penalizes large regression errors.
+The **Adam optimizer** is used for its adaptive learning rate properties.
+To prevent overfitting, we employ **Dropout** and **Early Stopping**—monitoring the validation loss and stopping training when it ceases to improve. The data is rigorously split into Training, Validation, and Test sets."
 
-## Slide 11: Model Architectures (6:30 - 7:15)
-"We explored four neural network architectures:
-**MLP**: A simple feedforward network as a baseline.
-**RNN**: Capable of handling time-series but prone to vanishing gradients.
-**LSTM and GRU**: Advanced recurrent networks with gating mechanisms. These are specifically designed to capture long-term dependencies, which is crucial for modeling the slow chemical kinetics in our system."
+## Slide 12: Hyperparameter Optimization (6:45 - 7:30)
+"Optimizing these models is complex. We used **Bayesian Optimization**.
+This method builds a probabilistic model to intelligently select the next set of hyperparameters to evaluate, balancing exploration and exploitation. It finds optimal configurations much faster than grid search."
 
-## Slide 12: Training Process (7:15 - 7:45)
-"Our training process is rigorous.
-We use **Mean Squared Error (MSE)** as the loss function because it penalizes larger errors, which is ideal for regression.
-We use the **Adam optimizer** for fast convergence.
-To prevent overfitting, we employ **Dropout** and **Early Stopping**."
+## Slide 13: Algorithm Optimizing (Rate of Change) (7:30 - 8:15)
+"We optimized our algorithms with two strategies.
+First, the **Normalized Rate of Change**.
+Absolute concentrations are dominated by the stable upstream value. The chemical transformation causes only small deviations. By predicting the 'Rate'—the relative change—we force the model to focus on the *kinetics* of the reaction occurring within the pipe, rather than just memorizing the input level."
 
-## Slide 13: Training Process (Workflow) (7:45 - 8:00)
-"Here is the complete workflow. We split the data into training, validation, and test sets. The model is trained on the training set, tuned on the validation set, and finally evaluated on the unseen test set to ensure generalizability."
-
-## Slide 14: Hyperparameter Optimization (8:00 - 8:45)
-"Optimizing these models is complex. Instead of manual tuning, we used **Bayesian Optimization**.
-This method builds a probabilistic model of the objective function to intelligently select the next set of hyperparameters to evaluate. It balances exploration of new regions and exploitation of known good regions, finding optimal configurations much faster than grid search."
-
-## Slide 15: Strategy 1: Normalized Rate of Change (8:45 - 9:30)
-"To further improve performance, we devised two specific strategies.
-First is the **Normalized Rate of Change Regression**.
-Instead of predicting absolute values, we predict the relative change.
-Since absolute concentrations are dominated by the stable upstream value, predicting the 'Rate' forces the model to focus on the *kinetics* of the reaction occurring within the pipe."
-
-## Slide 16: Strategy 2: Decoupled TRC Model (9:30 - 10:15)
-"Second is the **Decoupled TRC Model**.
-Total Residual Chlorine (TRC) is the primary disinfectant and decays rapidly, behaving very differently from stable parameters.
-In a combined model, its accuracy suffers.
-So, we built a dedicated model exclusively for TRC, allowing for specialized tuning, while a second model handles all other parameters."
+## Slide 14: Algorithm Optimizing (Decoupled Model) (8:15 - 9:00)
+"Second, **Decoupled Modeling**.
+Total Residual Chlorine (TRC) behaves very differently from stable parameters like pH or TOC; it decays rapidly. In a combined model, its accuracy often suffers.
+We solved this by building a dedicated **TRC Model** exclusively for chlorine, and a separate **Other Parameter Model** for the rest. This allows specialized tuning for the most critical parameter."
 
 # Section 3: Results & Conclusion
 
-## Slide 17: Performance Metrics (10:15 - 11:30)
-"Here are our results for Pipeline 2.
-We found that the 'Rate' regression strategy (with LSTM) was most effective for predicting TRC.
-However, for stable parameters like pH and TOC, the direct 'Value' regression (with GRU) performed best. This highlights that different water quality parameters require different modeling approaches."
+## Slide 15: Performance Metrics (9:00 - 9:45)
+"Our results show that:
+- For TRC, **LSTM with Rate regression** is effective. `Rate` helps capture the decay kinetics.
+- For stable parameters (pH, TOC), **GRU with Value regression** is superior. `Value` works best here as absolute concentrations are stable.
+(Note: MLPHIS was excluded as standard MLP/RNN/LSTM/GRU provided sufficient insight)."
 
-## Slide 18: Prediction Visualization (11:30 - 12:30)
-"This plot shows our model predictions versus the actual sensor data.
-As you can see, the models track the trends very closely for TRC, pH, and TOC, validating the effectiveness of our approach."
+## Slide 16: Prediction Visualization (9:45 - 10:15)
+"The plots confirm that our best models closely track the actual sensor trends."
 
-## Slide 19: Conclusion & Future Work (12:30 - 13:30)
-"In conclusion, Deep Learning models, particularly GRU and LSTM, are highly effective for this task. The choice of regression strategy—Rate vs. Value—is critical depending on the parameter.
-For future work, we plan to:
-1.  Test advanced Transformer models like PatchTST.
-2.  Focus on **Interpretability** using tools like SHAP to understand the 'why' behind predictions.
-3.  Build a second-stage model to predict actual DBP concentrations."
+## Slide 17: Conclusion & Future Work (10:15 - 11:15)
+"Key Findings:
+1.  **General Fit**: Neural Networks are highly capable of fitting this complex water quality data.
+2.  **Performance**: GRU and LSTM are superior, validating the importance of temporal modeling.
+3.  **Strategy**: The choice of regression target is key—'Rate' for reactive parameters like TRC, 'Value' for stable ones.
 
-## Slide 20: Q&A (13:30 - 15:00)
-"Thank you. I am now open to any questions."
+Future Work:
+We will focus on a **Second-Stage Model** to map these predicted water quality references (TRC, pH, TOC) to actual DBP concentrations (THMs, HAAs)."
+
+## Slide 18: Q&A (11:15 - 15:00)
+"Thank you. Questions?"
