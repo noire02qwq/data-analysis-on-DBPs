@@ -6,7 +6,7 @@ End-to-end toolkit for preparing dissolved by-product sensor data, training mult
 - **Data processing**: impute missing `-PPL1/-PPL2` readings and realign DT/RT/PPL1/PPL2 timestamps.
 - **Model zoo**: PyTorch dense/sequence models and tree ensembles (XGBoost, LightGBM, CatBoost) with shared training/test scripts.
 - **Rate mode**: optional `(PPL-RT)/RT` objective during training, with automatic conversion back to absolute values for metrics.
-- **Autotuning**: hill-climbing runner that explores grid configs for every model family (value and rate variants) and records best runs.
+- **Autotuning**: Bayesian optimization runner that explores hyperparameter spaces efficiently (replacing the old grid/hill-climbing approach).
 - **Archival**: `Archived/` stores the top checkpoints + metadata from major sweeps for future reference.
 
 ## Repository Layout
@@ -77,30 +77,32 @@ Both scripts log the decisions they make; rerun them whenever you update the sou
    python scripts/test_regression.py --model-dir scripts/outputs/lstm_regressor
    ```
    The script reloads the saved scalers, rebuilds the splits, and writes `test_predictions.csv` plus per-target plots.
-4. **Autotune** (hill-climb grid search):
+4. **Autotune** (Bayesian Optimization):
    ```bash
-   nohup python scripts/autotune_lstm.py \
+   python scripts/bayes_autotune_trc.py \
+       --model-type LSTM \
        --base-config models/configs/lstm_config.yaml \
-       --grid-config models/configs/lstm_grid.yaml \
-       > autotune_lstm.log 2>&1 &
+       --grid-config models/configs/lstm_bayes.yaml \
+       --n-trials 50
    ```
-   Each run lands in `scripts/outputs/lstm_regressor/<run_id>/`; `autotune_results.csv` logs hyperparameters and best validation MSE.
-5. **Rate variant**: swap to `scripts/rate_train_regression.py`, `scripts/rate_test_regression.py`, and `scripts/rate_autotune_lstm.py` while reusing the same YAML.
+   Each run lands in `scripts/outputs/lstm-trc-value/`; `optuna_study.db` (or similar logs) and `autotune_results.csv` record the progress.
+5. **Rate variant**: use `scripts/bayes_autotune_trc_rate.py` (or `_other_rate.py` for non-TRC) and point to the same configs.
 
 ## Autotuning Summary
-Use the matching pair of scripts + grid for each model family:
+We now use **Bayesian Optimization** (via Optuna or similar logic) to find optimal hyperparameters, which is more efficient than grid search.
 
-| Model | Value Autotune | Rate Autotune | Grid file |
-| --- | --- | --- | --- |
-| LSTM | `scripts/autotune_lstm.py` | `scripts/rate_autotune_lstm.py` | `models/configs/lstm_grid.yaml` |
-| RNN | `scripts/autotune_rnn.py` | `scripts/rate_autotune_rnn.py` | `models/configs/rnn_grid.yaml` |
-| MLP | `scripts/autotune_mlp.py` | `scripts/rate_autotune_mlp.py` | `models/configs/mlp_grid.yaml` |
-| MLP w/ history | `scripts/autotune_mlp_history.py` | `scripts/rate_autotune_mlp_history.py` | `models/configs/mlp_with_history_grid.yaml` |
-| XGBoost | `scripts/autotune_xgboost.py` | `scripts/rate_autotune_xgboost.py` | `models/configs/xgboost_grid.yaml` |
-| LightGBM | `scripts/autotune_lightgbm.py` | `scripts/rate_autotune_lightgbm.py` | `models/configs/lightgbm_grid.yaml` |
-| CatBoost | `scripts/autotune_catboost.py` | `scripts/rate_autotune_catboost.py` | `models/configs/catboost_grid.yaml` |
+| Target | Value Domain Script | Rate Domain Script |
+| --- | --- | --- |
+| **TRC** (Chlorine) | `scripts/bayes_autotune_trc.py` | `scripts/bayes_autotune_trc_rate.py` |
+| **Other** (pH/TOC/etc) | `scripts/bayes_autotune_other.py` | `scripts/bayes_autotune_other_rate.py` |
 
-**Hill-climb logic**: the runner evaluates the starting point, then iteratively moves along neighboring hyperparameter settings if they improve TRC‑PPL1 validation MSE. Failed runs are skipped automatically, and `autotune_results.csv` keeps a row-per-run audit trail (hyperparameters, status, best val loss, moved param).
+**Usage**:
+All scripts share the same flags:
+- `--model-type`: `LSTM`, `RNN`, `MLP`, `XGBOOST`, `LIGHTGBM`, `CATBOOST`, etc.
+- `--base-config`: path to the default YAML (e.g., `models/configs/xgboost_config.yaml`).
+- `--grid-config`: path to the search space YAML (e.g., `models/configs/xgboost_bayes.yaml`).
+
+**Bayesian logic**: The optimizer builds a probabilistic model of the objective function (validation MSE) and selects the next hyperparameters to balance exploration (uncertain regions) and exploitation (promising regions). output is logged to `autotune_results.csv`.
 
 ## Archived Best Runs
 Whenever an autotune sweep finishes, copy the best-performing folder into `Archived/<run_id><model>/` (see `Archived/README.md`). These archives preserve the exact environment required to reproduce research results:

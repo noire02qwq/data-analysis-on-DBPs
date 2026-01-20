@@ -66,15 +66,27 @@ This folder contains every step of the DBPS data-processing pipeline, from filli
 
 This sequence ensures the regression models always see the cleaned, aligned data and that evaluation uses the same scalers and splits recorded during training. Adjust the YAML configs to explore different look-back windows or architectures, then rerun steps 3–4. The autotuning scripts described in 回归实验1109 are intentionally deferred.
 
-## 5. Autotuning (LSTM / RNN)
-- **Purpose:** Sweep the grids specified in `models/configs/lstm_grid.yaml` / `models/configs/rnn_grid.yaml` by repeatedly launching the training script with different hyperparameters and logging the best validation loss.
-- **Commands:**  
+## 5. Autotuning (Bayesian Optimization)
+- **Purpose:** Efficiently search for optimal hyperparameters using Bayesian Optimization (instead of grid search). This covers **all** model types (LSTM, RNN, MLP, XGBoost, etc.).
+- **Scripts:**
+  - `bayes_autotune_trc.py`: Tuning for **TRC** (Value).
+  - `bayes_autotune_trc_rate.py`: Tuning for **TRC** (Rate).
+  - `bayes_autotune_other.py`: Tuning for **pH/TOC/etc** (Value).
+  - `bayes_autotune_other_rate.py`: Tuning for **pH/TOC/etc** (Rate).
+- **Common Arguments:**
+  - `--model-type`: One of `LSTM`, `RNN`, `MLP`, `MLP_WITH_HISTORY`, `XGBOOST`, `LIGHTGBM`, `CATBOOST`, `TRANSFORMER`.
+  - `--base-config`: Path to the baseline config (e.g., `models/configs/lstm_config.yaml`).
+  - `--grid-config`: Path to the search space config (e.g., `models/configs/lstm_bayes.yaml`).
+  - `--n-trials`: Number of trials to run (default 100).
+- **Example Command:**
   ```bash
-  python scripts/autotune_lstm.py [--max-trials N --start-index K]
-  python scripts/autotune_rnn.py  [--max-trials N --start-index K]
-  ```  
-  Use `nohup ... &` if you plan to keep them running overnight.
-- **Behaviour:** For each grid point the script creates `scripts/outputs/<model>/<run_id>/config.yaml`, invokes `train_regression.py`, and appends a row to `scripts/outputs/<model>/autotune_results.csv` containing the run id, hyperparameters, and the recorded best validation loss. Runs are numbered sequentially, so you can pause/resume without overwriting earlier trials.
+  python scripts/bayes_autotune_trc.py \
+      --model-type XGBOOST \
+      --base-config models/configs/xgboost_config.yaml \
+      --grid-config models/configs/xgboost_bayes.yaml \
+      --n-trials 50
+  ```
+- **Output:** Creates `scripts/outputs/<model-type>-<target>-<domain>/<run_id>`, checks validation loss, and saves `autotune_results.csv` with the trial history.
 
 ## 6. Rate-Based Regression (`变化率回归1115`)
 - **Purpose:** Implements the `prompt-draft/变化率回归1115.md` request by changing every target to `(PPL - RT) / RT` during training, then converts predictions back to absolute values for validation/test metrics.
@@ -82,44 +94,10 @@ This sequence ensures the regression models always see the cleaned, aligned data
   ```bash
   python scripts/rate_train_regression.py --config models/configs/<config>.yaml
   python scripts/rate_test_regression.py  --model-dir scripts/outputs/rate_<model_name>
-  python scripts/rate_autotune_lstm.py    [--max-trials N --start-index K]
-  python scripts/rate_autotune_rnn.py     [--max-trials N --start-index K]
+  # For autotuning, see Section 5 (use bayes_autotune_trc_rate.py or bayes_autotune_other_rate.py)
   ```  
   The YAML configs are identical to the direct-regression runs; the scripts automatically prefix the output folders with `rate_`.
 - **Key differences vs. the direct pipeline:**  
   - Targets are rates during optimization, but validation/test losses are computed on the recovered absolute values so that MSE stays in the original units.  
   - `metadata.json` now records `target_mode: "rate"` plus the RT column paired with each target, allowing `rate_test_regression.py` to rebuild the conversion without extra inputs.
 
-## 7. Autotuning MLP / MLP_WITH_HISTORY
-- **Purpose:** Explore the dense architectures described in `prompt-draft/调参脚本mlp-gbdt1116.md` by sweeping the number/width of middle layers plus optimization hyperparameters. The “hidden layers” are defined via `{mid_layer_count, mid_layer_size}` so the actual list becomes `[2×size] + [size]×count + [size/2]`.
-- **Commands:**  
-  ```bash
-  python scripts/autotune_mlp.py --base-config models/configs/mlp_config.yaml \
-       --grid-config models/configs/mlp_grid.yaml [--max-trials N --start-index K]
-
-  python scripts/autotune_mlp_history.py --base-config models/configs/mlp_with_history_config.yaml \
-       --grid-config models/configs/mlp_with_history_grid.yaml [--max-trials N --start-index K]
-  ```
-  Use the `rate_` counterparts (same flags) if you want the `(PPL-RT)/RT` objective.
-- **Behaviour:** The shared runner writes numbered folders under `scripts/outputs/<model>/`, copies the effective config, and appends `{mid_layer_count, mid_layer_size, history_length, dropout, batch_size, learning_rate, weight_decay}` + the resulting validation MSE to `autotune_results.csv`. Use `--max-trials` / `--start-index` to split long sweeps, or `nohup ... &` to keep them running overnight.
-
-## 8. Gradient-Boosted Trees (XGBoost / LightGBM / CatBoost)
-- **Purpose:** Cover the expanded hyperparameter ranges requested in `prompt-draft/调参脚本mlp-gbdt1116.md`, giving the tree-based baselines more capacity.
-- **Commands:**
-  ```bash
-  python scripts/autotune_xgboost.py  --base-config models/configs/xgboost_config.yaml \
-       --grid-config models/configs/xgboost_grid.yaml   [--max-trials N --start-index K]
-  python scripts/rate_autotune_xgboost.py  --base-config models/configs/xgboost_config.yaml \
-       --grid-config models/configs/xgboost_grid.yaml   [--max-trials N --start-index K]
-
-  python scripts/autotune_lightgbm.py --base-config models/configs/lightgbm_config.yaml \
-       --grid-config models/configs/lightgbm_grid.yaml [--max-trials N --start-index K]
-  python scripts/rate_autotune_lightgbm.py --base-config models/configs/lightgbm_config.yaml \
-       --grid-config models/configs/lightgbm_grid.yaml [--max-trials N --start-index K]
-
-  python scripts/autotune_catboost.py  --base-config models/configs/catboost_config.yaml \
-       --grid-config models/configs/catboost_grid.yaml [--max-trials N --start-index K]
-  python scripts/rate_autotune_catboost.py  --base-config models/configs/catboost_config.yaml \
-       --grid-config models/configs/catboost_grid.yaml [--max-trials N --start-index K]
-  ```
-- **Behaviour:** Same hill-climbing loop as the neural nets: each run writes a temporary folder under `scripts/outputs/<model_name>/`, invokes the corresponding training script (`train_regression.py` or `rate_train_regression.py` for the rate-aware XGBoost), and logs the selected hyperparameters plus the primary validation loss (TRC-PPL1 in the case of the tree ensembles) into `autotune_results.csv`.
