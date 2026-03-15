@@ -1,103 +1,208 @@
 # Scripts Usage Guide
 
-This folder contains every step of the DBPS data-processing pipeline, from filling missing values all the way to training and evaluating regression models. The sections below explain what each script does, the required inputs, and the most relevant flags.
+This folder contains all CLI entry points for the DBPs data-processing pipeline.
 
-## 1. Missing-Value Imputation (`fill_missing.py`)
-- **Purpose:** Fills all `-PPL1/-PPL2` columns in `data/raw_data.csv` according to the interpolation rules described in `prompt-draft/缺失填充.md`.
-- **Default command:**  
-  ```bash
-  python scripts/fill_missing.py
-  ```
-- **Key options:**  
-  - `--input`: path to the original CSV (default `data/raw_data.csv`).  
-  - `--output`: destination for the filled table (default `data/imputed_data.csv`).  
-  - `--seed`: random seed used when sampling the variance-based noise term (default `42`).
-- **Outputs:** Saves the filled CSV to `data/imputed_data.csv` (or the path you specify) and prints the number of synthesized values for each column.
+## Available Scripts
 
-## 2. Time Alignment (`align_time.py`)
-- **Purpose:** Removes the empty `cond-RT` column and realigns the DT/RT/PPL1/PPL2 measurements so that each row represents the same fluid batch. The offsets follow `prompt-draft/时间对齐.md`: RT is shifted +25h, PPL1 +38h, and PPL2 +55h relative to DT.
-- **Default command:**  
-  ```bash
-  python scripts/align_time.py
-  ```
-- **Key options:**  
-  - `--input`: imputed CSV to align (default `data/imputed_data.csv`).  
-  - `--output`: aligned CSV (default `data/time_aligned_data.csv`).  
-  - `--timestamp-column`: column containing the DT timestamp (default `"Date, Time"`).
-- **Outputs:** Aligned CSV in `data/time_aligned_data.csv`, logs dropped rows, and removes `cond-RT`.
+| Script | Description |
+|--------|-------------|
+| `split_data.py` | Split CSV data into train/val/test sets |
+| `train.py` | Train regression models |
+| `test.py` | Test trained models |
+| `autotune.py` | Bayesian hyperparameter optimization |
+| `server.py` | Backend API server (port 310) |
+| `demo_client.py` | Demo client for testing workflow |
 
-## 3. Regression Training (`train_regression.py`)
-- **Purpose:** Implements the 回归实验1109 specification: trains MLP / MLP_WITH_HISTORY / LSTM / RNN PyTorch models or an XGBoost regressor to predict `TRC/TOC/DOC/pH` at PPL1/PPL2 using only non-PPL features.
-- **Command template:**  
-  ```bash
-  python scripts/train_regression.py --config models/configs/<config>.yaml
-  ```
-- **Bundled configs (feel free to copy & edit):**  
-  - `mlp_config.yaml`: single-step MLP without history.  
-  - `mlp_with_history_config.yaml`: flattened history window MLP.  
-  - `lstm_config.yaml`: stacked LSTM fed with non-PPL sequences.  
-  - `rnn_config.yaml`: SimpleRNN counterpart.  
-  - `xgboost_config.yaml`: gradient-boosted regressor.  
-- **Training behaviour:**  
-  - Splits data 70/15/15, scales features with the train slice, and removes all `-PPL1/-PPL2` inputs.  
-  - 不再保存固定 checkpoint，而是每个 epoch 记录 train/val MSE；只有当 train loss 下降到初始值的 1/3 时才开始更新 best。Patience 计数从「train loss ≤ 1/3」或「第 31 轮」(先到者)开始，之后若 train/val MSE 在 50 轮内都没有刷新且总轮数 ≥ 80 就提前停止；若训练到第 100 轮仍达不到 1/3 阈值则强制终止。  
-  - PyTorch models output `best_model.pt` / `last_model.pt` plus one `training_curve.png` + `loss_history.csv` (均为 MSE)。XGBoost 依次训练 8 个单输出 booster，每个目标单独产出 `training_curve_<target>.png` / `loss_history_<target>.csv` 及 best/last `*.json`。  
-  - 每次训练还会写入 `metadata.json`, `scalers.npz` 以及原始 YAML 副本到 `scripts/outputs/<model_name>/`。
+## 1. Data Splitting (`split_data.py`)
 
-## 4. Regression Testing (`test_regression.py`)
-- **Purpose:** Loads the artifacts referenced in `metadata.json`, rebuilds the exact dataset splits, evaluates the best model on the test slice, and emits per-target plots plus a CSV (works for both PyTorch checkpoints and XGBoost boosters).
-- **Command template:**  
-  ```bash
-  python scripts/test_regression.py --model-dir scripts/outputs/mlp_regressor
-  ```
-- **Key options:**  
-  - `--model-dir`: folder holding `metadata.json`, `scalers.npz`, and the saved best model.  
-  - `--data`: optional override CSV; otherwise it uses the path recorded in `metadata.json`.
-- **Outputs:**  
-  - Per-target plots (e.g., `TRC-PPL1_pred_vs_true.png`).  
-  - `test_predictions.csv` with paired true/predicted values.  
-  - Console summary of per-target MSE.
+Split a CSV file into train, validation, and test sets.
+
+```bash
+python scripts/split_data.py \
+    --input data/time_aligned_data.csv \
+    --train-rows 8000 \
+    --val-rows 1500 \
+    --test-rows 1500 \
+    --output-dir data \
+    --shuffle \
+    --seed 42
+```
+
+**Options:**
+- `--input`: Input CSV file (required)
+- `--train-rows`: Number of training rows (required)
+- `--val-rows`: Number of validation rows (required)
+- `--test-rows`: Number of test rows (required)
+- `--output-dir`: Output directory (required)
+- `--shuffle`: Randomly shuffle before splitting
+- `--seed`: Random seed (default: 42)
+
+## 2. Model Training (`train.py`)
+
+Train a regression model using TOML configuration.
+
+```bash
+python scripts/train.py --config models/configs/rnn_config.toml
+```
+
+**Options:**
+- `--config`: Path to TOML config file (required)
+
+**Supported Models:**
+- PyTorch: MLP, LSTM, RNN, GRU, Transformer
+- GBDT: XGBoost, LightGBM, CatBoost
+
+**Config Format:**
+```toml
+[model]
+type = "RNN"
+name = "rnn_regressor"
+history_length = 32
+units = 128
+num_layers = 2
+dropout = 0.2
+
+[training]
+max_epochs = 100
+batch_size = 128
+learning_rate = 0.001
+patience = 10
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2"]
+```
+
+**Output:**
+- `outputs/<model_name>/<timestamp>/` directory containing:
+  - `best_model.pt` / `best_model_*.xgb` - Best model checkpoint
+  - `last_model.pt` - Final model checkpoint
+  - `scalers.npz` - Feature scalers
+  - `config.toml` - Copy of configuration
+  - `result.toml` - Training results
+  - `loss_history.csv` - Training history
+  - `training_curve.png` - Loss visualization
+
+## 3. Model Testing (`test.py`)
+
+Test a trained model on test data.
+
+```bash
+python scripts/test.py --model-dir outputs/rnn_regressor/<timestamp>
+```
+
+**Options:**
+- `--model-dir`: Directory containing trained model (required)
+- `--test-csv`: Optional test CSV override
+- `--output-dir`: Optional output directory
+
+**Output:**
+- `test_metrics.csv` - MSE, RMSE, MAE, R² metrics
+- `test_predictions.csv` - Predicted values
+- `*_pred_vs_true.png` - Prediction vs true plots
+
+## 4. Autotuning (`autotune.py`)
+
+Run Bayesian optimization for hyperparameter tuning.
+
+```bash
+python scripts/autotune.py \
+    --model-type RNN \
+    --base-config models/configs/rnn_config.toml \
+    --bayes-config models/configs/rnn_bayes.toml \
+    --n-trials 20
+```
+
+**Options:**
+- `--model-type`: Model type (required) - MLP, LSTM, RNN, GRU, TRANSFORMER, XGBOOST, LIGHTGBM, CATBOOST
+- `--base-config`: Base configuration TOML file (required)
+- `--bayes-config`: Bayesian search space TOML file (required)
+- `--n-trials`: Number of optimization trials (default: 20)
+- `--output-dir`: Output directory (optional)
+- `--study-name`: Optuna study name (optional)
+- `--storage`: Optuna storage URL (optional, e.g., sqlite:///study.db)
+
+**Bayes Config Format:**
+```toml
+[model]
+history_length = {min = 16, max = 64}
+units = {min = 64, max = 256}
+num_layers = {min = 1, max = 4}
+dropout = {min = 0.1, max = 0.4}
+
+[training]
+batch_size = {min = 64, max = 256}
+learning_rate = {min = 0.0001, max = 0.01, log = true}
+```
+
+## 5. API Server (`server.py`)
+
+Run the backend API server for web integration.
+
+```bash
+python scripts/server.py --port 310
+```
+
+**API Endpoints:**
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/health` | GET | Health check |
+| `/models` | GET | List available models |
+| `/split` | POST | Split data |
+| `/train` | POST | Train model |
+| `/autotune` | POST | Run autotuning |
+| `/test` | POST | Test model |
+
+**Request Format:**
+```json
+{
+    "input_csv": "data/time_aligned_data.csv",
+    "train_rows": 8000,
+    "val_rows": 1500,
+    "test_rows": 1500,
+    "output_dir": "data",
+    "shuffle": true,
+    "seed": 42
+}
+```
+
+## 6. Demo Client (`demo_client.py`)
+
+Run a demo that tests the full workflow.
+
+```bash
+python scripts/demo_client.py
+```
+
+This runs: data check → split (if needed) → train → autotune → test
 
 ## Typical Workflow
-1. `python scripts/fill_missing.py`  
-2. `python scripts/align_time.py`  
-3. `python scripts/train_regression.py --config models/configs/<your_config>.yaml`  
-4. `python scripts/test_regression.py --model-dir scripts/outputs/<model_name>`
 
-This sequence ensures the regression models always see the cleaned, aligned data and that evaluation uses the same scalers and splits recorded during training. Adjust the YAML configs to explore different look-back windows or architectures, then rerun steps 3–4. The autotuning scripts described in 回归实验1109 are intentionally deferred.
+```bash
+# 1. Split data (if not already done)
+python scripts/split_data.py \
+    --input data/time_aligned_data.csv \
+    --train-rows 8000 \
+    --val-rows 1500 \
+    --test-rows 1500 \
+    --output-dir data \
+    --shuffle
 
-## 5. Autotuning (Bayesian Optimization)
-- **Purpose:** Efficiently search for optimal hyperparameters using Bayesian Optimization (instead of grid search). This covers **all** model types (LSTM, RNN, MLP, XGBoost, etc.).
-- **Scripts:**
-  - `bayes_autotune_trc.py`: Tuning for **TRC** (Value).
-  - `bayes_autotune_trc_rate.py`: Tuning for **TRC** (Rate).
-  - `bayes_autotune_other.py`: Tuning for **pH/TOC/etc** (Value).
-  - `bayes_autotune_other_rate.py`: Tuning for **pH/TOC/etc** (Rate).
-- **Common Arguments:**
-  - `--model-type`: One of `LSTM`, `RNN`, `MLP`, `MLP_WITH_HISTORY`, `XGBOOST`, `LIGHTGBM`, `CATBOOST`, `TRANSFORMER`.
-  - `--base-config`: Path to the baseline config (e.g., `models/configs/lstm_config.yaml`).
-  - `--grid-config`: Path to the search space config (e.g., `models/configs/lstm_bayes.yaml`).
-  - `--n-trials`: Number of trials to run (default 100).
-- **Example Command:**
-  ```bash
-  python scripts/bayes_autotune_trc.py \
-      --model-type XGBOOST \
-      --base-config models/configs/xgboost_config.yaml \
-      --grid-config models/configs/xgboost_bayes.yaml \
-      --n-trials 50
-  ```
-- **Output:** Creates `scripts/outputs/<model-type>-<target>-<domain>/<run_id>`, checks validation loss, and saves `autotune_results.csv` with the trial history.
+# 2. Train a model
+python scripts/train.py --config models/configs/rnn_config.toml
 
-## 6. Rate-Based Regression (`变化率回归1115`)
-- **Purpose:** Implements the `prompt-draft/变化率回归1115.md` request by changing every target to `(PPL - RT) / RT` during training, then converts predictions back to absolute values for validation/test metrics.
-- **Commands:**  
-  ```bash
-  python scripts/rate_train_regression.py --config models/configs/<config>.yaml
-  python scripts/rate_test_regression.py  --model-dir scripts/outputs/rate_<model_name>
-  # For autotuning, see Section 5 (use bayes_autotune_trc_rate.py or bayes_autotune_other_rate.py)
-  ```  
-  The YAML configs are identical to the direct-regression runs; the scripts automatically prefix the output folders with `rate_`.
-- **Key differences vs. the direct pipeline:**  
-  - Targets are rates during optimization, but validation/test losses are computed on the recovered absolute values so that MSE stays in the original units.  
-  - `metadata.json` now records `target_mode: "rate"` plus the RT column paired with each target, allowing `rate_test_regression.py` to rebuild the conversion without extra inputs.
+# 3. Autotune (optional)
+python scripts/autotune.py \
+    --model-type RNN \
+    --base-config models/configs/rnn_config.toml \
+    --bayes-config models/configs/rnn_bayes.toml \
+    --n-trials 20
 
+# 4. Test the model
+python scripts/test.py --model-dir outputs/rnn_regressor/<timestamp>
+```

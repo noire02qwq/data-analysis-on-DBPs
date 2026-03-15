@@ -1,0 +1,36 @@
+[parameters.max_depth]
+min = 4
+max = 30
+step = 2
+log = false
+
+[parameters.learning_rate]
+min = 0.002
+max = 0.02
+log = true
+
+[parameters.subsample]
+min = 0.6
+max = 1.0
+log = true
+
+[parameters.colsample_bytree]
+min = 0.6
+max = 1.0
+log = true
+
+[parameters.reg_alpha]
+min = 0.0
+max = 2.0
+log = true
+
+[parameters.reg_lambda]
+min = 0.5
+max = 5.0
+log = true
+
+[parameters.min_child_samples]
+min = 10
+max = 100
+step = 5
+log = false

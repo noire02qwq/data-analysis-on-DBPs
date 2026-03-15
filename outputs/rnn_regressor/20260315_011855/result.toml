@@ -1,0 +1,10 @@
+model_name = "rnn_regressor"
+model_type = "RNN"
+model_format = "torch"
+input_columns = ["minutes_since_start", "TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT", "fDOM-RT", "DO-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2"]
+
+[eval]
+best_val_loss = 0.3672941179930671
+test_loss = 4.9250899930959235
+best_epoch = 1
