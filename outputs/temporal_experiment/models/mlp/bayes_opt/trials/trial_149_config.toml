@@ -1,0 +1,53 @@
+[model]
+type = "MLP"
+name = "mlp_regressor"
+history_length = 1
+hidden_layers = [
+    512,
+    256,
+    128,
+]
+dropout = 0.2
+
+[training]
+max_epochs = 150
+batch_size = 128
+learning_rate = 0.001
+weight_decay = 0.0
+patience = 15
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]
+
+[parameters]
+mid_layer_count = 4
+mid_layer_size = 219
+dropout = 0.06434662377758522
+batch_size = 112
+learning_rate = 0.0015476466969978342
+weight_decay = 2.8790477243302935e-05

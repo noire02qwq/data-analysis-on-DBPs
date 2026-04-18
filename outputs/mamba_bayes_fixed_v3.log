@@ -1,0 +1,702 @@
+[I 2026-04-12 14:56:27,787] A new study created in memory with name: mamba_fixed_v3_20260412_145627
+[I 2026-04-12 14:56:28,253] Trial 0 pruned. 
+[I 2026-04-12 14:56:28,630] Trial 1 pruned. 
+[I 2026-04-12 14:56:29,058] Trial 2 pruned. 
+[I 2026-04-12 14:56:29,448] Trial 3 pruned. 
+[I 2026-04-12 14:56:29,831] Trial 4 pruned. 
+[I 2026-04-12 14:56:30,171] Trial 5 pruned. 
+[I 2026-04-12 14:56:30,553] Trial 6 pruned. 
+[I 2026-04-12 14:56:30,943] Trial 7 pruned. 
+[I 2026-04-12 14:56:31,273] Trial 8 pruned. 
+[I 2026-04-12 14:56:31,641] Trial 9 pruned. 
+[I 2026-04-12 14:56:31,977] Trial 10 pruned. 
+[I 2026-04-12 14:56:32,331] Trial 11 pruned. 
+[I 2026-04-12 14:56:32,689] Trial 12 pruned. 
+[I 2026-04-12 14:56:33,061] Trial 13 pruned. 
+[I 2026-04-12 14:56:33,414] Trial 14 pruned. 
+[I 2026-04-12 14:56:33,770] Trial 15 pruned. 
+[I 2026-04-12 14:56:34,157] Trial 16 pruned. 
+[I 2026-04-12 14:56:34,532] Trial 17 pruned. 
+[I 2026-04-12 14:56:34,888] Trial 18 pruned. 
+[I 2026-04-12 14:56:35,288] Trial 19 pruned. 
+[I 2026-04-12 14:56:35,702] Trial 20 pruned. 
+[I 2026-04-12 14:56:36,109] Trial 21 pruned. 
+[I 2026-04-12 14:56:36,460] Trial 22 pruned. 
+[I 2026-04-12 14:56:36,830] Trial 23 pruned. 
+[I 2026-04-12 14:56:37,181] Trial 24 pruned. 
+[I 2026-04-12 14:56:37,624] Trial 25 pruned. 
+[I 2026-04-12 14:56:38,031] Trial 26 pruned. 
+[I 2026-04-12 14:56:38,454] Trial 27 pruned. 
+[I 2026-04-12 14:56:38,921] Trial 28 pruned. 
+[I 2026-04-12 14:56:39,348] Trial 29 pruned. 
+[I 2026-04-12 14:56:39,767] Trial 30 pruned. 
+[I 2026-04-12 14:56:40,192] Trial 31 pruned. 
+[I 2026-04-12 14:56:40,579] Trial 32 pruned. 
+[I 2026-04-12 14:56:40,991] Trial 33 pruned. 
+Trial 0 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 0 pruned due to exception: 
+Trial 1 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 1 pruned due to exception: 
+Trial 2 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 2 pruned due to exception: 
+Trial 3 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 3 pruned due to exception: 
+Trial 4 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 4 pruned due to exception: 
+Trial 5 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 5 pruned due to exception: 
+Trial 6 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 6 pruned due to exception: 
+Trial 7 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 7 pruned due to exception: 
+Trial 8 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 8 pruned due to exception: 
+Trial 9 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 9 pruned due to exception: 
+Trial 10 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 10 pruned due to exception: 
+Trial 11 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 11 pruned due to exception: 
+Trial 12 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 12 pruned due to exception: 
+Trial 13 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 13 pruned due to exception: 
+Trial 14 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 14 pruned due to exception: 
+Trial 15 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 15 pruned due to exception: 
+Trial 16 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 16 pruned due to exception: 
+Trial 17 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 17 pruned due to exception: 
+Trial 18 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 18 pruned due to exception: 
+Trial 19 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 19 pruned due to exception: 
+Trial 20 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 20 pruned due to exception: 
+Trial 21 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 21 pruned due to exception: 
+Trial 22 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 22 pruned due to exception: 
+Trial 23 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 23 pruned due to exception: 
+Trial 24 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 24 pruned due to exception: 
+Trial 25 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 25 pruned due to exception: 
+Trial 26 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 26 pruned due to exception: 
+Trial 27 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 27 pruned due to exception: 
+Trial 28 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 28 pruned due to exception: 
+Trial 29 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 29 pruned due to exception: 
+Trial 30 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 30 pruned due to exception: 
+Trial 31 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 31 pruned due to exception: 
+Trial 32 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 32 pruned due to exception: 
+Trial 33 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 33 pruned due to exception: 
+Trial 34 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+[I 2026-04-12 14:56:41,450] Trial 34 pruned. 
+[I 2026-04-12 14:56:41,857] Trial 35 pruned. 
+[I 2026-04-12 14:56:42,287] Trial 36 pruned. 
+[I 2026-04-12 14:56:42,722] Trial 37 pruned. 
+[I 2026-04-12 14:56:43,157] Trial 38 pruned. 
+[I 2026-04-12 14:56:43,619] Trial 39 pruned. 
+[I 2026-04-12 14:56:44,051] Trial 40 pruned. 
+[I 2026-04-12 14:56:44,480] Trial 41 pruned. 
+[I 2026-04-12 14:56:44,965] Trial 42 pruned. 
+[I 2026-04-12 14:56:45,385] Trial 43 pruned. 
+[I 2026-04-12 14:56:45,767] Trial 44 pruned. 
+[I 2026-04-12 14:56:46,150] Trial 45 pruned. 
+[I 2026-04-12 14:56:46,677] Trial 46 pruned. 
+[I 2026-04-12 14:56:47,093] Trial 47 pruned. 
+[I 2026-04-12 14:56:47,454] Trial 48 pruned. 
+[I 2026-04-12 14:56:47,814] Trial 49 pruned. 
+[I 2026-04-12 14:56:48,260] Trial 50 pruned. 
+[I 2026-04-12 14:56:48,737] Trial 51 pruned. 
+[I 2026-04-12 14:56:49,158] Trial 52 pruned. 
+[I 2026-04-12 14:56:49,616] Trial 53 pruned. 
+[I 2026-04-12 14:56:50,021] Trial 54 pruned. 
+[I 2026-04-12 14:56:50,502] Trial 55 pruned. 
+[I 2026-04-12 14:56:50,901] Trial 56 pruned. 
+[I 2026-04-12 14:56:51,422] Trial 57 pruned. 
+[I 2026-04-12 14:56:51,820] Trial 58 pruned. 
+[I 2026-04-12 14:56:52,217] Trial 59 pruned. 
+[I 2026-04-12 14:56:52,629] Trial 60 pruned. 
+[I 2026-04-12 14:56:53,013] Trial 61 pruned. 
+[I 2026-04-12 14:56:53,431] Trial 62 pruned. 
+[I 2026-04-12 14:56:53,832] Trial 63 pruned. 
+[I 2026-04-12 14:56:54,203] Trial 64 pruned. 
+[I 2026-04-12 14:56:54,563] Trial 65 pruned. 
+[I 2026-04-12 14:56:54,910] Trial 66 pruned. 
+[I 2026-04-12 14:56:55,304] Trial 67 pruned. 
+[I 2026-04-12 14:56:55,702] Trial 68 pruned. 
+
+Trial 34 pruned due to exception: 
+Trial 35 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 35 pruned due to exception: 
+Trial 36 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 36 pruned due to exception: 
+Trial 37 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 37 pruned due to exception: 
+Trial 38 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 38 pruned due to exception: 
+Trial 39 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 39 pruned due to exception: 
+Trial 40 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 40 pruned due to exception: 
+Trial 41 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 41 pruned due to exception: 
+Trial 42 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 42 pruned due to exception: 
+Trial 43 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 43 pruned due to exception: 
+Trial 44 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 44 pruned due to exception: 
+Trial 45 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 45 pruned due to exception: 
+Trial 46 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 46 pruned due to exception: 
+Trial 47 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 47 pruned due to exception: 
+Trial 48 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 48 pruned due to exception: 
+Trial 49 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 49 pruned due to exception: 
+Trial 50 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 50 pruned due to exception: 
+Trial 51 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 51 pruned due to exception: 
+Trial 52 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 52 pruned due to exception: 
+Trial 53 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 53 pruned due to exception: 
+Trial 54 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 54 pruned due to exception: 
+Trial 55 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 55 pruned due to exception: 
+Trial 56 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 56 pruned due to exception: 
+Trial 57 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 57 pruned due to exception: 
+Trial 58 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 58 pruned due to exception: 
+Trial 59 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 59 pruned due to exception: 
+Trial 60 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 60 pruned due to exception: 
+Trial 61 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 61 pruned due to exception: 
+Trial 62 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 62 pruned due to exception: 
+Trial 63 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 63 pruned due to exception: 
+Trial 64 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 64 pruned due to exception: 
+Trial 65 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 65 pruned due to exception: 
+Trial 66 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 66 pruned due to exception: 
+Trial 67 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 67 pruned due to exception: 
+Trial 68 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 68 pruned due to exception: 
+Trial 69 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+[I 2026-04-12 14:56:56,128] Trial 69 pruned. 
+[I 2026-04-12 14:56:56,595] Trial 70 pruned. 
+[I 2026-04-12 14:56:56,971] Trial 71 pruned. 
+[I 2026-04-12 14:56:57,384] Trial 72 pruned. 
+[I 2026-04-12 14:56:57,765] Trial 73 pruned. 
+[I 2026-04-12 14:56:58,217] Trial 74 pruned. 
+[I 2026-04-12 14:56:58,606] Trial 75 pruned. 
+[I 2026-04-12 14:56:59,032] Trial 76 pruned. 
+[I 2026-04-12 14:56:59,376] Trial 77 pruned. 
+[I 2026-04-12 14:56:59,826] Trial 78 pruned. 
+[I 2026-04-12 14:57:00,264] Trial 79 pruned. 
+[I 2026-04-12 14:57:00,635] Trial 80 pruned. 
+[I 2026-04-12 14:57:01,057] Trial 81 pruned. 
+[I 2026-04-12 14:57:01,480] Trial 82 pruned. 
+[I 2026-04-12 14:57:01,872] Trial 83 pruned. 
+[I 2026-04-12 14:57:02,321] Trial 84 pruned. 
+[I 2026-04-12 14:57:02,727] Trial 85 pruned. 
+[I 2026-04-12 14:57:03,137] Trial 86 pruned. 
+[I 2026-04-12 14:57:03,637] Trial 87 pruned. 
+[I 2026-04-12 14:57:04,074] Trial 88 pruned. 
+[I 2026-04-12 14:57:04,491] Trial 89 pruned. 
+[I 2026-04-12 14:57:04,859] Trial 90 pruned. 
+[I 2026-04-12 14:57:05,253] Trial 91 pruned. 
+[I 2026-04-12 14:57:05,624] Trial 92 pruned. 
+[I 2026-04-12 14:57:06,012] Trial 93 pruned. 
+[I 2026-04-12 14:57:06,474] Trial 94 pruned. 
+[I 2026-04-12 14:57:06,869] Trial 95 pruned. 
+[I 2026-04-12 14:57:07,315] Trial 96 pruned. 
+[I 2026-04-12 14:57:07,703] Trial 97 pruned. 
+[I 2026-04-12 14:57:08,044] Trial 98 pruned. 
+[I 2026-04-12 14:57:08,416] Trial 99 pruned. 
+
+Trial 69 pruned due to exception: 
+Trial 70 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 70 pruned due to exception: 
+Trial 71 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 71 pruned due to exception: 
+Trial 72 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 72 pruned due to exception: 
+Trial 73 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 73 pruned due to exception: 
+Trial 74 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 74 pruned due to exception: 
+Trial 75 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 75 pruned due to exception: 
+Trial 76 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 76 pruned due to exception: 
+Trial 77 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 77 pruned due to exception: 
+Trial 78 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 78 pruned due to exception: 
+Trial 79 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 79 pruned due to exception: 
+Trial 80 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 80 pruned due to exception: 
+Trial 81 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 81 pruned due to exception: 
+Trial 82 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 82 pruned due to exception: 
+Trial 83 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 83 pruned due to exception: 
+Trial 84 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 84 pruned due to exception: 
+Trial 85 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 85 pruned due to exception: 
+Trial 86 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 86 pruned due to exception: 
+Trial 87 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 87 pruned due to exception: 
+Trial 88 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 88 pruned due to exception: 
+Trial 89 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 89 pruned due to exception: 
+Trial 90 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 90 pruned due to exception: 
+Trial 91 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 91 pruned due to exception: 
+Trial 92 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 92 pruned due to exception: 
+Trial 93 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 93 pruned due to exception: 
+Trial 94 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 94 pruned due to exception: 
+Trial 95 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 95 pruned due to exception: 
+Trial 96 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 96 pruned due to exception: 
+Trial 97 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 97 pruned due to exception: 
+Trial 98 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 98 pruned due to exception: 
+Trial 99 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 30, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+Trial 99 pruned due to exception: 
+No trials completed successfully.

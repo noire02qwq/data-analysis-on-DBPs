@@ -1,0 +1,7 @@
+{
+  "best_val_loss": 0.5208945725621148,
+  "test_loss": 0.47431402721188287,
+  "best_epoch": 11,
+  "finetune_method": "full",
+  "dataset": "lsww_29c"
+}

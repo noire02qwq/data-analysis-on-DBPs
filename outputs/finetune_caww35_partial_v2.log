@@ -1,0 +1,39 @@
+Using device: cuda
+Input columns after removing completely null: ['TRC-DT', 'pH-DT', 'cond-DT', 'TRC-RT', 'pH-RT', 'fDOM-RT', 'DO-RT', 'TOC-RT', 'DOC-RT']
+Output columns after removing completely null: ['TRC-PPL1', 'TRC-PPL2', 'pH-PPL1', 'pH-PPL2', 'cond-PPL1', 'cond-PPL2', 'TOC-PPL1', 'TOC-PPL2', 'DOC-PPL1', 'DOC-PPL2']
+Dataset sizes: Train=7799, Val=1766, Test=1767
+Loading pre-trained model from: outputs/caww29_unified/final_models/transformer/best_model.pt
+Handling input dimension mismatch: original 10 inputs → new 9
+Loaded pretrained weights (adjusted for input/output dimensions): 27 keys loaded
+Missing keys (expected for new head): ['head.0.weight', 'head.0.bias']
+  Partial fine-tuning: 2,570/1,056,260 parameters trainable
+Output directory: outputs/finetune_caww35_partial_v2/caww_35c_partial_20260413_103304
+Epoch   1: train_loss=1.159874, val_loss=0.551142
+Epoch   2: train_loss=0.537110, val_loss=0.337478
+Epoch   3: train_loss=0.393568, val_loss=0.262990
+Epoch   4: train_loss=0.342966, val_loss=0.237471
+Epoch   5: train_loss=0.319445, val_loss=0.226565
+Epoch   6: train_loss=0.303933, val_loss=0.230828
+Epoch   7: train_loss=0.290495, val_loss=0.225949
+Epoch   8: train_loss=0.280460, val_loss=0.217300
+Epoch   9: train_loss=0.271768, val_loss=0.212238
+Epoch  10: train_loss=0.263967, val_loss=0.214570
+Epoch  11: train_loss=0.255391, val_loss=0.207870
+Epoch  12: train_loss=0.250714, val_loss=0.211070
+Epoch  13: train_loss=0.244373, val_loss=0.217773
+Epoch  14: train_loss=0.240928, val_loss=0.211210
+Epoch  15: train_loss=0.236143, val_loss=0.212454
+Epoch  16: train_loss=0.231902, val_loss=0.221785
+Epoch  17: train_loss=0.229702, val_loss=0.217466
+Epoch  18: train_loss=0.225401, val_loss=0.227780
+Epoch  19: train_loss=0.223041, val_loss=0.224694
+Epoch  20: train_loss=0.219303, val_loss=0.220728
+Epoch  21: train_loss=0.218871, val_loss=0.218664
+Early stopping at epoch 21 (best at epoch 11)
+
+Best model from epoch 11:
+  Best validation loss: 0.207870
+  Test loss: 0.363508
+
+Fine-tuning complete!
+Output saved to: outputs/finetune_caww35_partial_v2/caww_35c_partial_20260413_103304

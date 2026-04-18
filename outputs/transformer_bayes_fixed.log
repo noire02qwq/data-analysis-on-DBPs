@@ -1,0 +1,702 @@
+[I 2026-04-12 14:51:08,389] A new study created in memory with name: transformer_fixed_20260412_145108
+[I 2026-04-12 14:51:08,443] Trial 0 pruned. 
+[I 2026-04-12 14:51:08,485] Trial 1 pruned. 
+[I 2026-04-12 14:51:08,529] Trial 2 pruned. 
+[I 2026-04-12 14:51:08,572] Trial 3 pruned. 
+[I 2026-04-12 14:51:08,615] Trial 4 pruned. 
+[I 2026-04-12 14:51:08,660] Trial 5 pruned. 
+[I 2026-04-12 14:51:08,706] Trial 6 pruned. 
+[I 2026-04-12 14:51:08,746] Trial 7 pruned. 
+[I 2026-04-12 14:51:08,778] Trial 8 pruned. 
+[I 2026-04-12 14:51:08,809] Trial 9 pruned. 
+[I 2026-04-12 14:51:08,846] Trial 10 pruned. 
+[I 2026-04-12 14:51:08,883] Trial 11 pruned. 
+[I 2026-04-12 14:51:08,924] Trial 12 pruned. 
+[I 2026-04-12 14:51:08,962] Trial 13 pruned. 
+[I 2026-04-12 14:51:08,998] Trial 14 pruned. 
+[I 2026-04-12 14:51:09,035] Trial 15 pruned. 
+[I 2026-04-12 14:51:09,072] Trial 16 pruned. 
+[I 2026-04-12 14:51:09,109] Trial 17 pruned. 
+[I 2026-04-12 14:51:09,147] Trial 18 pruned. 
+[I 2026-04-12 14:51:09,186] Trial 19 pruned. 
+[I 2026-04-12 14:51:09,222] Trial 20 pruned. 
+[I 2026-04-12 14:51:09,259] Trial 21 pruned. 
+[I 2026-04-12 14:51:09,295] Trial 22 pruned. 
+[I 2026-04-12 14:51:09,332] Trial 23 pruned. 
+[I 2026-04-12 14:51:09,373] Trial 24 pruned. 
+[I 2026-04-12 14:51:09,416] Trial 25 pruned. 
+[I 2026-04-12 14:51:09,456] Trial 26 pruned. 
+[I 2026-04-12 14:51:09,494] Trial 27 pruned. 
+[I 2026-04-12 14:51:09,531] Trial 28 pruned. 
+[I 2026-04-12 14:51:09,568] Trial 29 pruned. 
+[I 2026-04-12 14:51:09,606] Trial 30 pruned. 
+[I 2026-04-12 14:51:09,645] Trial 31 pruned. 
+[I 2026-04-12 14:51:09,685] Trial 32 pruned. 
+Trial 0 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 0 pruned due to exception: 
+Trial 1 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 1 pruned due to exception: 
+Trial 2 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 2 pruned due to exception: 
+Trial 3 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 3 pruned due to exception: 
+Trial 4 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 4 pruned due to exception: 
+Trial 5 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 5 pruned due to exception: 
+Trial 6 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 6 pruned due to exception: 
+Trial 7 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 7 pruned due to exception: 
+Trial 8 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 8 pruned due to exception: 
+Trial 9 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 9 pruned due to exception: 
+Trial 10 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 10 pruned due to exception: 
+Trial 11 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 11 pruned due to exception: 
+Trial 12 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 12 pruned due to exception: 
+Trial 13 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 13 pruned due to exception: 
+Trial 14 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 14 pruned due to exception: 
+Trial 15 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 15 pruned due to exception: 
+Trial 16 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 16 pruned due to exception: 
+Trial 17 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 17 pruned due to exception: 
+Trial 18 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 18 pruned due to exception: 
+Trial 19 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 19 pruned due to exception: 
+Trial 20 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 20 pruned due to exception: 
+Trial 21 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 21 pruned due to exception: 
+Trial 22 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 22 pruned due to exception: 
+Trial 23 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 23 pruned due to exception: 
+Trial 24 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 24 pruned due to exception: 
+Trial 25 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 25 pruned due to exception: 
+Trial 26 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 26 pruned due to exception: 
+Trial 27 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 27 pruned due to exception: 
+Trial 28 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 28 pruned due to exception: 
+Trial 29 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 29 pruned due to exception: 
+Trial 30 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 30 pruned due to exception: 
+Trial 31 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 31 pruned due to exception: 
+Trial 32 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 32 pruned due to exception: 
+Trial 33 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+[I 2026-04-12 14:51:09,725] Trial 33 pruned. 
+[I 2026-04-12 14:51:09,763] Trial 34 pruned. 
+[I 2026-04-12 14:51:09,802] Trial 35 pruned. 
+[I 2026-04-12 14:51:09,841] Trial 36 pruned. 
+[I 2026-04-12 14:51:09,879] Trial 37 pruned. 
+[I 2026-04-12 14:51:09,922] Trial 38 pruned. 
+[I 2026-04-12 14:51:09,963] Trial 39 pruned. 
+[I 2026-04-12 14:51:10,003] Trial 40 pruned. 
+[I 2026-04-12 14:51:10,043] Trial 41 pruned. 
+[I 2026-04-12 14:51:10,084] Trial 42 pruned. 
+[I 2026-04-12 14:51:10,124] Trial 43 pruned. 
+[I 2026-04-12 14:51:10,162] Trial 44 pruned. 
+[I 2026-04-12 14:51:10,200] Trial 45 pruned. 
+[I 2026-04-12 14:51:10,239] Trial 46 pruned. 
+[I 2026-04-12 14:51:10,278] Trial 47 pruned. 
+[I 2026-04-12 14:51:10,319] Trial 48 pruned. 
+[I 2026-04-12 14:51:10,359] Trial 49 pruned. 
+[I 2026-04-12 14:51:10,400] Trial 50 pruned. 
+[I 2026-04-12 14:51:10,439] Trial 51 pruned. 
+[I 2026-04-12 14:51:10,480] Trial 52 pruned. 
+[I 2026-04-12 14:51:10,520] Trial 53 pruned. 
+[I 2026-04-12 14:51:10,558] Trial 54 pruned. 
+[I 2026-04-12 14:51:10,598] Trial 55 pruned. 
+[I 2026-04-12 14:51:10,638] Trial 56 pruned. 
+[I 2026-04-12 14:51:10,679] Trial 57 pruned. 
+[I 2026-04-12 14:51:10,718] Trial 58 pruned. 
+[I 2026-04-12 14:51:10,759] Trial 59 pruned. 
+[I 2026-04-12 14:51:10,800] Trial 60 pruned. 
+[I 2026-04-12 14:51:10,842] Trial 61 pruned. 
+[I 2026-04-12 14:51:10,883] Trial 62 pruned. 
+[I 2026-04-12 14:51:10,927] Trial 63 pruned. 
+[I 2026-04-12 14:51:10,968] Trial 64 pruned. 
+[I 2026-04-12 14:51:11,008] Trial 65 pruned. 
+[I 2026-04-12 14:51:11,049] Trial 66 pruned. 
+
+Trial 33 pruned due to exception: 
+Trial 34 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 34 pruned due to exception: 
+Trial 35 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 35 pruned due to exception: 
+Trial 36 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 36 pruned due to exception: 
+Trial 37 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 37 pruned due to exception: 
+Trial 38 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 38 pruned due to exception: 
+Trial 39 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 39 pruned due to exception: 
+Trial 40 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 40 pruned due to exception: 
+Trial 41 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 41 pruned due to exception: 
+Trial 42 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 42 pruned due to exception: 
+Trial 43 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 43 pruned due to exception: 
+Trial 44 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 44 pruned due to exception: 
+Trial 45 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 45 pruned due to exception: 
+Trial 46 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 46 pruned due to exception: 
+Trial 47 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 47 pruned due to exception: 
+Trial 48 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 48 pruned due to exception: 
+Trial 49 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 49 pruned due to exception: 
+Trial 50 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 50 pruned due to exception: 
+Trial 51 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 51 pruned due to exception: 
+Trial 52 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 52 pruned due to exception: 
+Trial 53 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 53 pruned due to exception: 
+Trial 54 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 54 pruned due to exception: 
+Trial 55 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 55 pruned due to exception: 
+Trial 56 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 56 pruned due to exception: 
+Trial 57 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 57 pruned due to exception: 
+Trial 58 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 58 pruned due to exception: 
+Trial 59 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 59 pruned due to exception: 
+Trial 60 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 60 pruned due to exception: 
+Trial 61 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 61 pruned due to exception: 
+Trial 62 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 62 pruned due to exception: 
+Trial 63 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 63 pruned due to exception: 
+Trial 64 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 64 pruned due to exception: 
+Trial 65 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 65 pruned due to exception: 
+Trial 66 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 66 pruned due to exception: 
+Trial 67 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+[I 2026-04-12 14:51:11,092] Trial 67 pruned. 
+[I 2026-04-12 14:51:11,132] Trial 68 pruned. 
+[I 2026-04-12 14:51:11,171] Trial 69 pruned. 
+[I 2026-04-12 14:51:11,213] Trial 70 pruned. 
+[I 2026-04-12 14:51:11,255] Trial 71 pruned. 
+[I 2026-04-12 14:51:11,295] Trial 72 pruned. 
+[I 2026-04-12 14:51:11,334] Trial 73 pruned. 
+[I 2026-04-12 14:51:11,375] Trial 74 pruned. 
+[I 2026-04-12 14:51:11,417] Trial 75 pruned. 
+[I 2026-04-12 14:51:11,459] Trial 76 pruned. 
+[I 2026-04-12 14:51:11,500] Trial 77 pruned. 
+[I 2026-04-12 14:51:11,541] Trial 78 pruned. 
+[I 2026-04-12 14:51:11,581] Trial 79 pruned. 
+[I 2026-04-12 14:51:11,622] Trial 80 pruned. 
+[I 2026-04-12 14:51:11,666] Trial 81 pruned. 
+[I 2026-04-12 14:51:11,706] Trial 82 pruned. 
+[I 2026-04-12 14:51:11,747] Trial 83 pruned. 
+[I 2026-04-12 14:51:11,789] Trial 84 pruned. 
+[I 2026-04-12 14:51:11,830] Trial 85 pruned. 
+[I 2026-04-12 14:51:11,870] Trial 86 pruned. 
+[I 2026-04-12 14:51:11,913] Trial 87 pruned. 
+[I 2026-04-12 14:51:11,955] Trial 88 pruned. 
+[I 2026-04-12 14:51:11,998] Trial 89 pruned. 
+[I 2026-04-12 14:51:12,039] Trial 90 pruned. 
+[I 2026-04-12 14:51:12,080] Trial 91 pruned. 
+[I 2026-04-12 14:51:12,121] Trial 92 pruned. 
+[I 2026-04-12 14:51:12,162] Trial 93 pruned. 
+[I 2026-04-12 14:51:12,204] Trial 94 pruned. 
+[I 2026-04-12 14:51:12,246] Trial 95 pruned. 
+[I 2026-04-12 14:51:12,287] Trial 96 pruned. 
+[I 2026-04-12 14:51:12,329] Trial 97 pruned. 
+[I 2026-04-12 14:51:12,371] Trial 98 pruned. 
+[I 2026-04-12 14:51:12,414] Trial 99 pruned. 
+
+Trial 67 pruned due to exception: 
+Trial 68 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 68 pruned due to exception: 
+Trial 69 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 69 pruned due to exception: 
+Trial 70 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 70 pruned due to exception: 
+Trial 71 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 71 pruned due to exception: 
+Trial 72 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 72 pruned due to exception: 
+Trial 73 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 73 pruned due to exception: 
+Trial 74 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 74 pruned due to exception: 
+Trial 75 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 75 pruned due to exception: 
+Trial 76 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 76 pruned due to exception: 
+Trial 77 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 77 pruned due to exception: 
+Trial 78 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 78 pruned due to exception: 
+Trial 79 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 79 pruned due to exception: 
+Trial 80 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 80 pruned due to exception: 
+Trial 81 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 81 pruned due to exception: 
+Trial 82 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 82 pruned due to exception: 
+Trial 83 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 83 pruned due to exception: 
+Trial 84 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 84 pruned due to exception: 
+Trial 85 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 85 pruned due to exception: 
+Trial 86 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 86 pruned due to exception: 
+Trial 87 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 87 pruned due to exception: 
+Trial 88 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 88 pruned due to exception: 
+Trial 89 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 89 pruned due to exception: 
+Trial 90 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 90 pruned due to exception: 
+Trial 91 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 91 pruned due to exception: 
+Trial 92 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 92 pruned due to exception: 
+Trial 93 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 93 pruned due to exception: 
+Trial 94 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 94 pruned due to exception: 
+Trial 95 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 95 pruned due to exception: 
+Trial 96 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 96 pruned due to exception: 
+Trial 97 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 97 pruned due to exception: 
+Trial 98 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 98 pruned due to exception: 
+Trial 99 failed: Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 27, in <module>
+    import polars as pl
+ModuleNotFoundError: No module named 'polars'
+
+Trial 99 pruned due to exception: 
+No trials completed successfully.

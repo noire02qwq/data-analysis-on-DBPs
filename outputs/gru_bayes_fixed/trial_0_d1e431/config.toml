@@ -1,0 +1,42 @@
+[model]
+type = "GRU"
+name = "gru_regressor"
+history_length = 39
+units = 280
+num_layers = 7
+dropout = 0.4647019115469107
+
+[training]
+max_epochs = 150
+batch_size = 167
+learning_rate = 0.0016597373390787255
+weight_decay = 0.0006360499013480672
+patience = 15
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]

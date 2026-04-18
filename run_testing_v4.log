@@ -1,0 +1,107 @@
+============================================================
+TESTING FOR ALL MODELS
+============================================================
+Started: 2026-04-07T18:00:10.954585
+
+============================================================
+Testing: RNN
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/rnn_regressor/20260407_173651
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/rnn_regressor/20260407_173651 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_rnn_final_v2/test_results
+
+Error: e "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 252, in main
+    df_test = load_time_series(Path(test_csv), ts_col)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 98, in load_time_series
+    raise KeyError(f"Timestamp column '{timestamp_column}' not found in {csv_path}.")
+KeyError: "Timestamp column 'None' not found in /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv."
+
+❌ Testing failed for rnn
+
+============================================================
+Testing: GRU
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/gru_regressor/20260407_173702
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/gru_regressor/20260407_173702 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_gru_final_v2/test_results
+
+Error: e "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 252, in main
+    df_test = load_time_series(Path(test_csv), ts_col)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 98, in load_time_series
+    raise KeyError(f"Timestamp column '{timestamp_column}' not found in {csv_path}.")
+KeyError: "Timestamp column 'None' not found in /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv."
+
+❌ Testing failed for gru
+
+============================================================
+Testing: LSTM
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/lstm_regressor/20260407_173717
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/lstm_regressor/20260407_173717 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_lstm_final_v2/test_results
+
+Error: e "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 252, in main
+    df_test = load_time_series(Path(test_csv), ts_col)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 98, in load_time_series
+    raise KeyError(f"Timestamp column '{timestamp_column}' not found in {csv_path}.")
+KeyError: "Timestamp column 'None' not found in /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv."
+
+❌ Testing failed for lstm
+
+============================================================
+Testing: TRANSFORMER
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/transformer_regressor/20260407_173724
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/transformer_regressor/20260407_173724 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_transformer_final_v2/test_results
+
+Error: e "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 252, in main
+    df_test = load_time_series(Path(test_csv), ts_col)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 98, in load_time_series
+    raise KeyError(f"Timestamp column '{timestamp_column}' not found in {csv_path}.")
+KeyError: "Timestamp column 'None' not found in /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv."
+
+❌ Testing failed for transformer
+
+============================================================
+Testing: MAMBA
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/mamba_regressor/20260407_173818
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/mamba_regressor/20260407_173818 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_mamba_final_v2/test_results
+
+Error: e "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 252, in main
+    df_test = load_time_series(Path(test_csv), ts_col)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 98, in load_time_series
+    raise KeyError(f"Timestamp column '{timestamp_column}' not found in {csv_path}.")
+KeyError: "Timestamp column 'None' not found in /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv."
+
+❌ Testing failed for mamba
+
+============================================================
+Testing: MLP
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/mlp_regressor/20260407_173907
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/mlp_regressor/20260407_173907 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_mlp_final_v2/test_results
+
+Error: e "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 252, in main
+    df_test = load_time_series(Path(test_csv), ts_col)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 98, in load_time_series
+    raise KeyError(f"Timestamp column '{timestamp_column}' not found in {csv_path}.")
+KeyError: "Timestamp column 'None' not found in /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv."
+
+❌ Testing failed for mlp
+
+============================================================
+SUMMARY
+============================================================
+❌ rnn: failed
+❌ gru: failed
+❌ lstm: failed
+❌ transformer: failed
+❌ mamba: failed
+❌ mlp: failed
+
+Finished: 2026-04-07T18:00:22.374789
+============================================================

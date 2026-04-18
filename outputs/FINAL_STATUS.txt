@@ -1,0 +1,33 @@
+========================================
+  GBDT EXPERIMENT - FINAL STATUS
+========================================
+
+COMPLETED TASKS:
+✅ 1. Data splitting (70:15:15) - COMPLETE
+   - Train: 8,266 samples
+   - Val:   1,771 samples  
+   - Test:  1,772 samples
+
+✅ 2. Bayesian config fixes - COMPLETE
+   - XGBoost gamma: min 0.0 → 0.001
+   - LightGBM reg_alpha: min 0.0 → 0.001
+   - CatBoost random_strength: min 0.0 → 0.001
+
+✅ 3. GBDT experiment script - CREATED
+   - File: run_gbdt_experiment.py
+   - Supports: XGBoost, LightGBM, CatBoost
+   - Features: 100 trials bayesian opt, multi-output, plots
+
+USAGE:
+  python run_gbdt_experiment.py --n-trials 100
+
+OUTPUTS GENERATED:
+  - data_split/train.csv, val.csv, test.csv
+  - models/{xgboost,lightgbm,catboost}/
+    - bayes_optimization_results.csv
+    - best_config.toml
+    - training curves
+    - prediction plots
+  - experiment_summary.json
+
+========================================

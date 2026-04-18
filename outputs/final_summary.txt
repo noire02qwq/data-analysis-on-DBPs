@@ -1,0 +1,18 @@
+====================================================================================================
+FINAL MODEL SUMMARY
+====================================================================================================
+
+Model           Status     Val Loss     Test MSE     Test RMSE    Test R²   
+----------------------------------------------------------------------------------------------------
+xgboost         COMPLETE   nan          nan          nan          nan       
+lightgbm        COMPLETE   nan          nan          nan          nan       
+catboost        COMPLETE   nan          nan          nan          nan       
+mlp             NO_TEST    0.270386     nan          nan          nan       
+rnn             NO_TEST    0.081916     nan          nan          nan       
+gru             NO_TEST    0.227567     nan          nan          nan       
+lstm            NO_TEST    0.241213     nan          nan          nan       
+mamba           NO_TEST    0.558456     nan          nan          nan       
+transformer     NO_TEST    0.695590     nan          nan          nan       
+====================================================================================================
+
+Generated: 2026-04-08T14:51:53.261032

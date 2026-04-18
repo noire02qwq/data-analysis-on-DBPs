@@ -178,7 +178,7 @@ def build_dataset_bundle(
 
     if model in {"MLP", "XGBOOST", "LIGHTGBM", "CATBOOST"}:
         dataset: Dataset = CurrentStepDataset(non_ppl, target_data, base_targets=base_targets)
-    elif model in {"LSTM", "RNN", "GRU", "TRANSFORMER"}:
+    elif model in {"LSTM", "RNN", "GRU", "TRANSFORMER", "MAMBA"}:
         dataset = SequenceDataset(non_ppl, target_data, history_length, base_targets=base_targets)
     else:
         raise ValueError(f"Unsupported model_type '{model_type}'.")

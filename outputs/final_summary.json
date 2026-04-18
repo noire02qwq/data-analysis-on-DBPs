@@ -1,0 +1,149 @@
+{
+  "date": "2026-04-08T14:51:53.260861",
+  "models": [
+    {
+      "model": "xgboost",
+      "final_dir_exists": true,
+      "model_file_exists": false,
+      "test_results_exist": true,
+      "test_metrics_exist": true,
+      "training_metrics": {},
+      "test_metrics": {
+        "metric": "r2",
+        "value": -1.377798080444336
+      }
+    },
+    {
+      "model": "lightgbm",
+      "final_dir_exists": true,
+      "model_file_exists": false,
+      "test_results_exist": true,
+      "test_metrics_exist": true,
+      "training_metrics": {},
+      "test_metrics": {
+        "metric": "r2",
+        "value": -1.6043284479080993
+      }
+    },
+    {
+      "model": "catboost",
+      "final_dir_exists": true,
+      "model_file_exists": false,
+      "test_results_exist": true,
+      "test_metrics_exist": true,
+      "training_metrics": {},
+      "test_metrics": {
+        "metric": "r2",
+        "value": -2.1128558463248757
+      }
+    },
+    {
+      "model": "mlp",
+      "final_dir_exists": true,
+      "model_file_exists": true,
+      "test_results_exist": false,
+      "test_metrics_exist": false,
+      "training_metrics": {
+        "model_name": "\"mlp_regressor\"",
+        "model_type": "\"MLP\"",
+        "model_format": "\"torch\"",
+        "input_columns": "[\"TRC-DT\", \"pH-DT\", \"cond-DT\", \"TRC-RT\", \"pH-RT\", \"fDOM-RT\", \"DO-RT\", \"TOC-RT\", \"DOC-RT\"]",
+        "output_columns": "[\"TRC-PPL1\", \"TRC-PPL2\"]",
+        "eval.best_val_loss": 0.27038555531700453,
+        "eval.test_loss": 4.4790169604619345,
+        "eval.best_epoch": 1.0
+      },
+      "test_metrics": {}
+    },
+    {
+      "model": "rnn",
+      "final_dir_exists": true,
+      "model_file_exists": false,
+      "test_results_exist": false,
+      "test_metrics_exist": false,
+      "training_metrics": {
+        "model_name": "\"rnn_regressor\"",
+        "model_type": "\"RNN\"",
+        "model_format": "\"torch\"",
+        "input_columns": "[\"minutes_since_start\", \"TRC-DT\", \"pH-DT\", \"cond-DT\", \"TRC-RT\", \"pH-RT\", \"fDOM-RT\", \"DO-RT\", \"TOC-RT\", \"DOC-RT\"]",
+        "output_columns": "[\"TRC-PPL1\", \"TRC-PPL2\"]",
+        "eval.best_val_loss": 0.08191607295851712,
+        "eval.test_loss": 0.08171334282963146,
+        "eval.best_epoch": 9.0
+      },
+      "test_metrics": {}
+    },
+    {
+      "model": "gru",
+      "final_dir_exists": true,
+      "model_file_exists": true,
+      "test_results_exist": false,
+      "test_metrics_exist": false,
+      "training_metrics": {
+        "model_name": "\"gru_regressor\"",
+        "model_type": "\"GRU\"",
+        "model_format": "\"torch\"",
+        "input_columns": "[\"TRC-DT\", \"pH-DT\", \"cond-DT\", \"TRC-RT\", \"pH-RT\", \"fDOM-RT\", \"DO-RT\", \"TOC-RT\", \"DOC-RT\"]",
+        "output_columns": "[\"TRC-PPL1\", \"TRC-PPL2\"]",
+        "eval.best_val_loss": 0.22756739052466055,
+        "eval.test_loss": 4.14137871458901,
+        "eval.best_epoch": 7.0
+      },
+      "test_metrics": {}
+    },
+    {
+      "model": "lstm",
+      "final_dir_exists": true,
+      "model_file_exists": true,
+      "test_results_exist": false,
+      "test_metrics_exist": false,
+      "training_metrics": {
+        "model_name": "\"lstm_regressor\"",
+        "model_type": "\"LSTM\"",
+        "model_format": "\"torch\"",
+        "input_columns": "[\"minutes_since_start\", \"TRC-DT\", \"pH-DT\", \"cond-DT\", \"TRC-RT\", \"pH-RT\", \"fDOM-RT\", \"DO-RT\", \"TOC-RT\", \"DOC-RT\"]",
+        "output_columns": "[\"TRC-PPL1\", \"TRC-PPL2\"]",
+        "eval.best_val_loss": 0.24121346629945328,
+        "eval.test_loss": 4.979813330410355,
+        "eval.best_epoch": 4.0
+      },
+      "test_metrics": {}
+    },
+    {
+      "model": "mamba",
+      "final_dir_exists": true,
+      "model_file_exists": true,
+      "test_results_exist": false,
+      "test_metrics_exist": false,
+      "training_metrics": {
+        "model_name": "\"mamba_regressor\"",
+        "model_type": "\"MAMBA\"",
+        "model_format": "\"torch\"",
+        "input_columns": "[\"minutes_since_start\", \"TRC-DT\", \"pH-DT\", \"cond-DT\", \"TRC-RT\", \"pH-RT\", \"fDOM-RT\", \"DO-RT\", \"TOC-RT\", \"DOC-RT\"]",
+        "output_columns": "[\"TRC-PPL1\", \"TRC-PPL2\", \"pH-PPL1\", \"pH-PPL2\", \"cond-PPL1\", \"cond-PPL2\"]",
+        "eval.best_val_loss": 0.5584558192166416,
+        "eval.test_loss": 3.16630052913319,
+        "eval.best_epoch": 39.0
+      },
+      "test_metrics": {}
+    },
+    {
+      "model": "transformer",
+      "final_dir_exists": true,
+      "model_file_exists": true,
+      "test_results_exist": false,
+      "test_metrics_exist": false,
+      "training_metrics": {
+        "model_name": "\"transformer_regressor\"",
+        "model_type": "\"TRANSFORMER\"",
+        "model_format": "\"torch\"",
+        "input_columns": "[\"minutes_since_start\", \"TRC-DT\", \"pH-DT\", \"cond-DT\", \"TRC-RT\", \"pH-RT\", \"fDOM-RT\", \"DO-RT\", \"TOC-RT\", \"DOC-RT\"]",
+        "output_columns": "[\"TRC-PPL1\", \"TRC-PPL2\", \"pH-PPL1\", \"pH-PPL2\", \"cond-PPL1\", \"cond-PPL2\"]",
+        "eval.best_val_loss": 0.6955896851796548,
+        "eval.test_loss": 3.329811766392315,
+        "eval.best_epoch": 27.0
+      },
+      "test_metrics": {}
+    }
+  ]
+}

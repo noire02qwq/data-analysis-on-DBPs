@@ -1,0 +1,40 @@
+[model]
+type = "XGBOOST"
+name = "xgboost_regressor"
+history_length = 1
+max_depth = 23
+learning_rate = 0.1
+n_estimators = 100
+min_child_weight = 3
+subsample = 0.6732280702103189
+colsample_bytree = 0.7599436377006995
+gamma = 0.2456237767529669
+reg_lambda = 4.455973715953068
+
+[training]
+max_epochs = 100
+batch_size = 128
+learning_rate = 0.005935572205505739
+weight_decay = 0.0
+patience = 10
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL2",
+]

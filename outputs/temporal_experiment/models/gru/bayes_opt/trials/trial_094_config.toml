@@ -1,0 +1,51 @@
+[model]
+type = "GRU"
+name = "gru_regressor"
+history_length = 32
+units = 330
+num_layers = 2
+dropout = 0.2580319639834544
+
+[training]
+max_epochs = 150
+batch_size = 377
+learning_rate = 0.00111033437271604
+weight_decay = 0.008882681158464037
+patience = 15
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]
+
+[parameters]
+history_length = 57
+units = 139
+num_layers = 5
+dropout = 0.28339979197600434
+batch_size = 172
+learning_rate = 0.00037521332022904185
+weight_decay = 0.008204611127091468

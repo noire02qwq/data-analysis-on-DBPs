@@ -1,0 +1,78 @@
+{
+  "dataset": "CAWW29",
+  "total_models": 9,
+  "models_ranked_by_val_loss": [
+    {
+      "rank": 1,
+      "model": "mlp",
+      "val_loss": 0.11734457252495879,
+      "test_loss": 0.11210152802973952,
+      "best_epoch": 45,
+      "output_dir": "/home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/mlp/20260411_173443"
+    },
+    {
+      "rank": 2,
+      "model": "lstm",
+      "val_loss": 0.09375742956072883,
+      "test_loss": 0.09677452740243553,
+      "best_epoch": 92,
+      "output_dir": "/home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/lstm/20260411_173532"
+    },
+    {
+      "rank": 3,
+      "model": "rnn",
+      "val_loss": 0.19337776408786267,
+      "test_loss": 0.1935816150626226,
+      "best_epoch": 40,
+      "output_dir": "/home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/rnn/20260411_173454"
+    },
+    {
+      "rank": 4,
+      "model": "gru",
+      "val_loss": 0.1350561225484606,
+      "test_loss": 0.1356746468453739,
+      "best_epoch": 52,
+      "output_dir": "/home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/gru/20260411_173510"
+    },
+    {
+      "rank": 5,
+      "model": "transformer",
+      "val_loss": 0.26538488184456277,
+      "test_loss": 0.2692956120460681,
+      "best_epoch": 35,
+      "output_dir": "/home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/transformer/20260411_173615"
+    },
+    {
+      "rank": 6,
+      "model": "mamba",
+      "val_loss": 0.356920876949586,
+      "test_loss": 0.3527776114927999,
+      "best_epoch": 9,
+      "output_dir": "/home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/mamba/20260411_173559"
+    },
+    {
+      "rank": 7,
+      "model": "xgboost",
+      "val_loss": 0.09305419933544748,
+      "test_loss": 0.09618825791403651,
+      "best_epoch": "N/A",
+      "output_dir": "/home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/xgboost/20260411_173420"
+    },
+    {
+      "rank": 8,
+      "model": "lightgbm",
+      "val_loss": 0.26157695233814393,
+      "test_loss": 0.26809821747957385,
+      "best_epoch": "N/A",
+      "output_dir": "/home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/lightgbm/20260411_173427"
+    },
+    {
+      "rank": 9,
+      "model": "catboost",
+      "val_loss": 0.5122492013107929,
+      "test_loss": 0.5206552523968346,
+      "best_epoch": "N/A",
+      "output_dir": "/home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/catboost/20260411_173434"
+    }
+  ]
+}

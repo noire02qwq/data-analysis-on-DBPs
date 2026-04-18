@@ -1,0 +1,41 @@
+[model]
+type = "LIGHTGBM"
+name = "lightgbm_regressor"
+history_length = 1
+num_leaves = 31
+max_depth = 4
+learning_rate = 0.1
+n_estimators = 100
+min_child_samples = 67
+subsample = 0.7352918705430123
+colsample_bytree = 0.7869120800257415
+reg_alpha = 0.030248501760287448
+reg_lambda = 1.3946383479597573
+
+[training]
+max_epochs = 100
+batch_size = 128
+learning_rate = 0.006537621990798172
+weight_decay = 0.0
+patience = 10
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL2",
+]

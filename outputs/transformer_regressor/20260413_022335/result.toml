@@ -1,0 +1,10 @@
+model_name = "transformer_regressor"
+model_type = "TRANSFORMER"
+model_format = "torch"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT", "cond-RT", "fDOM-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2", "pH-PPL1", "pH-PPL2", "cond-PPL1", "cond-PPL2", "TOC-PPL1", "TOC-PPL2"]
+
+[eval]
+best_val_loss = 0.3587155775953554
+test_loss = 0.45916437581646774
+best_epoch = 16

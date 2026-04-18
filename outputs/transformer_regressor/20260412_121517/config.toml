@@ -1,0 +1,55 @@
+[model]
+type = "TRANSFORMER"
+name = "transformer_regressor"
+history_length = 90
+d_model = 240
+nhead = 4
+num_encoder_layers = 4
+dim_feedforward = 429
+dropout = 0.06349433443149866
+
+[training]
+max_epochs = 150
+batch_size = 65
+learning_rate = 0.0016818818084880578
+weight_decay = 0.00036337451245327287
+patience = 15
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]
+
+[parameters]
+history_length = 82
+d_model = 180
+nhead = 8
+num_encoder_layers = 5
+dim_feedforward = 840
+dropout = 0.23541425069488267
+batch_size = 159
+learning_rate = 0.0006638263830542084
+weight_decay = 5.6976096982400814e-05

@@ -1,0 +1,55 @@
+INFO: Loading pre-split datasets...
+INFO: Starting MAMBA training for 150 epochs on cuda...
+INFO: Epoch 001: train_loss=0.853585, val_loss=0.670074 (New Best)
+INFO: Epoch 002: train_loss=0.987437, val_loss=0.917270
+INFO: Epoch 003: train_loss=1.030335, val_loss=0.647177 (New Best)
+INFO: Epoch 004: train_loss=1.031056, val_loss=0.734698
+INFO: Epoch 005: train_loss=0.947389, val_loss=0.530551 (New Best)
+INFO: Epoch 006: train_loss=0.856571, val_loss=0.474203 (New Best)
+INFO: Epoch 007: train_loss=0.778867, val_loss=0.482335
+INFO: Epoch 008: train_loss=0.759664, val_loss=0.472913 (New Best)
+INFO: Epoch 009: train_loss=0.704542, val_loss=0.551133
+INFO: Epoch 010: train_loss=0.791922, val_loss=0.520490
+INFO: Epoch 011: train_loss=0.775578, val_loss=0.439783 (New Best)
+INFO: Epoch 012: train_loss=0.737399, val_loss=0.438281 (New Best)
+INFO: Epoch 013: train_loss=0.727215, val_loss=0.443649
+INFO: Epoch 014: train_loss=0.721270, val_loss=0.447740
+INFO: Epoch 015: train_loss=0.714266, val_loss=0.450210
+INFO: Epoch 016: train_loss=0.716377, val_loss=0.439626
+INFO: Epoch 017: train_loss=0.715238, val_loss=0.477800
+INFO: Epoch 018: train_loss=0.717718, val_loss=0.462835
+INFO: Epoch 019: train_loss=0.713413, val_loss=0.455876
+INFO: Epoch 020: train_loss=0.737572, val_loss=0.428344 (New Best)
+INFO: Epoch 021: train_loss=0.713484, val_loss=0.430378
+INFO: Epoch 022: train_loss=0.697225, val_loss=0.430475
+INFO: Epoch 023: train_loss=0.690991, val_loss=0.440835
+INFO: Epoch 024: train_loss=0.694762, val_loss=0.446258
+INFO: Epoch 025: train_loss=0.698229, val_loss=0.439074
+INFO: Epoch 026: train_loss=0.700634, val_loss=0.433306
+INFO: Epoch 027: train_loss=0.696214, val_loss=0.454558
+INFO: Epoch 028: train_loss=0.696328, val_loss=0.446515
+INFO: Epoch 029: train_loss=0.695346, val_loss=0.442178
+INFO: Epoch 030: train_loss=0.694155, val_loss=0.439849
+INFO: Epoch 031: train_loss=0.695114, val_loss=0.433291
+INFO: Epoch 032: train_loss=0.695565, val_loss=0.429790
+INFO: Epoch 033: train_loss=0.688835, val_loss=0.434076
+INFO: Epoch 034: train_loss=0.691467, val_loss=0.429253
+INFO: Epoch 035: train_loss=0.691055, val_loss=0.426287 (New Best)
+INFO: Epoch 036: train_loss=0.692393, val_loss=0.439063
+INFO: Epoch 037: train_loss=0.691362, val_loss=0.443155
+INFO: Epoch 038: train_loss=0.696437, val_loss=0.436449
+INFO: Epoch 039: train_loss=0.691476, val_loss=0.436155
+INFO: Epoch 040: train_loss=0.692518, val_loss=0.430278
+INFO: Epoch 041: train_loss=0.697635, val_loss=0.452275
+INFO: Epoch 042: train_loss=0.717850, val_loss=0.455822
+INFO: Epoch 043: train_loss=0.716992, val_loss=0.450183
+INFO: Epoch 044: train_loss=0.703030, val_loss=0.445278
+INFO: Epoch 045: train_loss=0.691887, val_loss=0.443112
+INFO: Epoch 046: train_loss=0.694501, val_loss=0.447843
+INFO: Epoch 047: train_loss=0.693973, val_loss=0.447484
+INFO: Epoch 048: train_loss=0.694390, val_loss=0.445037
+INFO: Epoch 049: train_loss=0.695382, val_loss=0.441706
+INFO: Epoch 050: train_loss=0.695575, val_loss=0.442277
+INFO: Early stopping triggered at epoch 50
+WARNING: ONNX export skipped: onnxscript not installed
+INFO: Training completed successfully! Output saved to: /home/amoris/dbps/data-analysis-on-DBPs/outputs/mamba_regressor/20260413_001215

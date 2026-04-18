@@ -1,0 +1,53 @@
+[model]
+type = "LIGHTGBM"
+name = "lightgbm_regressor"
+num_leaves = 255
+max_depth = -1
+learning_rate = 0.05
+subsample = 0.9
+colsample_bytree = 0.8
+min_child_samples = 40
+reg_alpha = 0.0
+reg_lambda = 1.0
+bagging_freq = 1
+
+[training]
+max_epochs = 100
+batch_size = 256
+learning_rate = 0.05
+weight_decay = 0.0
+patience = 10
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+]
+
+[parameters]
+max_depth = 4
+learning_rate = 0.0031831825420085788
+subsample = 0.6266783351215991
+colsample_bytree = 0.8045174903435944
+reg_alpha = 0.032897505986613035
+reg_lambda = 0.9146177578831286
+min_child_samples = 91

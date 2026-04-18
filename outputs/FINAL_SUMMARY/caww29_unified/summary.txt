@@ -1,0 +1,17 @@
+CAWW29 9模型统一汇总目录
+================================
+
+结构说明:
+- final_models/    : 9个模型的最终训练结果
+  - catboost/       : CatBoost GBDT模型
+  - gru/            : GRU循环神经网络
+  - lightgbm/     : LightGBM GBDT模型
+  - lstm/         : LSTM长短期记忆网络
+  - mamba/        : Mamba状态空间模型
+  - mlp/          : MLP多层感知机
+  - rnn/          : RNN简单循环网络
+  - transformer/  : Transformer注意力模型
+  - xgboost/      : XGBoost GBDT模型
+- test_results/     : 各模型测试结果
+- bayes_opt/        : 贝叶斯优化过程数据
+- summary/          : 汇总统计信息

@@ -1,0 +1,49 @@
+[model]
+type = "CATBOOST"
+name = "catboost_regressor"
+depth = 8
+learning_rate = 0.05
+l2_leaf_reg = 3.0
+subsample = 0.8
+random_strength = 1.0
+bagging_temperature = 1.0
+
+[training]
+max_epochs = 100
+batch_size = 256
+learning_rate = 0.05
+weight_decay = 0.0
+patience = 10
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+]
+
+[parameters]
+depth = 8
+learning_rate = 0.021526010701244064
+l2_leaf_reg = 9.912816850994556
+subsample = 0.6854353710165765
+random_strength = 0.15691047978550285
+bagging_temperature = 0.6162642952781463

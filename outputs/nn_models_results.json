@@ -1,0 +1,32 @@
+{
+  "mlp": {
+    "bayes_opt": false,
+    "final_training": false,
+    "test": false
+  },
+  "rnn": {
+    "bayes_opt": false,
+    "final_training": false,
+    "test": false
+  },
+  "gru": {
+    "bayes_opt": false,
+    "final_training": false,
+    "test": false
+  },
+  "lstm": {
+    "bayes_opt": false,
+    "final_training": false,
+    "test": false
+  },
+  "mamba": {
+    "bayes_opt": false,
+    "final_training": false,
+    "test": false
+  },
+  "transformer": {
+    "bayes_opt": false,
+    "final_training": false,
+    "test": false
+  }
+}

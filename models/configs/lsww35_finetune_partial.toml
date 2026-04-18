@@ -1,0 +1,39 @@
+[model]
+type = "TRANSFORMER"
+name = "transformer_regressor"
+history_length = 136
+d_model = 256
+nhead = 8
+num_encoder_layers = 2
+dim_feedforward = 509
+dropout = 0.277
+
+[training]
+max_epochs = 50
+batch_size = 130
+learning_rate = 0.00001
+weight_decay = 0.00001
+patience = 10
+seed = 42
+
+[data]
+train_csv = "data/lsww_35c_split/train_clean.csv"
+val_csv = "data/lsww_35c_split/val_clean.csv"
+test_csv = "data/lsww_35c_split/test_clean.csv"
+input_columns = [
+    "TRC-DT", "pH-DT", "cond-DT",
+    "TRC-RT", "pH-RT", "cond-RT", "fDOM-RT",
+    "TOC-RT", "DOC-RT"
+]
+output_columns = [
+    "TRC-PPL1", "TRC-PPL2",
+    "pH-PPL1", "pH-PPL2",
+    "cond-PPL1", "cond-PPL2",
+    "TOC-PPL1", "TOC-PPL2"
+]
+
+[finetuning]
+mode = "partial"
+pretrained_model = "outputs/caww29_unified/final_models/transformer/best_model.pt"
+freeze_encoder = false
+freeze_layers = [0, 1]

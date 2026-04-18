@@ -1,6 +1,6 @@
 [parameters.history_length]
-min = 64
-max = 160
+min = 32
+max = 144
 step = 8
 log = false
 
@@ -10,15 +10,21 @@ max = 384
 step = 8
 log = false
 
+[parameters.num_layers]
+min = 2
+max = 10
+step = 2
+log = false
+
 [parameters.dropout]
-min = 0.1
+min = 0.2
 max = 0.5
-log = true
+log = false
 
 [parameters.batch_size]
-min = 128
+min = 64
 max = 384
-step = 16
+step = 4
 log = false
 
 [parameters.learning_rate]
@@ -27,6 +33,6 @@ max = 0.002
 log = true
 
 [parameters.weight_decay]
-min = 0.0
+min = 0.0001
 max = 0.01
 log = true

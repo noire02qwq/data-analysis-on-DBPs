@@ -1,0 +1,2075 @@
+[I 2026-04-12 15:16:49,965] A new study created in memory with name: transformer_v5_20260412_151649
+[I 2026-04-12 15:18:10,393] Trial 0 finished with value: 0.3805794113663895 and parameters: {'history_length': 103, 'd_model': 224, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 922, 'dropout': 0.13096652609348672, 'batch_size': 212, 'learning_rate': 0.00017507905358921932, 'weight_decay': 0.004612233489054293}. Best is trial 0 with value: 0.3805794113663895.
+[I 2026-04-12 15:18:13,441] Trial 1 pruned. 
+[I 2026-04-12 15:18:16,583] Trial 2 pruned. 
+[I 2026-04-12 15:18:19,999] Trial 3 pruned. 
+[I 2026-04-12 15:18:23,205] Trial 4 pruned. 
+[I 2026-04-12 15:18:26,336] Trial 5 pruned. 
+Trial 0: Found result in 20260412_151651
+Trial 0 completed with validation loss: 0.3805794113663895
+Trial 1 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 1 pruned due to exception: 
+Trial 2 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 2 pruned due to exception: 
+Trial 3 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 3 pruned due to exception: 
+Trial 4 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 4 pruned due to exception: 
+Trial 5 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 5 pruned due to exception: 
+Trial 6 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:18:29,609] Trial 6 pruned. 
+[I 2026-04-12 15:18:32,876] Trial 7 pruned. 
+[I 2026-04-12 15:18:36,035] Trial 8 pruned. 
+[I 2026-04-12 15:18:39,159] Trial 9 pruned. 
+[I 2026-04-12 15:18:42,317] Trial 10 pruned. 
+[I 2026-04-12 15:20:14,617] Trial 11 finished with value: 0.43139387877463137 and parameters: {'history_length': 101, 'd_model': 256, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 607, 'dropout': 0.1971655668311094, 'batch_size': 212, 'learning_rate': 0.0001910359834517924, 'weight_decay': 9.601460797435123e-05}. Best is trial 0 with value: 0.3805794113663895.
+[I 2026-04-12 15:20:17,222] Trial 12 pruned. 
+
+Trial 6 pruned due to exception: 
+Trial 7 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 7 pruned due to exception: 
+Trial 8 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 8 pruned due to exception: 
+Trial 9 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 9 pruned due to exception: 
+Trial 10 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 10 pruned due to exception: 
+Trial 11: Found result in 20260412_151844
+Trial 11 completed with validation loss: 0.43139387877463137
+Trial 12 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 12 pruned due to exception: 
+Trial 13 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:20:19,904] Trial 13 pruned. 
+[I 2026-04-12 15:20:22,893] Trial 14 pruned. 
+[I 2026-04-12 15:20:25,752] Trial 15 pruned. 
+[I 2026-04-12 15:20:28,454] Trial 16 pruned. 
+[I 2026-04-12 15:20:31,190] Trial 17 pruned. 
+[I 2026-04-12 15:20:33,932] Trial 18 pruned. 
+
+Trial 13 pruned due to exception: 
+Trial 14 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 14 pruned due to exception: 
+Trial 15 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 15 pruned due to exception: 
+Trial 16 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 16 pruned due to exception: 
+Trial 17 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 17 pruned due to exception: 
+Trial 18 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 18 pruned due to exception: 
+Trial 19 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:20:36,786] Trial 19 pruned. 
+[I 2026-04-12 15:20:39,683] Trial 20 pruned. 
+[I 2026-04-12 15:20:42,314] Trial 21 pruned. 
+[I 2026-04-12 15:20:45,041] Trial 22 pruned. 
+[I 2026-04-12 15:22:39,931] Trial 23 finished with value: 0.40602397705301824 and parameters: {'history_length': 125, 'd_model': 256, 'nhead': 8, 'num_encoder_layers': 3, 'dim_feedforward': 398, 'dropout': 0.1327617587902912, 'batch_size': 253, 'learning_rate': 0.00010143841373717055, 'weight_decay': 7.870181265818848e-05}. Best is trial 0 with value: 0.3805794113663895.
+[I 2026-04-12 15:25:33,927] Trial 24 finished with value: 0.3413453533611204 and parameters: {'history_length': 124, 'd_model': 240, 'nhead': 8, 'num_encoder_layers': 3, 'dim_feedforward': 795, 'dropout': 0.10001201992195957, 'batch_size': 254, 'learning_rate': 0.0002352346645848503, 'weight_decay': 0.0001396734917012308}. Best is trial 24 with value: 0.3413453533611204.
+[I 2026-04-12 15:25:36,304] Trial 25 pruned. 
+[I 2026-04-12 15:25:38,917] Trial 26 pruned. 
+
+Trial 19 pruned due to exception: 
+Trial 20 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 20 pruned due to exception: 
+Trial 21 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 21 pruned due to exception: 
+Trial 22 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 22 pruned due to exception: 
+Trial 23: Found result in 20260412_152046
+Trial 23 completed with validation loss: 0.40602397705301824
+Trial 24: Found result in 20260412_152241
+Trial 24 completed with validation loss: 0.3413453533611204
+Trial 25 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 25 pruned due to exception: 
+Trial 26 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 26 pruned due to exception: 
+Trial 27 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:25:41,678] Trial 27 pruned. 
+[I 2026-04-12 15:25:44,451] Trial 28 pruned. 
+[I 2026-04-12 15:25:47,152] Trial 29 pruned. 
+[I 2026-04-12 15:25:49,885] Trial 30 pruned. 
+[I 2026-04-12 15:25:52,643] Trial 31 pruned. 
+[I 2026-04-12 15:25:55,344] Trial 32 pruned. 
+
+Trial 27 pruned due to exception: 
+Trial 28 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 28 pruned due to exception: 
+Trial 29 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 29 pruned due to exception: 
+Trial 30 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 30 pruned due to exception: 
+Trial 31 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 31 pruned due to exception: 
+Trial 32 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 32 pruned due to exception: 
+Trial 33 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:25:58,118] Trial 33 pruned. 
+[I 2026-04-12 15:27:40,070] Trial 34 finished with value: 0.41168237265643726 and parameters: {'history_length': 110, 'd_model': 256, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 589, 'dropout': 0.18745920451572182, 'batch_size': 145, 'learning_rate': 0.00016400611697492659, 'weight_decay': 2.4221079387065725e-05}. Best is trial 24 with value: 0.3413453533611204.
+[I 2026-04-12 15:27:42,293] Trial 35 pruned. 
+[I 2026-04-12 15:28:56,322] Trial 36 finished with value: 0.4404992560637416 and parameters: {'history_length': 122, 'd_model': 232, 'nhead': 4, 'num_encoder_layers': 2, 'dim_feedforward': 262, 'dropout': 0.13300247556151282, 'batch_size': 97, 'learning_rate': 0.00013469415691956638, 'weight_decay': 1.0740301983857968e-05}. Best is trial 24 with value: 0.3413453533611204.
+[I 2026-04-12 15:28:58,553] Trial 37 pruned. 
+[I 2026-04-12 15:29:00,770] Trial 38 pruned. 
+[I 2026-04-12 15:31:47,266] Trial 39 finished with value: 0.34520909059669846 and parameters: {'history_length': 78, 'd_model': 208, 'nhead': 8, 'num_encoder_layers': 4, 'dim_feedforward': 905, 'dropout': 0.10698123210223003, 'batch_size': 145, 'learning_rate': 0.0001275727296043896, 'weight_decay': 1.6588230264170755e-05}. Best is trial 24 with value: 0.3413453533611204.
+[I 2026-04-12 15:31:49,561] Trial 40 pruned. 
+[I 2026-04-12 15:31:52,035] Trial 41 pruned. 
+
+Trial 33 pruned due to exception: 
+Trial 34: Found result in 20260412_152600
+Trial 34 completed with validation loss: 0.41168237265643726
+Trial 35 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 35 pruned due to exception: 
+Trial 36: Found result in 20260412_152743
+Trial 36 completed with validation loss: 0.4404992560637416
+Trial 37 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 37 pruned due to exception: 
+Trial 38 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 38 pruned due to exception: 
+Trial 39: Found result in 20260412_152902
+Trial 39 completed with validation loss: 0.34520909059669846
+Trial 40 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 40 pruned due to exception: 
+Trial 41 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 41 pruned due to exception: 
+Trial 42 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:31:54,319] Trial 42 pruned. 
+[I 2026-04-12 15:31:56,651] Trial 43 pruned. 
+[I 2026-04-12 15:31:58,958] Trial 44 pruned. 
+[I 2026-04-12 15:34:36,176] Trial 45 finished with value: 0.4039176524064528 and parameters: {'history_length': 94, 'd_model': 232, 'nhead': 8, 'num_encoder_layers': 3, 'dim_feedforward': 515, 'dropout': 0.08238971860786655, 'batch_size': 107, 'learning_rate': 0.0003668816814011272, 'weight_decay': 4.1691700102725865e-05}. Best is trial 24 with value: 0.3413453533611204.
+[I 2026-04-12 15:34:38,470] Trial 46 pruned. 
+[I 2026-04-12 15:34:40,781] Trial 47 pruned. 
+[I 2026-04-12 15:36:47,803] Trial 48 finished with value: 0.5311626222692184 and parameters: {'history_length': 76, 'd_model': 216, 'nhead': 8, 'num_encoder_layers': 6, 'dim_feedforward': 465, 'dropout': 0.09822317586756982, 'batch_size': 188, 'learning_rate': 0.0003633316957349321, 'weight_decay': 7.255216229436922e-05}. Best is trial 24 with value: 0.3413453533611204.
+[I 2026-04-12 15:36:50,034] Trial 49 pruned. 
+[I 2026-04-12 15:40:06,327] Trial 50 finished with value: 0.3341318605640041 and parameters: {'history_length': 70, 'd_model': 112, 'nhead': 16, 'num_encoder_layers': 3, 'dim_feedforward': 985, 'dropout': 0.0936832107730786, 'batch_size': 109, 'learning_rate': 0.0002121933220210153, 'weight_decay': 0.00043218485910874395}. Best is trial 50 with value: 0.3341318605640041.
+
+Trial 42 pruned due to exception: 
+Trial 43 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 43 pruned due to exception: 
+Trial 44 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 44 pruned due to exception: 
+Trial 45: Found result in 20260412_153200
+Trial 45 completed with validation loss: 0.4039176524064528
+Trial 46 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 46 pruned due to exception: 
+Trial 47 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 47 pruned due to exception: 
+Trial 48: Found result in 20260412_153442
+Trial 48 completed with validation loss: 0.5311626222692184
+Trial 49 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 49 pruned due to exception: 
+Trial 50: Found result in 20260412_153651
+Trial 50 completed with validation loss: 0.3341318605640041
+Trial 51 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:40:08,553] Trial 51 pruned. 
+[I 2026-04-12 15:40:10,765] Trial 52 pruned. 
+[I 2026-04-12 15:40:12,960] Trial 53 pruned. 
+[I 2026-04-12 15:40:15,259] Trial 54 pruned. 
+[I 2026-04-12 15:40:17,490] Trial 55 pruned. 
+[I 2026-04-12 15:40:19,681] Trial 56 pruned. 
+
+Trial 51 pruned due to exception: 
+Trial 52 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 52 pruned due to exception: 
+Trial 53 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 53 pruned due to exception: 
+Trial 54 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 54 pruned due to exception: 
+Trial 55 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 55 pruned due to exception: 
+Trial 56 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 56 pruned due to exception: 
+Trial 57 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:40:21,940] Trial 57 pruned. 
+[I 2026-04-12 15:40:24,222] Trial 58 pruned. 
+[I 2026-04-12 15:40:26,429] Trial 59 pruned. 
+[I 2026-04-12 15:40:28,583] Trial 60 pruned. 
+[I 2026-04-12 15:42:37,654] Trial 61 finished with value: 0.38924697029627175 and parameters: {'history_length': 115, 'd_model': 248, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 581, 'dropout': 0.2478522335288777, 'batch_size': 143, 'learning_rate': 0.0001663304507750558, 'weight_decay': 2.2214406937251116e-05}. Best is trial 50 with value: 0.3341318605640041.
+[I 2026-04-12 15:44:44,371] Trial 62 finished with value: 0.49496547263780055 and parameters: {'history_length': 119, 'd_model': 248, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 533, 'dropout': 0.24787605426358744, 'batch_size': 157, 'learning_rate': 0.00015505197268889144, 'weight_decay': 1.740519988987833e-05}. Best is trial 50 with value: 0.3341318605640041.
+[I 2026-04-12 15:44:46,625] Trial 63 pruned. 
+[I 2026-04-12 15:44:48,801] Trial 64 pruned. 
+
+Trial 57 pruned due to exception: 
+Trial 58 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 58 pruned due to exception: 
+Trial 59 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 59 pruned due to exception: 
+Trial 60 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 60 pruned due to exception: 
+Trial 61: Found result in 20260412_154030
+Trial 61 completed with validation loss: 0.38924697029627175
+Trial 62: Found result in 20260412_154239
+Trial 62 completed with validation loss: 0.49496547263780055
+Trial 63 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 63 pruned due to exception: 
+Trial 64 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 64 pruned due to exception: 
+Trial 65 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:44:50,987] Trial 65 pruned. 
+[I 2026-04-12 15:44:53,221] Trial 66 pruned. 
+[I 2026-04-12 15:49:03,214] Trial 67 finished with value: 0.3160149223912644 and parameters: {'history_length': 136, 'd_model': 256, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 509, 'dropout': 0.27696216909799753, 'batch_size': 130, 'learning_rate': 0.00010447524470008385, 'weight_decay': 1.30098648387164e-05}. Best is trial 67 with value: 0.3160149223912644.
+[I 2026-04-12 15:49:05,467] Trial 68 pruned. 
+[I 2026-04-12 15:49:07,687] Trial 69 pruned. 
+[I 2026-04-12 15:49:09,954] Trial 70 pruned. 
+[I 2026-04-12 15:51:53,707] Trial 71 finished with value: 0.37831262440504304 and parameters: {'history_length': 130, 'd_model': 256, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 501, 'dropout': 0.0894677893362931, 'batch_size': 154, 'learning_rate': 0.00010023085856690157, 'weight_decay': 2.8675446874092823e-05}. Best is trial 67 with value: 0.3160149223912644.
+[I 2026-04-12 15:51:55,992] Trial 72 pruned. 
+
+Trial 65 pruned due to exception: 
+Trial 66 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 66 pruned due to exception: 
+Trial 67: Found result in 20260412_154454
+Trial 67 completed with validation loss: 0.3160149223912644
+Trial 68 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 68 pruned due to exception: 
+Trial 69 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 69 pruned due to exception: 
+Trial 70 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 70 pruned due to exception: 
+Trial 71: Found result in 20260412_154911
+Trial 71 completed with validation loss: 0.37831262440504304
+Trial 72 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 72 pruned due to exception: 
+Trial 73 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:51:58,282] Trial 73 pruned. 
+[I 2026-04-12 15:56:00,856] Trial 74 finished with value: 0.34756477217315507 and parameters: {'history_length': 150, 'd_model': 240, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 583, 'dropout': 0.09285851505851579, 'batch_size': 126, 'learning_rate': 0.00012894579387595908, 'weight_decay': 1.0607665755768242e-05}. Best is trial 67 with value: 0.3160149223912644.
+[I 2026-04-12 15:57:56,600] Trial 75 finished with value: 0.5280167137536326 and parameters: {'history_length': 152, 'd_model': 256, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 593, 'dropout': 0.2797078805980671, 'batch_size': 140, 'learning_rate': 0.00012450412307827153, 'weight_decay': 1.0284072607770824e-05}. Best is trial 67 with value: 0.3160149223912644.
+[I 2026-04-12 16:01:33,086] Trial 76 finished with value: 0.3682324118604499 and parameters: {'history_length': 147, 'd_model': 240, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 667, 'dropout': 0.09300884756904206, 'batch_size': 155, 'learning_rate': 0.00010739958119297749, 'weight_decay': 1.64217652171177e-05}. Best is trial 67 with value: 0.3160149223912644.
+[I 2026-04-12 16:04:55,928] Trial 77 finished with value: 0.33574462071989525 and parameters: {'history_length': 156, 'd_model': 240, 'nhead': 16, 'num_encoder_layers': 2, 'dim_feedforward': 701, 'dropout': 0.09242032660814525, 'batch_size': 152, 'learning_rate': 0.0001005007813043011, 'weight_decay': 1.8392321349467936e-05}. Best is trial 67 with value: 0.3160149223912644.
+[I 2026-04-12 16:04:58,100] Trial 78 pruned. 
+[I 2026-04-12 16:05:00,347] Trial 79 pruned. 
+[I 2026-04-12 16:05:02,558] Trial 80 pruned. 
+[I 2026-04-12 16:05:04,834] Trial 81 pruned. 
+[I 2026-04-12 16:05:07,131] Trial 82 pruned. 
+
+Trial 73 pruned due to exception: 
+Trial 74: Found result in 20260412_155159
+Trial 74 completed with validation loss: 0.34756477217315507
+Trial 75: Found result in 20260412_155602
+Trial 75 completed with validation loss: 0.5280167137536326
+Trial 76: Found result in 20260412_155758
+Trial 76 completed with validation loss: 0.3682324118604499
+Trial 77: Found result in 20260412_160134
+Trial 77 completed with validation loss: 0.33574462071989525
+Trial 78 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 78 pruned due to exception: 
+Trial 79 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 79 pruned due to exception: 
+Trial 80 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 80 pruned due to exception: 
+Trial 81 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 81 pruned due to exception: 
+Trial 82 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 82 pruned due to exception: 
+Trial 83 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 16:05:09,581] Trial 83 pruned. 
+[I 2026-04-12 16:05:11,852] Trial 84 pruned. 
+[I 2026-04-12 16:05:14,081] Trial 85 pruned. 
+[I 2026-04-12 16:09:18,743] Trial 86 finished with value: 0.3469108504350068 and parameters: {'history_length': 159, 'd_model': 240, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 936, 'dropout': 0.10145736230276543, 'batch_size': 195, 'learning_rate': 0.0001185338607782186, 'weight_decay': 1.5115040250925528e-05}. Best is trial 67 with value: 0.3160149223912644.
+[I 2026-04-12 16:09:21,026] Trial 87 pruned. 
+[I 2026-04-12 16:09:23,473] Trial 88 pruned. 
+[I 2026-04-12 16:11:53,598] Trial 89 finished with value: 0.41004328219770636 and parameters: {'history_length': 155, 'd_model': 240, 'nhead': 8, 'num_encoder_layers': 2, 'dim_feedforward': 943, 'dropout': 0.08641740824235469, 'batch_size': 206, 'learning_rate': 0.00012441600900276918, 'weight_decay': 2.0400114033416486e-05}. Best is trial 67 with value: 0.3160149223912644.
+[I 2026-04-12 16:11:56,361] Trial 90 pruned. 
+
+Trial 83 pruned due to exception: 
+Trial 84 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 84 pruned due to exception: 
+Trial 85 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 85 pruned due to exception: 
+Trial 86: Found result in 20260412_160515
+Trial 86 completed with validation loss: 0.3469108504350068
+Trial 87 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 87 pruned due to exception: 
+Trial 88 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 88 pruned due to exception: 
+Trial 89: Found result in 20260412_160925
+Trial 89 completed with validation loss: 0.41004328219770636
+Trial 90 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 90 pruned due to exception: 
+Trial 91 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 16:11:59,001] Trial 91 pruned. 
+[I 2026-04-12 16:12:01,345] Trial 92 pruned. 
+[I 2026-04-12 16:12:03,698] Trial 93 pruned. 
+[I 2026-04-12 16:12:05,952] Trial 94 pruned. 
+[I 2026-04-12 16:12:08,232] Trial 95 pruned. 
+[I 2026-04-12 16:12:10,569] Trial 96 pruned. 
+
+Trial 91 pruned due to exception: 
+Trial 92 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 92 pruned due to exception: 
+Trial 93 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 93 pruned due to exception: 
+Trial 94 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 94 pruned due to exception: 
+Trial 95 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 95 pruned due to exception: 
+Trial 96 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 96 pruned due to exception: 
+Trial 97 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 16:12:13,560] Trial 97 pruned. 
+[I 2026-04-12 16:12:16,141] Trial 98 pruned. 
+[I 2026-04-12 16:12:18,697] Trial 99 pruned. 
+
+Trial 97 pruned due to exception: 
+Trial 98 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 98 pruned due to exception: 
+Trial 99 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 58, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 99 pruned due to exception: 
+
+Best parameters:
+  history_length: 136
+  d_model: 256
+  nhead: 8
+  num_encoder_layers: 2
+  dim_feedforward: 509
+  dropout: 0.27696216909799753
+  batch_size: 130
+  learning_rate: 0.00010447524470008385
+  weight_decay: 1.30098648387164e-05
+Best validation loss: 0.3160149223912644
+
+Results saved to outputs/transformer_bayes_v5/bayes_optimization_results.csv

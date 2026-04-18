@@ -1,0 +1,20 @@
+{
+  "experiment_date": "2026-04-12T12:26:36.549392",
+  "data_split": "temporal_ordered",
+  "temporal_split": true,
+  "output_directory": "outputs/temporal_experiment",
+  "n_trials": 100,
+  "seed": 42,
+  "models_run": [
+    "mamba",
+    "transformer"
+  ],
+  "results": {
+    "mamba": "failed",
+    "transformer": "failed"
+  },
+  "failed_models": [
+    "mamba",
+    "transformer"
+  ]
+}

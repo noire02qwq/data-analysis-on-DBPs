@@ -66,24 +66,51 @@ def build_run_config(
     INTEGER_PARAMS = {
         "history_length", "units", "num_layers", "max_depth", "min_child_samples",
         "num_leaves", "bagging_freq", "depth", "batch_size", "max_epochs",
-        "nhead", "num_encoder_layers", "dim_feedforward"
+        "nhead", "num_encoder_layers", "dim_feedforward", "d_model", "n_layers",
+        "d_state", "d_conv", "expand"
     }
 
-    # Model parameters
-    model_params = bayes_config.get("model", {})
-    for param_name, param_spec in model_params.items():
-        value = _suggest_param(trial, param_name, param_spec)
-        if param_name in INTEGER_PARAMS:
-            value = int(value)
-        model_section[param_name] = value
+    # Check for "parameters" format (new style) or "model"/"training" format
+    if "parameters" in bayes_config:
+        # New style: [parameters.param_name] sections
+        for param_name, param_spec in bayes_config["parameters"].items():
+            value = _suggest_param(trial, param_name, param_spec)
+            if param_name in INTEGER_PARAMS:
+                value = int(value)
 
-    # Training parameters
-    training_params = bayes_config.get("training", {})
-    for param_name, param_spec in training_params.items():
-        value = _suggest_param(trial, param_name, param_spec)
-        if param_name in INTEGER_PARAMS:
-            value = int(value)
-        training_section[param_name] = value
+            # Determine which section to put the parameter in
+            if param_name in ["history_length", "units", "num_layers", "dropout",
+                              "max_depth", "subsample", "colsample_bytree", "gamma",
+                              "reg_lambda", "reg_alpha", "min_child_weight",
+                              "min_child_samples", "num_leaves", "reg_beta",
+                              "boosting_type", "bagging_fraction", "bagging_freq",
+                              "feature_fraction", "depth", "l2_leaf_reg",
+                              "random_strength", "bagging_temperature", "nhead",
+                              "num_encoder_layers", "dim_feedforward", "d_model",
+                              "n_layers", "d_state", "d_conv", "expand"]:
+                model_section[param_name] = value
+            elif param_name in ["batch_size", "max_epochs", "learning_rate", "weight_decay", "patience", "seed"]:
+                training_section[param_name] = value
+            else:
+                # Default to model section for unknown parameters
+                model_section[param_name] = value
+    else:
+        # Old style: [model] and [training] sections
+        # Model parameters
+        model_params = bayes_config.get("model", {})
+        for param_name, param_spec in model_params.items():
+            value = _suggest_param(trial, param_name, param_spec)
+            if param_name in INTEGER_PARAMS:
+                value = int(value)
+            model_section[param_name] = value
+
+        # Training parameters
+        training_params = bayes_config.get("training", {})
+        for param_name, param_spec in training_params.items():
+            value = _suggest_param(trial, param_name, param_spec)
+            if param_name in INTEGER_PARAMS:
+                value = int(value)
+            training_section[param_name] = value
 
     return config
 
@@ -153,23 +180,42 @@ def objective(
             print(f"Trial {trial.number} failed: {result.stderr}")
             raise optuna.TrialPruned()
 
-        # Result is in the run_dir (outputs/<model_name>/<timestamp>)
-        result_file = run_dir / "result.toml"
-        # Also check in outputs directory
-        if not result_file.exists():
-            model_name = config.get("model", {}).get("name", "model")
-            output_root = REPO_ROOT / "outputs" / model_name
-            if output_root.exists():
-                subdirs = sorted(output_root.iterdir(), key=lambda p: p.stat().st_mtime, reverse=True)
-                for d in subdirs:
-                    result_file = d / "result.toml"
-                    if result_file.exists():
-                        # Copy result to run_dir for reference
-                        import shutil
-                        shutil.copy(result_file, run_dir / "result.toml")
-                        break
+        # Training script saves to outputs/<model_name>/<timestamp>/result.toml
+        # Find the result by looking for the most recent directory that was created
+        # AFTER this trial started (based on file modification time)
+        import time
+        trial_start_time = time.time()
 
-        if result_file.exists():
+        model_name = config.get("model", {}).get("name", "model")
+        output_root = REPO_ROOT / "outputs" / model_name
+        result_file = None
+
+        if output_root.exists():
+            # Get all subdirs with their modification times
+            subdirs_with_time = []
+            for d in output_root.iterdir():
+                if d.is_dir():
+                    mtime = d.stat().st_mtime
+                    subdirs_with_time.append((d, mtime))
+
+            # Sort by modification time (newest first)
+            subdirs_with_time.sort(key=lambda x: x[1], reverse=True)
+
+            for d, mtime in subdirs_with_time:
+                # Skip directories that were modified before this trial started
+                if mtime < trial_start_time - 30:  # Allow 30 second buffer
+                    continue
+
+                candidate = d / "result.toml"
+                if candidate.exists():
+                    result_file = candidate
+                    # Copy result to run_dir for reference
+                    import shutil
+                    shutil.copy(result_file, run_dir / "result.toml")
+                    print(f"Trial {trial.number}: Found result in {d.name}")
+                    break
+
+        if result_file is not None and result_file.exists():
             result_data = load_toml(result_file)
             best_val = result_data.get("eval", {}).get("best_val_loss", float('inf'))
             if best_val is None or best_val == float('inf'):

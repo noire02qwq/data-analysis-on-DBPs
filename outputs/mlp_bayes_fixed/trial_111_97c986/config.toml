@@ -1,0 +1,47 @@
+[model]
+type = "MLP"
+name = "mlp_regressor"
+history_length = 1
+hidden_layers = [
+    512,
+    256,
+    128,
+]
+dropout = 0.2621725150992469
+mid_layer_count = 2
+mid_layer_size = 359
+
+[training]
+max_epochs = 150
+batch_size = 239
+learning_rate = 0.0004993869283044731
+weight_decay = 0.007089356265201831
+patience = 15
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]

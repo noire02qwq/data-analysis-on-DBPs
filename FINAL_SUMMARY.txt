@@ -1,0 +1,101 @@
+================================================================================
+TIME-SERIES NEURAL NETWORK EXPERIMENTS - FINAL SUMMARY
+================================================================================
+
+All 5 experiments COMPLETED successfully with 100 trials each.
+
+--------------------------------------------------------------------------------
+RESULTS (Ranked by Best Validation Loss)
+--------------------------------------------------------------------------------
+
+Rank  Model          Best Loss    Trials    Status
+----  -----          ---------    ------    ------
+ 1    GRU            0.212684     100/100   COMPLETED
+ 2    LSTM           0.287027     100/100   COMPLETED
+ 3    Transformer    0.334539     100/100   COMPLETED
+ 4    Mamba          0.355972     100/100   COMPLETED
+ 5    RNN            0.363059     100/100   COMPLETED
+
+--------------------------------------------------------------------------------
+BEST MODEL: GRU
+--------------------------------------------------------------------------------
+
+Best Validation Loss: 0.212684
+
+Optimal Hyperparameters:
+  - history_length:    100
+  - units:             288
+  - num_layers:        10
+  - dropout:           0.407
+  - batch_size:        383
+  - learning_rate:     0.000434
+  - weight_decay:      0.000119
+
+--------------------------------------------------------------------------------
+KEY FINDINGS
+--------------------------------------------------------------------------------
+
+1. GRU achieved the best performance with a validation loss of 0.2127
+
+2. Gated architectures (GRU, LSTM) significantly outperformed basic RNN
+   - GRU: 41% better than RNN
+   - LSTM: 21% better than RNN
+
+3. All hyperparameters including history_length were successfully tuned
+   via Bayesian optimization
+
+4. All 5 models completed 100 trials successfully
+
+--------------------------------------------------------------------------------
+EXPERIMENT CONFIGURATION
+--------------------------------------------------------------------------------
+
+Optimization Method:    Bayesian Optimization (Optuna)
+Trials per Model:     100
+Total Trials:          500
+Optimization Metric:  Validation Loss
+Sampler:              TPE (Tree-structured Parzen Estimator)
+Pruning:              Enabled
+
+Key Hyperparameters Tuned:
+  - history_length:  Sequence window size
+  - units/d_model:   Hidden dimension
+  - num_layers:      Number of layers
+  - dropout:         Dropout rate
+  - batch_size:      Training batch size
+  - learning_rate:   Learning rate (log scale)
+  - weight_decay:    L2 regularization (log scale)
+
+--------------------------------------------------------------------------------
+OUTPUT FILES
+--------------------------------------------------------------------------------
+
+Results saved in:
+  outputs/nn_rnn_final_v2/
+  outputs/nn_gru_final_v2/
+  outputs/nn_lstm_final_v2/
+  outputs/nn_transformer_final_v2/
+  outputs/nn_mamba_final_v2/
+
+Each directory contains:
+  - experiment.log:                Full training log
+  - bayes_optimization_results.csv: All trial results
+  - best_trial/:                  Best model checkpoint
+
+--------------------------------------------------------------------------------
+CONCLUSION
+--------------------------------------------------------------------------------
+
+All 5 time-series neural network experiments have been successfully completed
+with proper Bayesian optimization. The GRU model achieved the best validation
+loss of 0.2127, followed by LSTM at 0.2870.
+
+The key achievement is that ALL hyperparameters including history_length
+were properly tuned via Bayesian optimization, fixing the previous issue
+where history_length was fixed at a constant value.
+
+================================================================================
+Date Completed: 2026-04-06
+Total Trials: 500 (100 per model)
+Status: ALL EXPERIMENTS COMPLETED SUCCESSFULLY
+================================================================================

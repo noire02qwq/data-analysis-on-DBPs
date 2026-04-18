@@ -1,0 +1,436 @@
+[I 2026-04-12 15:03:26,857] A new study created in memory with name: transformer_v4_20260412_150326
+[I 2026-04-12 15:03:30,162] Trial 0 pruned. 
+[I 2026-04-12 15:03:32,298] Trial 1 pruned. 
+[I 2026-04-12 15:03:34,362] Trial 2 pruned. 
+[I 2026-04-12 15:03:36,359] Trial 3 pruned. 
+[I 2026-04-12 15:03:38,506] Trial 4 pruned. 
+Trial 0 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (84) must match the existing size (85) at non-singleton dimension 1.  Target sizes: [5000, 84].  Tensor sizes: [5000, 85]
+
+Trial 0 pruned due to exception: 
+Trial 1 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (70) must match the existing size (71) at non-singleton dimension 1.  Target sizes: [5000, 70].  Tensor sizes: [5000, 71]
+
+Trial 1 pruned due to exception: 
+Trial 2 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 55, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 2 pruned due to exception: 
+Trial 3 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (61) must match the existing size (62) at non-singleton dimension 1.  Target sizes: [5000, 61].  Tensor sizes: [5000, 62]
+
+Trial 3 pruned due to exception: 
+Trial 4 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (59) must match the existing size (60) at non-singleton dimension 1.  Target sizes: [5000, 59].  Tensor sizes: [5000, 60]
+
+Trial 4 pruned due to exception: 
+Trial 5 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (106) must match the existing size (107) at non-singleton dimension 1.  Target sizes: [5000, 106].  Tensor sizes: [5000, 107]
+[I 2026-04-12 15:03:40,586] Trial 5 pruned. 
+[I 2026-04-12 15:03:42,658] Trial 6 pruned. 
+[I 2026-04-12 15:03:44,729] Trial 7 pruned. 
+[I 2026-04-12 15:03:46,719] Trial 8 pruned. 
+[I 2026-04-12 15:03:48,866] Trial 9 pruned. 
+[I 2026-04-12 15:03:50,882] Trial 10 pruned. 
+
+Trial 5 pruned due to exception: 
+Trial 6 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (44) must match the existing size (45) at non-singleton dimension 1.  Target sizes: [5000, 44].  Tensor sizes: [5000, 45]
+
+Trial 6 pruned due to exception: 
+Trial 7 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (120) must match the existing size (121) at non-singleton dimension 1.  Target sizes: [5000, 120].  Tensor sizes: [5000, 121]
+
+Trial 7 pruned due to exception: 
+Trial 8 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (58) must match the existing size (59) at non-singleton dimension 1.  Target sizes: [5000, 58].  Tensor sizes: [5000, 59]
+
+Trial 8 pruned due to exception: 
+Trial 9 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (127) must match the existing size (128) at non-singleton dimension 1.  Target sizes: [5000, 127].  Tensor sizes: [5000, 128]
+
+Trial 9 pruned due to exception: 
+Trial 10 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (91) must match the existing size (92) at non-singleton dimension 1.  Target sizes: [5000, 91].  Tensor sizes: [5000, 92]
+
+Trial 10 pruned due to exception: 
+Trial 11 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (86) must match the existing size (87) at non-singleton dimension 1.  Target sizes: [5000, 86].  Tensor sizes: [5000, 87]
+
+Trial 11 pruned due to exception: [I 2026-04-12 15:03:52,947] Trial 11 pruned. 
+[I 2026-04-12 15:03:55,021] Trial 12 pruned. 
+[I 2026-04-12 15:03:57,150] Trial 13 pruned. 
+[I 2026-04-12 15:07:25,519] Trial 14 finished with value: 0.3919804038062016 and parameters: {'history_length': 136, 'd_model': 72, 'nhead': 8, 'num_encoder_layers': 5, 'dim_feedforward': 494, 'dropout': 0.12206767792254462, 'batch_size': 188, 'learning_rate': 0.00017108684012717354, 'weight_decay': 0.0003028719195252283}. Best is trial 14 with value: 0.3919804038062016.
+[I 2026-04-12 15:07:27,731] Trial 15 pruned. 
+[I 2026-04-12 15:07:29,857] Trial 16 pruned. 
+[I 2026-04-12 15:07:32,014] Trial 17 pruned. 
+[I 2026-04-12 15:08:19,119] Trial 18 finished with value: 0.3694045408073713 and parameters: {'history_length': 101, 'd_model': 64, 'nhead': 4, 'num_encoder_layers': 4, 'dim_feedforward': 434, 'dropout': 0.11772391029584278, 'batch_size': 214, 'learning_rate': 0.00017470001069260567, 'weight_decay': 5.8092538449309e-05}. Best is trial 18 with value: 0.3694045408073713.
+[I 2026-04-12 15:09:10,023] Trial 19 finished with value: 0.35781151587888826 and parameters: {'history_length': 108, 'd_model': 64, 'nhead': 8, 'num_encoder_layers': 3, 'dim_feedforward': 441, 'dropout': 0.10982372744421634, 'batch_size': 228, 'learning_rate': 0.0001744083968262887, 'weight_decay': 4.0596138752154943e-05}. Best is trial 19 with value: 0.35781151587888826.
+
+Trial 12 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (97) must match the existing size (98) at non-singleton dimension 1.  Target sizes: [5000, 97].  Tensor sizes: [5000, 98]
+
+Trial 12 pruned due to exception: 
+Trial 13 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (78) must match the existing size (79) at non-singleton dimension 1.  Target sizes: [5000, 78].  Tensor sizes: [5000, 79]
+
+Trial 13 pruned due to exception: 
+Trial 14: Found result in 20260412_150358
+Trial 14 completed with validation loss: 0.3919804038062016
+Trial 15 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 55, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 15 pruned due to exception: 
+Trial 16 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 55, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+
+Trial 16 pruned due to exception: 
+Trial 17 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 53, in __init__
+    self.pos_encoding = PositionalEncoding(d_model)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 27, in __init__
+    pe[:, 1::2] = torch.cos(position * div_term)
+    ~~^^^^^^^^^
+RuntimeError: The expanded size of the tensor (110) must match the existing size (111) at non-singleton dimension 1.  Target sizes: [5000, 110].  Tensor sizes: [5000, 111]
+
+Trial 17 pruned due to exception: 
+Trial 18: Found result in 20260412_150733
+Trial 18 completed with validation loss: 0.3694045408073713
+Trial 19: Found result in 20260412_150820
+Trial 19 completed with validation loss: 0.35781151587888826
+Trial 20 failed: INFO: Loading pre-split datasets...
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 321, in train_with_torch
+    model = build_torch_model(
+            ^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 207, in build_torch_model
+    return TransformerRegressor(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/models/transformer_regressor.py", line 55, in __init__
+    encoder_layer = nn.TransformerEncoderLayer(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/transformer.py", line 759, in __init__
+    self.self_attn = MultiheadAttention(
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/activation.py", line 1193, in __init__
+    raise AssertionError("embed_dim must be divisible by num_heads")
+AssertionError: embed_dim must be divisible by num_heads
+[I 2026-04-12 15:09:12,180] Trial 20 pruned. 
+[I 2026-04-12 15:09:14,330] Trial 21 pruned. 
+[I 2026-04-12 15:09:16,524] Trial 22 pruned. 
+[I 2026-04-12 15:10:57,950] Trial 23 finished with value: 0.36768338113746407 and parameters: {'history_length': 130, 'd_model': 64, 'nhead': 8, 'num_encoder_layers': 4, 'dim_feedforward': 467, 'dropout': 0.09607678714633289, 'batch_size': 231, 'learning_rate': 0.00016152505525003635, 'weight_decay': 0.00016986419533370712}. Best is trial 19 with value: 0.35781151587888826.
+[I 2026-04-12 15:11:00,164] Trial 24 pruned. 
+[I 2026-04-12 15:11:48,139] Trial 25 finished with value: 0.36939706407748096 and parameters: {'history_length': 116, 'd_model': 92, 'nhead': 4, 'num_encoder_layers': 3, 'dim_feedforward': 444, 'dropout': 0.1003099526562115, 'batch_size': 230, 'learning_rate': 0.00013298955270045162, 'weight_decay': 2.2896588722087677e-05}. Best is trial 19 with value: 0.35781151587888826.
+[I 2026-04-12 15:11:50,306] Trial 26 pruned. 

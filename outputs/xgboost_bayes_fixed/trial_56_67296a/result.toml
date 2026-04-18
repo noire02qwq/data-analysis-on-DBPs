@@ -1,0 +1,9 @@
+model_name = "xgboost_regressor"
+model_type = "XGBOOST"
+model_format = "xgboost"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT", "cond-RT", "fDOM-RT", "DO-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL2"]
+
+[eval]
+best_val_loss = 0.15448429769786892
+test_loss = 0.7616643309593201

@@ -1,0 +1,613 @@
+Trial 0: Found result in 20260412_185202
+Trial 0 completed with validation loss: 0.35697198646248207
+Trial 1: Found result in 20260412_185211
+Trial 1 completed with validation loss: 0.3581191832246955
+Trial 2: Found result in 20260412_185221
+Trial 2 completed with validation loss: 0.32222948397963685
+Trial 3: Found result in 20260412_185224
+Trial 3 completed with validation loss: 0.3332471267235006
+Trial 4: Found result in 20260412_185228
+Trial 4 completed with validation loss: 0.34558804838895835
+Trial 5: Found result in 20260412_185231
+Trial 5 completed with validation loss: 0.36680597218327
+Trial 6: Found result in 20260412_185237
+Trial 6 completed with validation loss: 0.3509326136946273
+Trial 7: Found result in 20260412_185243
+Trial 7 completed with validation loss: 0.3309558599004951
+Trial 8: Found result in 20260412_185247
+Trial 8 completed with validation loss: 0.3592198420876535
+Trial 9: Found result in 20260412_185257
+Trial 9 completed with validation loss: 0.32222994169548086
+Trial 10: Found result in 20260412_185300
+Trial 10 completed with validation loss: 0.3123956299037814
+Trial 11: Found result in 20260412_185303
+Trial 11 completed with validation loss: 0.3299238469767389
+Trial 12: Found result in 20260412_185306
+Trial 12 completed with validation loss: 0.31151771630366293
+Trial 13: Found result in 20260412_185309
+Trial 13 completed with validation loss: 0.32051454676084784
+Trial 14: Found result in 20260412_185312
+Trial 14 completed with validation loss: 0.31445383958556455
+Trial 15: Found result in 20260412_185316
+Trial 15 completed with validation loss: 0.35293927149055565
+Trial 16: Found result in 20260412_185319
+Trial 16 completed with validation loss: 0.34831016434248024
+Trial 17: Found result in 20260412_185322
+Trial 17 completed with validation loss: 0.312835012979842
+Trial 18: Found result in 20260412_185325
+Trial 18 completed with validation loss: 0.3308184391463919
+Trial 19: Found result in 20260412_185328
+Trial 19 completed with validation loss: 0.34758450903991783
+Trial 20: Found result in 20260412_185332
+Trial 20 completed with validation loss: 0.3702173639505368
+Trial 21: Found result in 20260412_185336
+Trial 21 completed with validation loss: 0.32610937693468084
+Trial 22: Found result in 20260412_185339
+Trial 22 completed with validation loss: 0.3151267735461501
+Trial 23: Found result in 20260412_185342
+Trial 23 completed with validation loss: 0.3020318242689853
+Trial 24: Found result in 20260412_185345
+Trial 24 completed with validation loss: 0.30851158670183804
+Trial 25: Found result in 20260412_185348
+Trial 25 completed with validation loss: 0.3154516837513481
+Trial 26: Found result in 20260412_185351
+Trial 26 completed with validation loss: 0.3207967131130157
+Trial 27: Found result in 20260412_185354
+Trial 27 completed with validation loss: 0.32632420995846334
+Trial 28: Found result in 20260412_185357
+Trial 28 completed with validation loss: 0.3562832799985294
+Trial 29: Found result in 20260412_185401
+Trial 29 completed with validation loss: 0.40603042235151987
+Trial 30: Found result in 20260412_185417
+Trial 30 completed with validation loss: 0.32777423070248785
+Trial 31: Found result in 20260412_185420
+Trial 31 completed with validation loss: 0.3179214664786742
+Trial 32: Found result in 20260412_185424
+Trial 32 completed with validation loss: 0.3051230500374887
+Trial 33: Found result in 20260412_185427
+Trial 33 completed with validation loss: 0.3138178743229037
+Trial 34: Found result in 20260412_185430
+Trial 34 completed with validation loss: 0.3578288775214746
+Trial 35: Found result in 20260412_185433
+Trial 35 completed with validation loss: 0.32295355466079423
+Trial 36: Found result in 20260412_185436
+Trial 36 completed with validation loss: 0.3284675890161782
+Trial 37: Found result in 20260412_185439
+Trial 37 completed with validation loss: 0.30909840694198004
+Trial 38: Found result in 20260412_185442
+Trial 38 completed with validation loss: 0.35400757106486974
+Trial 39: Found result in 20260412_185445
+Trial 39 completed with validation loss: 0.30785265244433774
+Trial 40: Found result in 20260412_185448
+Trial 40 completed with validation loss: 0.313531824314721
+Trial 41: Found result in 20260412_185451
+Trial 41 completed with validation loss: 0.3346825961945978
+Trial 42: Found result in 20260412_185454
+Trial 42 completed with validation loss: 0.38153475195737413
+Trial 43: Found result in 20260412_185457
+Trial 43 completed with validation loss: 0.35406982043832347
+Trial 44: Found result in 20260412_185500
+Trial 44 completed with validation loss: 0.30802826034028913
+Trial 45: Found result in 20260412_185503
+Trial 45 completed with validation loss: 0.33064892413322855
+Trial 46: Found result in 20260412_185506
+Trial 46 completed with validation loss: 0.3387067107415484
+Trial 47: Found result in 20260412_185509
+Trial 47 completed with validation loss: 0.33964740159402146
+Trial 48: Found result in 20260412_185512
+Trial 48 completed with validation loss: 0.32219520119907624
+Trial 49: Found result in 20260412_185515
+Trial 49 completed with validation loss: 0.3536868122365653
+Trial 50: Found result in 20260412_185521
+Trial 50 completed with validation loss: 0.33552459840003274
+Trial 51: Found result in 20260412_185525
+Trial 51 completed with validation loss: 0.2985788579397545
+Trial 52: Found result in 20260412_185528
+Trial 52 completed with validation loss: 0.3057038527205787
+Trial 53: Found result in 20260412_185531
+Trial 53 completed with validation loss: 0.3201817656840725
+Trial 54: Found result in 20260412_185534
+Trial 54 completed with validation loss: 0.3055977906411752
+Trial 55: Found result in 20260412_185537
+Trial 55 completed with validation loss: 0.30723533468903913
+Trial 56: Found result in 20260412_185540
+Trial 56 completed with validation loss: 0.33214883779079996
+Trial 57: Found result in 20260412_185543
+Trial 57 completed with validation loss: 0.31256416832653516
+Trial 58: Found result in 20260412_185546
+Trial 58 completed with validation loss: 0.33775319106112156
+Trial 59: Found result in 20260412_185549
+Trial 59 completed with validation loss: 0.33999247034930313
+Trial 60: Found result in 20260412_185552
+Trial 60 completed with validation loss: 0.2998110939840144
+Trial 61: Found result in 20260412_185556
+Trial 61 completed with validation loss: 0.31453521838482607
+Trial 62: Found result in 20260412_185559
+Trial 62 completed with validation loss: 0.2968609564220695
+Trial 63: Found result in 20260412_185602
+Trial 63 completed with validation loss: 0.3077297976033916
+Trial 64: Found result in 20260412_185605
+Trial 64 completed with validation loss: 0.2992000856325658
+Trial 65: Found result in 20260412_185609
+Trial 65 completed with validation loss: 0.36191110698221207
+Trial 66: Found result in 20260412_185612
+Trial 66 completed with validation loss: 0.3356827051474078
+Trial 67: Found result in 20260412_185615
+Trial 67 completed with validation loss: 0.3157979457435613
+Trial 68: Found result in 20260412_185618
+Trial 68 completed with validation loss: 0.3103031325815188
+Trial 69: Found result in 20260412_185621
+Trial 69 completed with validation loss: 0.32965475052634113
+Trial 70: Found result in 20260412_185625
+Trial 70 completed with validation loss: 0.31368033785481925
+Trial 71: Found result in 20260412_185628
+Trial 71 completed with validation loss: 0.31418742939943073
+Trial 72: Found result in 20260412_185631
+Trial 72 completed with validation loss: 0.32748469112054934
+Trial 73: Found result in 20260412_185635
+Trial 73 completed with validation loss: 0.3053245881720479
+Trial 74: Found result in 20260412_185640
+Trial 74 completed with validation loss: 0.3233113523833363
+Trial 75: Found result in 20260412_185644
+Trial 75 completed with validation loss: 0.35910066554317804
+Trial 76: Found result in 20260412_185647
+Trial 76 completed with validation loss: 0.31384089145855265
+Trial 77: Found result in 20260412_185650
+Trial 77 completed with validation loss: 0.3831083792568637
+Trial 78: Found result in 20260412_185710
+Trial 78 completed with validation loss: 0.31007427169525775
+Trial 79: Found result in 20260412_185713
+Trial 79 completed with validation loss: 0.3251029981159476
+Trial 80: Found result in 20260412_185716
+Trial 80 completed with validation loss: 0.3120565855619303
+Trial 81: Found result in 20260412_185719
+Trial 81 completed with validation loss: 0.3359496324621856
+Trial 82: Found result in 20260412_185722
+Trial 82 completed with validation loss: 0.2991497403568267
+Trial 83: Found result in 20260412_185725
+Trial 83 completed with validation loss: 0.3161987888490866
+Trial 84: Found result in 20260412_185729
+Trial 84 completed with validation loss: 0.3093539654638813
+Trial 85: Found result in 20260412_185732
+Trial 85 completed with validation loss: 0.3128618186976626
+Trial 86: Found result in 20260412_185735
+Trial 86 completed with validation loss: 0.31512159290078234
+Trial 87: Found result in 20260412_185738
+Trial 87 completed with validation loss: 0.3912791505710718
+Trial 88: Found result in 20260412_185747
+Trial 88 completed with validation loss: 0.33552623552720623
+Trial 89: Found result in 20260412_185751
+Trial 89 completed with validation loss: 0.3246629999329732
+Trial 90: Found result in 20260412_185754
+Trial 90 completed with validation loss: 0.3238071995105084
+Trial 91: Found result in 20260412_185757
+Trial 91 completed with validation loss: 0.3092647581967304
+Trial 92: Found result in 20260412_185800
+Trial 92 completed with validation loss: 0.313020425013872
+Trial 93: Found result in 20260412_185803
+Trial 93 completed with validation loss: 0.31272562678916205
+Trial 94: Found result in 20260412_185806
+Trial 94 completed with validation loss: 0.32461402554283975
+Trial 95: Found result in 20260412_185809
+Trial 95 completed with validation loss: 0.3261263886196616
+Trial 96: Found result in 20260412_185812
+Trial 96 completed with validation loss: 0.3272714712029969
+Trial 97: Found result in 20260412_185816
+Trial 97 completed with validation loss: 0.29941511904015666
+Trial 98: Found result in 20260412_185819
+Trial 98 completed with validation loss: 0.30758820535722387
+Trial 99: Found result in 20260412_185822
+Trial 99 completed with validation loss: 0.32770947233485376
+Trial 100: Found result in 20260412_185825
+Trial 100 completed with validation loss: 0.33465309212068767
+Trial 101: Found result in 20260412_185828
+Trial 101 completed with validation loss: 0.29943710338689195
+Trial 102: Found result in 20260412_185831
+Trial 102 completed with validation loss: 0.30682901210229474
+Trial 103: Found result in 20260412_185834
+Trial 103 completed with validation loss: 0.3147533940975123
+Trial 104: Found result in 20260412_185837
+Trial 104 completed with validation loss: 0.31271083610982675
+Trial 105: Found result in 20260412_185841
+Trial 105 completed with validation loss: 0.3318264357631597
+Trial 106: Found result in 20260412_185844
+Trial 106 completed with validation loss: 0.3040065962006174
+Trial 107: Found result in 20260412_185847
+Trial 107 completed with validation loss: 0.34086472985181787
+Trial 108: Found result in 20260412_185850
+Trial 108 completed with validation loss: 0.30206759226640434
+Trial 109: Found result in 20260412_185853
+Trial 109 completed with validation loss: 0.34737415457269544
+Trial 110: Found result in 20260412_185856
+Trial 110 completed with validation loss: 0.31920717833357526
+Trial 111: Found result in 20260412_185859
+Trial 111 completed with validation loss: 0.3123675248361776
+Trial 112: Found result in 20260412_185902
+Trial 112 completed with validation loss: 0.3195901626568555
+Trial 113: Found result in 20260412_185905
+Trial 113 completed with validation loss: 0.307041503330521
+Trial 114: Found result in 20260412_185908
+Trial 114 completed with validation loss: 0.3107732940200341
+Trial 115: Found result in 20260412_185911
+Trial 115 completed with validation loss: 0.32684423728890605
+Trial 116: Found result in 20260412_185915
+Trial 116 completed with validation loss: 0.3065637681595315
+Trial 117: Found result in 20260412_185918
+Trial 117 completed with validation loss: 0.32462294586884805
+Trial 118: Found result in 20260412_185921
+Trial 118 completed with validation loss: 0.32073964773610236
+Trial 119: Found result in 20260412_185924
+Trial 119 completed with validation loss: 0.3231818255464238
+Trial 120: Found result in 20260412_185927
+Trial 120 completed with validation loss: 0.3486570306812908
+Trial 121: Found result in 20260412_185930
+Trial 121 completed with validation loss: 0.32865528905112446
+Trial 122: Found result in 20260412_185933
+Trial 122 completed with validation loss: 0.29731234090620956
+Trial 123: Found result in 20260412_185936
+Trial 123 completed with validation loss: 0.3114306584067909
+Trial 124: Found result in 20260412_185939
+Trial 124 completed with validation loss: 0.31913216409987855
+Trial 125: Found result in 20260412_185942
+Trial 125 completed with validation loss: 0.31377882335216273
+Trial 126: Found result in 20260412_185945
+Trial 126 completed with validation loss: 0.31406768139087027
+Trial 127: Found result in 20260412_185948
+Trial 127 completed with validation loss: 0.3067232576219739
+Trial 128: Found result in 20260412_185951
+Trial 128 completed with validation loss: 0.3065386290974608
+Trial 129: Found result in 20260412_185954
+Trial 129 completed with validation loss: 0.3104135674507697
+Trial 130: Found result in 20260412_185957
+Trial 130 completed with validation loss: 0.321977623683323
+Trial 131: Found result in 20260412_190000
+Trial 131 completed with validation loss: 0.30562005584748986
+Trial 132: Found result in 20260412_190004
+Trial 132 completed with validation loss: 0.3428214238002572
+Trial 133: Found result in 20260412_190007
+Trial 133 completed with validation loss: 0.32345114360013355
+Trial 134: Found result in 20260412_190010
+Trial 134 completed with validation loss: 0.3057372761561087
+Trial 135: Found result in 20260412_190013
+Trial 135 completed with validation loss: 0.32510057757897665
+Trial 136: Found result in 20260412_190016
+Trial 136 completed with validation loss: 0.3042630993967819
+Trial 137: Found result in 20260412_190019
+Trial 137 completed with validation loss: 0.30452126087148107
+Trial 138: Found result in 20260412_190022
+Trial 138 completed with validation loss: 0.31661732116121377
+Trial 139: Found result in 20260412_190025
+Trial 139 completed with validation loss: 0.33885730895352856
+Trial 140: Found result in 20260412_190028
+Trial 140 completed with validation loss: 0.31464259770434794
+Trial 141: Found result in 20260412_190031
+Trial 141 completed with validation loss: 0.321845279564061
+Trial 142: Found result in 20260412_190035
+Trial 142 completed with validation loss: 0.31559819266987016
+Trial 143: Found result in 20260412_190038
+Trial 143 completed with validation loss: 0.3150742124925589
+Trial 144: Found result in 20260412_190041
+Trial 144 completed with validation loss: 0.35994851553335255
+Trial 145: Found result in 20260412_190044
+Trial 145 completed with validation loss: 0.2999424644516388
+Trial 146: Found result in 20260412_190047
+Trial 146 completed with validation loss: 0.34270239922920515
+Trial 147: Found result in 20260412_190050
+Trial 147 completed with validation loss: 0.3171983423530354
+Trial 148: Found result in 20260412_190054
+Trial 148 completed with validation loss: 0.31890435369152076
+Trial 149: Found result in 20260412_190057
+Trial 149 completed with validation loss: 0.3068220043596396
+Trial 150: Found result in 20260412_190100
+Trial 150 completed with validation loss: 0.30938641288684776
+Trial 151: Found result in 20260412_190103
+Trial 151 completed with validation loss: 0.3482421520394727
+Trial 152: Found result in 20260412_190106
+Trial 152 completed with validation loss: 0.3155255223973941
+Trial 153: Found result in 20260412_190109
+Trial 153 completed with validation loss: 0.327511248380511
+Trial 154: Found result in 20260412_190112
+Trial 154 completed with validation loss: 0.34467719155812565
+Trial 155: Found result in 20260412_190115
+Trial 155 completed with validation loss: 0.35369357489915587
+Trial 156: Found result in 20260412_190118
+Trial 156 completed with validation loss: 0.3211161466059765
+Trial 157: Found result in 20260412_190121
+Trial 157 completed with validation loss: 0.2968162868100914
+Trial 158: Found result in 20260412_190124
+Trial 158 completed with validation loss: 0.30497010445504885
+Trial 159: Found result in 20260412_190127
+Trial 159 completed with validation loss: 0.3082635738770844
+Trial 160: Found result in 20260412_190131
+Trial 160 completed with validation loss: 0.3178049848255579
+Trial 161: Found result in 20260412_190134
+Trial 161 completed with validation loss: 0.3127242388894989
+Trial 162: Found result in 20260412_190137
+Trial 162 completed with validation loss: 0.3101167721962948
+Trial 163: Found result in 20260412_190141
+Trial 163 completed with validation loss: 0.3349245461154278
+Trial 164: Found result in 20260412_190143
+Trial 164 completed with validation loss: 0.36661898135401344
+Trial 165: Found result in 20260412_190146
+Trial 165 completed with validation loss: 0.3067680641847601
+Trial 166: Found result in 20260412_190149
+Trial 166 completed with validation loss: 0.31325300772201164
+Trial 167: Found result in 20260412_190152
+Trial 167 completed with validation loss: 0.35106872607796946
+Trial 168: Found result in 20260412_190156
+Trial 168 completed with validation loss: 0.33196393798432583
+Trial 169: Found result in 20260412_190159
+Trial 169 completed with validation loss: 0.3213846706194764
+Trial 170: Found result in 20260412_190202
+Trial 170 completed with validation loss: 0.3100607449214648
+Trial 171: Found result in 20260412_190205
+Trial 171 completed with validation loss: 0.3113192507539731
+Trial 172: Found result in 20260412_190208
+Trial 172 completed with validation loss: 0.34962525317585297
+Trial 173: Found result in 20260412_190211
+Trial 173 completed with validation loss: 0.3178009216934706
+Trial 174: Found result in 20260412_190215
+Trial 174 completed with validation loss: 0.33271873517339223
+Trial 175: Found result in 20260412_190218
+Trial 175 completed with validation loss: 0.34369402801583043
+Trial 176: Found result in 20260412_190224
+Trial 176 completed with validation loss: 0.32512554664240556
+Trial 177: Found result in 20260412_190227
+Trial 177 completed with validation loss: 0.3125794314635429
+Trial 178: Found result in 20260412_190231
+Trial 178 completed with validation loss: 0.31250002049728176
+Trial 179: Found result in 20260412_190235
+Trial 179 completed with validation loss: 0.3050739418270429
+Trial 180: Found result in 20260412_190238
+Trial 180 completed with validation loss: 0.3147523845880167
+Trial 181: Found result in 20260412_190242
+Trial 181 completed with validation loss: 0.3115401110271893
+Trial 182: Found result in 20260412_190246
+Trial 182 completed with validation loss: 0.29920268133802863
+Trial 183: Found result in 20260412_190249
+Trial 183 completed with validation loss: 0.3239120922159403
+Trial 184: Found result in 20260412_190253
+Trial 184 completed with validation loss: 0.31530308989699196
+Trial 185: Found result in 20260412_190256
+Trial 185 completed with validation loss: 0.32867818484386885
+Trial 186: Found result in 20260412_190300
+Trial 186 completed with validation loss: 0.30940897858529653
+Trial 187: Found result in 20260412_190304
+Trial 187 completed with validation loss: 0.3068593825806752
+Trial 188: Found result in 20260412_190307
+Trial 188 completed with validation loss: 0.34796602793600545
+Trial 189: Found result in 20260412_190311
+Trial 189 completed with validation loss: 0.3392521376429389
+Trial 190: Found result in 20260412_190314
+Trial 190 completed with validation loss: 0.3325537353663364
+Trial 191: Found result in 20260412_190318
+Trial 191 completed with validation loss: 0.3135712202834363
+Trial 192: Found result in 20260412_190322
+Trial 192 completed with validation loss: 0.3303896143746617
+Trial 193: Found result in 20260412_190325
+Trial 193 completed with validation loss: 0.30387837102420284
+Trial 194: Found result in 20260412_190329
+Trial 194 completed with validation loss: 0.3000383086953902
+Trial 195: Found result in 20260412_190332
+Trial 195 completed with validation loss: 0.32269909104098327
+Trial 196: Found result in 20260412_190336
+Trial 196 completed with validation loss: 0.3062265013124755
+Trial 197: Found result in 20260412_190339
+Trial 197 completed with validation loss: 0.3188938813851168
+Trial 198: Found result in 20260412_190343
+Trial 198 completed with validation loss: 0.31902387089956225
+Trial 199: Found result in 20260412_190347
+Trial 199 completed with validation loss: 0.3023174955089244
+
+Best parameters:
+  depth: 4
+  learning_rate: 0.002490013082887413
+  l2_leaf_reg: 9.382083734051669
+  subsample: 0.6821355922889006
+  random_strength: 0.13255568941635779
+  bagging_temperature: 0.005233078715265604
+  max_epochs: 300
+Best validation loss: 0.2968162868100914
+
+Results saved to outputs/catboost_bayes_300epochs/bayes_optimization_results.csv
+[I 2026-04-12 18:52:01,080] A new study created in memory with name: catboost_300epochs_v2
+[I 2026-04-12 18:52:10,044] Trial 0 finished with value: 0.35697198646248207 and parameters: {'depth': 11, 'learning_rate': 0.0020109449036775427, 'l2_leaf_reg': 1.1292658261865378, 'subsample': 0.9919247169186988, 'random_strength': 0.6560900904620964, 'bagging_temperature': 0.0508843298966772, 'max_epochs': 300}. Best is trial 0 with value: 0.35697198646248207.
+[I 2026-04-12 18:52:20,275] Trial 1 finished with value: 0.3581191832246955 and parameters: {'depth': 11, 'learning_rate': 0.0025860570598199933, 'l2_leaf_reg': 3.008455163959995, 'subsample': 0.8979551807159493, 'random_strength': 0.44413147262049324, 'bagging_temperature': 0.14700170103855673, 'max_epochs': 300}. Best is trial 0 with value: 0.35697198646248207.
+[I 2026-04-12 18:52:23,373] Trial 2 finished with value: 0.32222948397963685 and parameters: {'depth': 4, 'learning_rate': 0.0028444290618952713, 'l2_leaf_reg': 1.093295551206298, 'subsample': 0.9820123098753515, 'random_strength': 0.3954254375317053, 'bagging_temperature': 0.3119006023799005, 'max_epochs': 300}. Best is trial 2 with value: 0.32222948397963685.
+[I 2026-04-12 18:52:26,700] Trial 3 finished with value: 0.3332471267235006 and parameters: {'depth': 7, 'learning_rate': 0.0025383861909251083, 'l2_leaf_reg': 8.10572354094233, 'subsample': 0.7097666025293954, 'random_strength': 0.14107707182756388, 'bagging_temperature': 0.4014989910561523, 'max_epochs': 300}. Best is trial 2 with value: 0.32222948397963685.
+[I 2026-04-12 18:52:30,088] Trial 4 finished with value: 0.34558804838895835 and parameters: {'depth': 7, 'learning_rate': 0.004907922509457628, 'l2_leaf_reg': 2.3322789233420393, 'subsample': 0.6117325782505956, 'random_strength': 0.1930273035620576, 'bagging_temperature': 0.6075720477330796, 'max_epochs': 300}. Best is trial 2 with value: 0.32222948397963685.
+[I 2026-04-12 18:52:36,054] Trial 5 finished with value: 0.36680597218327 and parameters: {'depth': 10, 'learning_rate': 0.009120421296591854, 'l2_leaf_reg': 2.104479966448474, 'subsample': 0.9510178123597081, 'random_strength': 0.6181762094773002, 'bagging_temperature': 0.6192333555354093, 'max_epochs': 300}. Best is trial 2 with value: 0.32222948397963685.
+[I 2026-04-12 18:52:42,376] Trial 6 finished with value: 0.3509326136946273 and parameters: {'depth': 10, 'learning_rate': 0.016675221398911356, 'l2_leaf_reg': 2.575596576001711, 'subsample': 0.6426190708276897, 'random_strength': 0.6657148884302292, 'bagging_temperature': 0.6961468613256313, 'max_epochs': 300}. Best is trial 2 with value: 0.32222948397963685.
+[I 2026-04-12 18:52:45,805] Trial 7 finished with value: 0.3309558599004951 and parameters: {'depth': 7, 'learning_rate': 0.004669426707923166, 'l2_leaf_reg': 9.741854441225168, 'subsample': 0.6138022543129812, 'random_strength': 0.6275317321248064, 'bagging_temperature': 0.10878974938507946, 'max_epochs': 300}. Best is trial 2 with value: 0.32222948397963685.
+[I 2026-04-12 18:52:55,672] Trial 8 finished with value: 0.3592198420876535 and parameters: {'depth': 11, 'learning_rate': 0.023925698028129296, 'l2_leaf_reg': 1.1324404242789385, 'subsample': 0.8312142892379276, 'random_strength': 0.503545230095898, 'bagging_temperature': 0.055540400276418565, 'max_epochs': 300}. Best is trial 2 with value: 0.32222948397963685.
+[I 2026-04-12 18:52:58,718] Trial 9 finished with value: 0.32222994169548086 and parameters: {'depth': 4, 'learning_rate': 0.026075713657878596, 'l2_leaf_reg': 2.7150370453374717, 'subsample': 0.7013932836305989, 'random_strength': 0.6743741644687403, 'bagging_temperature': 0.007610219642487434, 'max_epochs': 300}. Best is trial 2 with value: 0.32222948397963685.
+[I 2026-04-12 18:53:01,921] Trial 10 finished with value: 0.3123956299037814 and parameters: {'depth': 4, 'learning_rate': 0.004734919049458074, 'l2_leaf_reg': 5.2078739665678855, 'subsample': 0.8184937870715578, 'random_strength': 0.2879312094593051, 'bagging_temperature': 0.0017181439552457782, 'max_epochs': 300}. Best is trial 10 with value: 0.3123956299037814.
+[I 2026-04-12 18:53:04,940] Trial 11 finished with value: 0.3299238469767389 and parameters: {'depth': 4, 'learning_rate': 0.004316066232716032, 'l2_leaf_reg': 5.528405570157706, 'subsample': 0.8240569312623586, 'random_strength': 0.3052719100071367, 'bagging_temperature': 0.0015324534984645349, 'max_epochs': 300}. Best is trial 10 with value: 0.3123956299037814.
+[I 2026-04-12 18:53:08,135] Trial 12 finished with value: 0.31151771630366293 and parameters: {'depth': 5, 'learning_rate': 0.00838572187872534, 'l2_leaf_reg': 4.956493255367426, 'subsample': 0.8846528200834622, 'random_strength': 0.29981925271923865, 'bagging_temperature': 0.012675376676065424, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:11,266] Trial 13 finished with value: 0.32051454676084784 and parameters: {'depth': 5, 'learning_rate': 0.008460630213437759, 'l2_leaf_reg': 5.032744584137008, 'subsample': 0.8575430065750149, 'random_strength': 0.24548986583577292, 'bagging_temperature': 0.009045279719286545, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:14,518] Trial 14 finished with value: 0.31445383958556455 and parameters: {'depth': 6, 'learning_rate': 0.011100993344921001, 'l2_leaf_reg': 4.654137358132003, 'subsample': 0.765067764106655, 'random_strength': 0.1010865255966466, 'bagging_temperature': 0.0010838184329513513, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:17,508] Trial 15 finished with value: 0.35293927149055565 and parameters: {'depth': 5, 'learning_rate': 0.006102374968702708, 'l2_leaf_reg': 3.8806120190969935, 'subsample': 0.7725001452205584, 'random_strength': 0.9682398344716905, 'bagging_temperature': 0.004357995925389705, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:21,071] Trial 16 finished with value: 0.34831016434248024 and parameters: {'depth': 8, 'learning_rate': 0.0132694106223775, 'l2_leaf_reg': 6.800466159254223, 'subsample': 0.895255670990913, 'random_strength': 0.22777386801343297, 'bagging_temperature': 0.019914292161931735, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:24,095] Trial 17 finished with value: 0.312835012979842 and parameters: {'depth': 5, 'learning_rate': 0.006335902546834586, 'l2_leaf_reg': 3.8042700531666522, 'subsample': 0.7281421953731206, 'random_strength': 0.32188740990654857, 'bagging_temperature': 0.0036521229072232994, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:27,240] Trial 18 finished with value: 0.3308184391463919 and parameters: {'depth': 6, 'learning_rate': 0.006777607644891568, 'l2_leaf_reg': 6.6780269065885145, 'subsample': 0.800831226556681, 'random_strength': 0.16237021499931814, 'bagging_temperature': 0.018721566407891382, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:31,403] Trial 19 finished with value: 0.34758450903991783 and parameters: {'depth': 9, 'learning_rate': 0.0035949559911815764, 'l2_leaf_reg': 1.7253528093564325, 'subsample': 0.9113902989075323, 'random_strength': 0.3202316082928292, 'bagging_temperature': 0.002493257212673381, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:34,491] Trial 20 finished with value: 0.3702173639505368 and parameters: {'depth': 6, 'learning_rate': 0.017130739756746328, 'l2_leaf_reg': 3.368617803999138, 'subsample': 0.8613706227800142, 'random_strength': 0.27128068237315756, 'bagging_temperature': 0.009174263360615881, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:37,592] Trial 21 finished with value: 0.32610937693468084 and parameters: {'depth': 5, 'learning_rate': 0.005946796046170718, 'l2_leaf_reg': 4.228489011789815, 'subsample': 0.7272674220044013, 'random_strength': 0.3668512991633273, 'bagging_temperature': 0.003708577003267288, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:40,725] Trial 22 finished with value: 0.3151267735461501 and parameters: {'depth': 5, 'learning_rate': 0.007759027161760449, 'l2_leaf_reg': 6.01483093057457, 'subsample': 0.742405839347894, 'random_strength': 0.33044104515134576, 'bagging_temperature': 0.0023235637960109597, 'max_epochs': 300}. Best is trial 12 with value: 0.31151771630366293.
+[I 2026-04-12 18:53:43,841] Trial 23 finished with value: 0.3020318242689853 and parameters: {'depth': 4, 'learning_rate': 0.0036344968805990746, 'l2_leaf_reg': 3.7159170688751346, 'subsample': 0.6813652618718034, 'random_strength': 0.20321362980274316, 'bagging_temperature': 0.005112643236708679, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:53:46,869] Trial 24 finished with value: 0.30851158670183804 and parameters: {'depth': 4, 'learning_rate': 0.003482376335573699, 'l2_leaf_reg': 3.316567298869271, 'subsample': 0.6411076363980941, 'random_strength': 0.18685419162317582, 'bagging_temperature': 0.01664521486440741, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:53:49,949] Trial 25 finished with value: 0.3154516837513481 and parameters: {'depth': 4, 'learning_rate': 0.003567977249290938, 'l2_leaf_reg': 1.7680097921376257, 'subsample': 0.6824072623468411, 'random_strength': 0.19308703019438386, 'bagging_temperature': 0.01840973981962378, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:53:53,185] Trial 26 finished with value: 0.3207967131130157 and parameters: {'depth': 6, 'learning_rate': 0.003566454979781307, 'l2_leaf_reg': 3.301193928455094, 'subsample': 0.6617894625551769, 'random_strength': 0.12821789672071707, 'bagging_temperature': 0.0315226851585251, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:53:56,237] Trial 27 finished with value: 0.32632420995846334 and parameters: {'depth': 4, 'learning_rate': 0.0020710782061703604, 'l2_leaf_reg': 4.3451359664114495, 'subsample': 0.6417959655282702, 'random_strength': 0.1960604270027807, 'bagging_temperature': 0.006353285431237642, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:53:59,767] Trial 28 finished with value: 0.3562832799985294 and parameters: {'depth': 8, 'learning_rate': 0.010133175108853238, 'l2_leaf_reg': 3.595776326169092, 'subsample': 0.6688302252026264, 'random_strength': 0.15959013370019776, 'bagging_temperature': 0.012150041142746334, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:16,361] Trial 29 finished with value: 0.40603042235151987 and parameters: {'depth': 12, 'learning_rate': 0.002941257392857986, 'l2_leaf_reg': 2.0358901331949437, 'subsample': 0.6361775637425987, 'random_strength': 0.11453827815231064, 'bagging_temperature': 0.032357048930304416, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:19,442] Trial 30 finished with value: 0.32777423070248785 and parameters: {'depth': 5, 'learning_rate': 0.0038612671095732964, 'l2_leaf_reg': 1.386612831359296, 'subsample': 0.6829684465361786, 'random_strength': 0.22298652540097194, 'bagging_temperature': 0.06439087794288592, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:22,504] Trial 31 finished with value: 0.3179214664786742 and parameters: {'depth': 4, 'learning_rate': 0.005360118615688693, 'l2_leaf_reg': 5.0791375826363545, 'subsample': 0.8008657472903732, 'random_strength': 0.2660284010202816, 'bagging_temperature': 0.0019942083331638623, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:25,603] Trial 32 finished with value: 0.3051230500374887 and parameters: {'depth': 4, 'learning_rate': 0.003040645170081394, 'l2_leaf_reg': 2.8396494952476363, 'subsample': 0.869619547019985, 'random_strength': 0.17105133149832774, 'bagging_temperature': 0.005777109019683545, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:28,736] Trial 33 finished with value: 0.3138178743229037 and parameters: {'depth': 5, 'learning_rate': 0.0020711716297074083, 'l2_leaf_reg': 2.8976557635339413, 'subsample': 0.9333676576137703, 'random_strength': 0.16599433941774003, 'bagging_temperature': 0.0055700985884608025, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:31,677] Trial 34 finished with value: 0.3578288775214746 and parameters: {'depth': 4, 'learning_rate': 0.0029282252304146674, 'l2_leaf_reg': 3.2063246711728572, 'subsample': 0.9890714816232635, 'random_strength': 0.20971582452230206, 'bagging_temperature': 0.01233844123572213, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:34,869] Trial 35 finished with value: 0.32295355466079423 and parameters: {'depth': 6, 'learning_rate': 0.002376800119043381, 'l2_leaf_reg': 2.4982241986807416, 'subsample': 0.600305677615596, 'random_strength': 0.13877215372612875, 'bagging_temperature': 0.028211311790254778, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:37,918] Trial 36 finished with value: 0.3284675890161782 and parameters: {'depth': 4, 'learning_rate': 0.0029832399177051167, 'l2_leaf_reg': 4.031710143491233, 'subsample': 0.8668925755193148, 'random_strength': 0.17356376426449419, 'bagging_temperature': 0.01419708834649477, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:41,074] Trial 37 finished with value: 0.30909840694198004 and parameters: {'depth': 5, 'learning_rate': 0.002444833190351283, 'l2_leaf_reg': 3.0203121008512297, 'subsample': 0.9582527842049929, 'random_strength': 0.4200966753674105, 'bagging_temperature': 0.004499385815233841, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:44,315] Trial 38 finished with value: 0.35400757106486974 and parameters: {'depth': 7, 'learning_rate': 0.0024319214644269237, 'l2_leaf_reg': 2.3073103681446767, 'subsample': 0.9547155766655279, 'random_strength': 0.43099400222187223, 'bagging_temperature': 0.0032299981974883356, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:47,451] Trial 39 finished with value: 0.30785265244433774 and parameters: {'depth': 4, 'learning_rate': 0.003283395273935614, 'l2_leaf_reg': 2.8692815163934826, 'subsample': 0.9661415676397639, 'random_strength': 0.5239488532227352, 'bagging_temperature': 0.0051852767846163016, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:50,474] Trial 40 finished with value: 0.313531824314721 and parameters: {'depth': 4, 'learning_rate': 0.00406631006435578, 'l2_leaf_reg': 1.9881007670218318, 'subsample': 0.624765050966216, 'random_strength': 0.49253525708764023, 'bagging_temperature': 0.2113327529953212, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:53,446] Trial 41 finished with value: 0.3346825961945978 and parameters: {'depth': 4, 'learning_rate': 0.0026272201697743022, 'l2_leaf_reg': 2.960529220566012, 'subsample': 0.9557804394950222, 'random_strength': 0.5426100251168207, 'bagging_temperature': 0.005254270834177087, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:56,396] Trial 42 finished with value: 0.38153475195737413 and parameters: {'depth': 5, 'learning_rate': 0.003222972565944484, 'l2_leaf_reg': 2.763257967535666, 'subsample': 0.9963346978204922, 'random_strength': 0.39273042368546435, 'bagging_temperature': 0.007628256579706478, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:54:59,325] Trial 43 finished with value: 0.35406982043832347 and parameters: {'depth': 4, 'learning_rate': 0.0032905596942032723, 'l2_leaf_reg': 2.408202197524314, 'subsample': 0.9320734434995676, 'random_strength': 0.14474063097065296, 'bagging_temperature': 0.0027474875713467237, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:55:02,385] Trial 44 finished with value: 0.30802826034028913 and parameters: {'depth': 4, 'learning_rate': 0.002639712798518976, 'l2_leaf_reg': 3.5166459028240955, 'subsample': 0.9623358214786142, 'random_strength': 0.5544216948821631, 'bagging_temperature': 0.004762128324664014, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:55:05,307] Trial 45 finished with value: 0.33064892413322855 and parameters: {'depth': 4, 'learning_rate': 0.00443880393264044, 'l2_leaf_reg': 3.5792651628164043, 'subsample': 0.9225520405176212, 'random_strength': 0.6027537669245613, 'bagging_temperature': 0.0012111522838123378, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:55:08,297] Trial 46 finished with value: 0.3387067107415484 and parameters: {'depth': 4, 'learning_rate': 0.005342090613850436, 'l2_leaf_reg': 2.2648326231904785, 'subsample': 0.9694024385820521, 'random_strength': 0.7982671684707158, 'bagging_temperature': 0.008681142145412091, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:55:11,296] Trial 47 finished with value: 0.33964740159402146 and parameters: {'depth': 5, 'learning_rate': 0.0022322111305887685, 'l2_leaf_reg': 4.426152436457254, 'subsample': 0.8799733432857134, 'random_strength': 0.7392730702857222, 'bagging_temperature': 0.005614506170394532, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:55:14,491] Trial 48 finished with value: 0.32219520119907624 and parameters: {'depth': 6, 'learning_rate': 0.0027284005371297315, 'l2_leaf_reg': 2.6840043394325965, 'subsample': 0.9046731640829314, 'random_strength': 0.541365769701582, 'bagging_temperature': 0.043616878269257565, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:55:20,252] Trial 49 finished with value: 0.3536868122365653 and parameters: {'depth': 10, 'learning_rate': 0.0032202290491119235, 'l2_leaf_reg': 3.5174665248204424, 'subsample': 0.8402136968538795, 'random_strength': 0.872121655940089, 'bagging_temperature': 0.0801338006326063, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:55:23,637] Trial 50 finished with value: 0.33552459840003274 and parameters: {'depth': 7, 'learning_rate': 0.003975014553578878, 'l2_leaf_reg': 3.1236588710674407, 'subsample': 0.7932944687413654, 'random_strength': 0.1834998648426485, 'bagging_temperature': 0.010526894346583163, 'max_epochs': 300}. Best is trial 23 with value: 0.3020318242689853.
+[I 2026-04-12 18:55:26,681] Trial 51 finished with value: 0.2985788579397545 and parameters: {'depth': 4, 'learning_rate': 0.0024947164730565476, 'l2_leaf_reg': 3.007605409291041, 'subsample': 0.9723623934912611, 'random_strength': 0.46440914928631594, 'bagging_temperature': 0.004074736530971674, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:29,762] Trial 52 finished with value: 0.3057038527205787 and parameters: {'depth': 4, 'learning_rate': 0.0027643866723031187, 'l2_leaf_reg': 3.8364339799788887, 'subsample': 0.9773343389322787, 'random_strength': 0.48274991032329645, 'bagging_temperature': 0.00673944723212822, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:32,855] Trial 53 finished with value: 0.3201817656840725 and parameters: {'depth': 4, 'learning_rate': 0.0026741237088701974, 'l2_leaf_reg': 3.8620822741364345, 'subsample': 0.9775967514125696, 'random_strength': 0.47315191657438727, 'bagging_temperature': 0.003195932045065367, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:35,961] Trial 54 finished with value: 0.3055977906411752 and parameters: {'depth': 5, 'learning_rate': 0.0022607336229441863, 'l2_leaf_reg': 2.601397905235062, 'subsample': 0.9355584511512015, 'random_strength': 0.5899733316781808, 'bagging_temperature': 0.001487352399305654, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:39,051] Trial 55 finished with value: 0.30723533468903913 and parameters: {'depth': 5, 'learning_rate': 0.0021562135266451976, 'l2_leaf_reg': 2.7556043957082332, 'subsample': 0.9368489852921312, 'random_strength': 0.6993372798154439, 'bagging_temperature': 0.0015987362540851547, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:42,146] Trial 56 finished with value: 0.33214883779079996 and parameters: {'depth': 5, 'learning_rate': 0.0021877931855550565, 'l2_leaf_reg': 2.577889352875874, 'subsample': 0.9387662913874968, 'random_strength': 0.7113170092465683, 'bagging_temperature': 0.0017440985161822529, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:45,267] Trial 57 finished with value: 0.31256416832653516 and parameters: {'depth': 5, 'learning_rate': 0.002266742254515362, 'l2_leaf_reg': 2.168425362467125, 'subsample': 0.915728765752429, 'random_strength': 0.3603271339857608, 'bagging_temperature': 0.0014246400237653786, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:48,360] Trial 58 finished with value: 0.33775319106112156 and parameters: {'depth': 5, 'learning_rate': 0.002014668102993814, 'l2_leaf_reg': 1.8049706431999921, 'subsample': 0.8910354153008097, 'random_strength': 0.5965755338896749, 'bagging_temperature': 0.0011393063348516844, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:51,460] Trial 59 finished with value: 0.33999247034930313 and parameters: {'depth': 6, 'learning_rate': 0.0029435011686697646, 'l2_leaf_reg': 1.5587782146698048, 'subsample': 0.94476855373369, 'random_strength': 0.6522042446093554, 'bagging_temperature': 0.0022262802222424594, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:54,685] Trial 60 finished with value: 0.2998110939840144 and parameters: {'depth': 5, 'learning_rate': 0.0024605075587753617, 'l2_leaf_reg': 4.6329729523372665, 'subsample': 0.9961654990722869, 'random_strength': 0.4627775994161941, 'bagging_temperature': 0.0016345579202411379, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:55:57,875] Trial 61 finished with value: 0.31453521838482607 and parameters: {'depth': 5, 'learning_rate': 0.0023817528654286827, 'l2_leaf_reg': 5.79076904973344, 'subsample': 0.9869783139052959, 'random_strength': 0.4799311479886733, 'bagging_temperature': 0.0015189900449000119, 'max_epochs': 300}. Best is trial 51 with value: 0.2985788579397545.
+[I 2026-04-12 18:56:01,061] Trial 62 finished with value: 0.2968609564220695 and parameters: {'depth': 5, 'learning_rate': 0.002529022063937027, 'l2_leaf_reg': 4.692882422277018, 'subsample': 0.9834341875663307, 'random_strength': 0.46055670959517947, 'bagging_temperature': 0.0010004549256123147, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:04,439] Trial 63 finished with value: 0.3077297976033916 and parameters: {'depth': 6, 'learning_rate': 0.0024756865451560296, 'l2_leaf_reg': 4.654262119955856, 'subsample': 0.9966069354061295, 'random_strength': 0.37793407704055754, 'bagging_temperature': 0.0010406936551676516, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:07,497] Trial 64 finished with value: 0.2992000856325658 and parameters: {'depth': 4, 'learning_rate': 0.002806974804196615, 'l2_leaf_reg': 6.510021215083695, 'subsample': 0.9775646171864946, 'random_strength': 0.4497452335379117, 'bagging_temperature': 0.002750649141666112, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:10,571] Trial 65 finished with value: 0.36191110698221207 and parameters: {'depth': 5, 'learning_rate': 0.003088516292626311, 'l2_leaf_reg': 6.779977153864383, 'subsample': 0.7585370050343402, 'random_strength': 0.445004794242587, 'bagging_temperature': 0.0020441247747903, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:13,862] Trial 66 finished with value: 0.3356827051474078 and parameters: {'depth': 7, 'learning_rate': 0.0037582410196011643, 'l2_leaf_reg': 9.327213877233959, 'subsample': 0.9973903631340727, 'random_strength': 0.4364536933525648, 'bagging_temperature': 0.002733735521836326, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:16,932] Trial 67 finished with value: 0.3157979457435613 and parameters: {'depth': 4, 'learning_rate': 0.0020069209009034162, 'l2_leaf_reg': 8.04721041775086, 'subsample': 0.9237666836561944, 'random_strength': 0.33361939389949424, 'bagging_temperature': 0.003907499965501655, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:20,114] Trial 68 finished with value: 0.3103031325815188 and parameters: {'depth': 5, 'learning_rate': 0.028918465519670755, 'l2_leaf_reg': 6.059695924209242, 'subsample': 0.9764525562562874, 'random_strength': 0.244902915841719, 'bagging_temperature': 0.00139198627473555, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:23,799] Trial 69 finished with value: 0.32965475052634113 and parameters: {'depth': 8, 'learning_rate': 0.002611223691082149, 'l2_leaf_reg': 5.515287248185815, 'subsample': 0.9036715555400237, 'random_strength': 0.34848046758542167, 'bagging_temperature': 0.0019251304620143365, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:26,902] Trial 70 finished with value: 0.31368033785481925 and parameters: {'depth': 4, 'learning_rate': 0.0034561108028861665, 'l2_leaf_reg': 7.3517181201541115, 'subsample': 0.9474215942780161, 'random_strength': 0.41651382277243315, 'bagging_temperature': 0.0030725119455579336, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:30,011] Trial 71 finished with value: 0.31418742939943073 and parameters: {'depth': 4, 'learning_rate': 0.002891711176331632, 'l2_leaf_reg': 4.071392346667037, 'subsample': 0.9760129771031061, 'random_strength': 0.5831058473737246, 'bagging_temperature': 0.006605189404683756, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:34,400] Trial 72 finished with value: 0.32748469112054934 and parameters: {'depth': 9, 'learning_rate': 0.002825266091741559, 'l2_leaf_reg': 4.934041330133971, 'subsample': 0.9809835895980293, 'random_strength': 0.4654670154065865, 'bagging_temperature': 0.00228748806540843, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:38,362] Trial 73 finished with value: 0.3053245881720479 and parameters: {'depth': 4, 'learning_rate': 0.002291961727307959, 'l2_leaf_reg': 4.53139246111546, 'subsample': 0.714947162472912, 'random_strength': 0.6432550097862874, 'bagging_temperature': 0.0035998961120331254, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:42,544] Trial 74 finished with value: 0.3233113523833363 and parameters: {'depth': 4, 'learning_rate': 0.002296362306524981, 'l2_leaf_reg': 4.7500067109504815, 'subsample': 0.7078212485547419, 'random_strength': 0.5086634422363612, 'bagging_temperature': 0.003694125195543296, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:45,700] Trial 75 finished with value: 0.35910066554317804 and parameters: {'depth': 6, 'learning_rate': 0.0024095508951575218, 'l2_leaf_reg': 5.444644660065936, 'subsample': 0.6501813612725643, 'random_strength': 0.6437035937304355, 'bagging_temperature': 0.002843110792853707, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:56:48,685] Trial 76 finished with value: 0.31384089145855265 and parameters: {'depth': 4, 'learning_rate': 0.020029556827485622, 'l2_leaf_reg': 4.511184415590666, 'subsample': 0.6930794028685748, 'random_strength': 0.5703570797898342, 'bagging_temperature': 0.00124215792672108, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:08,975] Trial 77 finished with value: 0.3831083792568637 and parameters: {'depth': 12, 'learning_rate': 0.00256252984391814, 'l2_leaf_reg': 6.298890926112344, 'subsample': 0.6736382295861225, 'random_strength': 0.4053869106081892, 'bagging_temperature': 0.004116351208133286, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:12,082] Trial 78 finished with value: 0.31007427169525775 and parameters: {'depth': 5, 'learning_rate': 0.003096037328938463, 'l2_leaf_reg': 4.103129181558356, 'subsample': 0.7221674787263376, 'random_strength': 0.7797995670083421, 'bagging_temperature': 0.0016599129590169003, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:15,095] Trial 79 finished with value: 0.3251029981159476 and parameters: {'depth': 4, 'learning_rate': 0.004273239748487232, 'l2_leaf_reg': 3.215181558328171, 'subsample': 0.7484479073564316, 'random_strength': 0.2840896706835814, 'bagging_temperature': 0.8510725110626808, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:18,336] Trial 80 finished with value: 0.3120565855619303 and parameters: {'depth': 5, 'learning_rate': 0.0023021179763913968, 'l2_leaf_reg': 4.261032083021672, 'subsample': 0.6934058333723095, 'random_strength': 0.5189569913162954, 'bagging_temperature': 0.0025691912408863935, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:21,326] Trial 81 finished with value: 0.3359496324621856 and parameters: {'depth': 4, 'learning_rate': 0.0027340991283807767, 'l2_leaf_reg': 3.7669499337157815, 'subsample': 0.9575706154748139, 'random_strength': 0.45506764815840517, 'bagging_temperature': 0.007232214129848203, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:24,416] Trial 82 finished with value: 0.2991497403568267 and parameters: {'depth': 4, 'learning_rate': 0.0021727040882842255, 'l2_leaf_reg': 3.7210137131040435, 'subsample': 0.9679139049052485, 'random_strength': 0.6155220098975337, 'bagging_temperature': 0.0010072309765717165, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:27,519] Trial 83 finished with value: 0.3161987888490866 and parameters: {'depth': 4, 'learning_rate': 0.0021501102490026494, 'l2_leaf_reg': 5.087695750261782, 'subsample': 0.8462927643137435, 'random_strength': 0.6092806255933073, 'bagging_temperature': 0.0013107913015688538, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:30,709] Trial 84 finished with value: 0.3093539654638813 and parameters: {'depth': 4, 'learning_rate': 0.0025020187316699576, 'l2_leaf_reg': 3.6502442817805236, 'subsample': 0.9693991995638797, 'random_strength': 0.14750740935612117, 'bagging_temperature': 0.0018748856865691249, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:33,784] Trial 85 finished with value: 0.3128618186976626 and parameters: {'depth': 4, 'learning_rate': 0.002153128185082119, 'l2_leaf_reg': 3.049377447526276, 'subsample': 0.9989502123699753, 'random_strength': 0.8835452526496258, 'bagging_temperature': 0.001003906878243337, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:36,950] Trial 86 finished with value: 0.31512159290078234 and parameters: {'depth': 5, 'learning_rate': 0.0025454771561621487, 'l2_leaf_reg': 2.4852829012664253, 'subsample': 0.9483128658248282, 'random_strength': 0.12622291298455876, 'bagging_temperature': 0.003343248803807365, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:45,637] Trial 87 finished with value: 0.3912791505710718 and parameters: {'depth': 11, 'learning_rate': 0.0034330579422482107, 'l2_leaf_reg': 3.484342069266285, 'subsample': 0.9868615516798331, 'random_strength': 0.5506038897098327, 'bagging_temperature': 0.002294000247477408, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:49,961] Trial 88 finished with value: 0.33552623552720623 and parameters: {'depth': 9, 'learning_rate': 0.0030116942196450167, 'l2_leaf_reg': 5.3216280201365125, 'subsample': 0.9636856351158655, 'random_strength': 0.6820527093590296, 'bagging_temperature': 0.001003090844247279, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:52,946] Trial 89 finished with value: 0.3246629999329732 and parameters: {'depth': 4, 'learning_rate': 0.002307597765013115, 'l2_leaf_reg': 4.8081891756927835, 'subsample': 0.928051393966785, 'random_strength': 0.7479777333593867, 'bagging_temperature': 0.0012693127993313842, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:56,018] Trial 90 finished with value: 0.3238071995105084 and parameters: {'depth': 5, 'learning_rate': 0.0067676074542261, 'l2_leaf_reg': 2.654612028860591, 'subsample': 0.8802925680309083, 'random_strength': 0.38107066493932784, 'bagging_temperature': 0.0017196744180922867, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:57:59,119] Trial 91 finished with value: 0.3092647581967304 and parameters: {'depth': 4, 'learning_rate': 0.0027827139447404747, 'l2_leaf_reg': 3.9080762170115992, 'subsample': 0.9801196856637318, 'random_strength': 0.49400038569349697, 'bagging_temperature': 0.005925449512966828, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:02,238] Trial 92 finished with value: 0.313020425013872 and parameters: {'depth': 4, 'learning_rate': 0.012611956720691795, 'l2_leaf_reg': 3.3137931966940086, 'subsample': 0.9682055996292308, 'random_strength': 0.5230524996828188, 'bagging_temperature': 0.004571062114334772, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:05,267] Trial 93 finished with value: 0.31272562678916205 and parameters: {'depth': 4, 'learning_rate': 0.0027147261678893155, 'l2_leaf_reg': 4.355629714774093, 'subsample': 0.7855197124903451, 'random_strength': 0.5749361581500216, 'bagging_temperature': 0.0035129595871132456, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:08,352] Trial 94 finished with value: 0.32461402554283975 and parameters: {'depth': 4, 'learning_rate': 0.0021176807364776435, 'l2_leaf_reg': 2.868890312708975, 'subsample': 0.8219066970702139, 'random_strength': 0.20587208687145409, 'bagging_temperature': 0.008785271592126095, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:11,414] Trial 95 finished with value: 0.3261263886196616 and parameters: {'depth': 5, 'learning_rate': 0.0024506236305784678, 'l2_leaf_reg': 3.438178672474596, 'subsample': 0.9394902952309594, 'random_strength': 0.17522481884233726, 'bagging_temperature': 0.005146138832604992, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:14,562] Trial 96 finished with value: 0.3272714712029969 and parameters: {'depth': 4, 'learning_rate': 0.0031935445921132803, 'l2_leaf_reg': 3.9943605830414506, 'subsample': 0.9130647939784089, 'random_strength': 0.4553862072965025, 'bagging_temperature': 0.010565185535044647, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:17,714] Trial 97 finished with value: 0.29941511904015666 and parameters: {'depth': 4, 'learning_rate': 0.0028402683438198155, 'l2_leaf_reg': 3.701694122372071, 'subsample': 0.9513647697537649, 'random_strength': 0.6249952833268766, 'bagging_temperature': 0.0014556061828534183, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:21,006] Trial 98 finished with value: 0.30758820535722387 and parameters: {'depth': 6, 'learning_rate': 0.0020287210584426425, 'l2_leaf_reg': 3.1756812506197565, 'subsample': 0.9499452479580112, 'random_strength': 0.6359812704164274, 'bagging_temperature': 0.0015394627386319806, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:24,192] Trial 99 finished with value: 0.32770947233485376 and parameters: {'depth': 5, 'learning_rate': 0.003632106843486239, 'l2_leaf_reg': 3.6976945768233724, 'subsample': 0.7174777156615202, 'random_strength': 0.6179284803010548, 'bagging_temperature': 0.0019796001839668402, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:27,317] Trial 100 finished with value: 0.33465309212068767 and parameters: {'depth': 4, 'learning_rate': 0.0022288111329535946, 'l2_leaf_reg': 4.15859332435168, 'subsample': 0.9908777157998596, 'random_strength': 0.15309012420407908, 'bagging_temperature': 0.0011532783580612501, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:30,323] Trial 101 finished with value: 0.29943710338689195 and parameters: {'depth': 4, 'learning_rate': 0.002787254719535484, 'l2_leaf_reg': 4.5479095584619635, 'subsample': 0.9599942722835054, 'random_strength': 0.4893419253742354, 'bagging_temperature': 0.002508681139369724, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:33,428] Trial 102 finished with value: 0.30682901210229474 and parameters: {'depth': 4, 'learning_rate': 0.0028860327727750555, 'l2_leaf_reg': 4.448789310282099, 'subsample': 0.9579236174869756, 'random_strength': 0.5312514428462946, 'bagging_temperature': 0.0013889777268116246, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:36,449] Trial 103 finished with value: 0.3147533940975123 and parameters: {'depth': 4, 'learning_rate': 0.002597332081721242, 'l2_leaf_reg': 5.690940240777066, 'subsample': 0.6572074214883543, 'random_strength': 0.4248141185614665, 'bagging_temperature': 0.002711388562892509, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:39,520] Trial 104 finished with value: 0.31271083610982675 and parameters: {'depth': 4, 'learning_rate': 0.003336534221887939, 'l2_leaf_reg': 2.951062628604816, 'subsample': 0.9280033468621565, 'random_strength': 0.5704191955393975, 'bagging_temperature': 0.004164197600158726, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:42,595] Trial 105 finished with value: 0.3318264357631597 and parameters: {'depth': 5, 'learning_rate': 0.002373540250697798, 'l2_leaf_reg': 1.1900612083896147, 'subsample': 0.9684611330108953, 'random_strength': 0.6800774911513658, 'bagging_temperature': 0.0022874502141846283, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:45,816] Trial 106 finished with value: 0.3040065962006174 and parameters: {'depth': 4, 'learning_rate': 0.0030704144006086023, 'l2_leaf_reg': 7.231361396013232, 'subsample': 0.939269071815845, 'random_strength': 0.5059755978919838, 'bagging_temperature': 0.0030219527223295005, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:48,851] Trial 107 finished with value: 0.34086472985181787 and parameters: {'depth': 4, 'learning_rate': 0.003757520116083281, 'l2_leaf_reg': 7.8473031741740655, 'subsample': 0.8125557007125576, 'random_strength': 0.4887179561767058, 'bagging_temperature': 0.30445197625474163, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:52,040] Trial 108 finished with value: 0.30206759226640434 and parameters: {'depth': 4, 'learning_rate': 0.003050316893923633, 'l2_leaf_reg': 8.664608541442298, 'subsample': 0.9178062680413993, 'random_strength': 0.38995799133760994, 'bagging_temperature': 0.0031581633945084596, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:55,053] Trial 109 finished with value: 0.34737415457269544 and parameters: {'depth': 4, 'learning_rate': 0.003160748361527038, 'l2_leaf_reg': 9.033300672200543, 'subsample': 0.9146086693654546, 'random_strength': 0.4399341156428419, 'bagging_temperature': 0.0031547900595972358, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:58:58,015] Trial 110 finished with value: 0.31920717833357526 and parameters: {'depth': 4, 'learning_rate': 0.00299992085233583, 'l2_leaf_reg': 7.134889285867935, 'subsample': 0.8682184563045781, 'random_strength': 0.4138894743869552, 'bagging_temperature': 0.002130850063476138, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:01,259] Trial 111 finished with value: 0.3123675248361776 and parameters: {'depth': 4, 'learning_rate': 0.002824975281009547, 'l2_leaf_reg': 8.54111088059383, 'subsample': 0.7371580025172306, 'random_strength': 0.3974293994375521, 'bagging_temperature': 0.0029200231567026646, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:04,246] Trial 112 finished with value: 0.3195901626568555 and parameters: {'depth': 4, 'learning_rate': 0.002566053714721903, 'l2_leaf_reg': 6.123491624428266, 'subsample': 0.9438467082231352, 'random_strength': 0.34757056057179875, 'bagging_temperature': 0.0037496500543261276, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:07,334] Trial 113 finished with value: 0.307041503330521 and parameters: {'depth': 4, 'learning_rate': 0.00495692241824531, 'l2_leaf_reg': 7.649173411029218, 'subsample': 0.9857580676960512, 'random_strength': 0.5054962545607302, 'bagging_temperature': 0.0047057018287058145, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:10,407] Trial 114 finished with value: 0.3107732940200341 and parameters: {'depth': 4, 'learning_rate': 0.0032953544379932132, 'l2_leaf_reg': 9.959855718226168, 'subsample': 0.8954977666553972, 'random_strength': 0.47488467805851076, 'bagging_temperature': 0.00182235115637199, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:13,519] Trial 115 finished with value: 0.32684423728890605 and parameters: {'depth': 4, 'learning_rate': 0.004127385240800281, 'l2_leaf_reg': 6.494149323087516, 'subsample': 0.954751669167722, 'random_strength': 0.4591073073819451, 'bagging_temperature': 0.0025550147153709786, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:16,615] Trial 116 finished with value: 0.3065637681595315 and parameters: {'depth': 4, 'learning_rate': 0.0030364643922001365, 'l2_leaf_reg': 8.514668135138464, 'subsample': 0.9743190869344386, 'random_strength': 0.3796982542630344, 'bagging_temperature': 0.1346263067234211, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:19,715] Trial 117 finished with value: 0.32462294586884805 and parameters: {'depth': 5, 'learning_rate': 0.0027002232788642293, 'l2_leaf_reg': 7.164018361623553, 'subsample': 0.9640957754890962, 'random_strength': 0.5547526558798153, 'bagging_temperature': 0.0011590822151820344, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:22,788] Trial 118 finished with value: 0.32073964773610236 and parameters: {'depth': 4, 'learning_rate': 0.0035539548807676214, 'l2_leaf_reg': 4.5406175888470495, 'subsample': 0.9999775834155322, 'random_strength': 0.3100058726151293, 'bagging_temperature': 0.0034533797799299313, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:25,858] Trial 119 finished with value: 0.3231818255464238 and parameters: {'depth': 4, 'learning_rate': 0.0023957610942570116, 'l2_leaf_reg': 5.257159137529441, 'subsample': 0.6754939067645689, 'random_strength': 0.43223838562287864, 'bagging_temperature': 0.0016804870029672296, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:29,003] Trial 120 finished with value: 0.3486570306812908 and parameters: {'depth': 5, 'learning_rate': 0.0028756140396501463, 'l2_leaf_reg': 8.371019070675874, 'subsample': 0.9209216819315299, 'random_strength': 0.3982558405745718, 'bagging_temperature': 0.00248435637090195, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:32,121] Trial 121 finished with value: 0.32865528905112446 and parameters: {'depth': 5, 'learning_rate': 0.0022933802611477473, 'l2_leaf_reg': 2.820404660708725, 'subsample': 0.9343046097269104, 'random_strength': 0.6213301192914159, 'bagging_temperature': 0.0014695408175069047, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:35,197] Trial 122 finished with value: 0.29731234090620956 and parameters: {'depth': 4, 'learning_rate': 0.00245598903928933, 'l2_leaf_reg': 9.351161528973849, 'subsample': 0.939386019314716, 'random_strength': 0.5053856769856142, 'bagging_temperature': 0.001270163119708821, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:38,247] Trial 123 finished with value: 0.3114306584067909 and parameters: {'depth': 4, 'learning_rate': 0.0025471856627635133, 'l2_leaf_reg': 9.306303501744004, 'subsample': 0.9479901912324915, 'random_strength': 0.5028571740656577, 'bagging_temperature': 0.0013062360712729904, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:41,266] Trial 124 finished with value: 0.31913216409987855 and parameters: {'depth': 4, 'learning_rate': 0.002736403049410785, 'l2_leaf_reg': 4.898656162488163, 'subsample': 0.9041272229266372, 'random_strength': 0.46078393058522427, 'bagging_temperature': 0.0021078429090883367, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:44,303] Trial 125 finished with value: 0.31377882335216273 and parameters: {'depth': 4, 'learning_rate': 0.002488779534953913, 'l2_leaf_reg': 9.698738029790437, 'subsample': 0.9599454341767423, 'random_strength': 0.5415659170574131, 'bagging_temperature': 0.0043238101904567484, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:47,328] Trial 126 finished with value: 0.31406768139087027 and parameters: {'depth': 4, 'learning_rate': 0.0030576512594115675, 'l2_leaf_reg': 8.735483305476622, 'subsample': 0.6300892358079863, 'random_strength': 0.5123644405784374, 'bagging_temperature': 0.005991451139103621, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:50,420] Trial 127 finished with value: 0.3067232576219739 and parameters: {'depth': 4, 'learning_rate': 0.002185277664177921, 'l2_leaf_reg': 7.334600462310504, 'subsample': 0.9829354753361804, 'random_strength': 0.4861084588390951, 'bagging_temperature': 0.001000815202629478, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:53,425] Trial 128 finished with value: 0.3065386290974608 and parameters: {'depth': 4, 'learning_rate': 0.0026515688174672, 'l2_leaf_reg': 5.830247465275267, 'subsample': 0.9730534596790281, 'random_strength': 0.6612774564965823, 'bagging_temperature': 0.0028709895963618943, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:56,442] Trial 129 finished with value: 0.3104135674507697 and parameters: {'depth': 4, 'learning_rate': 0.0028227070109710884, 'l2_leaf_reg': 4.258323779263794, 'subsample': 0.9396948062619962, 'random_strength': 0.23508105518642072, 'bagging_temperature': 0.0018678798301889528, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 18:59:59,460] Trial 130 finished with value: 0.321977623683323 and parameters: {'depth': 4, 'learning_rate': 0.0033422188891177582, 'l2_leaf_reg': 4.672815246948107, 'subsample': 0.990021179086652, 'random_strength': 0.4482379925161299, 'bagging_temperature': 0.0011801150075881498, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:02,643] Trial 131 finished with value: 0.30562005584748986 and parameters: {'depth': 5, 'learning_rate': 0.0023425047576544626, 'l2_leaf_reg': 3.37575336355868, 'subsample': 0.929634295743383, 'random_strength': 0.7032271289883042, 'bagging_temperature': 0.0015484572419769075, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:05,725] Trial 132 finished with value: 0.3428214238002572 and parameters: {'depth': 5, 'learning_rate': 0.002133775805981068, 'l2_leaf_reg': 3.0810206326014122, 'subsample': 0.9541817517625736, 'random_strength': 0.5999448469812049, 'bagging_temperature': 0.0014098491642260988, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:08,887] Trial 133 finished with value: 0.32345114360013355 and parameters: {'depth': 4, 'learning_rate': 0.0022336347952927856, 'l2_leaf_reg': 8.157906440029201, 'subsample': 0.9413687297238517, 'random_strength': 0.13602143775688508, 'bagging_temperature': 0.0024599919674992573, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:12,035] Trial 134 finished with value: 0.3057372761561087 and parameters: {'depth': 5, 'learning_rate': 0.009675219849009844, 'l2_leaf_reg': 3.7535014016288146, 'subsample': 0.9240111383213133, 'random_strength': 0.5713684515811601, 'bagging_temperature': 0.0016614055869035545, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:15,105] Trial 135 finished with value: 0.32510057757897665 and parameters: {'depth': 4, 'learning_rate': 0.002430868564821829, 'l2_leaf_reg': 2.631911436027276, 'subsample': 0.8897074044486085, 'random_strength': 0.5239065170786877, 'bagging_temperature': 0.0011537719566533872, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:18,290] Trial 136 finished with value: 0.3042630993967819 and parameters: {'depth': 4, 'learning_rate': 0.002596740994603661, 'l2_leaf_reg': 9.091917597111944, 'subsample': 0.9642080832614416, 'random_strength': 0.16789344786774882, 'bagging_temperature': 0.003857508508322423, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:21,377] Trial 137 finished with value: 0.30452126087148107 and parameters: {'depth': 4, 'learning_rate': 0.002944219649498882, 'l2_leaf_reg': 9.319361801146146, 'subsample': 0.9685423217140913, 'random_strength': 0.1688458681473405, 'bagging_temperature': 0.005330833394508144, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:24,422] Trial 138 finished with value: 0.31661732116121377 and parameters: {'depth': 4, 'learning_rate': 0.003010908258628214, 'l2_leaf_reg': 9.154430291800074, 'subsample': 0.964722744668799, 'random_strength': 0.1641665533834849, 'bagging_temperature': 0.005319438181106858, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:27,419] Trial 139 finished with value: 0.33885730895352856 and parameters: {'depth': 4, 'learning_rate': 0.003202918671693323, 'l2_leaf_reg': 9.691186398501248, 'subsample': 0.979857979295796, 'random_strength': 0.1784418211762863, 'bagging_temperature': 0.02510845491131976, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:30,451] Trial 140 finished with value: 0.31464259770434794 and parameters: {'depth': 4, 'learning_rate': 0.002645865119143306, 'l2_leaf_reg': 9.073662327143762, 'subsample': 0.9481932455927449, 'random_strength': 0.19842199166009783, 'bagging_temperature': 0.004056556570835046, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:33,589] Trial 141 finished with value: 0.321845279564061 and parameters: {'depth': 4, 'learning_rate': 0.0028904019384175853, 'l2_leaf_reg': 8.85050442022469, 'subsample': 0.9701858046736611, 'random_strength': 0.18523546672529315, 'bagging_temperature': 0.0037607786030355948, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:36,823] Trial 142 finished with value: 0.31559819266987016 and parameters: {'depth': 4, 'learning_rate': 0.0024959910488590678, 'l2_leaf_reg': 7.72563916663595, 'subsample': 0.985941129159433, 'random_strength': 0.1632790216194325, 'bagging_temperature': 0.004756641591596299, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:39,867] Trial 143 finished with value: 0.3150742124925589 and parameters: {'depth': 4, 'learning_rate': 0.008097455069040986, 'l2_leaf_reg': 9.473058310992919, 'subsample': 0.9590419784574923, 'random_strength': 0.17220513434251575, 'bagging_temperature': 0.0031589721691759813, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:42,830] Trial 144 finished with value: 0.35994851553335255 and parameters: {'depth': 4, 'learning_rate': 0.002696184780899948, 'l2_leaf_reg': 8.210050026855981, 'subsample': 0.6972142637968852, 'random_strength': 0.19268655209548385, 'bagging_temperature': 0.008063722311835915, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:45,985] Trial 145 finished with value: 0.2999424644516388 and parameters: {'depth': 4, 'learning_rate': 0.002862654508789156, 'l2_leaf_reg': 9.951876401244622, 'subsample': 0.9757801211512693, 'random_strength': 0.15491067123011956, 'bagging_temperature': 0.0055779477118632105, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:49,459] Trial 146 finished with value: 0.34270239922920515 and parameters: {'depth': 7, 'learning_rate': 0.003123855691559611, 'l2_leaf_reg': 9.006655438063712, 'subsample': 0.9907289817402894, 'random_strength': 0.15310617375994512, 'bagging_temperature': 0.006281836976576448, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:52,573] Trial 147 finished with value: 0.3171983423530354 and parameters: {'depth': 4, 'learning_rate': 0.0035202474137355578, 'l2_leaf_reg': 6.987308741477507, 'subsample': 0.9757304806809624, 'random_strength': 0.14043905726710404, 'bagging_temperature': 0.006896869912224523, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:55,674] Trial 148 finished with value: 0.31890435369152076 and parameters: {'depth': 4, 'learning_rate': 0.0029074363468238923, 'l2_leaf_reg': 7.792702200557482, 'subsample': 0.6118652042339211, 'random_strength': 0.21600148370971917, 'bagging_temperature': 0.004999972453603148, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:00:58,744] Trial 149 finished with value: 0.3068220043596396 and parameters: {'depth': 4, 'learning_rate': 0.003774359859623174, 'l2_leaf_reg': 9.669014226572148, 'subsample': 0.9545627171671789, 'random_strength': 0.1586986734931401, 'bagging_temperature': 0.004269678556386452, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:01:01,808] Trial 150 finished with value: 0.30938641288684776 and parameters: {'depth': 4, 'learning_rate': 0.0028055998990836367, 'l2_leaf_reg': 8.40126164096992, 'subsample': 0.9674889981516829, 'random_strength': 0.16866656542321287, 'bagging_temperature': 0.003263954037778371, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:01:04,855] Trial 151 finished with value: 0.3482421520394727 and parameters: {'depth': 4, 'learning_rate': 0.002554863017246392, 'l2_leaf_reg': 3.9311228471411064, 'subsample': 0.9818233037063961, 'random_strength': 0.15654238108489443, 'bagging_temperature': 0.003921792430233044, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:01:07,856] Trial 152 finished with value: 0.3155255223973941 and parameters: {'depth': 4, 'learning_rate': 0.0023763649754412965, 'l2_leaf_reg': 9.946440449250714, 'subsample': 0.9989117156091758, 'random_strength': 0.4204911979857503, 'bagging_temperature': 0.002786057180682576, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:01:10,874] Trial 153 finished with value: 0.327511248380511 and parameters: {'depth': 4, 'learning_rate': 0.0020082175291411784, 'l2_leaf_reg': 3.588206195786707, 'subsample': 0.7073890199133982, 'random_strength': 0.1469684958982907, 'bagging_temperature': 0.005777354276051847, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:01:13,908] Trial 154 finished with value: 0.34467719155812565 and parameters: {'depth': 4, 'learning_rate': 0.002632198276936736, 'l2_leaf_reg': 6.564658438750967, 'subsample': 0.9470946174718292, 'random_strength': 0.12600728043137296, 'bagging_temperature': 0.0034445667077721872, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:01:16,989] Trial 155 finished with value: 0.35369357489915587 and parameters: {'depth': 4, 'learning_rate': 0.0029770109758928257, 'l2_leaf_reg': 8.641740919880974, 'subsample': 0.7643007052493608, 'random_strength': 0.17831836351757135, 'bagging_temperature': 0.00758053599333537, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:01:19,982] Trial 156 finished with value: 0.3211161466059765 and parameters: {'depth': 4, 'learning_rate': 0.003384657738697759, 'l2_leaf_reg': 5.030231643463843, 'subsample': 0.9629945205482765, 'random_strength': 0.48101810752678176, 'bagging_temperature': 0.002149606206345567, 'max_epochs': 300}. Best is trial 62 with value: 0.2968609564220695.
+[I 2026-04-12 19:01:23,184] Trial 157 finished with value: 0.2968162868100914 and parameters: {'depth': 4, 'learning_rate': 0.002490013082887413, 'l2_leaf_reg': 9.382083734051669, 'subsample': 0.6821355922889006, 'random_strength': 0.13255568941635779, 'bagging_temperature': 0.005233078715265604, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:26,305] Trial 158 finished with value: 0.30497010445504885 and parameters: {'depth': 4, 'learning_rate': 0.002785784342060977, 'l2_leaf_reg': 9.238951288709256, 'subsample': 0.9745629341185815, 'random_strength': 0.13389831377007957, 'bagging_temperature': 0.005174252630241342, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:29,518] Trial 159 finished with value: 0.3082635738770844 and parameters: {'depth': 4, 'learning_rate': 0.002740661998598994, 'l2_leaf_reg': 9.306175803095421, 'subsample': 0.9754951333341058, 'random_strength': 0.11946244077537611, 'bagging_temperature': 0.00486217444721535, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:32,796] Trial 160 finished with value: 0.3178049848255579 and parameters: {'depth': 4, 'learning_rate': 0.0024959823824080934, 'l2_leaf_reg': 9.97621444617527, 'subsample': 0.9902298469539347, 'random_strength': 0.1326136641045919, 'bagging_temperature': 0.04571668676748067, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:35,890] Trial 161 finished with value: 0.3127242388894989 and parameters: {'depth': 4, 'learning_rate': 0.0031834954148670155, 'l2_leaf_reg': 8.7346514182288, 'subsample': 0.9567152916703497, 'random_strength': 0.1214737455871558, 'bagging_temperature': 0.005544389247552249, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:39,011] Trial 162 finished with value: 0.3101167721962948 and parameters: {'depth': 4, 'learning_rate': 0.0028173333659461904, 'l2_leaf_reg': 9.398712280302837, 'subsample': 0.9338777365661662, 'random_strength': 0.14452152120809772, 'bagging_temperature': 0.009550708601045132, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:42,427] Trial 163 finished with value: 0.3349245461154278 and parameters: {'depth': 4, 'learning_rate': 0.0030642460768176, 'l2_leaf_reg': 8.095888582466014, 'subsample': 0.6882140791587366, 'random_strength': 0.10798100534833982, 'bagging_temperature': 0.006623188380757544, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:45,375] Trial 164 finished with value: 0.36661898135401344 and parameters: {'depth': 4, 'learning_rate': 0.0026223541705573637, 'l2_leaf_reg': 8.923265703905043, 'subsample': 0.9697191027319708, 'random_strength': 0.13202598519396802, 'bagging_temperature': 0.004783591449361581, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:48,420] Trial 165 finished with value: 0.3067680641847601 and parameters: {'depth': 4, 'learning_rate': 0.002940763979984826, 'l2_leaf_reg': 9.465854501916825, 'subsample': 0.9824449905434492, 'random_strength': 0.10631255655585461, 'bagging_temperature': 0.004426377084742615, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:51,441] Trial 166 finished with value: 0.31325300772201164 and parameters: {'depth': 4, 'learning_rate': 0.002476211320191104, 'l2_leaf_reg': 7.598650505234661, 'subsample': 0.600541929171703, 'random_strength': 0.26025201242092266, 'bagging_temperature': 0.0012765938740683213, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:54,583] Trial 167 finished with value: 0.35106872607796946 and parameters: {'depth': 5, 'learning_rate': 0.0027790637037755023, 'l2_leaf_reg': 3.2110636101144205, 'subsample': 0.9458654591945127, 'random_strength': 0.15114000715348336, 'bagging_temperature': 0.005626561956576215, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:01:57,707] Trial 168 finished with value: 0.33196393798432583 and parameters: {'depth': 4, 'learning_rate': 0.0023274296745529398, 'l2_leaf_reg': 9.124761808453224, 'subsample': 0.6688939758826818, 'random_strength': 0.4455304511640328, 'bagging_temperature': 0.0011005767594068718, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:00,813] Trial 169 finished with value: 0.3213846706194764 and parameters: {'depth': 4, 'learning_rate': 0.002583797741368847, 'l2_leaf_reg': 8.503437712883862, 'subsample': 0.6812630048628596, 'random_strength': 0.1397621874137741, 'bagging_temperature': 0.0030337246985165716, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:04,136] Trial 170 finished with value: 0.3100607449214648 and parameters: {'depth': 5, 'learning_rate': 0.0031731392290898666, 'l2_leaf_reg': 9.952443490067303, 'subsample': 0.972112627625264, 'random_strength': 0.4752855428582232, 'bagging_temperature': 0.0038922508049885627, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:07,304] Trial 171 finished with value: 0.3113192507539731 and parameters: {'depth': 4, 'learning_rate': 0.0022247839802179525, 'l2_leaf_reg': 4.586390733211867, 'subsample': 0.9611574039294631, 'random_strength': 0.7471810515720664, 'bagging_temperature': 0.003715751635876117, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:10,295] Trial 172 finished with value: 0.34962525317585297 and parameters: {'depth': 4, 'learning_rate': 0.0023957879595940005, 'l2_leaf_reg': 3.9840560124985083, 'subsample': 0.9922036759020052, 'random_strength': 0.1679140610692041, 'bagging_temperature': 0.0026184434038153295, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:13,432] Trial 173 finished with value: 0.3178009216934706 and parameters: {'depth': 4, 'learning_rate': 0.002697047983494752, 'l2_leaf_reg': 4.201242147609988, 'subsample': 0.9384866688413663, 'random_strength': 0.5357298172842886, 'bagging_temperature': 0.0033556508581949604, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:17,260] Trial 174 finished with value: 0.33271873517339223 and parameters: {'depth': 8, 'learning_rate': 0.00213072475561267, 'l2_leaf_reg': 9.462050498701586, 'subsample': 0.6628786236065183, 'random_strength': 0.49563840698122563, 'bagging_temperature': 0.00434669542846803, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:23,012] Trial 175 finished with value: 0.34369402801583043 and parameters: {'depth': 10, 'learning_rate': 0.0023111224726301465, 'l2_leaf_reg': 3.001357759298218, 'subsample': 0.9495702113944563, 'random_strength': 0.3613600004843632, 'bagging_temperature': 0.005170417163599842, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:26,135] Trial 176 finished with value: 0.32512554664240556 and parameters: {'depth': 4, 'learning_rate': 0.0028579445537035533, 'l2_leaf_reg': 4.440077113240245, 'subsample': 0.6499716802859363, 'random_strength': 0.6414564522983381, 'bagging_temperature': 0.0064525776770204555, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:29,959] Trial 177 finished with value: 0.3125794314635429 and parameters: {'depth': 4, 'learning_rate': 0.002523429107607409, 'l2_leaf_reg': 4.771338320533097, 'subsample': 0.8553836520440523, 'random_strength': 0.4044939049499093, 'bagging_temperature': 0.0019077522074672267, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:33,478] Trial 178 finished with value: 0.31250002049728176 and parameters: {'depth': 4, 'learning_rate': 0.01783253903923215, 'l2_leaf_reg': 8.74903750452859, 'subsample': 0.7811717864489304, 'random_strength': 0.29103129211929923, 'bagging_temperature': 0.0010078467785927918, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:36,990] Trial 179 finished with value: 0.3050739418270429 and parameters: {'depth': 4, 'learning_rate': 0.002942596701134029, 'l2_leaf_reg': 5.244310844230803, 'subsample': 0.9801479000646752, 'random_strength': 0.43327152478481823, 'bagging_temperature': 0.007408980689789131, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:40,664] Trial 180 finished with value: 0.3147523845880167 and parameters: {'depth': 4, 'learning_rate': 0.0029681347259781004, 'l2_leaf_reg': 5.498758119828803, 'subsample': 0.9798193907949666, 'random_strength': 0.4638017832618881, 'bagging_temperature': 0.008329443757026978, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:44,413] Trial 181 finished with value: 0.3115401110271893 and parameters: {'depth': 4, 'learning_rate': 0.0026978337362868355, 'l2_leaf_reg': 6.270854310265117, 'subsample': 0.9999198168146158, 'random_strength': 0.42954576848776227, 'bagging_temperature': 0.007383119489728628, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:47,974] Trial 182 finished with value: 0.29920268133802863 and parameters: {'depth': 4, 'learning_rate': 0.0033617407727970544, 'l2_leaf_reg': 5.006669425716175, 'subsample': 0.8334765157819796, 'random_strength': 0.4411003846961011, 'bagging_temperature': 0.005875189253028739, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:51,478] Trial 183 finished with value: 0.3239120922159403 and parameters: {'depth': 4, 'learning_rate': 0.0034305487811006523, 'l2_leaf_reg': 5.178617179228571, 'subsample': 0.847234189134151, 'random_strength': 0.4403274153107216, 'bagging_temperature': 0.014550631308682033, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:54,927] Trial 184 finished with value: 0.31530308989699196 and parameters: {'depth': 4, 'learning_rate': 0.0032581657135974293, 'l2_leaf_reg': 5.713042974294507, 'subsample': 0.7994596788600583, 'random_strength': 0.46159338206192885, 'bagging_temperature': 0.001339922544558177, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:02:58,779] Trial 185 finished with value: 0.32867818484386885 and parameters: {'depth': 4, 'learning_rate': 0.0031175735696227637, 'l2_leaf_reg': 4.959654474511159, 'subsample': 0.9655988396374139, 'random_strength': 0.41281570604983137, 'bagging_temperature': 0.005663514588906223, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:02,489] Trial 186 finished with value: 0.30940897858529653 and parameters: {'depth': 4, 'learning_rate': 0.003645146954428961, 'l2_leaf_reg': 5.419234794776026, 'subsample': 0.8751754896971073, 'random_strength': 0.5098274138868142, 'bagging_temperature': 0.006935269481094368, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:05,936] Trial 187 finished with value: 0.3068593825806752 and parameters: {'depth': 4, 'learning_rate': 0.0028999425369894078, 'l2_leaf_reg': 2.761631912050659, 'subsample': 0.9743061621475924, 'random_strength': 0.43076241733423076, 'bagging_temperature': 0.0061246708794782286, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:09,404] Trial 188 finished with value: 0.34796602793600545 and parameters: {'depth': 4, 'learning_rate': 0.0030309653629776363, 'l2_leaf_reg': 4.8416385710524965, 'subsample': 0.9105955180081796, 'random_strength': 0.4806332716018246, 'bagging_temperature': 0.004286989956892285, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:12,989] Trial 189 finished with value: 0.3392521376429389 and parameters: {'depth': 4, 'learning_rate': 0.0033218293776424066, 'l2_leaf_reg': 8.029680807621059, 'subsample': 0.8282335460422962, 'random_strength': 0.3875265337302491, 'bagging_temperature': 0.004977067881157239, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:17,037] Trial 190 finished with value: 0.3325537353663364 and parameters: {'depth': 6, 'learning_rate': 0.0027889863769095854, 'l2_leaf_reg': 5.238453687166095, 'subsample': 0.955988554536823, 'random_strength': 0.44820035504013667, 'bagging_temperature': 0.0053413805842675716, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:20,633] Trial 191 finished with value: 0.3135712202834363 and parameters: {'depth': 4, 'learning_rate': 0.0024624418053546746, 'l2_leaf_reg': 4.719339865044564, 'subsample': 0.987602040137234, 'random_strength': 0.49799458976162164, 'bagging_temperature': 0.0035023890041933872, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:24,097] Trial 192 finished with value: 0.3303896143746617 and parameters: {'depth': 4, 'learning_rate': 0.0026023806614809027, 'l2_leaf_reg': 4.38596955163367, 'subsample': 0.8113220830437773, 'random_strength': 0.15927903810391783, 'bagging_temperature': 0.00441852224137275, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:27,546] Trial 193 finished with value: 0.30387837102420284 and parameters: {'depth': 4, 'learning_rate': 0.003050658610884564, 'l2_leaf_reg': 4.554822225595503, 'subsample': 0.9662540539506512, 'random_strength': 0.5541449747157612, 'bagging_temperature': 0.003089256396719628, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:30,989] Trial 194 finished with value: 0.3000383086953902 and parameters: {'depth': 4, 'learning_rate': 0.0030710271115583676, 'l2_leaf_reg': 4.1567669426800276, 'subsample': 0.9642831732694624, 'random_strength': 0.5475228380493571, 'bagging_temperature': 0.0030650975664945675, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:34,584] Trial 195 finished with value: 0.32269909104098327 and parameters: {'depth': 4, 'learning_rate': 0.003165081345256609, 'l2_leaf_reg': 4.127044129932935, 'subsample': 0.9643219402255426, 'random_strength': 0.5603044502571773, 'bagging_temperature': 0.0028689486845057204, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:38,136] Trial 196 finished with value: 0.3062265013124755 and parameters: {'depth': 4, 'learning_rate': 0.0028646478189946695, 'l2_leaf_reg': 3.747285792608724, 'subsample': 0.9776036494665904, 'random_strength': 0.5343644947163287, 'bagging_temperature': 0.0030525175654452855, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:41,716] Trial 197 finished with value: 0.3188938813851168 and parameters: {'depth': 4, 'learning_rate': 0.005784726039585038, 'l2_leaf_reg': 4.331498455270839, 'subsample': 0.9564873549362842, 'random_strength': 0.5778071989605299, 'bagging_temperature': 0.002285149697427293, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:45,450] Trial 198 finished with value: 0.31902387089956225 and parameters: {'depth': 4, 'learning_rate': 0.0030024847696626575, 'l2_leaf_reg': 4.593230188017831, 'subsample': 0.9692941379165679, 'random_strength': 0.5223501136093818, 'bagging_temperature': 0.00249708774922864, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.
+[I 2026-04-12 19:03:49,241] Trial 199 finished with value: 0.3023174955089244 and parameters: {'depth': 4, 'learning_rate': 0.003943608459098256, 'l2_leaf_reg': 4.200827632917411, 'subsample': 0.9826172165796226, 'random_strength': 0.5943828972280177, 'bagging_temperature': 0.00388823918717149, 'max_epochs': 300}. Best is trial 157 with value: 0.2968162868100914.

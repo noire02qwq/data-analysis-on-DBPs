@@ -1,0 +1,9 @@
+model_name = "catboost_regressor"
+model_type = "CATBOOST"
+model_format = "catboost"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT", "fDOM-RT", "DO-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2", "pH-PPL1", "pH-PPL2", "cond-PPL1", "cond-PPL2"]
+
+[eval]
+best_val_loss = 0.31890435369152076
+test_loss = 1.7406819516802001

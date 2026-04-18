@@ -1,0 +1,9 @@
+model_name = "lightgbm_regressor"
+model_type = "LIGHTGBM"
+model_format = "lightgbm"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT", "fDOM-RT", "DO-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2", "pH-PPL1", "pH-PPL2", "cond-PPL1", "cond-PPL2"]
+
+[eval]
+best_val_loss = 0.34193117700588643
+test_loss = 1.8528727800519798

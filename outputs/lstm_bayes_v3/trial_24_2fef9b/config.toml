@@ -1,0 +1,48 @@
+[model]
+type = "LSTM"
+name = "lstm_regressor"
+history_length = 96
+num_layers = 3
+units = 213
+dropout = 0.24343263149875194
+batch_size = 305
+learning_rate = 0.00028991941228319665
+weight_decay = 0.0031447495667987543
+
+[training]
+max_epochs = 100
+batch_size = 128
+learning_rate = 0.001
+weight_decay = 0.0
+patience = 10
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]
+units = 128
+num_layers = 2
+dropout = 0.2

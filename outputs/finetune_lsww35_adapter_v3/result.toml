@@ -1,0 +1,9 @@
+model_name = "transformer_lsww_35c_adapter_finetune"
+model_type = "TRANSFORMER"
+finetune_method = "adapter"
+dataset = "lsww_35c"
+
+[eval]
+best_val_loss = 0.318618968129158
+test_loss = 0.45835759137806137
+best_epoch = 1

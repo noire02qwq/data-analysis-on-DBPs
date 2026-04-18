@@ -65,6 +65,31 @@ python scripts/autotune.py \
 python scripts/test.py --model-dir outputs/rnn_regressor/<timestamp>
 ```
 
+### 6. Complete All Models (Bayesian Optimization + Training + Testing)
+
+```bash
+python scripts/complete_all_models.py \
+    --output-dir outputs/complete_experiment \
+    --n-trials 100 \
+    --skip-completed
+```
+
+### 7. Process New Datasets (CAWW_35C, LSWW_29C, LSWW_35C)
+
+```bash
+python scripts/process_all_new_datasets.py
+```
+
+### 8. Fine-Tune Transformer on New Datasets
+
+```bash
+python scripts/fine_tune_transformer.py \
+    --model-path outputs/transformer_regressor/<timestamp>/best_model.pt \
+    --dataset caww_35c \
+    --method full \
+    --output-dir outputs/fine_tune_caww_35c
+```
+
 ## Configuration Files
 
 Model configs are in `models/configs/` with `.toml` extension:

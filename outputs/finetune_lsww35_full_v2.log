@@ -1,0 +1,59 @@
+Using device: cuda
+  Dropping completely null column: DO-RT
+  Dropping completely null column: DO-RT
+  Dropping completely null column: DO-RT
+Input columns after removing completely null: ['TRC-DT', 'pH-DT', 'cond-DT', 'TRC-RT', 'pH-RT', 'fDOM-RT', 'TOC-RT', 'DOC-RT']
+Output columns after removing completely null: ['TRC-PPL1', 'TRC-PPL2', 'pH-PPL1', 'pH-PPL2', 'cond-PPL1', 'cond-PPL2', 'TOC-PPL1', 'TOC-PPL2', 'DOC-PPL1', 'DOC-PPL2']
+Dataset sizes: Train=5343, Val=1124, Test=1106
+Loading pre-trained model from: outputs/caww29_unified/final_models/transformer/best_model.pt
+Handling input dimension mismatch: original 10 inputs → new 8
+Loaded pretrained weights (adjusted for input/output dimensions): 27 keys loaded
+Missing keys (expected for new head): ['head.0.weight', 'head.0.bias']
+Full fine-tuning: All 1,056,004 parameters trainable
+Output directory: outputs/finetune_lsww35_full_v2/lsww_35c_full_20260413_103304
+Epoch   1: train_loss=0.382851, val_loss=0.539289
+Epoch   2: train_loss=0.131289, val_loss=0.569747
+Epoch   3: train_loss=0.097025, val_loss=0.490454
+Epoch   4: train_loss=0.080717, val_loss=0.460775
+Epoch   5: train_loss=0.072100, val_loss=0.456660
+Epoch   6: train_loss=0.067021, val_loss=0.472229
+Epoch   7: train_loss=0.062668, val_loss=0.421685
+Epoch   8: train_loss=0.058378, val_loss=0.383512
+Epoch   9: train_loss=0.055694, val_loss=0.353131
+Epoch  10: train_loss=0.054099, val_loss=0.376122
+Epoch  11: train_loss=0.051825, val_loss=0.321757
+Epoch  12: train_loss=0.050036, val_loss=0.335665
+Epoch  13: train_loss=0.048683, val_loss=0.328250
+Epoch  14: train_loss=0.048161, val_loss=0.308912
+Epoch  15: train_loss=0.046547, val_loss=0.318734
+Epoch  16: train_loss=0.045347, val_loss=0.297401
+Epoch  17: train_loss=0.044771, val_loss=0.290449
+Epoch  18: train_loss=0.043601, val_loss=0.288804
+Epoch  19: train_loss=0.043217, val_loss=0.313079
+Epoch  20: train_loss=0.041997, val_loss=0.307324
+Epoch  21: train_loss=0.041520, val_loss=0.267870
+Epoch  22: train_loss=0.041084, val_loss=0.304010
+Epoch  23: train_loss=0.040510, val_loss=0.284083
+Epoch  24: train_loss=0.039906, val_loss=0.281451
+Epoch  25: train_loss=0.039576, val_loss=0.261113
+Epoch  26: train_loss=0.038601, val_loss=0.275228
+Epoch  27: train_loss=0.038664, val_loss=0.288811
+Epoch  28: train_loss=0.037528, val_loss=0.253059
+Epoch  29: train_loss=0.037835, val_loss=0.278701
+Epoch  30: train_loss=0.036751, val_loss=0.299861
+Epoch  31: train_loss=0.036891, val_loss=0.291853
+Epoch  32: train_loss=0.036495, val_loss=0.263501
+Epoch  33: train_loss=0.035949, val_loss=0.257602
+Epoch  34: train_loss=0.036177, val_loss=0.259887
+Epoch  35: train_loss=0.035115, val_loss=0.274109
+Epoch  36: train_loss=0.034984, val_loss=0.270403
+Epoch  37: train_loss=0.034834, val_loss=0.268955
+Epoch  38: train_loss=0.034170, val_loss=0.274226
+Early stopping at epoch 38 (best at epoch 28)
+
+Best model from epoch 28:
+  Best validation loss: 0.253059
+  Test loss: 0.860294
+
+Fine-tuning complete!
+Output saved to: outputs/finetune_lsww35_full_v2/lsww_35c_full_20260413_103304

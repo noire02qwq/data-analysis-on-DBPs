@@ -1,0 +1,45 @@
+[model]
+type = "MAMBA"
+name = "mamba_regressor"
+history_length = 82
+d_model = 374
+n_layers = 11
+d_state = 40
+d_conv = 7
+expand = 2
+dropout = 0.3295783323283019
+
+[training]
+max_epochs = 150
+batch_size = 189
+learning_rate = 0.001711622944135863
+weight_decay = 0.00017815715128928866
+patience = 15
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]

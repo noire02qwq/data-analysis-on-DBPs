@@ -1,0 +1,35 @@
+Using device: cuda
+  Dropping completely null column: DO-RT
+  Dropping completely null column: DO-RT
+  Dropping completely null column: DO-RT
+Input columns after removing completely null: ['TRC-DT', 'pH-DT', 'cond-DT', 'TRC-RT', 'pH-RT', 'fDOM-RT', 'TOC-RT', 'DOC-RT']
+Output columns after removing completely null: ['TRC-PPL1', 'TRC-PPL2', 'pH-PPL1', 'pH-PPL2', 'cond-PPL1', 'cond-PPL2', 'TOC-PPL1', 'TOC-PPL2', 'DOC-PPL1', 'DOC-PPL2']
+Dataset sizes: Train=5343, Val=1124, Test=1106
+Loading pre-trained model from: outputs/caww29_unified/final_models/transformer/best_model.pt
+Handling input dimension mismatch: original 10 inputs → new 8
+Loaded pretrained weights (adjusted for input/output dimensions): 27 keys loaded
+Missing keys (expected for new head): ['head.0.weight', 'head.0.bias']
+  Partial fine-tuning: 2,570/1,056,004 parameters trainable
+Output directory: outputs/finetune_lsww35_partial_v2/lsww_35c_partial_20260413_103304
+Epoch   1: train_loss=1.197794, val_loss=0.572417
+Epoch   2: train_loss=0.650237, val_loss=0.397377
+Epoch   3: train_loss=0.439501, val_loss=0.337369
+Epoch   4: train_loss=0.345269, val_loss=0.323772
+Epoch   5: train_loss=0.296844, val_loss=0.330485
+Epoch   6: train_loss=0.268979, val_loss=0.361394
+Epoch   7: train_loss=0.252778, val_loss=0.384882
+Epoch   8: train_loss=0.239213, val_loss=0.408969
+Epoch   9: train_loss=0.228461, val_loss=0.439241
+Epoch  10: train_loss=0.220336, val_loss=0.472625
+Epoch  11: train_loss=0.215553, val_loss=0.475874
+Epoch  12: train_loss=0.211372, val_loss=0.489783
+Epoch  13: train_loss=0.205126, val_loss=0.489429
+Epoch  14: train_loss=0.201515, val_loss=0.532224
+Early stopping at epoch 14 (best at epoch 4)
+
+Best model from epoch 4:
+  Best validation loss: 0.323772
+  Test loss: 0.381246
+
+Fine-tuning complete!
+Output saved to: outputs/finetune_lsww35_partial_v2/lsww_35c_partial_20260413_103304

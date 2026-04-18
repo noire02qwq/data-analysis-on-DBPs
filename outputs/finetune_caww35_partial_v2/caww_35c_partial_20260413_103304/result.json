@@ -1,0 +1,7 @@
+{
+  "best_val_loss": 0.20787022014458975,
+  "test_loss": 0.3635082062747743,
+  "best_epoch": 11,
+  "finetune_method": "partial",
+  "dataset": "caww_35c"
+}

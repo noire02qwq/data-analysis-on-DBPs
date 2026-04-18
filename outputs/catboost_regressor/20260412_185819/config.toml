@@ -1,0 +1,41 @@
+[model]
+type = "CATBOOST"
+name = "catboost_regressor"
+depth = 6
+learning_rate = 0.05
+l2_leaf_reg = 3.1756812506197565
+subsample = 0.9499452479580112
+random_strength = 0.6359812704164274
+bagging_temperature = 0.0015394627386319806
+
+[training]
+max_epochs = 300
+batch_size = 256
+learning_rate = 0.0020287210584426425
+weight_decay = 0.0
+patience = 10
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+]

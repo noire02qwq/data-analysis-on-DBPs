@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 
 import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import numpy as np
 import polars as pl
 import torch
@@ -26,7 +27,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from models import LSTMRegressor, MLPRegressor, RNNRegressor
+from models import LSTMRegressor, MLPRegressor, RNNRegressor, GRURegressor, TransformerRegressor, MambaRegressor
 from scripts.utils import (
     DatasetBundle,
     build_dataset_bundle,
@@ -75,20 +76,76 @@ def plot_predictions(
     target_names: List[str],
     y_true: np.ndarray,
     y_pred: np.ndarray,
-    output_dir: Path
+    output_dir: Path,
+    timestamps: List[str] = None,
 ) -> None:
     for idx, name in enumerate(target_names):
-        plt.figure(figsize=(8, 4))
-        plt.plot(y_true[:, idx], label="True", alpha=0.7)
-        plt.plot(y_pred[:, idx], label="Predicted", alpha=0.7)
+        plt.figure(figsize=(14, 6))
+
+        if timestamps is not None:
+            # Parse timestamps to datetime for better x-axis
+            from datetime import datetime
+            parsed_times = []
+            for ts in timestamps:
+                try:
+                    dt = datetime.strptime(ts, "%Y/%m/%d %H:%M")
+                    parsed_times.append(dt)
+                except:
+                    parsed_times.append(None)
+
+            # Plot with datetime x-axis
+            plt.plot(parsed_times, y_true[:, idx], label="True", alpha=0.7, linewidth=1.5)
+            plt.plot(parsed_times, y_pred[:, idx], label="Predicted", alpha=0.7, linewidth=1.5)
+
+            # Format x-axis to show dates nicely (day-level to prevent overlap)
+            plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y/%m/%d'))
+            plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=2))  # Every 2 days
+            plt.gcf().autofmt_xdate(rotation=45)
+            plt.xlabel("Date")
+        else:
+            plt.plot(y_true[:, idx], label="True", alpha=0.7)
+            plt.plot(y_pred[:, idx], label="Predicted", alpha=0.7)
+            plt.xlabel("Sample Index")
+
         plt.title(f"{name} - True vs Predicted")
-        plt.xlabel("Sample Index")
         plt.ylabel("Value")
         plt.legend()
         plt.grid(True, linestyle="--", alpha=0.4)
         plt.tight_layout()
         safe_name = name.replace("/", "_").replace(" ", "_")
-        plt.savefig(output_dir / f"{safe_name}_pred_vs_true.png")
+        plt.savefig(output_dir / f"{safe_name}_pred_vs_true.png", dpi=150)
+        plt.close()
+
+
+def plot_scatter(
+    target_names: List[str],
+    y_true: np.ndarray,
+    y_pred: np.ndarray,
+    output_dir: Path
+) -> None:
+    """Plot y=x scatter plots for each target."""
+    for idx, name in enumerate(target_names):
+        plt.figure(figsize=(6, 6))
+        true_vals = y_true[:, idx]
+        pred_vals = y_pred[:, idx]
+
+        # Scatter plot
+        plt.scatter(true_vals, pred_vals, alpha=0.5, s=10)
+
+        # y=x line
+        min_val = min(true_vals.min(), pred_vals.min())
+        max_val = max(true_vals.max(), pred_vals.max())
+        plt.plot([min_val, max_val], [min_val, max_val], 'r--', linewidth=2, label="y=x")
+
+        plt.title(f"{name} - True vs Predicted (y=x)")
+        plt.xlabel(f"True {name}")
+        plt.ylabel(f"Predicted {name}")
+        plt.legend()
+        plt.grid(True, linestyle="--", alpha=0.4)
+        plt.axis('equal')
+        plt.tight_layout()
+        safe_name = name.replace("/", "_").replace(" ", "_")
+        plt.savefig(output_dir / f"{safe_name}_yx_scatter.png")
         plt.close()
 
 
@@ -124,7 +181,8 @@ def load_torch_model(model_dir: Path, model_type: str, input_dim: int, output_di
 
     if model_type == "MLP":
         hidden_layers = model_params.get("hidden_layers", [512, 256, 128])
-        model = MLPRegressor(input_dim=input_dim, output_dim=output_dim, hidden_layers=hidden_layers)
+        dropout = model_params.get("dropout", 0.0)
+        model = MLPRegressor(input_dim=input_dim, output_dim=output_dim, hidden_layers=hidden_layers, dropout=dropout)
     elif model_type == "LSTM":
         hidden_size = model_params.get("units", 192)
         num_layers = model_params.get("num_layers", 2)
@@ -146,15 +204,25 @@ def load_torch_model(model_dir: Path, model_type: str, input_dim: int, output_di
         d_model = model_params.get("d_model", 128)
         nhead = model_params.get("nhead", 8)
         num_encoder_layers = model_params.get("num_encoder_layers", 4)
+        dim_feedforward = model_params.get("dim_feedforward", 512)
         dropout = model_params.get("dropout", 0.1)
-        model = TransformerRegressor(input_dim=input_dim, output_dim=output_dim, d_model=d_model, nhead=nhead, num_encoder_layers=num_encoder_layers, dropout=dropout)
+        model = TransformerRegressor(input_dim=input_dim, output_dim=output_dim, d_model=d_model, nhead=nhead, num_encoder_layers=num_encoder_layers, dim_feedforward=dim_feedforward, dropout=dropout)
+    elif model_type == "MAMBA":
+        from models.mamba_regressor import MambaRegressor
+        d_model = model_params.get("d_model", 128)
+        n_layers = model_params.get("n_layers", 4)
+        d_state = model_params.get("d_state", 16)
+        d_conv = model_params.get("d_conv", 4)
+        expand = model_params.get("expand", 2)
+        dropout = model_params.get("dropout", 0.1)
+        model = MambaRegressor(input_dim=input_dim, output_dim=output_dim, d_model=d_model, n_layers=n_layers, d_state=d_state, d_conv=d_conv, expand=expand, dropout=dropout)
     else:
         raise ValueError(f"Unknown model type: {model_type}")
 
     # Load weights
     best_model_path = model_dir / "best_model.pt"
     if best_model_path.exists():
-        model.load_state_dict(torch.load(best_model_path, map_location=device))
+        model.load_state_dict(torch.load(best_model_path, map_location=device), strict=False)
     else:
         raise FileNotFoundError(f"Model file not found: {best_model_path}")
 
@@ -246,15 +314,76 @@ def main() -> None:
     df_test = pl.read_csv(test_csv, encoding="utf-8-sig")
     columns = df_test.columns
 
-    # Check for timestamp column
-    ts_col = "Date, Time" if "Date, Time" in columns else None
+    # Check for timestamp column - if present, process it
+    if "Date, Time" in columns:
+        df_test = load_time_series(Path(test_csv), "Date, Time")
+        columns = df_test.columns
+    else:
+        # No timestamp column - check if minutes_since_start already exists
+        if "minutes_since_start" not in columns:
+            # Generate minutes_since_start from row index
+            df_test = df_test.with_columns([
+                (pl.arange(0, df_test.height) * 5).alias("minutes_since_start")  # Assume 5 min intervals
+            ])
+        columns = df_test.columns
 
-    df_test = load_time_series(Path(test_csv), ts_col)
+    # Select only the columns that are used by the model (inputs + outputs)
+    # This ensures we only scale the relevant columns
+    model_columns = input_columns + output_columns
+
+    # Check if all required columns exist in the test data
+    missing_cols = [c for c in model_columns if c not in columns]
+    if missing_cols:
+        raise ValueError(f"Missing columns in test data: {missing_cols}. Available: {columns}")
+
+    # Select only the model columns
+    df_test = df_test.select(model_columns)
     columns = df_test.columns
 
     feature_indices, target_indices = get_feature_and_target_indices(columns, input_columns, output_columns)
 
     values_test = df_test.to_numpy().astype(np.float32)
+
+    # Scale only the relevant columns
+    # We need to extract the scalers for only the model columns
+    all_columns_after_load = list(df_test.columns)  # This should match model_columns
+
+    # Get indices of model columns in the full dataset (if we had all columns)
+    # For now, since we selected only model columns, we use all scalers
+    # But we need to make sure the scaler shape matches the data shape
+
+    if scalers_mean.shape[0] != values_test.shape[1]:
+        # Scalers were computed with more columns than the model uses
+        # Need to slice scalers to match the model columns
+        print(f"Note: Scaler shape mismatch - scalers have {scalers_mean.shape[0]} elements, "
+              f"but test data has {values_test.shape[1]} columns. Slicing scalers...")
+
+        # Read train.csv to get full column list
+        train_csv = REPO_ROOT / result.get("train_csv", config.get("data", {}).get("train_csv", "outputs/gbdt_final/data_split/train.csv"))
+        if not train_csv.exists():
+            train_csv = REPO_ROOT / "outputs/gbdt_final/data_split/train.csv"
+
+        df_train = pl.read_csv(train_csv, encoding="utf-8-sig")
+        full_columns = df_train.columns
+
+        # Remove timestamp column if present (it wasn't included in scalers)
+        if "Date, Time" in full_columns:
+            full_columns = [c for c in full_columns if c != "Date, Time"]
+
+        # Find indices of model columns in full columns
+        indices = []
+        for col in model_columns:
+            if col in full_columns:
+                indices.append(full_columns.index(col))
+            else:
+                raise ValueError(f"Model column '{col}' not found in training data columns")
+
+        # Slice scalers
+        scalers_mean = scalers_mean[indices]
+        scalers_std = scalers_std[indices]
+
+        print(f"Sliced scalers from {len(full_columns)} to {len(indices)} elements")
+
     scaled_test = scale_values(values_test, scalers_mean, scalers_std)
 
     history_length = config.get("model", {}).get("history_length", 1)
@@ -279,8 +408,15 @@ def main() -> None:
 
     y_true = test_bundle.targets
 
-    # Compute metrics
-    metrics = compute_metrics(y_true, y_pred)
+    # IMPORTANT: Inverse transform predictions and targets back to original scale
+    # Get scalers for target columns only
+    target_mean = scalers_mean[target_indices]
+    target_std = scalers_std[target_indices]
+    y_true_original = y_true * target_std + target_mean
+    y_pred_original = y_pred * target_std + target_mean
+
+    # Compute metrics on ORIGINAL scale
+    metrics = compute_metrics(y_true_original, y_pred_original)
 
     print(f"Test Results for {model_type}:")
     print(f"  MSE:  {metrics['mse']:.6f}")
@@ -295,12 +431,26 @@ def main() -> None:
         for k, v in metrics.items():
             f.write(f"{k},{v}\n")
 
-    # Plot predictions
-    plot_predictions(output_columns, y_true, y_pred, output_dir)
+    # Get timestamps for plotting if available
+    timestamps = None
+    if "Date, Time" in columns:
+        timestamps = df_test.select("Date, Time").to_numpy().flatten().tolist()
 
-    # Save predictions
-    pred_df = pl.DataFrame(y_pred, schema=output_columns)
+    # Plot predictions (on original scale)
+    plot_predictions(output_columns, y_true_original, y_pred_original, output_dir, timestamps)
+    plot_scatter(output_columns, y_true_original, y_pred_original, output_dir)
+
+    # Save predictions (on original scale)
+    pred_df = pl.DataFrame(y_pred_original, schema=output_columns)
     pred_df.write_csv(output_dir / "test_predictions.csv")
+
+    # Save comparison table (true vs predicted) on original scale
+    comparison_data = {"sample_idx": list(range(len(y_true_original)))}
+    for i, col in enumerate(output_columns):
+        comparison_data[f"{col}_true"] = y_true_original[:, i]
+        comparison_data[f"{col}_pred"] = y_pred_original[:, i]
+    comp_df = pl.DataFrame(comparison_data)
+    comp_df.write_csv(output_dir / "test_comparison.csv")
 
     print(f"Results saved to {output_dir}")
 

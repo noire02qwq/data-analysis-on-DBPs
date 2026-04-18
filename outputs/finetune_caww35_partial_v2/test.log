@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 459, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 311, in main
+    scalers_mean, scalers_std = load_scalers(model_dir)
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 63, in load_scalers
+    return data["mean"], data["std"]
+           ~~~~^^^^^^^^
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 243, in __getitem__
+    raise KeyError(f"{key} is not a file in the archive") from None
+KeyError: 'mean is not a file in the archive'

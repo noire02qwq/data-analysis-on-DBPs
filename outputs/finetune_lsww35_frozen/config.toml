@@ -1,0 +1,34 @@
+[model]
+type = "TRANSFORMER"
+name = "transformer_regressor"
+history_length = 90
+d_model = 240
+nhead = 4
+num_encoder_layers = 4
+dim_feedforward = 429
+dropout = 0.06349433443149866
+checkpoint = "outputs/caww29_unified/final_models/transformer/best_model.pt"
+freeze_layers = ['encoder']
+
+[training]
+max_epochs = 100
+batch_size = 65
+learning_rate = 0.001
+weight_decay = 0.00036337451245327287
+patience = 10
+seed = 42
+
+[data]
+train_csv = "data/lsww_35c_split/train.csv"
+val_csv = "data/lsww_35c_split/val.csv"
+test_csv = "data/lsww_35c_split/test.csv"
+input_columns = [
+    "TRC-DT", "pH-DT", "cond-DT",
+    "TRC-RT", "pH-RT", "cond-RT", "fDOM-RT", "DO-RT",
+    "TOC-RT", "DOC-RT"
+]
+output_columns = [
+    "TRC-PPL1", "TRC-PPL2",
+    "pH-PPL1", "pH-PPL2",
+    "cond-PPL1", "cond-PPL2"
+]

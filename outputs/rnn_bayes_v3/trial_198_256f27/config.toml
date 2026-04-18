@@ -1,0 +1,42 @@
+[model]
+type = "RNN"
+name = "rnn_regressor"
+history_length = 77
+units = 218
+num_layers = 5
+dropout = 0.3879425170705295
+
+[training]
+max_epochs = 150
+batch_size = 349
+learning_rate = 0.00023815258235404153
+weight_decay = 0.0013691167396851554
+patience = 15
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]

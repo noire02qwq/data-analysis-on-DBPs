@@ -1,0 +1,44 @@
+[model]
+type = "TRANSFORMER"
+name = "transformer_regressor"
+history_length = 133
+d_model = 144
+nhead = 4
+num_encoder_layers = 6
+dim_feedforward = 696
+dropout = 0.20516756366943356
+
+[training]
+max_epochs = 150
+batch_size = 240
+learning_rate = 0.00025679567705579737
+weight_decay = 0.0012633112498327721
+patience = 15
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]

@@ -1,0 +1,51 @@
+[model]
+type = "LSTM"
+name = "lstm_regressor"
+history_length = 68
+units = 350
+num_layers = 3
+dropout = 0.2147529385674343
+
+[training]
+max_epochs = 150
+batch_size = 315
+learning_rate = 0.0007929181970201134
+weight_decay = 0.0006974932920701457
+patience = 15
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]
+
+[parameters]
+history_length = 110
+num_layers = 3
+units = 191
+dropout = 0.3280007270038457
+batch_size = 297
+learning_rate = 0.0018672078078331568
+weight_decay = 0.00036363068074342494

@@ -1,0 +1,31 @@
+INFO: Loading pre-split datasets...
+INFO: Starting TRANSFORMER training for 50 epochs on cuda...
+INFO: Epoch 001: train_loss=1.098941, val_loss=0.996632 (New Best)
+INFO: Epoch 002: train_loss=0.828542, val_loss=0.769409 (New Best)
+INFO: Epoch 003: train_loss=0.685274, val_loss=0.659222 (New Best)
+INFO: Epoch 004: train_loss=0.571811, val_loss=0.587662 (New Best)
+INFO: Epoch 005: train_loss=0.479484, val_loss=0.535863 (New Best)
+INFO: Epoch 006: train_loss=0.413513, val_loss=0.496516 (New Best)
+INFO: Epoch 007: train_loss=0.365824, val_loss=0.465147 (New Best)
+INFO: Epoch 008: train_loss=0.330097, val_loss=0.438510 (New Best)
+INFO: Epoch 009: train_loss=0.304824, val_loss=0.418429 (New Best)
+INFO: Epoch 010: train_loss=0.283529, val_loss=0.399779 (New Best)
+INFO: Epoch 011: train_loss=0.269233, val_loss=0.385315 (New Best)
+INFO: Epoch 012: train_loss=0.257760, val_loss=0.374484 (New Best)
+INFO: Epoch 013: train_loss=0.244694, val_loss=0.367240 (New Best)
+INFO: Epoch 014: train_loss=0.235945, val_loss=0.362450 (New Best)
+INFO: Epoch 015: train_loss=0.227856, val_loss=0.359745 (New Best)
+INFO: Epoch 016: train_loss=0.220634, val_loss=0.358716 (New Best)
+INFO: Epoch 017: train_loss=0.216043, val_loss=0.362285
+INFO: Epoch 018: train_loss=0.208465, val_loss=0.365295
+INFO: Epoch 019: train_loss=0.204459, val_loss=0.368429
+INFO: Epoch 020: train_loss=0.201371, val_loss=0.374466
+INFO: Epoch 021: train_loss=0.195202, val_loss=0.380378
+INFO: Epoch 022: train_loss=0.191559, val_loss=0.386195
+INFO: Epoch 023: train_loss=0.186741, val_loss=0.391242
+INFO: Epoch 024: train_loss=0.184220, val_loss=0.398531
+INFO: Epoch 025: train_loss=0.180780, val_loss=0.404951
+INFO: Epoch 026: train_loss=0.176198, val_loss=0.409890
+INFO: Early stopping triggered at epoch 26
+WARNING: ONNX export skipped: onnxscript not installed
+INFO: Training completed successfully! Output saved to: /home/amoris/dbps/data-analysis-on-DBPs/outputs/transformer_regressor/20260413_022241

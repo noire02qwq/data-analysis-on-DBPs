@@ -1,0 +1,101 @@
+{
+  "xgboost": {
+    "model": "xgboost",
+    "has_config": false,
+    "has_model_file": false,
+    "has_result": false,
+    "has_test": false,
+    "best_val_loss": null,
+    "test_loss": null,
+    "latest_dir": null,
+    "is_complete": false
+  },
+  "lightgbm": {
+    "model": "lightgbm",
+    "has_config": false,
+    "has_model_file": false,
+    "has_result": false,
+    "has_test": false,
+    "best_val_loss": null,
+    "test_loss": null,
+    "latest_dir": null,
+    "is_complete": false
+  },
+  "catboost": {
+    "model": "catboost",
+    "has_config": false,
+    "has_model_file": false,
+    "has_result": false,
+    "has_test": false,
+    "best_val_loss": null,
+    "test_loss": null,
+    "latest_dir": null,
+    "is_complete": false
+  },
+  "mlp": {
+    "model": "mlp",
+    "has_config": false,
+    "has_model_file": false,
+    "has_result": false,
+    "has_test": false,
+    "best_val_loss": null,
+    "test_loss": null,
+    "latest_dir": null,
+    "is_complete": false
+  },
+  "rnn": {
+    "model": "rnn",
+    "has_config": true,
+    "has_model_file": false,
+    "has_result": true,
+    "has_test": false,
+    "best_val_loss": 0.3646760333091427,
+    "test_loss": 4.8410069923647345,
+    "latest_dir": "nn_rnn_final_v2/best_trial",
+    "is_complete": false
+  },
+  "gru": {
+    "model": "gru",
+    "has_config": true,
+    "has_model_file": false,
+    "has_result": true,
+    "has_test": false,
+    "best_val_loss": 0.22756739052466055,
+    "test_loss": 4.14137871458901,
+    "latest_dir": "nn_gru_final_v2/best_trial",
+    "is_complete": false
+  },
+  "lstm": {
+    "model": "lstm",
+    "has_config": false,
+    "has_model_file": false,
+    "has_result": false,
+    "has_test": false,
+    "best_val_loss": null,
+    "test_loss": null,
+    "latest_dir": null,
+    "is_complete": false
+  },
+  "transformer": {
+    "model": "transformer",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 0.6955896851796548,
+    "test_loss": 3.329811766392315,
+    "latest_dir": "transformer_regressor/20260407_173724",
+    "is_complete": true
+  },
+  "mamba": {
+    "model": "mamba",
+    "has_config": false,
+    "has_model_file": false,
+    "has_result": false,
+    "has_test": false,
+    "best_val_loss": null,
+    "test_loss": null,
+    "latest_dir": null,
+    "is_complete": false
+  }
+}

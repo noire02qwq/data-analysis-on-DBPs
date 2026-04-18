@@ -1,0 +1,32 @@
+model_name = "transformer_caww_35c_partial_finetune"
+model_type = "TRANSFORMER"
+finetune_method = "partial"
+dataset = "caww_35c"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+    "DOC-PPL1",
+    "DOC-PPL2",
+]
+
+[eval]
+best_val_loss = 0.18042319654314606
+test_loss = 0.5217479583289888
+best_epoch = 30

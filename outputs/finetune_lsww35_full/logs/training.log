@@ -1,0 +1,9 @@
+usage: finetune_transformer.py [-h] --dataset {caww_35c,lsww_29c,lsww_35c}
+                               --method {full,partial}
+                               [--pretrained-model PRETRAINED_MODEL]
+                               [--data-dir DATA_DIR] [--output-dir OUTPUT_DIR]
+                               [--learning-rate LEARNING_RATE]
+                               [--max-epochs MAX_EPOCHS] [--patience PATIENCE]
+                               [--batch-size BATCH_SIZE] [--seed SEED]
+finetune_transformer.py: error: the following arguments are required: --dataset, --method
+ERROR conda.cli.main_run:execute(142): `conda run python scripts/finetune_transformer.py --config outputs/finetune_lsww35_full/config.toml --checkpoint outputs/caww29_unified/final_models/transformer/best_model.pt --mode full` failed. (See above for error)

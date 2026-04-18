@@ -1,0 +1,49 @@
+[model]
+type = "TRANSFORMER"
+name = "transformer_caww35_partial"
+# Partial fine-tuning - freeze encoder, only train head
+pretrained_path = "outputs/transformer_regressor/20260411_162709/best_model.pt"
+pretrained_config = "outputs/transformer_regressor/20260411_162709/config.toml"
+freeze_encoder = true
+
+history_length = 60
+d_model = 120
+nhead = 4
+num_encoder_layers = 5
+dim_feedforward = 498
+dropout = 0.083
+batch_size = 128
+learning_rate = 0.0001
+weight_decay = 0.001
+
+[training]
+max_epochs = 80
+patience = 15
+seed = 42
+
+[data]
+train_csv = "data/caww_35c_split/train.csv"
+val_csv = "data/caww_35c_split/val.csv"
+test_csv = "data/caww_35c_split/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT"
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2"
+]

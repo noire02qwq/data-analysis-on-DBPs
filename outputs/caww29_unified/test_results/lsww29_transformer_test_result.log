@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 459, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 291, in main
+    result = load_result_toml(model_dir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 52, in load_result_toml
+    raise FileNotFoundError(f"result.toml not found in {model_dir}")
+FileNotFoundError: result.toml not found in outputs/caww29_unified/final_models/lsww29_transformer
+ERROR conda.cli.main_run:execute(142): `conda run python scripts/test.py --model-dir outputs/caww29_unified/final_models/lsww29_transformer` failed. (See above for error)

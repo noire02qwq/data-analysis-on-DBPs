@@ -1,0 +1,48 @@
+CAWW29 Final V2 - 9 Model Results Summary
+==========================================================================================
+
+mlp:
+  Val Loss: 0.117345
+  Test Loss: 0.112102
+  Dir: /home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/mlp/20260411_173443
+
+lstm:
+  Val Loss: 0.093757
+  Test Loss: 0.096775
+  Dir: /home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/lstm/20260411_173532
+
+rnn:
+  Val Loss: 0.193378
+  Test Loss: 0.193582
+  Dir: /home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/rnn/20260411_173454
+
+gru:
+  Val Loss: 0.135056
+  Test Loss: 0.135675
+  Dir: /home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/gru/20260411_173510
+
+transformer:
+  Val Loss: 0.265385
+  Test Loss: 0.269296
+  Dir: /home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/transformer/20260411_173615
+
+mamba:
+  Val Loss: 0.356921
+  Test Loss: 0.352778
+  Dir: /home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/mamba/20260411_173559
+
+xgboost:
+  Val Loss: 0.093054
+  Test Loss: 0.096188
+  Dir: /home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/xgboost/20260411_173420
+
+lightgbm:
+  Val Loss: 0.261577
+  Test Loss: 0.268098
+  Dir: /home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/lightgbm/20260411_173427
+
+catboost:
+  Val Loss: 0.512249
+  Test Loss: 0.520655
+  Dir: /home/amoris/dbps/data-analysis-on-DBPs/outputs/caww29_final_v2/catboost/20260411_173434
+

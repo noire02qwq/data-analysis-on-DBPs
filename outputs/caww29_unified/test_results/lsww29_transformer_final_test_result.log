@@ -1,0 +1,8 @@
+Note: Scaler shape mismatch - scalers have 22 elements, but test data has 17 columns. Slicing scalers...
+Sliced scalers from 22 to 17 elements
+Test Results for TRANSFORMER:
+  MSE:  1.275988
+  RMSE: 1.129597
+  MAE:  0.472634
+  R2:   0.999843
+Results saved to outputs/caww29_unified/final_models/lsww29_transformer_final

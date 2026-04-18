@@ -1,0 +1,10 @@
+model_name = "gru_regressor"
+model_type = "GRU"
+model_format = "torch"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT", "fDOM-RT", "DO-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2"]
+
+[eval]
+best_val_loss = 0.032779175641541924
+test_loss = 0.05839186498620186
+best_epoch = 10

@@ -1,0 +1,55 @@
+============================================================
+FINAL TRAINING FOR ALL MODELS
+============================================================
+Started: 2026-04-07T17:36:49.482465
+
+============================================================
+Processing: RNN
+============================================================
+Using config: /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_rnn_final_v2/best_trial/config.toml
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/train.py --config /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_rnn_final_v2/best_trial/config.toml
+
+✅ Training completed for rnn
+
+============================================================
+Processing: GRU
+============================================================
+Using config: /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_gru_final_v2/best_trial/config.toml
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/train.py --config /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_gru_final_v2/best_trial/config.toml
+
+✅ Training completed for gru
+
+============================================================
+Processing: LSTM
+============================================================
+Using config: /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_lstm_final_v2/best_trial/config.toml
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/train.py --config /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_lstm_final_v2/best_trial/config.toml
+
+✅ Training completed for lstm
+
+============================================================
+Processing: TRANSFORMER
+============================================================
+Using config: /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_transformer_final_v2/best_trial/config.toml
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/train.py --config /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_transformer_final_v2/best_trial/config.toml
+
+✅ Training completed for transformer
+
+============================================================
+Processing: MAMBA
+============================================================
+Using config: /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_mamba_final_v2/best_trial/config.toml
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/train.py --config /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_mamba_final_v2/best_trial/config.toml
+
+✅ Training completed for mamba
+
+============================================================
+Processing: MLP
+============================================================
+Using config: /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_mlp_final_v2/best_trial/config.toml
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/train.py --config /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_mlp_final_v2/best_trial/config.toml
+
+✅ Training completed for mlp
+
+Finished: 2026-04-07T17:39:09.699912
+============================================================

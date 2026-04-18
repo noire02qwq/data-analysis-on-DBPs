@@ -1,0 +1,10 @@
+model_name = "mamba_regressor"
+model_type = "MAMBA"
+model_format = "torch"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT", "cond-RT", "fDOM-RT", "DO-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2", "pH-PPL1", "pH-PPL2", "cond-PPL1", "cond-PPL2", "TOC-PPL1", "TOC-PPL2"]
+
+[eval]
+best_val_loss = 0.4640338559750344
+test_loss = 1.6694203938047092
+best_epoch = 33

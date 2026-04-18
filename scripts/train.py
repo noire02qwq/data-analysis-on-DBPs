@@ -13,7 +13,12 @@ import math
 import random
 import shutil
 import sys
-import tomli
+
+try:
+    import tomllib as tomli
+except ImportError:
+    import tomli
+
 from datetime import datetime
 from dataclasses import dataclass
 from pathlib import Path
@@ -45,7 +50,7 @@ from scripts.utils import (
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
-SUPPORTED_MODELS = {"MLP", "LSTM", "RNN", "GRU", "TRANSFORMER", "XGBOOST", "LIGHTGBM", "CATBOOST"}
+SUPPORTED_MODELS = {"MLP", "LSTM", "RNN", "GRU", "TRANSFORMER", "MAMBA", "XGBOOST", "LIGHTGBM", "CATBOOST"}
 
 
 @dataclass
@@ -209,6 +214,19 @@ def build_torch_model(
             dropout=model_params["dropout"],
             fc_dim=model_params.get("fc_dim"),
         )
+    if model_type == "MAMBA":
+        from models.mamba_regressor import MambaRegressor
+        return MambaRegressor(
+            input_dim=input_dim,
+            output_dim=output_dim,
+            d_model=model_params.get("d_model", 128),
+            n_layers=model_params.get("n_layers", 4),
+            d_state=model_params.get("d_state", 16),
+            d_conv=model_params.get("d_conv", 4),
+            expand=model_params.get("expand", 2),
+            dropout=model_params.get("dropout", 0.1),
+            fc_dim=model_params.get("fc_dim"),
+        )
     raise ValueError(f"Unsupported torch model: {model_type}")
 
 
@@ -296,7 +314,7 @@ def train_with_torch(
     device: torch.device,
 ) -> Dict[str, Any]:
     
-    train_loader = DataLoader(train_bundle.dataset, batch_size=cfg.training_params["batch_size"], shuffle=True)
+    train_loader = DataLoader(train_bundle.dataset, batch_size=cfg.training_params["batch_size"], shuffle=False)
     val_loader = DataLoader(val_bundle.dataset, batch_size=cfg.training_params["batch_size"], shuffle=False)
     test_loader = DataLoader(test_bundle.dataset, batch_size=cfg.training_params["batch_size"], shuffle=False)
 

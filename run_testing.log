@@ -1,0 +1,125 @@
+============================================================
+TESTING FOR ALL MODELS
+============================================================
+Started: 2026-04-07T17:46:24.220002
+
+============================================================
+Testing: RNN
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/rnn_regressor/20260407_173651
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/rnn_regressor/20260407_173651 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_rnn_final_v2/test_results
+
+Error: t.py", line 309, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 258, in main
+    scaled_test = scale_values(values_test, scalers_mean, scalers_std)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 164, in scale_values
+    return (values - mean) / std
+            ~~~~~~~^~~~~~
+ValueError: operands could not be broadcast together with shapes (1744,25) (24,) 
+
+❌ Testing failed for rnn
+
+============================================================
+Testing: GRU
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/gru_regressor/20260407_173702
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/gru_regressor/20260407_173702 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_gru_final_v2/test_results
+
+Error: t.py", line 309, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 258, in main
+    scaled_test = scale_values(values_test, scalers_mean, scalers_std)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 164, in scale_values
+    return (values - mean) / std
+            ~~~~~~~^~~~~~
+ValueError: operands could not be broadcast together with shapes (1744,25) (24,) 
+
+❌ Testing failed for gru
+
+============================================================
+Testing: LSTM
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/lstm_regressor/20260407_173717
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/lstm_regressor/20260407_173717 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_lstm_final_v2/test_results
+
+Error: t.py", line 309, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 258, in main
+    scaled_test = scale_values(values_test, scalers_mean, scalers_std)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 164, in scale_values
+    return (values - mean) / std
+            ~~~~~~~^~~~~~
+ValueError: operands could not be broadcast together with shapes (1744,25) (24,) 
+
+❌ Testing failed for lstm
+
+============================================================
+Testing: TRANSFORMER
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/transformer_regressor/20260407_173724
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/transformer_regressor/20260407_173724 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_transformer_final_v2/test_results
+
+Error: t.py", line 309, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 258, in main
+    scaled_test = scale_values(values_test, scalers_mean, scalers_std)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 164, in scale_values
+    return (values - mean) / std
+            ~~~~~~~^~~~~~
+ValueError: operands could not be broadcast together with shapes (1744,25) (24,) 
+
+❌ Testing failed for transformer
+
+============================================================
+Testing: MAMBA
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/mamba_regressor/20260407_173818
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/mamba_regressor/20260407_173818 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_mamba_final_v2/test_results
+
+Error: t.py", line 309, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 258, in main
+    scaled_test = scale_values(values_test, scalers_mean, scalers_std)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 164, in scale_values
+    return (values - mean) / std
+            ~~~~~~~^~~~~~
+ValueError: operands could not be broadcast together with shapes (1744,25) (24,) 
+
+❌ Testing failed for mamba
+
+============================================================
+Testing: MLP
+============================================================
+Using model: /home/amoris/dbps/data-analysis-on-DBPs/outputs/mlp_regressor/20260407_173907
+Running: /home/amoris/miniconda3/envs/torch/bin/python scripts/test.py --model-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/mlp_regressor/20260407_173907 --test-csv /home/amoris/dbps/data-analysis-on-DBPs/outputs/gbdt_final/data_split/test.csv --output-dir /home/amoris/dbps/data-analysis-on-DBPs/outputs/nn_mlp_final_v2/test_results
+
+Error: t.py", line 309, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/test.py", line 258, in main
+    scaled_test = scale_values(values_test, scalers_mean, scalers_std)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 164, in scale_values
+    return (values - mean) / std
+            ~~~~~~~^~~~~~
+ValueError: operands could not be broadcast together with shapes (1744,25) (24,) 
+
+❌ Testing failed for mlp
+
+============================================================
+SUMMARY
+============================================================
+❌ rnn: failed
+❌ gru: failed
+❌ lstm: failed
+❌ transformer: failed
+❌ mamba: failed
+❌ mlp: failed
+
+Finished: 2026-04-07T17:46:35.794345
+============================================================

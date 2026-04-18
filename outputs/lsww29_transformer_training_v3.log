@@ -1,0 +1,24 @@
+INFO: Loading pre-split datasets...
+/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py:157: RuntimeWarning: Mean of empty slice
+  mean = values.mean(axis=0)
+/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/numpy/_core/_methods.py:134: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/numpy/_core/_methods.py:219: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/numpy/_core/_methods.py:178: RuntimeWarning: invalid value encountered in divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean,
+/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/numpy/_core/_methods.py:208: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 669, in main
+    train_bundle = build_dataset_bundle(cfg.model_type, scaled_train, feature_indices, target_indices, history_length)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 182, in build_dataset_bundle
+    dataset = SequenceDataset(non_ppl, target_data, history_length, base_targets=base_targets)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/utils.py", line 60, in __init__
+    raise ValueError("Not enough samples to build the requested history window.")
+ValueError: Not enough samples to build the requested history window.
+ERROR conda.cli.main_run:execute(142): `conda run python scripts/train.py --config outputs/lsww29_transformer_config_v3.toml` failed. (See above for error)

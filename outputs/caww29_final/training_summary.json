@@ -1,0 +1,11 @@
+{
+  "xgboost": "OK",
+  "lightgbm": "OK",
+  "catboost": "OK",
+  "mlp": "OK",
+  "rnn": "OK",
+  "gru": "OK",
+  "lstm": "OK",
+  "mamba": "FAILED",
+  "transformer": "OK"
+}

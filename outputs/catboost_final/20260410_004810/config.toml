@@ -1,0 +1,24 @@
+[model]
+type = "CATBOOST"
+name = "catboost_final"
+
+depth = 8
+learning_rate = 0.05
+l2_leaf_reg = 3.0
+subsample = 0.8
+random_strength = 1.0
+bagging_temperature = 1.0
+[training]
+max_epochs = 150
+batch_size = 128
+learning_rate = 0.001
+weight_decay = 0.0
+patience = 15
+seed = 42
+
+[data]
+train_csv = "data/train.csv"
+val_csv = "data/val.csv"
+test_csv = "data/test.csv"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT", "cond-RT", "fDOM-RT", "DO-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL2"]

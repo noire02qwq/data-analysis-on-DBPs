@@ -1,0 +1,101 @@
+{
+  "xgboost": {
+    "model": "xgboost",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 0.4739391586259442,
+    "test_loss": 2.2014341255029044,
+    "latest_dir": "xgboost_regressor/20260409_031340",
+    "is_complete": true
+  },
+  "lightgbm": {
+    "model": "lightgbm",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 0.487116124257408,
+    "test_loss": 2.3481647212303254,
+    "latest_dir": "lightgbm_regressor/20260409_031808",
+    "is_complete": true
+  },
+  "catboost": {
+    "model": "catboost",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 0.4745267985310208,
+    "test_loss": 2.2979980989355933,
+    "latest_dir": "catboost_regressor/20260409_032706",
+    "is_complete": true
+  },
+  "mlp": {
+    "model": "mlp",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 0.27038555531700453,
+    "test_loss": 4.4790169604619345,
+    "latest_dir": "mlp_final",
+    "is_complete": true
+  },
+  "rnn": {
+    "model": "rnn",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 1.0846465236984975,
+    "test_loss": 7.501667358292785,
+    "latest_dir": "rnn_regressor/20260409_035552",
+    "is_complete": true
+  },
+  "gru": {
+    "model": "gru",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 0.22756739052466055,
+    "test_loss": 4.14137871458901,
+    "latest_dir": "gru_final",
+    "is_complete": true
+  },
+  "lstm": {
+    "model": "lstm",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 0.24121346629945328,
+    "test_loss": 4.979813330410355,
+    "latest_dir": "lstm_final",
+    "is_complete": true
+  },
+  "transformer": {
+    "model": "transformer",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 0.6955896851796548,
+    "test_loss": 3.329811766392315,
+    "latest_dir": "transformer_final",
+    "is_complete": true
+  },
+  "mamba": {
+    "model": "mamba",
+    "has_config": true,
+    "has_model_file": true,
+    "has_result": true,
+    "has_test": true,
+    "best_val_loss": 0.5584558192166416,
+    "test_loss": 3.16630052913319,
+    "latest_dir": "mamba_final",
+    "is_complete": true
+  }
+}

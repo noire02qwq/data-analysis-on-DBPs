@@ -20,7 +20,7 @@ max = 1.0
 log = true
 
 [parameters.gamma]
-min = 0.0
+min = 0.001
 max = 2.0
 log = true
 

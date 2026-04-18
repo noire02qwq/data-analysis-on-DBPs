@@ -1,0 +1,36 @@
+INFO: Loading pre-split datasets...
+INFO: Starting TRANSFORMER training for 50 epochs on cuda...
+INFO: Epoch 001: train_loss=1.275152, val_loss=1.595095 (New Best)
+INFO: Epoch 002: train_loss=0.913856, val_loss=1.122416 (New Best)
+INFO: Epoch 003: train_loss=0.729814, val_loss=0.881712 (New Best)
+INFO: Epoch 004: train_loss=0.604016, val_loss=0.748038 (New Best)
+INFO: Epoch 005: train_loss=0.506730, val_loss=0.670570 (New Best)
+INFO: Epoch 006: train_loss=0.438167, val_loss=0.628100 (New Best)
+INFO: Epoch 007: train_loss=0.387014, val_loss=0.609084 (New Best)
+INFO: Epoch 008: train_loss=0.348778, val_loss=0.599856 (New Best)
+INFO: Epoch 009: train_loss=0.318610, val_loss=0.596619 (New Best)
+INFO: Epoch 010: train_loss=0.295083, val_loss=0.596711
+INFO: Epoch 011: train_loss=0.274723, val_loss=0.597653
+INFO: Epoch 012: train_loss=0.258805, val_loss=0.603319
+INFO: Epoch 013: train_loss=0.244573, val_loss=0.606150
+INFO: Epoch 014: train_loss=0.234472, val_loss=0.607092
+INFO: Epoch 015: train_loss=0.225372, val_loss=0.606995
+INFO: Epoch 016: train_loss=0.216513, val_loss=0.607488
+INFO: Epoch 017: train_loss=0.209969, val_loss=0.607239
+INFO: Epoch 018: train_loss=0.202963, val_loss=0.607450
+INFO: Epoch 019: train_loss=0.198013, val_loss=0.603764
+INFO: Early stopping triggered at epoch 19
+Traceback (most recent call last):
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 731, in <module>
+    main()
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 689, in main
+    result = train_with_torch(cfg, train_bundle, val_bundle, test_bundle, output_dir, device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/amoris/dbps/data-analysis-on-DBPs/scripts/train.py", line 376, in train_with_torch
+    model.load_state_dict(torch.load(best_model_path, map_location=device))
+  File "/home/amoris/miniconda3/envs/torch/lib/python3.12/site-packages/torch/nn/modules/module.py", line 2639, in load_state_dict
+    raise RuntimeError(
+RuntimeError: Error(s) in loading state_dict for TransformerRegressor:
+	size mismatch for input_projection.weight: copying a param with shape torch.Size([256, 9]) from checkpoint, the shape in current model is torch.Size([256, 10]).
+	size mismatch for head.0.weight: copying a param with shape torch.Size([8, 256]) from checkpoint, the shape in current model is torch.Size([14, 256]).
+	size mismatch for head.0.bias: copying a param with shape torch.Size([8]) from checkpoint, the shape in current model is torch.Size([14]).

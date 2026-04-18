@@ -1,0 +1,57 @@
+[model]
+type = "MAMBA"
+name = "mamba_regressor"
+history_length = 62
+d_model = 126
+n_layers = 9
+d_state = 43
+d_conv = 4
+expand = 3
+dropout = 0.16540887453274014
+
+[training]
+max_epochs = 150
+batch_size = 310
+learning_rate = 0.0004865297749575472
+weight_decay = 0.0022135935139847096
+patience = 15
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/data/test.csv"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "cond-RT",
+    "fDOM-RT",
+    "DO-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+]
+
+[parameters]
+history_length = 179
+d_model = 456
+n_layers = 12
+d_state = 40
+d_conv = 3
+expand = 4
+dropout = 0.11319027779288128
+batch_size = 287
+learning_rate = 0.001656295021279032
+weight_decay = 0.0003956447833845278

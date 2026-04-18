@@ -1,0 +1,31 @@
+model_name = "transformer_lsww_35c_full_finetune"
+model_type = "TRANSFORMER"
+finetune_method = "full"
+dataset = "lsww_35c"
+input_columns = [
+    "TRC-DT",
+    "pH-DT",
+    "cond-DT",
+    "TRC-RT",
+    "pH-RT",
+    "fDOM-RT",
+    "TOC-RT",
+    "DOC-RT",
+]
+output_columns = [
+    "TRC-PPL1",
+    "TRC-PPL2",
+    "pH-PPL1",
+    "pH-PPL2",
+    "cond-PPL1",
+    "cond-PPL2",
+    "TOC-PPL1",
+    "TOC-PPL2",
+    "DOC-PPL1",
+    "DOC-PPL2",
+]
+
+[eval]
+best_val_loss = 0.2530591632513439
+test_loss = 0.8602941947824815
+best_epoch = 28
