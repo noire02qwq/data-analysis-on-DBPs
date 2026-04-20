@@ -1,0 +1,12 @@
+graph TD
+    A[CAWW_29 Dataset] -->|Bayesian Optimization| B[Optimal Hyperparameters]
+    B --> C[CAWW_29 Pre-trained Transformer]
+    B --> D[LSWW_29 Pre-trained Transformer]
+    
+    C -->|Full Fine-Tuning| E[CAWW_35 Finetuned Models]
+    C -->|Partial Fine-Tuning| E
+    C -->|Adapter/LoRA| E
+    
+    D -->|Full Fine-Tuning| F[LSWW_35 Finetuned Models]
+    D -->|Partial Fine-Tuning| F
+    D -->|Adapter/LoRA| F

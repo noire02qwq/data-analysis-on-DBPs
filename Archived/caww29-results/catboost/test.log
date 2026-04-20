@@ -1,8 +1,0 @@
-Note: Scaler shape mismatch - scalers have 19 elements, but test data has 15 columns. Slicing scalers...
-Sliced scalers from 18 to 15 elements
-Test Results for CATBOOST:
-  MSE:  0.381332
-  RMSE: 0.617521
-  MAE:  0.338886
-  R2:   0.999965
-Results saved to outputs/catboost_regressor/20260412_193028

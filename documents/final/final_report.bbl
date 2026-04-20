@@ -1,0 +1,90 @@
+\begin{thebibliography}{10}
+
+\bibitem{galliard2004organic}
+Herv{\'e} Galliard and Urs von Gunten.
+\newblock Organic matter and disinfection by-products.
+\newblock {\em Water Research}, 38(1):45--56, 2004.
+
+\bibitem{siddique2012review}
+Mst~Asma Siddique, Abdul Khaleque, and Md~Aminul Islam.
+\newblock A review of disinfection by-product (dbp) formation.
+\newblock {\em International Journal of Environmental Sciences},
+  2(4):2356--2366, 2012.
+
+\bibitem{hua2015formation}
+Guanghui Hua and David~A Reckhow.
+\newblock Formation and control of nitrogenous disinfection by-products.
+\newblock {\em Current Opinion in Environmental Science \& Health}, pages
+  28--34, 2015.
+
+\bibitem{zhang2020review}
+Jing Zhang and Jian Wang.
+\newblock A review of the applications of machine learning in water quality
+  prediction.
+\newblock {\em Artificial Intelligence Review}, 53:2627--2647, 2020.
+
+\bibitem{chen2016xgboost}
+Tianqi Chen and Carlos Guestrin.
+\newblock Xgboost: A scalable tree boosting system.
+\newblock In {\em Proceedings of the 22nd acm sigkdd international conference
+  on knowledge discovery and data mining}, pages 785--794, 2016.
+
+\bibitem{ke2017lightgbm}
+Guolin Ke, Qi~Meng, Thomas Finley, Taifeng Wang, Wei Chen, Weidong Ma, Qiwei
+  Ye, and Liu Tie-Yan.
+\newblock Lightgbm: A highly efficient gradient boosting decision tree.
+\newblock In {\em Advances in neural information processing systems},
+  volume~30, 2017.
+
+\bibitem{prokhorenkova2018catboost}
+Liudmila Prokhorenkova, Gleb Gusev, Aleksandr Vorobev, Anna~Veronika Dorogush,
+  and Andrey Gulin.
+\newblock Catboost: unbiased boosting with categorical features.
+\newblock In {\em Advances in neural information processing systems},
+  volume~31, 2018.
+
+\bibitem{hochreiter1997long}
+Sepp Hochreiter and J{\'u}rgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780, 1997.
+
+\bibitem{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, {Ł}ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock {\em Advances in neural information processing systems}, 30, 2017.
+
+\bibitem{gu2023mamba}
+Albert Gu and Tri Dao.
+\newblock Mamba: Linear-time sequence modeling with selective state spaces.
+\newblock {\em arXiv preprint arXiv:2312.00752}, 2023.
+
+\bibitem{hu2021lora}
+Edward~J Hu, Yelong Shen, Phil Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen.
+\newblock Lora: Low-rank adaptation of large language models.
+\newblock {\em arXiv preprint arXiv:2106.09685}, 2021.
+
+\bibitem{kingma2014adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{srivastava2014dropout}
+Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
+  Salakhutdinov.
+\newblock Dropout: a simple way to prevent neural networks from overfitting.
+\newblock {\em The journal of machine learning research}, 15(1):1929--1958,
+  2014.
+
+\bibitem{bergstra2012random}
+James Bergstra and Yoshua Bengio.
+\newblock Random search for hyper-parameter optimization.
+\newblock {\em Journal of machine learning research}, 13(Feb):281--305, 2012.
+
+\bibitem{snoek2012practical}
+Jasper Snoek, Hugo Larochelle, and Ryan~P Adams.
+\newblock Practical bayesian optimization of machine learning algorithms.
+\newblock {\em Advances in neural information processing systems}, 25, 2012.
+
+\end{thebibliography}
