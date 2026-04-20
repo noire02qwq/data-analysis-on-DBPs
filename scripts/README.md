@@ -12,6 +12,7 @@ This folder contains all CLI entry points for the DBPs data-processing pipeline.
 | `autotune.py` | Bayesian hyperparameter optimization |
 | `server.py` | Backend API server (port 310) |
 | `demo_client.py` | Demo client for testing workflow |
+| `run_comprehensive_experiment.py` | Run all models with Bayesian optimization |
 
 ## 1. Data Splitting (`split_data.py`)
 
@@ -49,7 +50,7 @@ python scripts/train.py --config models/configs/rnn_config.toml
 - `--config`: Path to TOML config file (required)
 
 **Supported Models:**
-- PyTorch: MLP, LSTM, RNN, GRU, Transformer
+- PyTorch: MLP, LSTM, RNN, GRU, Transformer, Mamba
 - GBDT: XGBoost, LightGBM, CatBoost
 
 **Config Format:**
@@ -118,7 +119,7 @@ python scripts/autotune.py \
 ```
 
 **Options:**
-- `--model-type`: Model type (required) - MLP, LSTM, RNN, GRU, TRANSFORMER, XGBOOST, LIGHTGBM, CATBOOST
+- `--model-type`: Model type (required) - MLP, LSTM, RNN, GRU, TRANSFORMER, MAMBA, XGBOOST, LIGHTGBM, CATBOOST
 - `--base-config`: Base configuration TOML file (required)
 - `--bayes-config`: Bayesian search space TOML file (required)
 - `--n-trials`: Number of optimization trials (default: 20)
@@ -139,7 +140,68 @@ batch_size = {min = 64, max = 256}
 learning_rate = {min = 0.0001, max = 0.01, log = true}
 ```
 
-## 5. API Server (`server.py`)
+## 5. Comprehensive Experiment (`run_comprehensive_experiment.py`)
+
+Run all models with Bayesian optimization, final training, and testing.
+
+```bash
+python scripts/run_comprehensive_experiment.py \
+    --input data/imputed_data.csv \
+    --output-dir outputs/comprehensive_experiment \
+    --n-trials 100 \
+    --models all
+```
+
+**Options:**
+- `--input`: Input CSV file (default: data/imputed_data.csv)
+- `--output-dir`: Output directory (default: outputs/comprehensive_experiment)
+- `--n-trials`: Number of trials for Bayesian optimization (default: 100)
+- `--models`: Models to run (default: all)
+- `--skip-completed`: Skip models that have already been completed (default: True)
+- `--seed`: Random seed (default: 42)
+
+**Supported Models:**
+
+**GBDT (Gradient Boosting Decision Trees):**
+- `xgboost` - XGBoost regressor
+- `lightgbm` - LightGBM regressor
+- `catboost` - CatBoost regressor
+
+**Neural Networks:**
+- `mlp` - Multi-Layer Perceptron
+- `rnn` - Recurrent Neural Network
+- `gru` - Gated Recurrent Unit
+- `lstm` - Long Short-Term Memory
+- `mamba` - Mamba State Space Model
+- `transformer` - Transformer (encoder-only)
+
+**What the Script Does:**
+
+1. **Data Splitting**: Splits input data 70:15:15 (train:val:test)
+2. **Bayesian Optimization**: Runs 100 trials of hyperparameter optimization for each model
+3. **Final Training**: Trains the best model from Bayesian optimization
+4. **Testing**: Evaluates the trained model on the test set
+5. **Visualization**: Generates loss curves, prediction vs true plots, and y=x scatter plots with R²
+
+**Output Structure:**
+
+```
+outputs/comprehensive_experiment/
+├── data_split/              # Train/val/test splits
+│   ├── train.csv
+│   ├── val.csv
+│   └── test.csv
+└── models/
+    ├── xgboost/
+    │   ├── bayes_opt/       # Bayesian optimization results
+    │   ├── final_model/     # Best model training
+    │   └── test_results/    # Test predictions and metrics
+    ├── lightgbm/
+    ...
+    └── transformer/
+```
+
+## 6. API Server (`server.py`)
 
 Run the backend API server for web integration.
 
@@ -156,7 +218,7 @@ python scripts/server.py --port 310
 | `/split` | POST | Split data |
 | `/train` | POST | Train model |
 | `/autotune` | POST | Run autotuning |
-| `/test` | POST | Test model |
+| `/test` | POST | Test trained model |
 
 **Request Format:**
 ```json
@@ -171,7 +233,7 @@ python scripts/server.py --port 310
 }
 ```
 
-## 6. Demo Client (`demo_client.py`)
+## 7. Demo Client (`demo_client.py`)
 
 Run a demo that tests the full workflow.
 
@@ -180,29 +242,3 @@ python scripts/demo_client.py
 ```
 
 This runs: data check → split (if needed) → train → autotune → test
-
-## Typical Workflow
-
-```bash
-# 1. Split data (if not already done)
-python scripts/split_data.py \
-    --input data/time_aligned_data.csv \
-    --train-rows 8000 \
-    --val-rows 1500 \
-    --test-rows 1500 \
-    --output-dir data \
-    --shuffle
-
-# 2. Train a model
-python scripts/train.py --config models/configs/rnn_config.toml
-
-# 3. Autotune (optional)
-python scripts/autotune.py \
-    --model-type RNN \
-    --base-config models/configs/rnn_config.toml \
-    --bayes-config models/configs/rnn_bayes.toml \
-    --n-trials 20
-
-# 4. Test the model
-python scripts/test.py --model-dir outputs/rnn_regressor/<timestamp>
-```

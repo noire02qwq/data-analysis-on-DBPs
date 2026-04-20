@@ -27,7 +27,8 @@ This is a machine learning backend for analyzing dissolved by-product (DBP) sens
 │   ├── autotune.py
 │   ├── split_data.py
 │   ├── server.py
-│   └── utils.py
+│   ├── demo_client.py
+│   └── run_comprehensive_experiment.py
 └── outputs/           # Training outputs and results
 ```
 
@@ -243,7 +244,7 @@ conda activate dbps
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 
 # Install other dependencies
-pip install xgboost lightgbm catboost polars matplotlib optuna pyyaml tomli tomli-w
+pip install xgboost lightgbm catboost polars matplotlib optuna numpy tomli tomli-w scikit-learn
 ```
 
 ## Troubleshooting

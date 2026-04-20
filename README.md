@@ -1,13 +1,14 @@
 # DBPs Regression Pipeline
 
-End-to-end toolkit for preparing dissolved by-product sensor data, training multi-output regressors (MLP/LSTM/RNN/GRU/Transformer/GBDT), with unified training, autotuning, and testing scripts.
+End-to-end toolkit for preparing dissolved by-product sensor data, training multi-output regressors (MLP/LSTM/RNN/GRU/Transformer/Mamba/GBDT), with unified training, autotuning, and testing scripts.
 
 ## Overview
 
 - **Data processing**: Impute missing values and align timestamps (using Polars)
-- **Model zoo**: PyTorch models (MLP, LSTM, RNN, GRU, Transformer) and tree ensembles (XGBoost, LightGBM, CatBoost)
+- **Model zoo**: PyTorch models (MLP, LSTM, RNN, GRU, Transformer, Mamba) and tree ensembles (XGBoost, LightGBM, CatBoost)
 - **Unified scripts**: Single `train.py`, `test.py`, `autotune.py` for all model types
 - **Config format**: TOML configuration files
+- **Comprehensive experiments**: Run all models with Bayesian optimization via `run_comprehensive_experiment.py`
 - **Backend API**: Server on port 310 for web integration
 
 ## Repository Layout
@@ -19,6 +20,7 @@ End-to-end toolkit for preparing dissolved by-product sensor data, training mult
 | `scripts/` | CLI entry points for all tasks |
 | `scripts/server.py` | Backend API server (port 310) |
 | `scripts/demo_client.py` | Demo client (port 110) |
+| `scripts/run_comprehensive_experiment.py` | Run all models with Bayes opt |
 
 ## Quick Start
 
@@ -65,14 +67,24 @@ python scripts/autotune.py \
 python scripts/test.py --model-dir outputs/rnn_regressor/<timestamp>
 ```
 
-### 6. Complete All Models (Bayesian Optimization + Training + Testing)
+### 6. Run Comprehensive Experiment (All Models)
 
 ```bash
-python scripts/complete_all_models.py \
-    --output-dir outputs/complete_experiment \
+python scripts/run_comprehensive_experiment.py \
+    --input data/imputed_data.csv \
+    --output-dir outputs/comprehensive_experiment \
     --n-trials 100 \
-    --skip-completed
+    --models all
 ```
+
+This will:
+1. Split data 70:15:15 (train:val:test)
+2. Run Bayesian optimization (100 trials) for all models:
+   - GBDT: XGBoost, LightGBM, CatBoost
+   - Neural Networks: MLP, RNN, GRU, LSTM, Mamba, Transformer
+3. Train best model for each type
+4. Generate test predictions and visualizations
+5. Save all results to `outputs/comprehensive_experiment/`
 
 ### 7. Process New Datasets (CAWW_35C, LSWW_29C, LSWW_35C)
 
@@ -124,7 +136,7 @@ output_columns = ["TRC-PPL1", "TRC-PPL2"]
 
 ## Available Models
 
-- **PyTorch**: MLP, LSTM, RNN, GRU, Transformer
+- **PyTorch**: MLP, LSTM, RNN, GRU, Transformer, Mamba
 - **GBDT**: XGBoost, LightGBM, CatBoost
 
 ## Using the Backend Server
@@ -173,7 +185,8 @@ Expected CSV columns include:
 │   ├── autotune.py         # Hyperparameter optimization
 │   ├── split_data.py       # Data splitting
 │   ├── server.py           # API server
-│   └── demo_client.py      # Demo client
+│   ├── demo_client.py      # Demo client
+│   └── run_comprehensive_experiment.py  # Run all models
 ├── outputs/                 # Training outputs
 └── README.md
 ```
