@@ -1,0 +1,23 @@
+[model]
+type = "LSTM"
+name = "lstm_model"
+
+history_length = 16
+units = 64
+num_layers = 1
+dropout = 0.1
+
+[training]
+max_epochs = 3
+batch_size = 64
+learning_rate = 0.001
+weight_decay = 0.0
+patience = 50
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/3c7a2600-a45a-4be7-95bf-a1ef8a6a8e51/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/3c7a2600-a45a-4be7-95bf-a1ef8a6a8e51/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/3c7a2600-a45a-4be7-95bf-a1ef8a6a8e51/test.csv"
+input_columns = ["TRC-DT", "pH-DT"]
+output_columns = ["TRC-PPL1"]

@@ -1,0 +1,10 @@
+model_name = "mlp_regressor"
+model_type = "MLP"
+model_format = "torch"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2"]
+
+[eval]
+best_val_loss = 0.38754148223452617
+test_loss = 3.6159091895748032
+best_epoch = 2

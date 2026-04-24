@@ -66,6 +66,7 @@ class ConfigBundle:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Unified training script.")
     parser.add_argument("--config", required=True, help="Path to TOML config file.")
+    parser.add_argument("--output-dir", help="Output directory (overrides config-based path).")
     return parser.parse_args()
 
 
@@ -357,6 +358,9 @@ def train_with_torch(
         train_history.append(train_loss)
         val_history.append(val_loss)
 
+        # Save loss history after each epoch so frontend can display curves during training
+        save_loss_history(output_dir / "loss_history.csv", epochs_axis, train_history, val_history)
+
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             best_epoch = epoch
@@ -403,7 +407,11 @@ def train_with_xgboost(
     output_columns = cfg.data_params["output_columns"]
     max_epochs = cfg.training_params["max_epochs"]
     patience = cfg.training_params["patience"]
-    
+
+    # XGBoost only supports single output - warn if multiple targets
+    if len(output_columns) > 1:
+        logging.warning(f"XGBoost only supports single output. Training {len(output_columns)} separate models for each target.")
+
     params = {
         "objective": "reg:squarederror",
         "max_depth": cfg.model_params["max_depth"],
@@ -627,9 +635,12 @@ def main() -> None:
         raise FileNotFoundError(f"Config not found: {config_path}")
 
     cfg = parse_config(config_path)
-    
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = REPO_ROOT / "outputs" / cfg.model_name / timestamp
+
+    if args.output_dir:
+        output_dir = Path(args.output_dir)
+    else:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_dir = REPO_ROOT / "outputs" / cfg.model_name / timestamp
     output_dir.mkdir(parents=True, exist_ok=True)
     
     shutil.copy(config_path, output_dir / "config.toml")

@@ -1,0 +1,21 @@
+[model]
+type = "MLP"
+name = "mlp_model"
+
+hidden_layers = [64, 64]
+dropout = 0.2
+
+[training]
+max_epochs = 2
+batch_size = 64
+learning_rate = 0.001
+weight_decay = 0.0
+patience = 10
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/351d26a8-882d-4bd5-82c0-d4ccd4191563/train.csv"
+val_csv = ""
+test_csv = ""
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT"]
+output_columns = ["TRC-PPL1"]

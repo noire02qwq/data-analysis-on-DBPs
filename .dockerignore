@@ -1,0 +1,69 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.py[cod]
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test files
+*_test.py
+test_*.py
+tests/
+
+# Temporary files
+*.tmp
+*.log
+logs/
+
+# Data files (should be mounted as volumes)
+*.csv
+*.xlsx
+*.xls
+
+# Model outputs (should be mounted as volumes)
+outputs/
+
+# Uploads (should be mounted as volumes)
+uploads/
+
+# Jupyter notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# CatBoost cache
+catboost_info/
+
+# Archived files
+Archived/
+EOF
+PYEOF
+VERIFY_EOF
+
+# Other scripts (not needed in container)
+*_backup*
+*_final*
+run_*.sh
+restart_*.sh

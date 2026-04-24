@@ -150,23 +150,18 @@ def objective(
     # Write config file
     config_path = run_dir / "config.toml"
 
-    # Create a copy with corrected data paths for writing
-    config_for_file = deepcopy(config)
-    if "data" in config_for_file:
-        for key in ["train_csv", "val_csv", "test_csv"]:
-            if key in config_for_file["data"]:
-                config_for_file["data"][key] = f"data/{Path(config_for_file['data'][key]).name}"
-
+    # Write the full config with absolute paths so train.py can find the data
     with config_path.open("wb") as f:
         import tomli_w
-        tomli_w.dump(config_for_file, f)
+        tomli_w.dump(config, f)
 
     # Run training
     try:
         cmd = [
             sys.executable,
             str(REPO_ROOT / "scripts" / "train.py"),
-            "--config", str(config_path)
+            "--config", str(config_path),
+            "--output-dir", str(run_dir)
         ]
         result = subprocess.run(
             cmd,
@@ -180,46 +175,19 @@ def objective(
             print(f"Trial {trial.number} failed: {result.stderr}")
             raise optuna.TrialPruned()
 
-        # Training script saves to outputs/<model_name>/<timestamp>/result.toml
-        # Find the result by looking for the most recent directory that was created
-        # AFTER this trial started (based on file modification time)
-        import time
-        trial_start_time = time.time()
+        # Training output is directly in run_dir since we passed --output-dir
+        result_file = run_dir / "result.toml"
 
-        model_name = config.get("model", {}).get("name", "model")
-        output_root = REPO_ROOT / "outputs" / model_name
-        result_file = None
-
-        if output_root.exists():
-            # Get all subdirs with their modification times
-            subdirs_with_time = []
-            for d in output_root.iterdir():
-                if d.is_dir():
-                    mtime = d.stat().st_mtime
-                    subdirs_with_time.append((d, mtime))
-
-            # Sort by modification time (newest first)
-            subdirs_with_time.sort(key=lambda x: x[1], reverse=True)
-
-            for d, mtime in subdirs_with_time:
-                # Skip directories that were modified before this trial started
-                if mtime < trial_start_time - 30:  # Allow 30 second buffer
-                    continue
-
-                candidate = d / "result.toml"
-                if candidate.exists():
-                    result_file = candidate
-                    # Copy result to run_dir for reference
-                    import shutil
-                    shutil.copy(result_file, run_dir / "result.toml")
-                    print(f"Trial {trial.number}: Found result in {d.name}")
-                    break
-
-        if result_file is not None and result_file.exists():
+        if result_file.exists():
             result_data = load_toml(result_file)
             best_val = result_data.get("eval", {}).get("best_val_loss", float('inf'))
             if best_val is None or best_val == float('inf'):
                 raise optuna.TrialPruned()
+            # Save trial info including model directory for later retrieval
+            trial_info_path = run_dir / "trial_info.toml"
+            import tomli_w
+            with trial_info_path.open("wb") as f:
+                tomli_w.dump({"model_dir": str(run_dir)}, f)
             print(f"Trial {trial.number} completed with validation loss: {best_val}")
             return best_val
         else:

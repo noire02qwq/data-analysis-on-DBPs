@@ -1,0 +1,10 @@
+model_name = "lstm_model"
+model_type = "LSTM"
+model_format = "torch"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT"]
+output_columns = ["TRC-PPL1"]
+
+[eval]
+best_val_loss = 0.02689108760968409
+test_loss = 0.4521420134591094
+best_epoch = 1

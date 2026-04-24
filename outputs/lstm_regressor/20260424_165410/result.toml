@@ -1,0 +1,10 @@
+model_name = "lstm_regressor"
+model_type = "LSTM"
+model_format = "torch"
+input_columns = ["TRC-DT", "TRC-RT", "pH-DT", "pH-RT", "cond-DT", "fDOM-RT", "DO-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2"]
+
+[eval]
+best_val_loss = 0.4168370615253955
+test_loss = 5.9967809509937435
+best_epoch = 1

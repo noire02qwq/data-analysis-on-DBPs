@@ -4,12 +4,12 @@ End-to-end toolkit for preparing dissolved by-product sensor data, training mult
 
 ## Overview
 
+- **Environment**: uv (fast Python package manager) with PyTorch 2.5 + CUDA 12.1
 - **Data processing**: Impute missing values and align timestamps (using Polars)
 - **Model zoo**: PyTorch models (MLP, LSTM, RNN, GRU, Transformer, Mamba) and tree ensembles (XGBoost, LightGBM, CatBoost)
 - **Unified scripts**: Single `train.py`, `test.py`, `autotune.py` for all model types
 - **Config format**: TOML configuration files
-- **Comprehensive experiments**: Run all models with Bayesian optimization via `run_comprehensive_experiment.py`
-- **Backend API**: Server on port 310 for web integration
+- **Backend API**: Flask server on port 5555 for web integration
 
 ## Repository Layout
 
@@ -18,16 +18,26 @@ End-to-end toolkit for preparing dissolved by-product sensor data, training mult
 | `data/` | Raw/imputed/aligned CSVs |
 | `models/` | PyTorch modules and TOML configs |
 | `scripts/` | CLI entry points for all tasks |
-| `scripts/server.py` | Backend API server (port 310) |
-| `scripts/demo_client.py` | Demo client (port 110) |
-| `scripts/run_comprehensive_experiment.py` | Run all models with Bayes opt |
+| `backend_server.py` | Backend API server (port 5555) |
+| `outputs/` | Training outputs and results |
 
 ## Quick Start
 
-### 1. Install Dependencies
+### 1. Install Dependencies (uv)
 
 ```bash
-pip install torch xgboost lightgbm catboost polars tomli tomli-w matplotlib optuna numpy
+# Install uv if not available
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Create virtual environment with Python 3.12
+uv venv .venv --python 3.12
+source .venv/bin/activate
+
+# Install PyTorch with CUDA
+uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+# Install all dependencies
+uv pip install flask flask-cors polars scikit-learn xgboost lightgbm catboost optuna tomli tomli-w matplotlib python-dateutil openpyxl
 ```
 
 ### 2. Prepare Data
@@ -139,28 +149,29 @@ output_columns = ["TRC-PPL1", "TRC-PPL2"]
 - **PyTorch**: MLP, LSTM, RNN, GRU, Transformer, Mamba
 - **GBDT**: XGBoost, LightGBM, CatBoost
 
-## Using the Backend Server
+## Using the Backend API Server
 
-### Start Server (port 310)
+### Start Server (port 5555)
 
 ```bash
-python scripts/server.py --port 310
+python backend_server.py --port 5555
 ```
 
 ### API Endpoints
 
 - `GET /health` - Health check
-- `GET /models` - List available models
-- `POST /split` - Split data
-- `POST /train` - Train model
-- `POST /autotune` - Run hyperparameter optimization
-- `POST /test` - Test trained model
-
-### Demo Client
-
-```bash
-python scripts/demo_client.py
-```
+- `POST /api/v1/data/upload` - Upload dataset
+- `POST /api/v1/data/split` - Split dataset
+- `POST /api/v1/train` - Train model
+- `GET /api/v1/train/<id>/status` - Get training status
+- `POST /api/v1/train/<id>/stop` - Stop training
+- `POST /api/v1/tune` - Run hyperparameter optimization
+- `POST /api/v1/test` - Test trained model
+- `POST /api/v1/predict` - Run prediction
+- `GET /api/v1/models` - List trained models
+- `GET /api/v1/models/<id>` - Get model details
+- `DELETE /api/v1/models/<id>` - Delete model
+- `GET /api/v1/models/<id>/download` - Download model
 
 ## Data Format
 
@@ -184,13 +195,79 @@ Expected CSV columns include:
 │   ├── test.py             # Testing script
 │   ├── autotune.py         # Hyperparameter optimization
 │   ├── split_data.py       # Data splitting
-│   ├── server.py           # API server
-│   ├── demo_client.py      # Demo client
 │   └── run_comprehensive_experiment.py  # Run all models
 ├── outputs/                 # Training outputs
+├── backend_server.py        # Flask API server
+├── pyproject.toml           # uv project configuration
+├── Dockerfile               # Docker container (GPU)
+├── Dockerfile.cpu           # Docker container (CPU only)
 └── README.md
 ```
 
 ## Documentation
 
 See `scripts/README.md` for detailed CLI documentation.
+
+## Docker Deployment
+
+### Build Image
+
+```bash
+# GPU version (with CUDA support)
+docker build -t dbps-backend:latest .
+
+# CPU-only version
+docker build -f Dockerfile.cpu -t dbps-backend:cpu .
+```
+
+### Run Container
+
+```bash
+# GPU version
+docker run -d --gpus all \
+  -p 5555:5555 \
+  -v $(pwd)/data:/app/data:ro \
+  -v dbps-outputs:/app/outputs \
+  --name dbps-backend \
+  dbps-backend:latest
+
+# CPU version
+docker run -d \
+  -p 5555:5555 \
+  -v $(pwd)/data:/app/data:ro \
+  -v dbps-outputs:/app/outputs \
+  --name dbps-backend \
+  dbps-backend:cpu
+```
+
+### Using Docker Compose (Recommended)
+
+From the project root:
+```bash
+docker-compose -f docker-compose.yml up backend
+
+# Or CPU-only
+docker-compose -f docker-compose.yml -f docker-compose.cpu.yml up backend
+```
+
+### Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PYTHONUNBUFFERED` | 1 | Unbuffered Python output |
+| `FLASK_ENV` | production | Flask environment |
+| `CUDA_VISIBLE_DEVICES` | "" (empty) | GPU device IDs (set for CPU-only) |
+
+### Ports
+
+| Service | Port | Description |
+|---------|------|-------------|
+| Backend API | 5555 | Flask REST API |
+
+### Volumes
+
+| Volume | Mount Point | Description |
+|--------|------------|-------------|
+| dbps-outputs | /app/outputs | Trained model outputs |
+| dbps-uploads | /app/uploads | Temporary upload files |
+| ./data | /app/data:ro | Dataset directory (read-only) |

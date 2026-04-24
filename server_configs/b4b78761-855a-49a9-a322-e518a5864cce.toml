@@ -1,0 +1,21 @@
+[model]
+type = "MLP"
+name = "mlp_regressor"
+
+hidden_layers = [256, 256, 256]
+dropout = 0.15
+
+[training]
+max_epochs = 1
+batch_size = 128
+learning_rate = 0.001
+weight_decay = 0.0
+patience = 50
+seed = 42
+
+[data]
+train_csv = "/tmp/fake.csv"
+val_csv = "/tmp/fake.csv"
+test_csv = "/tmp/fake.csv"
+input_columns = ["x"]
+output_columns = ["y"]

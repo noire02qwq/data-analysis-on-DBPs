@@ -1,0 +1,23 @@
+[model]
+type = "RNN"
+name = "rnn_regressor"
+
+history_length = 128
+units = 256
+num_layers = 2
+dropout = 0.3
+
+[training]
+max_epochs = 500
+batch_size = 128
+learning_rate = 0.001
+weight_decay = 0
+patience = 50
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/6c5e5a00-aa28-45a4-96fc-d6fcd642d944/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/6c5e5a00-aa28-45a4-96fc-d6fcd642d944/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/6c5e5a00-aa28-45a4-96fc-d6fcd642d944/test.csv"
+input_columns = ["TRC-DT", "TRC-RT", "pH-DT", "pH-RT", "cond-DT", "fDOM-RT", "DO-RT", "TOC-RT", "DOC-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2"]

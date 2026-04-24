@@ -1,0 +1,23 @@
+[model]
+type = "GRU"
+name = "gru_model"
+
+history_length = 16
+units = 64
+num_layers = 2
+dropout = 0.2
+
+[training]
+max_epochs = 2
+batch_size = 128
+learning_rate = 0.001
+weight_decay = 0.0
+patience = 10
+seed = 42
+
+[data]
+train_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/16fa8b2b-3ff1-4125-a916-fae35840b0ff/train.csv"
+val_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/16fa8b2b-3ff1-4125-a916-fae35840b0ff/val.csv"
+test_csv = "/home/amoris/dbps/data-analysis-on-DBPs/uploads/splits/16fa8b2b-3ff1-4125-a916-fae35840b0ff/test.csv"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT"]
+output_columns = ["TRC-PPL1"]

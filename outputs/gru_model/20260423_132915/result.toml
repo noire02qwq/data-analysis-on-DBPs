@@ -1,0 +1,10 @@
+model_name = "gru_model"
+model_type = "GRU"
+model_format = "torch"
+input_columns = ["TRC-DT", "TRC-RT", "pH-DT", "pH-RT"]
+output_columns = ["TRC-PPL1", "TRC-PPL2"]
+
+[eval]
+best_val_loss = 0.28727304668402776
+test_loss = 4.1787676110205325
+best_epoch = 1

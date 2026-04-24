@@ -29,7 +29,9 @@ This is a machine learning backend for analyzing dissolved by-product (DBP) sens
 │   ├── server.py
 │   ├── demo_client.py
 │   └── run_comprehensive_experiment.py
-└── outputs/           # Training outputs and results
+├── outputs/           # Training outputs and results
+├── backend_server.py  # Flask API server (port 5555)
+└── pyproject.toml     # uv project configuration
 ```
 
 ### Model Types
@@ -236,16 +238,32 @@ Training outputs are saved to `outputs/<model_name>/<timestamp>/`:
 ## Environment Setup
 
 ```bash
-# Create conda environment
-conda create -n dbps python=3.10
-conda activate dbps
+# Install uv if not available
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Install PyTorch (with CUDA if available)
-conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+# Create virtual environment with Python 3.12
+uv venv .venv --python 3.12
+source .venv/bin/activate
 
-# Install other dependencies
-pip install xgboost lightgbm catboost polars matplotlib optuna numpy tomli tomli-w scikit-learn
+# Install PyTorch with CUDA 12.4
+uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+# Install all other dependencies
+uv pip install flask flask-cors polars scikit-learn xgboost lightgbm catboost optuna tomli tomli-w matplotlib python-dateutil openpyxl
 ```
+
+## Backend API Server
+
+```bash
+python backend_server.py --port 5555
+```
+
+The backend provides REST API endpoints on port 5555 for:
+- Data upload and splitting
+- Model training with real-time status polling
+- Hyperparameter tuning (Bayesian optimization)
+- Model testing and prediction
+- Model management (list, download, delete)
 
 ## Troubleshooting
 

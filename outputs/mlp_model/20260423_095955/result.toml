@@ -1,0 +1,10 @@
+model_name = "mlp_model"
+model_type = "MLP"
+model_format = "torch"
+input_columns = ["TRC-DT", "pH-DT", "cond-DT", "TRC-RT", "pH-RT"]
+output_columns = ["TRC-PPL1"]
+
+[eval]
+best_val_loss = 0.02315566241150534
+test_loss = 0.306975857840929
+best_epoch = 2

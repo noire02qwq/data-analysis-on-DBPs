@@ -1,0 +1,60 @@
+# DBPs Backend Dockerfile
+# Python 3.12 with uv + PyTorch CUDA + Flask API
+
+FROM python:3.12-slim
+
+# Install uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies for PyTorch and scientific computing
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy dependency files first for better caching
+COPY pyproject.toml ./
+
+# Install Python dependencies with uv
+# PyTorch with CUDA support
+RUN uv pip install --system torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+# Install all other dependencies
+RUN uv pip install --system \
+    flask>=3.0.0 \
+    flask-cors>=4.0.0 \
+    polars>=0.20.0 \
+    scikit-learn>=1.3.0 \
+    xgboost>=2.0.0 \
+    lightgbm>=4.1.0 \
+    catboost>=1.2.0 \
+    optuna>=3.4.0 \
+    tomli>=2.0.0 \
+    tomli-w>=1.0.0 \
+    matplotlib>=3.8.0 \
+    python-dateutil>=2.8.0 \
+    openpyxl>=3.1.0 \
+    onnx>=1.15.0
+
+# Copy application code
+COPY . .
+
+# Create directories for outputs and uploads
+RUN mkdir -p outputs uploads server_configs
+
+# Expose backend port
+EXPOSE 5555
+
+# Environment variables
+ENV PYTHONUNBUFFERED=1
+ENV FLASK_APP=backend_server.py
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:5555/health || exit 1
+
+# Run the backend server
+CMD ["python", "backend_server.py", "--port", "5555"]

@@ -1,0 +1,33 @@
+# Flask Backend Requirements
+# Install with: pip install -r backend_requirements.txt
+
+# Web Framework
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# PyTorch (install via conda recommended)
+# conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+polars>=0.20.0
+scikit-learn>=1.3.0
+
+# ML Libraries
+xgboost>=2.0.0
+lightgbm>=4.1.0
+catboost>=1.2.0
+
+# Optimization
+optuna>=3.4.0
+
+# Configuration
+tomli>=2.0.0
+tomli-w>=1.0.0
+
+# Visualization
+matplotlib>=3.8.0
+
+# Utilities
+python-dateutil>=2.8.0

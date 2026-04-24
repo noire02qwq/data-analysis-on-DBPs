@@ -1,0 +1,59 @@
+[project]
+name = "dbps-regression"
+version = "1.0.0"
+description = "Deep Learning Platform for Dissolved By-Product (DBPs) Time Series Analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    # Web Framework
+    "flask>=3.0.0",
+    "flask-cors>=4.0.0",
+
+    # Data Processing (Polars, not pandas)
+    "numpy>=1.24.0",
+    "polars>=0.20.0",
+    "scikit-learn>=1.3.0",
+
+    # ML Libraries
+    "xgboost>=2.0.0",
+    "lightgbm>=4.1.0",
+    "catboost>=1.2.0",
+    "onnx>=1.15.0",
+
+    # Optimization
+    "optuna>=3.4.0",
+
+    # Configuration
+    "tomli>=2.0.0",
+    "tomli-w>=1.0.0",
+
+    # Visualization
+    "matplotlib>=3.8.0",
+
+    # Utilities
+    "python-dateutil>=2.8.0",
+    "openpyxl>=3.1.0",
+]
+
+[project.optional-dependencies]
+gpu = [
+    # PyTorch with CUDA - install separately:
+    # uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+    "torch>=2.1.0",
+]
+cpu = [
+    # PyTorch CPU only
+    "torch>=2.1.0",
+]
+dev = [
+    "ipykernel>=6.0.0",
+    "jupyter>=1.0.0",
+]
+
+[tool.uv]
+# PyTorch needs a custom index URL for CUDA builds
+extra-index-url = ["https://download.pytorch.org/whl/cu124"]
+
+# This project is a script collection, not a package
+package = false
