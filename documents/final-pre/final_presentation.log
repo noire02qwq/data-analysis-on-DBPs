@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.4.20)  26 APR 2026 03:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2026.4.20)  28 APR 2026 02:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -764,12 +764,13 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\\' on input line 37.
 
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+
+(/tmp/beamer_rpm/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdf
+tex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count339
 \l__pdf_internal_box=\box78
-)
-(./final_presentation.aux)
+) (./final_presentation.aux)
 \openout1 = `final_presentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
@@ -825,17 +826,17 @@ LaTeX Font Info:    ... okay on input line 48.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+
+(/tmp/beamer_rpm/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-b
+ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package hyperref Info: Link coloring OFF on input line 48.
-
 (./final_presentation.out) (./final_presentation.out)
 \@outlinefile=\write5
 \openout5 = `final_presentation.out'.
@@ -907,7 +908,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./final_presentation.nav)
-<nus-logo.png, id=89, 203.8014pt x 99.7326pt>
+<nus-logo.png, id=93, 203.8014pt x 99.7326pt>
 File: nus-logo.png Graphic file (type png)
 <use nus-logo.png>
 Package pdftex.def Info: nus-logo.png  used on input line 53.
@@ -918,18 +919,18 @@ Package pdftex.def Info: nus-logo.png  used on input line 53.
 [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
 
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \vbox (5.42934pt too high) detected at line 81
+Overfull \vbox (5.42934pt too high) detected at line 82
  []
 
 [3
@@ -937,7 +938,7 @@ Overfull \vbox (5.42934pt too high) detected at line 81
 ] [4
 
 ]
-Overfull \vbox (4.82101pt too high) detected at line 112
+Overfull \vbox (10.51817pt too high) detected at line 113
  []
 
 [5
@@ -945,56 +946,101 @@ Overfull \vbox (4.82101pt too high) detected at line 112
 ] [6
 
 ]
-<../attachment/reactors.png, id=190, 2826.56pt x 1541.76pt>
+<../attachment/reactors.png, id=196, 2826.56pt x 1541.76pt>
 File: ../attachment/reactors.png Graphic file (type png)
 <use ../attachment/reactors.png>
-Package pdftex.def Info: ../attachment/reactors.png  used on input line 137.
+Package pdftex.def Info: ../attachment/reactors.png  used on input line 138.
 (pdftex.def)             Requested size: 245.83282pt x 134.07086pt.
  [7
 
  <../attachment/reactors.png (PNG copy)>]
-<../attachment/imputation.png, id=203, 2826.56pt x 1541.76pt>
+<../attachment/imputation.png, id=209, 2826.56pt x 1541.76pt>
 File: ../attachment/imputation.png Graphic file (type png)
 <use ../attachment/imputation.png>
-Package pdftex.def Info: ../attachment/imputation.png  used on input line 151.
+Package pdftex.def Info: ../attachment/imputation.png  used on input line 152.
 (pdftex.def)             Requested size: 168.85307pt x 92.10167pt.
- [8
+
+Overfull \vbox (5.63812pt too high) detected at line 152
+ []
+
+[8
 
  <../attachment/imputation.png (PNG copy)>] [9
 
 ] [10
 
 ]
-Overfull \vbox (16.0877pt too high) detected at line 193
+<../attachment/mlp.png, id=246, 2826.56pt x 1541.76pt>
+File: ../attachment/mlp.png Graphic file (type png)
+<use ../attachment/mlp.png>
+Package pdftex.def Info: ../attachment/mlp.png  used on input line 204.
+(pdftex.def)             Requested size: 76.81413pt x 41.8986pt.
+<../attachment/rnn.png, id=247, 2826.56pt x 1541.76pt>
+File: ../attachment/rnn.png Graphic file (type png)
+<use ../attachment/rnn.png>
+Package pdftex.def Info: ../attachment/rnn.png  used on input line 204.
+(pdftex.def)             Requested size: 76.81413pt x 41.8986pt.
+<../attachment/lstm.png, id=248, 2826.56pt x 1541.76pt>
+File: ../attachment/lstm.png Graphic file (type png)
+<use ../attachment/lstm.png>
+Package pdftex.def Info: ../attachment/lstm.png  used on input line 204.
+(pdftex.def)             Requested size: 76.81413pt x 41.8986pt.
+<../attachment/gru.png, id=249, 2826.56pt x 1541.76pt>
+File: ../attachment/gru.png Graphic file (type png)
+<use ../attachment/gru.png>
+Package pdftex.def Info: ../attachment/gru.png  used on input line 204.
+(pdftex.def)             Requested size: 76.81413pt x 41.8986pt.
+<../attachment/transformer from Attention Is All You Need.png, id=250, 444.1593
+8pt x 560.8453pt>
+File: ../attachment/transformer from Attention Is All You Need.png Graphic file
+ (type png)
+<use ../attachment/transformer from Attention Is All You Need.png>
+Package pdftex.def Info: ../attachment/transformer from Attention Is All You Ne
+ed.png  used on input line 204.
+(pdftex.def)             Requested size: 45.591pt x 57.56831pt.
+<../attachment/ssm from Mamba: Linear-Time Sequence Modeling with Selective Sta
+te Spaces.png, id=251, 8327.11pt x 3104.59875pt>
+File: ../attachment/ssm from Mamba: Linear-Time Sequence Modeling with Selectiv
+e State Spaces.png Graphic file (type png)
+<use ../attachment/ssm from Mamba: Linear-Time Sequence Modeling with Selective
+ State Spaces.png>
+Package pdftex.def Info: ../attachment/ssm from Mamba: Linear-Time Sequence Mod
+eling with Selective State Spaces.png  used on input line 204.
+(pdftex.def)             Requested size: 76.74503pt x 28.61287pt.
+ [11
+
+ <../attachment/mlp.png (PNG copy)> <../attachment/rnn.png (PNG copy)> <../atta
+chment/lstm.png (PNG copy)> <../attachment/gru.png (PNG copy)> <../attachment/t
+ransformer from Attention Is All You Need.png (PNG copy)> <../attachment/ssm fr
+om Mamba: Linear-Time Sequence Modeling with Selective State Spaces.png>]
+Overfull \vbox (19.38495pt too high) detected at line 220
  []
 
-[11
-
-] [12
+[12
 
 ]
-<../attachment/model workflow.png, id=263, 2826.56pt x 1541.76pt>
+<../attachment/model workflow.png, id=282, 2826.56pt x 1541.76pt>
 File: ../attachment/model workflow.png Graphic file (type png)
 <use ../attachment/model workflow.png>
 Package pdftex.def Info: ../attachment/model workflow.png  used on input line 2
-10.
+28.
 (pdftex.def)             Requested size: 307.25653pt x 167.59447pt.
  [13
 
  <../attachment/model workflow.png (PNG copy)>]
-<../attachment/finetuning_workflow.png, id=277, 786.94pt x 461.725pt>
+<../attachment/finetuning_workflow.png, id=296, 786.94pt x 461.725pt>
 File: ../attachment/finetuning_workflow.png Graphic file (type png)
 <use ../attachment/finetuning_workflow.png>
 Package pdftex.def Info: ../attachment/finetuning_workflow.png  used on input l
-ine 218.
+ine 236.
 (pdftex.def)             Requested size: 230.46739pt x 135.22134pt.
  [14
 
  <../attachment/finetuning_workflow.png>]
-<../attachment/frontend.png, id=293, 1510.14188pt x 997.47656pt>
+<../attachment/frontend.png, id=310, 1510.14188pt x 997.47656pt>
 File: ../attachment/frontend.png Graphic file (type png)
 <use ../attachment/frontend.png>
-Package pdftex.def Info: ../attachment/frontend.png  used on input line 241.
+Package pdftex.def Info: ../attachment/frontend.png  used on input line 259.
 (pdftex.def)             Requested size: 153.64493pt x 101.47339pt.
  [15
 
@@ -1003,61 +1049,69 @@ Package pdftex.def Info: ../attachment/frontend.png  used on input line 241.
 ] [17
 
 ]
+Overfull \vbox (10.1293pt too high) detected at line 309
+ []
+
+[18
+
+] [19
+
+]
 <../../Archived/final-results/caww29-results/xgboost/test_results/TRC-PPL2_pred
-_vs_true.png, id=327, 867.24pt x 361.35pt>
+_vs_true.png, id=372, 867.24pt x 361.35pt>
 File: ../../Archived/final-results/caww29-results/xgboost/test_results/TRC-PPL2
 _pred_vs_true.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/xgboost/test_results/TRC-PPL2_
 pred_vs_true.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/xgboost/te
-st_results/TRC-PPL2_pred_vs_true.png  used on input line 296.
+st_results/TRC-PPL2_pred_vs_true.png  used on input line 353.
 (pdftex.def)             Requested size: 101.40622pt x 42.25186pt.
 <../../Archived/final-results/caww29-results/lightgbm/test_results/TRC-PPL2_pre
-d_vs_true.png, id=328, 867.24pt x 361.35pt>
+d_vs_true.png, id=373, 867.24pt x 361.35pt>
 File: ../../Archived/final-results/caww29-results/lightgbm/test_results/TRC-PPL
 2_pred_vs_true.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/lightgbm/test_results/TRC-PPL2
 _pred_vs_true.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/lightgbm/t
-est_results/TRC-PPL2_pred_vs_true.png  used on input line 296.
+est_results/TRC-PPL2_pred_vs_true.png  used on input line 353.
 (pdftex.def)             Requested size: 101.40622pt x 42.25186pt.
 <../../Archived/final-results/caww29-results/catboost/test_results/TRC-PPL2_pre
-d_vs_true.png, id=329, 867.24pt x 361.35pt>
+d_vs_true.png, id=374, 867.24pt x 361.35pt>
 File: ../../Archived/final-results/caww29-results/catboost/test_results/TRC-PPL
 2_pred_vs_true.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/catboost/test_results/TRC-PPL2
 _pred_vs_true.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/catboost/t
-est_results/TRC-PPL2_pred_vs_true.png  used on input line 296.
+est_results/TRC-PPL2_pred_vs_true.png  used on input line 353.
 (pdftex.def)             Requested size: 101.40622pt x 42.25186pt.
 <../../Archived/final-results/caww29-results/xgboost/test_results/TRC-PPL2_yx_s
-catter.png, id=330, 433.62pt x 433.62pt>
+catter.png, id=375, 433.62pt x 433.62pt>
 File: ../../Archived/final-results/caww29-results/xgboost/test_results/TRC-PPL2
 _yx_scatter.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/xgboost/test_results/TRC-PPL2_
 yx_scatter.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/xgboost/te
-st_results/TRC-PPL2_yx_scatter.png  used on input line 296.
+st_results/TRC-PPL2_yx_scatter.png  used on input line 353.
 (pdftex.def)             Requested size: 101.40622pt x 101.40446pt.
 <../../Archived/final-results/caww29-results/lightgbm/test_results/TRC-PPL2_yx_
-scatter.png, id=331, 433.62pt x 433.62pt>
+scatter.png, id=376, 433.62pt x 433.62pt>
 File: ../../Archived/final-results/caww29-results/lightgbm/test_results/TRC-PPL
 2_yx_scatter.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/lightgbm/test_results/TRC-PPL2
 _yx_scatter.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/lightgbm/t
-est_results/TRC-PPL2_yx_scatter.png  used on input line 296.
+est_results/TRC-PPL2_yx_scatter.png  used on input line 353.
 (pdftex.def)             Requested size: 101.40622pt x 101.40446pt.
 <../../Archived/final-results/caww29-results/catboost/test_results/TRC-PPL2_yx_
-scatter.png, id=332, 433.62pt x 433.62pt>
+scatter.png, id=377, 433.62pt x 433.62pt>
 File: ../../Archived/final-results/caww29-results/catboost/test_results/TRC-PPL
 2_yx_scatter.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/catboost/test_results/TRC-PPL2
 _yx_scatter.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/catboost/t
-est_results/TRC-PPL2_yx_scatter.png  used on input line 296.
+est_results/TRC-PPL2_yx_scatter.png  used on input line 353.
 (pdftex.def)             Requested size: 101.40622pt x 101.40446pt.
- [18
+ [20
 
  <../../Archived/final-results/caww29-results/xgboost/test_results/TRC-PPL2_pre
 d_vs_true.png> <../../Archived/final-results/caww29-results/lightgbm/test_resul
@@ -1067,64 +1121,67 @@ oost/test_results/TRC-PPL2_pred_vs_true.png> <../../Archived/final-results/caww
 results/caww29-results/lightgbm/test_results/TRC-PPL2_yx_scatter.png> <../../Ar
 chived/final-results/caww29-results/catboost/test_results/TRC-PPL2_yx_scatter.p
 ng>]
-[19
+Overfull \vbox (6.31912pt too high) detected at line 378
+ []
+
+[21
 
 ]
 <../../Archived/final-results/caww29-results/mlp/test_results/TRC-PPL2_pred_vs_
-true.png, id=364, 867.24pt x 361.35pt>
+true.png, id=410, 867.24pt x 361.35pt>
 File: ../../Archived/final-results/caww29-results/mlp/test_results/TRC-PPL2_pre
 d_vs_true.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/mlp/test_results/TRC-PPL2_pred
 _vs_true.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/mlp/test_r
-esults/TRC-PPL2_pred_vs_true.png  used on input line 334.
+esults/TRC-PPL2_pred_vs_true.png  used on input line 395.
 (pdftex.def)             Requested size: 101.40622pt x 42.25186pt.
 <../../Archived/final-results/caww29-results/rnn/test_results/TRC-PPL2_pred_vs_
-true.png, id=365, 867.24pt x 361.35pt>
+true.png, id=411, 867.24pt x 361.35pt>
 File: ../../Archived/final-results/caww29-results/rnn/test_results/TRC-PPL2_pre
 d_vs_true.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/rnn/test_results/TRC-PPL2_pred
 _vs_true.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/rnn/test_r
-esults/TRC-PPL2_pred_vs_true.png  used on input line 334.
+esults/TRC-PPL2_pred_vs_true.png  used on input line 395.
 (pdftex.def)             Requested size: 101.40622pt x 42.25186pt.
 <../../Archived/final-results/caww29-results/gru/test_results/TRC-PPL2_pred_vs_
-true.png, id=366, 867.24pt x 361.35pt>
+true.png, id=412, 867.24pt x 361.35pt>
 File: ../../Archived/final-results/caww29-results/gru/test_results/TRC-PPL2_pre
 d_vs_true.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/gru/test_results/TRC-PPL2_pred
 _vs_true.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/gru/test_r
-esults/TRC-PPL2_pred_vs_true.png  used on input line 334.
+esults/TRC-PPL2_pred_vs_true.png  used on input line 395.
 (pdftex.def)             Requested size: 101.40622pt x 42.25186pt.
 <../../Archived/final-results/caww29-results/mlp/test_results/TRC-PPL2_yx_scatt
-er.png, id=367, 433.62pt x 433.62pt>
+er.png, id=413, 433.62pt x 433.62pt>
 File: ../../Archived/final-results/caww29-results/mlp/test_results/TRC-PPL2_yx_
 scatter.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/mlp/test_results/TRC-PPL2_yx_s
 catter.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/mlp/test_r
-esults/TRC-PPL2_yx_scatter.png  used on input line 334.
+esults/TRC-PPL2_yx_scatter.png  used on input line 395.
 (pdftex.def)             Requested size: 101.40622pt x 101.40446pt.
 <../../Archived/final-results/caww29-results/rnn/test_results/TRC-PPL2_yx_scatt
-er.png, id=368, 433.62pt x 433.62pt>
+er.png, id=414, 433.62pt x 433.62pt>
 File: ../../Archived/final-results/caww29-results/rnn/test_results/TRC-PPL2_yx_
 scatter.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/rnn/test_results/TRC-PPL2_yx_s
 catter.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/rnn/test_r
-esults/TRC-PPL2_yx_scatter.png  used on input line 334.
+esults/TRC-PPL2_yx_scatter.png  used on input line 395.
 (pdftex.def)             Requested size: 101.40622pt x 101.40446pt.
 <../../Archived/final-results/caww29-results/gru/test_results/TRC-PPL2_yx_scatt
-er.png, id=369, 433.62pt x 433.62pt>
+er.png, id=415, 433.62pt x 433.62pt>
 File: ../../Archived/final-results/caww29-results/gru/test_results/TRC-PPL2_yx_
 scatter.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/gru/test_results/TRC-PPL2_yx_s
 catter.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/gru/test_r
-esults/TRC-PPL2_yx_scatter.png  used on input line 334.
+esults/TRC-PPL2_yx_scatter.png  used on input line 395.
 (pdftex.def)             Requested size: 101.40622pt x 101.40446pt.
- [20
+ [22
 
  <../../Archived/final-results/caww29-results/mlp/test_results/TRC-PPL2_pred_vs
 _true.png> <../../Archived/final-results/caww29-results/rnn/test_results/TRC-PP
@@ -1134,60 +1191,60 @@ lts/TRC-PPL2_pred_vs_true.png> <../../Archived/final-results/caww29-results/mlp
 ults/rnn/test_results/TRC-PPL2_yx_scatter.png> <../../Archived/final-results/ca
 ww29-results/gru/test_results/TRC-PPL2_yx_scatter.png>]
 <../../Archived/final-results/caww29-results/lstm/test_results/TRC-PPL2_pred_vs
-_true.png, id=388, 867.24pt x 361.35pt>
+_true.png, id=436, 867.24pt x 361.35pt>
 File: ../../Archived/final-results/caww29-results/lstm/test_results/TRC-PPL2_pr
 ed_vs_true.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/lstm/test_results/TRC-PPL2_pre
 d_vs_true.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/lstm/test_
-results/TRC-PPL2_pred_vs_true.png  used on input line 351.
+results/TRC-PPL2_pred_vs_true.png  used on input line 412.
 (pdftex.def)             Requested size: 101.40622pt x 42.25186pt.
 <../../Archived/final-results/caww29-results/transformer/test_results/TRC-PPL2_
-pred_vs_true.png, id=389, 867.24pt x 361.35pt>
+pred_vs_true.png, id=437, 867.24pt x 361.35pt>
 File: ../../Archived/final-results/caww29-results/transformer/test_results/TRC-
 PPL2_pred_vs_true.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/transformer/test_results/TRC-P
 PL2_pred_vs_true.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/transforme
-r/test_results/TRC-PPL2_pred_vs_true.png  used on input line 351.
+r/test_results/TRC-PPL2_pred_vs_true.png  used on input line 412.
 (pdftex.def)             Requested size: 101.40622pt x 42.25186pt.
 <../../Archived/final-results/caww29-results/mamba/test_results/TRC-PPL2_pred_v
-s_true.png, id=390, 867.24pt x 361.35pt>
+s_true.png, id=438, 867.24pt x 361.35pt>
 File: ../../Archived/final-results/caww29-results/mamba/test_results/TRC-PPL2_p
 red_vs_true.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/mamba/test_results/TRC-PPL2_pr
 ed_vs_true.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/mamba/test
-_results/TRC-PPL2_pred_vs_true.png  used on input line 351.
+_results/TRC-PPL2_pred_vs_true.png  used on input line 412.
 (pdftex.def)             Requested size: 101.40622pt x 42.25186pt.
 <../../Archived/final-results/caww29-results/lstm/test_results/TRC-PPL2_yx_scat
-ter.png, id=391, 433.62pt x 433.62pt>
+ter.png, id=439, 433.62pt x 433.62pt>
 File: ../../Archived/final-results/caww29-results/lstm/test_results/TRC-PPL2_yx
 _scatter.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/lstm/test_results/TRC-PPL2_yx_
 scatter.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/lstm/test_
-results/TRC-PPL2_yx_scatter.png  used on input line 351.
+results/TRC-PPL2_yx_scatter.png  used on input line 412.
 (pdftex.def)             Requested size: 101.40622pt x 101.40446pt.
 <../../Archived/final-results/caww29-results/transformer/test_results/TRC-PPL2_
-yx_scatter.png, id=392, 433.62pt x 433.62pt>
+yx_scatter.png, id=440, 433.62pt x 433.62pt>
 File: ../../Archived/final-results/caww29-results/transformer/test_results/TRC-
 PPL2_yx_scatter.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/transformer/test_results/TRC-P
 PL2_yx_scatter.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/transforme
-r/test_results/TRC-PPL2_yx_scatter.png  used on input line 351.
+r/test_results/TRC-PPL2_yx_scatter.png  used on input line 412.
 (pdftex.def)             Requested size: 101.40622pt x 101.40446pt.
 <../../Archived/final-results/caww29-results/mamba/test_results/TRC-PPL2_yx_sca
-tter.png, id=393, 433.62pt x 433.62pt>
+tter.png, id=441, 433.62pt x 433.62pt>
 File: ../../Archived/final-results/caww29-results/mamba/test_results/TRC-PPL2_y
 x_scatter.png Graphic file (type png)
 <use ../../Archived/final-results/caww29-results/mamba/test_results/TRC-PPL2_yx
 _scatter.png>
 Package pdftex.def Info: ../../Archived/final-results/caww29-results/mamba/test
-_results/TRC-PPL2_yx_scatter.png  used on input line 351.
+_results/TRC-PPL2_yx_scatter.png  used on input line 412.
 (pdftex.def)             Requested size: 101.40622pt x 101.40446pt.
- [21
+ [23
 
  <../../Archived/final-results/caww29-results/lstm/test_results/TRC-PPL2_pred_v
 s_true.png> <../../Archived/final-results/caww29-results/transformer/test_resul
@@ -1195,32 +1252,24 @@ ts/TRC-PPL2_pred_vs_true.png> <../../Archived/final-results/caww29-results/mamb
 a/test_results/TRC-PPL2_pred_vs_true.png> <../../Archived/final-results/caww29-
 results/lstm/test_results/TRC-PPL2_yx_scatter.png> <../../Archived/final-result
 s/caww29-results/transformer/test_results/TRC-PPL2_yx_scatter.png> <../../Archi
-ved/final-results/caww29-results/mamba/test_results/TRC-PPL2_yx_scatter.png>]
-Overfull \hbox (24.66306pt too wide) in paragraph at lines 374--374
- [] 
- []
+ved/final-results/caww29-results/mamba/test_results/TRC-PPL2_yx_scatter.png>] [
+24
 
-
-Overfull \vbox (44.02782pt too high) detected at line 374
- []
-
-[22
-
-] [23
-
-] [24
+] [25
 
 ]
-<../attachment/experiment framework.png, id=447, 2826.56pt x 1541.76pt>
+[26
+
+]
+<../attachment/experiment framework.png, id=499, 2826.56pt x 1541.76pt>
 File: ../attachment/experiment framework.png Graphic file (type png)
 <use ../attachment/experiment framework.png>
 Package pdftex.def Info: ../attachment/experiment framework.png  used on input 
-line 403.
+line 464.
 (pdftex.def)             Requested size: 276.559pt x 150.84444pt.
- [25
+ [27
 
- <../attachment/experiment framework.png (PNG copy)>]
-[26
+ <../attachment/experiment framework.png (PNG copy)>] [28
 
 ]
 \tf@nav=\write6
@@ -1232,32 +1281,37 @@ line 403.
 \tf@snm=\write8
 \openout8 = `final_presentation.snm'.
 
- (./final_presentation.aux)
+
+(./final_presentation.aux)
 Package rerunfilecheck Info: File `final_presentation.out' has not changed.
-(rerunfilecheck)             Checksum: FE10E516C26BDA4DAFAF9281B1A9ED9A;2023.
+(rerunfilecheck)             Checksum: 70728935116F2BC073C4CA45982E14BF;2185.
  ) 
 Here is how much of TeX's memory you used:
- 21943 strings out of 477985
- 438341 string characters out of 5839380
- 1862388 words of memory out of 6000000
- 41607 multiletter control sequences out of 15000+600000
- 523768 words of font info for 74 fonts, out of 8000000 for 9000
+ 22020 strings out of 477985
+ 440676 string characters out of 5839380
+ 1863388 words of memory out of 6000000
+ 41668 multiletter control sequences out of 15000+600000
+ 527441 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,19n,104p,393b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msam10.pfb>
-Output written on final_presentation.pdf (26 pages, 21605443 bytes).
+ 101i,19n,104p,562b,751s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on final_presentation.pdf (28 pages, 42215567 bytes).
 PDF statistics:
- 534 PDF objects out of 1000 (max. 8388607)
- 419 compressed objects within 5 object streams
- 68 named destinations out of 1000 (max. 500000)
- 324 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 609 PDF objects out of 1000 (max. 8388607)
+ 475 compressed objects within 5 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 362 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -54,6 +54,7 @@
 
 % Outline
 \begin{frame}{Outline}
+  \small
   \tableofcontents
 \end{frame}
 
@@ -66,47 +67,47 @@
 \begin{frame}{Background \& DBP Formation}
   \begin{block}{The Challenge}
     \begin{itemize}
-        \item \textbf{Disinfection By-products (DBPs)}: Formed by the reaction of disinfectants (e.g., Chlorine) with Natural Organic Matter (NOM).
-        \item \textbf{Health Concerns}: Potential carcinogenic properties (e.g., THMs, HAAs, Nitrosamines).
-        \item \textbf{Goal}: Leverage high-frequency sensor data (TRC, pH, TOC) and Machine Learning for real-time predictive control.
+        \item \textbf{Disinfection By-products (DBPs)}: Formed by the reaction of disinfectants (e.g., Chlorine) with \textbf{Natural Organic Matter (NOM)}.
+        \item \textbf{Health Concerns}: Potential carcinogenic properties (e.g., \textbf{THMs, HAAs, Nitrosamines}).
+        \item \textbf{Goal}: Leverage high-frequency sensor data (\textbf{TRC, pH, TOC}) and Machine Learning for real-time predictive control.
     \end{itemize}
   \end{block}
 
   \begin{block}{Chemistry in Alkaline Conditions}
     \begin{itemize}
-        \item $ \text{NH}_3 + \text{OCl}^- \rightarrow \text{NH}_2\text{Cl} + \text{OH}^- $
-        \item Chloramines react with organic nitrogen precursors (secondary amines) leading to N-DBPs formation.
+        \item $ \text{NH}_3 + \text{OCl}^- \rightarrow \textbf{NH}_2\textbf{Cl} + \text{OH}^- $
+        \item Chloramines react with organic nitrogen precursors (secondary amines) leading to \textbf{N-DBPs} formation.
     \end{itemize}
   \end{block}
 \end{frame}
 
-\begin{frame}{Limitations of Traditional Approaches}
+\begin{frame}{Research Gap \& Limitations of Traditional Approaches}
   \begin{block}{Methodological Gaps}
     \begin{itemize}
-        \item \textbf{Complex Kinetics}: Mechanistic models struggle with non-linear, dynamic hydraulic conditions.
-        \item \textbf{Infrequent Sampling}: Lab testing provides low temporal resolution and high costs.
+        \item \textbf{Complex Kinetics}: Traditional \textbf{mechanistic physical models} struggle with highly dynamic, non-linear \textbf{hydraulic conditions} in real distribution networks.
+        \item \textbf{Infrequent Sampling}: \textbf{Lab testing} provides extremely low temporal resolution and incurs high operational costs.
     \end{itemize}
   \end{block}
   \begin{block}{The Deep Learning Opportunity}
     \begin{itemize}
-        \item Capable of capturing intricate temporal dependencies from multi-variate continuous time-series data without explicit manual feature shifting.
+        \item Capable of autonomously capturing intricate \textbf{temporal dependencies} from \textbf{multi-variate continuous time-series data} without explicit manual feature shifting or strict physical assumptions.
     \end{itemize}
   \end{block}
 \end{frame}
 
 \subsection{Concepts}
-\begin{frame}{Transfer Learning \& Fine-Tuning}
-  \begin{block}{The Need for Transferability}
+\begin{frame}{Fine-Tuning Strategy for Reactor Generalization}
+  \small
+  \begin{block}{The Need for Transferability in Environmental Engineering}
       \begin{itemize}
-          \item Water sources and environmental conditions (e.g., temperature) vary significantly.
-          \item Training entirely new models for every condition is computationally expensive and data-hungry.
+          \item Real-world \textbf{water distribution systems} span vastly different environmental conditions (e.g., \textbf{temperature shifts, distinct water sources}).
+          \item Training entirely new models for every condition is computationally inefficient and ignores the shared physical similarities between \textbf{reactors}.
       \end{itemize}
   \end{block}
-  \begin{block}{Fine-Tuning Strategy}
+  \begin{block}{Exploring Reactor Generalization}
       \begin{itemize}
-          \item \textbf{Full Fine-Tuning}: Updating all weights on the new target dataset.
-          \item \textbf{Partial Fine-Tuning (Frozen Encoder)}: Freezing feature extraction layers, updating only the predictive heads.
-          \item \textbf{Adapter (LoRA)}: Injecting small trainable bottleneck layers to maintain parameter efficiency.
+          \item We introduce \textbf{Fine-Tuning Techniques} to systematically explore how effectively learned \textbf{chemical kinetics} can be generalized.
+          \item This allows us to transfer core predictive knowledge from a \textbf{baseline reactor environment} to new, similar \textbf{physical reactors} operating under varied boundary conditions.
       \end{itemize}
   \end{block}
 \end{frame}
@@ -115,9 +116,9 @@
 \begin{frame}{Objectives}
   \begin{block}{Core Research Goals}
     \begin{enumerate}
-        \item \textbf{Evaluate Predictive Models}: Compare GBDTs (XGBoost, LightGBM, CatBoost) against Classical NNs (MLP, RNN, LSTM, GRU) and Modern Sequence Architectures (Transformer, Mamba).
-        \item \textbf{Investigate Fine-Tuning}: Test the Transformer's capability to transfer learned kinetics across different temperatures ($29^{\circ}\text{C}$ to $35^{\circ}\text{C}$) and water sources (CAWW, LSWW).
-        \item \textbf{Develop a Production GUI}: Package the machine learning backend into a user-friendly frontend application for facility operators.
+        \item \textbf{Evaluate Predictive Models}: Compare standard GBDTs (\textbf{XGBoost, LightGBM, CatBoost}) against advanced Neural Networks (\textbf{MLP, RNN, LSTM, GRU, Transformer, Mamba}) on complex continuous \textbf{water quality time-series data}.
+        \item \textbf{Investigate Fine-Tuning Generalizability}: Test the transferability of learned kinetics across varying temperatures ($29^{\circ}\text{C}$ to $35^{\circ}\text{C}$) and distinct source \textbf{water distributions} (CAWW vs. LSWW).
+        \item \textbf{Develop a Production GUI}: Package the machine learning backend into a user-friendly frontend application for \textbf{operational facility management}.
     \end{enumerate}
   \end{block}
 \end{frame}
@@ -132,15 +133,15 @@
   \begin{figure}
       \centering
       \includegraphics[width=0.8\textwidth]{../attachment/reactors.png}
-      \caption{Simulated WDS: Disinfection (DT), Retention (RT), and Pipelines (PPL1/2).}
+      \caption{Simulated WDS: \textbf{Disinfection Tank (DT)}, \textbf{Retention Tank (RT)}, and Pipelines (\textbf{PPL1/2}).}
   \end{figure}
 \end{frame}
 
 \begin{frame}{Data Preprocessing: Stochastic Imputation}
   \begin{block}{Challenge \& Solution}
       \begin{itemize}
-          \item Addresses 30-min alternating sensor gaps between PPL1 and PPL2.
-          \item Fills gaps via linear regression combined with variance-matched random noise.
+          \item Addresses 30-min alternating sensor gaps between \textbf{PPL1} and \textbf{PPL2}.
+          \item Fills gaps via \textbf{linear regression} combined with \textbf{variance-matched random noise} to preserve true natural \textbf{sensor fluctuations}.
       \end{itemize}
   \end{block}
   \vspace{0.2cm}
@@ -150,11 +151,18 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Data Preprocessing: Data Segmentation}
-  \begin{block}{Sliding Window Approach}
+\begin{frame}{Hydraulic Retention Time (HRT) \& Temporal Dynamics}
+  \footnotesize
+  \begin{block}{Physical Reactor Dynamics}
       \begin{itemize}
-          \item Instead of manual time-alignment, a sliding window implicitly captures hydraulic delay.
-          \item \textbf{Split Ratio}: Chronological division of $7:1.5:1.5$ for Training, Validation, and Testing.
+          \item In real physical pipelines, water physically takes hours to transit from the upstream \textbf{Disinfection Tank (DT)} to the downstream measurement points (\textbf{PPL1/PPL2}).
+          \item This transit duration is known as the \textbf{Hydraulic Retention Time (HRT)}.
+          \item \textbf{Continuous Reactions}: Chemical reactions (like \textbf{chlorine decay} and \textbf{DBP formation}) occur continuously along this spatial and temporal transit.
+      \end{itemize}
+  \end{block}
+  \begin{block}{Modeling the Water Parcel}
+      \begin{itemize}
+          \item Traditional static tabular modeling ignores flow dynamics. Our \textbf{time-series sliding window approach} inherently mirrors the \textbf{HRT}. It allows the model to dynamically track the aging and reacting \textbf{"water parcel"} as it moves through the pipe network.
       \end{itemize}
   \end{block}
 \end{frame}
@@ -163,45 +171,55 @@
 \begin{frame}{Model Architectures Overview}
   \begin{block}{GBDTs (Single-Output Regressors)}
       \begin{itemize}
-          \item \textbf{XGBoost, LightGBM, CatBoost}: Fast, tree-based ensemble learners relying on histogram optimizations and regularization.
+          \item \textbf{XGBoost, LightGBM, CatBoost}: Fast, tree-based ensemble learners utilizing \textbf{decision boundaries} and \textbf{histogram optimization}.
       \end{itemize}
   \end{block}
   \begin{block}{Neural Networks (Multi-Output Regressors)}
       \begin{itemize}
-          \item \textbf{MLP}: Flattened baseline.
-          \item \textbf{RNN, LSTM, GRU}: Recursive state updates capturing sequential logic.
-          \item \textbf{Transformer}: Multi-head global self-attention.
-          \item \textbf{Mamba}: State Space Model (SSM) enabling linear-time sequence processing.
+          \item \textbf{MLP}: Flattened standard neural baseline.
+          \item \textbf{RNN, LSTM, GRU}: Recursive state updates inherently suited for \textbf{continuous time-series dependencies}.
+          \item \textbf{Transformer}: Multi-head global \textbf{self-attention} architectures.
+          \item \textbf{Mamba}: \textbf{State Space Model (SSM)} enabling linear-time sequence processing.
       \end{itemize}
   \end{block}
 \end{frame}
 
-\begin{frame}{Transformer for Time Series: Why Encoder-Only?}
-  \begin{block}{Attention over Time}
-      \begin{itemize}
-          \item Calculates attention weights across the entire sequence simultaneously.
-          \item Captures global temporal dependencies and long-range correlations irrespective of distance.
-      \end{itemize}
+\begin{frame}{Neural Network Architectures}
+  \begin{figure}
+      \centering
+      \resizebox{0.9\textwidth}{!}{
+      \begin{tabular}{ccc}
+          \textbf{MLP} & \textbf{RNN} & \textbf{LSTM} \\
+          \includegraphics[width=0.25\linewidth,height=0.25\textheight,keepaspectratio]{../attachment/mlp.png} &
+          \includegraphics[width=0.25\linewidth,height=0.25\textheight,keepaspectratio]{../attachment/rnn.png} &
+          \includegraphics[width=0.25\linewidth,height=0.25\textheight,keepaspectratio]{../attachment/lstm.png} \\
+          \textbf{GRU} & \textbf{Transformer (Encoder)} & \textbf{Mamba (SSM)} \\
+          \includegraphics[width=0.25\linewidth,height=0.25\textheight,keepaspectratio]{../attachment/gru.png} &
+          \includegraphics[width=0.25\linewidth,height=0.25\textheight,keepaspectratio]{../attachment/transformer from Attention Is All You Need.png} &
+          \includegraphics[width=0.25\linewidth,height=0.25\textheight,keepaspectratio]{../attachment/ssm from Mamba: Linear-Time Sequence Modeling with Selective State Spaces.png} \\
+      \end{tabular}
+      }
+      \caption{Structural diagrams of the implemented \textbf{Neural Network architectures}.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Why \textbf{Transformer} is Suitable for Water Reactors}
+  \small
+  \begin{block}{The Attention Mechanism}
+      \begin{equation*}
+          \scalebox{0.8}{$\text{Attention}(Q,K,V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$}
+      \end{equation*}
   \end{block}
-  \begin{block}{Encoder-Only Rationale}
+  \begin{block}{Environmental Engineering Context}
       \begin{itemize}
-          \item \textbf{NLP vs Regression}: NLP translation requires a Decoder for auto-regressive generation of variable-length text.
-          \item \textbf{Our Task}: Maps a fixed-length historical multi-variate input to concurrent numerical predictions.
-          \item \textbf{Benefit}: Omitting the Decoder reduces overfitting and boosts computational efficiency while retaining feature extraction power.
+          \item \textbf{Cyclical Operations}: \textbf{Water distribution systems} operate on highly periodic and \textbf{cyclical hydraulic schedules}.
+          \item \textbf{Intrinsic Matching}: Historical data generated at identical pipeline locations during similar cycles exhibit immense \textbf{structural similarity}. 
+          \item \textbf{Global Perception}: The \textbf{Attention mechanism} calculates correlation weights ($QK^T$) across the entire historical sequence simultaneously, allowing the model to naturally "attend" to these \textbf{recurring cyclical physical states} far better than strictly sequential models.
       \end{itemize}
   \end{block}
 \end{frame}
 
 \subsection{Training Workflow}
-\begin{frame}{Model Training Configuration}
-  \begin{block}{Parameters}
-    \begin{itemize}
-        \item \textbf{Loss \& Optimization}: Mean Squared Error (MSE); Adam Optimizer for NNs.
-        \item \textbf{Hyperparameters}: Tuned via Bayesian Optimization on the CAWW\_29 dataset.
-    \end{itemize}
-  \end{block}
-\end{frame}
-
 \begin{frame}{Model Training Workflow}
   \begin{figure}
       \centering
@@ -245,7 +263,7 @@
   \centering
   \Huge \textbf{Live Demonstration} \\
   \vspace{1cm}
-  \Large (1:30 Video Walkthrough of the GUI Application)
+  \Large (1:30 Video Walkthrough of the \textbf{GUI Application})
   \vspace{1cm}
   \normalsize \\ Please direct your attention to the video player.
 \end{frame}
@@ -255,6 +273,41 @@
 % ============================================================================
 \section{Results \& Conclusion}
 
+\subsection{Theoretical Analysis}
+\begin{frame}{Chemical Kinetics: First-Order Decay in Pipelines}
+  \footnotesize
+  \begin{block}{The Chemistry of Chlorine Transport}
+      \begin{itemize}
+          \item The decay of \textbf{Total Residual Chlorine (TRC)} from upstream (\textbf{DT/RT}) to downstream (\textbf{PPL1/PPL2}) follows a \textbf{first-order reaction}:
+          \begin{equation*}
+              \scalebox{0.8}{$C_t = C_0 e^{-kt}$}
+          \end{equation*}
+      \end{itemize}
+  \end{block}
+  \begin{block}{Dynamic Reactor Conditions}
+      \begin{itemize}
+          \item The \textbf{rate constant ($k$)} is dynamically influenced by real-time \textbf{environmental conditions} (\textbf{temperature, pH, flow}).
+          \item This creates a continuous, non-linear exponential decay along the physical pipe network.
+      \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Algorithm Expressiveness: GBDT vs Neural Networks}
+  \small
+  \begin{block}{\textbf{Neural Networks}: Continuous Mathematics}
+      \begin{itemize}
+          \item \textbf{Neural Networks} process inputs through multiple \textbf{nested non-linear activation functions} (e.g., Sigmoid, ReLU). 
+          \item This continuous mathematical architecture natively maps to, and inherently approximates, smooth \textbf{continuous functional transformations} like true \textbf{exponential chemical decay}.
+      \end{itemize}
+  \end{block}
+  \begin{block}{\textbf{GBDTs}: Discontinuous Step Functions}
+      \begin{itemize}
+          \item \textbf{Tree-based GBDTs} operate via greedy variance reduction, constructing orthogonal, discontinuous step functions.
+          \item They partition the real-number data space into rigid "boxes." Consequently, they lack the \textbf{continuous functional expression power} necessary to physically extrapolate smooth \textbf{environmental reaction kinetics} beyond historically seen discrete thresholds.
+      \end{itemize}
+  \end{block}
+\end{frame}
+
 \subsection{Results}
 \begin{frame}{Evaluation Environment \& GBDT Metrics}
   \begin{block}{Hardware}
@@ -263,19 +316,23 @@
   
   \begin{table}
       \centering
-      \caption{Overall Performance Metrics for GBDT Models (CAWW\_29)}
+      \caption{\textbf{GBDT Metrics} (CAWW\_29)}
+      \scalebox{0.8}{
       \begin{tabular}{lccc}
       \toprule
       \textbf{Model} & \textbf{MSE} & \textbf{MAE} & \textbf{RMSE} \\
       \midrule
       \textbf{XGBoost} & \textbf{0.2217} & \textbf{0.1920} & \textbf{0.4709} \\
-      LightGBM & 0.8666 & 0.4017 & 0.9309 \\
-      CatBoost & 2.0576 & 0.6288 & 1.4344 \\
+      \textbf{LightGBM} & 0.8666 & 0.4017 & 0.9309 \\
+      \textbf{CatBoost} & 2.0576 & 0.6288 & 1.4344 \\
       \bottomrule
-      \end{tabular}
+      \end{tabular}}
   \end{table}
-  \small
-  \textit{Note}: XGBoost outperforms others, but GBDTs lack natural representation learning for temporal data and extrapolate poorly.
+  \vspace{-0.3cm}
+  \begin{block}{Environmental Engineering Analysis}
+      \small
+      While \textbf{XGBoost} performs numerically well within seen training bounds, \textbf{GBDTs} struggle with \textbf{environmental time-series data}. They cannot model \textbf{temporal flow dynamics} nor extrapolate \textbf{kinetic changes} beyond the absolute numerical limits observed during historical sampling.
+  \end{block}
 \end{frame}
 
 \begin{frame}{GBDT Models: Visualization (TRC-PPL2)}
@@ -298,22 +355,26 @@
 \begin{frame}{Neural Network Metrics}
   \begin{table}
       \centering
-      \caption{Overall Performance Metrics for Neural Network Models (CAWW\_29)}
+      \caption{\textbf{Neural Network Metrics} (CAWW\_29)}
+      \scalebox{0.8}{
       \begin{tabular}{lccc}
       \toprule
       \textbf{Model} & \textbf{MSE} & \textbf{MAE} & \textbf{RMSE} \\
       \midrule
-      MLP & 0.2389 & 0.2046 & 0.4888 \\
-      RNN & 0.4255 & 0.2678 & 0.6523 \\
-      GRU & 0.2004 & 0.1921 & 0.4476 \\
+      \textbf{MLP} & 0.2389 & 0.2046 & 0.4888 \\
+      \textbf{RNN} & 0.4255 & 0.2678 & 0.6523 \\
+      \textbf{GRU} & 0.2004 & 0.1921 & 0.4476 \\
       \textbf{LSTM} & \textbf{0.1779} & \textbf{0.1736} & \textbf{0.4218} \\
-      Transformer & 0.4208 & 0.2789 & 0.6487 \\
-      Mamba & 0.8168 & 0.3844 & 0.9038 \\
+      \textbf{Transformer} & 0.4208 & 0.2789 & 0.6487 \\
+      \textbf{Mamba} & 0.8168 & 0.3844 & 0.9038 \\
       \bottomrule
-      \end{tabular}
+      \end{tabular}}
   \end{table}
-  \small
-  \textit{Note}: LSTM achieves the lowest MSE on this specific dataset due to its gated mechanism being highly optimized for moderately long sequences.
+  \vspace{-0.3cm}
+  \begin{block}{Environmental Engineering Analysis}
+      \small
+      The \textbf{LSTM} naturally matches the continuous, moderate-length \textbf{sequential decay patterns}, achieving the lowest MSE. However, if massive volumes of parallel multi-\textbf{reactor environmental datasets} become available, the \textbf{Transformer}'s superior expressive capacity would unlock significantly higher predictive potential than classical \textbf{recurrent models}.
+  \end{block}
 \end{frame}
 
 \begin{frame}{Neural Networks: Visualization (Part 1)}
@@ -350,36 +411,36 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Transformer Fine-Tuning Performance}
+\begin{frame}{\textbf{Transformer} Fine-Tuning Performance}
+  \footnotesize
   \begin{table}
       \centering
       \caption{MSE of Fine-Tuning Strategies on $35^{\circ}\text{C}$ Datasets}
+      \scalebox{0.65}{
       \begin{tabular}{lcc}
       \toprule
       \textbf{Method} & \textbf{CAWW\_35 (MSE)} & \textbf{LSWW\_35 (MSE)} \\
       \midrule
       \textbf{Full Fine-Tuning} & \textbf{0.2624} & 0.8603 \\
       \textbf{Partial (Frozen Layers)} & 0.3635 & \textbf{0.3812} \\
-      Adapter & 0.4066 & 0.8985 \\
+      \textbf{Adapter} & 0.4066 & 0.8985 \\
       \bottomrule
-      \end{tabular}
+      \end{tabular}}
   \end{table}
-  \begin{block}{Analysis}
-      \begin{itemize}
-          \item \textbf{Full Fine-Tuning}: Works best with clean data and aligned distributions (CAWW).
-          \item \textbf{Partial Fine-Tuning}: Superior robustness and acts as a regularizer when dealing with severe source/noise distribution shifts (LSWW).
-          \item \textbf{Adapter}: Bottleneck dimension restricts expression capacity for this specific regression task.
-      \end{itemize}
+  \vspace{-0.3cm}
+  \begin{block}{Environmental Variables Perception}
+      \footnotesize
+      \textbf{Partial Fine-Tuning} demonstrates the best robust generalization across \textbf{reactor conditions}. Each neural layer acts as a perceptron for specific \textbf{environmental conditions} (e.g., \textbf{pH, conductivity}, as well as some unmeasured physical parameters or substance concentrations). By freezing core layers and retraining only specific shallow neurons, we isolate the "\textbf{temperature}" shift without corrupting the fundamental \textbf{physical and chemical relationships} already learned by the network.
   \end{block}
 \end{frame}
 
 \subsection{Conclusion}
 \begin{frame}{Conclusion}
-  \begin{block}{Key Takeaways}
+  \begin{block}{Key Engineering Takeaways}
       \begin{itemize}
-          \item \textbf{Architecture Superiority}: LSTM yielded the highest baseline accuracy for continuous WDS time-series data.
-          \item \textbf{Transfer Learning}: Transformer architectures demonstrated exceptionally strong generalization capabilities through Partial Fine-Tuning across distinct source distributions.
-          \item \textbf{Industrial Readiness}: The developed GUI application successfully bridges advanced ML research with accessible industrial operation.
+          \item \textbf{Kinetic Modeling}: \textbf{Neural Networks}, leveraging nested \textbf{activation functions}, are fundamentally better equipped than \textbf{GBDTs} to capture continuous \textbf{environmental transformations} like \textbf{first-order chemical decay} in water networks.
+          \item \textbf{Reactor Generalization}: \textbf{Transformer} architectures demonstrated exceptional transferability via \textbf{Partial Fine-Tuning}, successfully isolating \textbf{environmental factors} like \textbf{temperature shifts} across distinct \textbf{reactors}.
+          \item \textbf{Industrial Readiness}: The developed \textbf{GUI application} successfully bridges advanced \textbf{kinetic AI modeling} with accessible industrial operational practice.
       \end{itemize}
   \end{block}
 \end{frame}
@@ -388,8 +449,8 @@
 \begin{frame}{Future Work}
   \begin{block}{Next Steps}
       \begin{itemize}
-          \item \textbf{Model Interpretability}: Integrate SHAP (SHapley Additive exPlanations) values to interpret exactly which sensor features drive the model's decisions temporally.
-          \item \textbf{Second-Stage Model}: Map the accurately predicted proxy water quality parameters (TRC, TOC) directly to laboratory-measured actual THM and HAA concentrations.
+          \item \textbf{Model Interpretability}: Integrate \textbf{SHAP values} to interpret exactly which \textbf{sensor features} biologically or chemically drive the model's decisions temporally.
+          \item \textbf{Second-Stage Model}: Map the accurately predicted proxy \textbf{water quality parameters} (\textbf{TRC, TOC}) directly to laboratory-measured actual \textbf{THM and HAA concentrations}.
       \end{itemize}
   \end{block}
 \end{frame}

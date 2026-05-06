@@ -5,11 +5,12 @@
 \beamer@sectionintoc {2}{Methodology \& Experimental Framework}{7}{0}{2}
 \beamer@subsectionintoc {2}{1}{System \& Data}{7}{0}{2}
 \beamer@subsectionintoc {2}{2}{Models \& Strategies}{10}{0}{2}
-\beamer@subsectionintoc {2}{3}{Training Workflow}{12}{0}{2}
+\beamer@subsectionintoc {2}{3}{Training Workflow}{13}{0}{2}
 \beamer@sectionintoc {3}{GUI Development}{15}{0}{3}
 \beamer@subsectionintoc {3}{1}{Software Tech Stack}{15}{0}{3}
 \beamer@subsectionintoc {3}{2}{Live Demo}{16}{0}{3}
 \beamer@sectionintoc {4}{Results \& Conclusion}{17}{0}{4}
-\beamer@subsectionintoc {4}{1}{Results}{17}{0}{4}
-\beamer@subsectionintoc {4}{2}{Conclusion}{23}{0}{4}
-\beamer@subsectionintoc {4}{3}{Future Work}{24}{0}{4}
+\beamer@subsectionintoc {4}{1}{Theoretical Analysis}{17}{0}{4}
+\beamer@subsectionintoc {4}{2}{Results}{19}{0}{4}
+\beamer@subsectionintoc {4}{3}{Conclusion}{25}{0}{4}
+\beamer@subsectionintoc {4}{4}{Future Work}{26}{0}{4}
